@@ -2,7 +2,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
   line-height: 1.4;
 }
@@ -58,7 +58,7 @@ body {
 }
 .form-login {
   width: 100%;
-  max-width: 430px;
+  max-width: 400px;
   padding: 3.5rem;
   background: #fff;
   border-radius: 2rem;
@@ -78,7 +78,7 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 1.6rem;
-  background-color: #ffd6d6;
+  background-color: #ffdfdf;
   padding: 0.5rem 1rem;
   /* display: none; */
 }
@@ -165,7 +165,7 @@ ul li .icon {
 #tw {
   color: rgb(85, 172, 238);
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1425px) {
   .form-login {
     display: block;
     margin: 0 auto;

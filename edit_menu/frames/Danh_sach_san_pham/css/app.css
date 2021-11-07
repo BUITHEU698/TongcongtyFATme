@@ -43,7 +43,7 @@ h1{
   margin-right: 1rem;
   color: var(--color-primary);
 }
-.product > div > button{
+.product > div > a> button{
   background-color:var(--color-primary);
   color: white;
   width: 10rem;

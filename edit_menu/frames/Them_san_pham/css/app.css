@@ -6,3 +6,28 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
 }
+.container
+{
+ 
+  display: flex;
+  justify-content: space-between;
+}
+.container_left{
+  background-color: aquamarine;
+  flex-basis: 70%;
+  height: 100vh;
+}
+.container_right{
+  background-color: blue;
+  height: 100vh;
+  margin-left: 20px;
+  flex-basis: 30%;
+}
+.list_info >li{
+
+  background-color: rgb(255, 255, 255);
+  padding-top: 10px;
+  
+  
+
+}

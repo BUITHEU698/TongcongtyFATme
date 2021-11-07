@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -30,20 +30,28 @@
         </p>
         <div class="form-group">
           <input
-            type="text"
+            type="email"
             name="SDT"
-            placeholder="Số điện thoại, tên người dùng hoặc email"
+            placeholder="Nhập email"
             class="input-text"
             autocomplete="username"
           /><br />
           <div class="relative">
-            <input type="password" name="password" placeholder="Mật khẩu" id="passwd" class="input-text"/>
+            <input
+              type="password"
+              name="password"
+              placeholder="Mật khẩu"
+              id="passwd"
+              class="input-text"
+            />
             <i class="fas fa-eye showpwd" onclick="showPassword('passwd', this)"></i>
           </div>
           <button type="submit">Đăng nhập</button>
         </div>
         <?php if (isset($_GET['error'])) { ?>
-        <p class="error sub-text"><?php echo $_GET['error']; ?>Tên đăng nhập hoặc mật khẩu không đúng!</p>
+        <p class="error sub-text">
+          <?php echo $_GET['error']; ?>Tên đăng nhập hoặc mật khẩu không đúng!
+        </p>
         <?php } ?>
         <p class="m-20-0"><a href="#" class="semi-bold sub-link">Quên mật khẩu</a></p>
         <div class="m-40-0 upcase light or">

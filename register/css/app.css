@@ -2,7 +2,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
   line-height: 1.4;
 }
@@ -185,7 +185,7 @@ ul li .icon {
 #tw {
   color: rgb(85, 172, 238);
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1425px) {
   .form-register {
     display: block;
     margin: 0 auto;

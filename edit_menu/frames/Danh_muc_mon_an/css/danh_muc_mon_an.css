@@ -23,7 +23,7 @@ ul{
     --color-background: #f5f5f5;
   }
 .danh_muc_container{
-  width: 1500px !important;
+  width: 100% !important;
   height: 800px;
 }
 .menu_container{
@@ -33,7 +33,7 @@ ul{
   background-color: black;
 }
 .noi_dung_container{
-  width: 1250px;
+  width: 1130px;
   height: 800px;
   
   float: left;

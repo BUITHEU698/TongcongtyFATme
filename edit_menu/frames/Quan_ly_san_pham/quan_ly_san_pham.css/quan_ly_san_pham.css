@@ -166,26 +166,20 @@ ul{
     width: 100%;
     height: 100%;
 }
-
 .scroll_table {
     height: 300px;
     overflow-y: auto;
     border: none;
     border-collapse: collapse;
     text-align: center;
-  }
-
-/* .scroll_table td{
-    border-collapse: collapse;
-} */
+}
 .scroll_table th,td{
-    
     width: 100rem;
 }
 .scroll_table thead th{
     position: sticky !important;
     top: 0 !important;
-    background-color: var(--color-primary);
+    background-color: grey;
     color: white;
 }
 .scroll_table input{
@@ -205,6 +199,12 @@ ul{
     border: none;
     background-color: unset;
     font-size: 2rem;
+}
+.more_button i{
+    color: grey;
+}
+.more_button i:hover{
+color: var(--color-button-hover);
 }
 .dropdown_more_btn {
     position: relative;

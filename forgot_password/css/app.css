@@ -2,7 +2,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   line-height: 1.4;
 }
@@ -56,7 +56,7 @@ body {
   align-items: center;
   padding: 1.5rem;
 }
-.form-login {
+.form-forgot {
   width: 100%;
   max-width: 400px;
   padding: 3.5rem;
@@ -65,15 +65,34 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.form-login h1 {
+.form-forgot-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: black;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100rem;
+}
+.form-forgot-icon i {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  color: inherit;
+}
+
+.form-forgot h1 {
   font-size: 4rem;
   margin-bottom: 3rem;
 }
-.form-login .sub-text {
+.form-forgot .sub-text {
   font-size: 1.4rem;
   font-weight: 400;
 }
-.form-login .error {
+.form-forgot .error {
   color: #ff3333;
   font-weight: 600;
   letter-spacing: 1px;
@@ -82,11 +101,11 @@ body {
   padding: 0.5rem 1rem;
   /* display: none; */
 }
-.form-login .form-group {
+.form-forgot .form-group {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-.form-login .form-group .input-text {
+.form-forgot .form-group .input-text {
   width: 100%;
   padding: 1.5rem;
   border: 1px solid #ddd;
@@ -95,14 +114,14 @@ body {
   outline: none;
   margin-bottom: 1rem;
 }
-.form-login .form-group .input-text:focus {
+.form-forgot .form-group .input-text:focus {
   border: 1px solid var(--color-primary);
 }
-.form-login .form-group .input-text::placeholder {
+.form-forgot .form-group .input-text::placeholder {
   color: #aaa;
   font-size: 1.6rem;
 }
-.form-login .form-group button {
+.form-forgot .form-group button {
   width: 100%;
   padding: 1rem;
   border: none;
@@ -116,110 +135,57 @@ body {
   outline: none;
   margin-top: 1.5rem;
 }
-.form-login .form-group button:hover {
+.form-forgot .form-group button:hover {
   background: var(--color-button-hover);
 }
-.form-login .form-group p {
+.form-forgot .form-group p {
   font-size: 1.6rem;
   font-weight: 400;
   margin: 0 1.5rem;
 }
-.or {
-  position: relative;
-}
-.or .abs-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #000;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-}
-.or hr {
-  width: 100%;
-  border: 1px solid #ddd;
-  margin: 0;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-ul li .icon {
-  font-size: 5rem;
-  text-decoration: none;
-}
-#fb {
-  color: rgb(59, 89, 152);
-}
-#apple {
-  color: black;
-}
-#gg {
-  color: rgb(220, 78, 65);
-}
-#tw {
-  color: rgb(85, 172, 238);
-}
 @media only screen and (min-width: 1425px) {
-  .form-login {
+  .form-forgot {
     display: block;
     margin: 0 auto;
     margin-right: 15%;
   }
 }
 @media only screen and (max-width: 768px) {
-  .form-login {
+  .form-forgot {
     padding: 2.5rem;
   }
-  .form-login .form-group {
+  .form-forgot .form-group {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  .form-login .form-group .input-text {
+  .form-forgot .form-group .input-text {
     padding: 1rem;
     font-size: 1.4rem;
   }
-  .form-login .form-group .input-text::placeholder {
+  .form-forgot .form-group .input-text::placeholder {
     font-size: 1.4rem;
   }
-  .form-login .form-group button {
+  .form-forgot .form-group button {
     font-size: 2rem;
-  }
-  .or {
-    margin-top: 2rem;
-  }
-  .or .abs-text {
-    font-size: 1.4rem;
   }
 }
 @media only screen and (max-width: 480px) {
-  .form-login {
+  .form-forgot {
     padding: 2.5rem;
   }
-  .form-login .form-group {
+  .form-forgot .form-group {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  .form-login .form-group .input-text {
+  .form-forgot .form-group .input-text {
     padding: 1rem;
     font-size: 1.2rem;
   }
-  .form-login .form-group .input-text::placeholder {
+  .form-forgot .form-group .input-text::placeholder {
     font-size: 1.2rem;
   }
-  .form-login .form-group button {
+  .form-forgot .form-group button {
     font-size: 1.8rem;
-  }
-  .or {
-    margin-top: 2rem;
-  }
-  .or .abs-text {
-    font-size: 1.2rem;
   }
 }
 .sub-link {
@@ -229,7 +195,7 @@ ul li .icon {
 }
 
 .sub-link:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -248,14 +214,14 @@ ul li .icon {
 .relative {
   position: relative;
 }
-.relative  i {
+.relative i {
   position: absolute;
   right: 2rem;
   top: 50%;
   transform: translateY(calc(-50% - 0.5rem));
   color: #ddd;
 }
-.relative  i:hover {
+.relative i:hover {
   color: var(--color-button-hover);
   cursor: pointer;
 }

@@ -22,7 +22,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="./register.php" method="post" class="form-register">
+      <form action="" method="post" class="form-register">
         <h1 class="header-text bold">Tạo tài khoản</h1>
         <p class="sub-text">
           Bạn đã có tài khoản?
@@ -60,11 +60,9 @@
             />
             <label for="checkbox" class="label-checkbox">Chấp nhận điều khoản và dịch vụ</label>
           </div>
-          <button type="submit">Đăng ký</button>
+          <button type="submit" onclick="checkPassword()">Đăng ký</button>
         </div>
-        <?php if (isset($_GET['error'])) { ?>
-        <p class="error sub-text"><?php echo $_GET['error']; ?>Mật khẩu không trùng khớp!</p>
-        <?php } ?>
+        <p class="error sub-text">Mật khẩu không trùng khớp!</p>
         <p class="m-20-0"><a href="#" class="semi-bold sub-link">Quên mật khẩu</a></p>
         <div class="m-40-0 upcase light or">
           <span class="abs-text">hoặc</span>

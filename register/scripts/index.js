@@ -3,10 +3,10 @@ function showPassword(id, el) {
   let x = document.getElementById(id);
   if (x.type === "password") {
     x.type = "text";
-    el.className = "fas fa-eye-slash showpwd";
+    el.className = "fas fa-eye showpwd";
   } else {
     x.type = "password";
-    el.className = "fas fa-eye showpwd";
+    el.className = "fas fa-eye-slash showpwd";
   }
 }
 //kiểm tra mật khẩu trùng khớp

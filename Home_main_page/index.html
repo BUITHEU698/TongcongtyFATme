@@ -18,6 +18,7 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
+    
   </head>
   <body>
     <div class="container">
@@ -26,7 +27,7 @@
           <div class="centered">
             <ul class="list_menu">
               <li  class="img_li">
-                <img class="img_icon" src="images/Logo .png" />
+                <img class="img_icon" src="images/Logo .png"/>
               </li>
               <li  class="search">
                 <div>
@@ -44,15 +45,24 @@
                   <li class="icon">
                     <a><i class="fas fa-bell"></i></a>
                   </li>
-                  <li class="icon_more">
-                    <div class="dropdown_more">
+                  <li>
+                    <!-- <div class="dropdown_more">
                       <i class="style_more fas fa-bars"></i>
-                      <div class="dropdown_more_content">
-                        <a target="content" href="/edit_menu/frames/Them_san_pham/them_san_pham.html"
+                      <div id="moreDropdown" class="dropdown_more_content">
+                        <a target="content" onclick="more()" href="/edit_menu/frames/Them_san_pham/them_san_pham.html"
                           ><i class="fas fa-plus-square"></i></i>Thêm sản phẩm</a
                         >
                         
-                        <a target="content" href=""><i class="fas fa-list"></i>Danh sách sản phẩm</a>
+                        <a target="content" href="/edit_menu/frames/Danh_sach_san_pham/Danh_sach_san_pham.html"><i class="fas fa-list"></i>Danh sách sản phẩm</a>
+                       
+                      </div>
+                    </div> -->
+                    <div class="icon_more">
+                      <button  onclick="more()" class="more_button"><i class="style_more fas fa-bars"></i></button>
+                      <div id="moreDropdown" class="dropdown_more_content">
+                        <a target="content" href="/edit_menu/frames/Them_san_pham/them_san_pham.html"><i class="fas fa-plus-square"></i></i>Thêm sản phẩm</a>
+                        
+                        <a target="content" href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-list"></i>Danh sách sản phẩm</a>
                         <!-- <a href=""><i class="fas fa-key"></i>Mật khẩu</a>
                         <a href=""><i class="fas fa-sign-out-alt"></i>Đăng xuất</a> -->
                       </div>
@@ -61,8 +71,8 @@
                   <li>
                     <div class="dropdown">
                       <img class="img_account" src="images/anh-anime.jpg" />
-                      <button class="dropbtn">Nhóm 11</button>
-                      <div class="dropdown-content">
+                      <button  onclick="avatar()" class="dropbtn">Nhóm 11</button>
+                      <div id="myDropdown" class="dropdown-content">
                         <!-- href="/Main_page/home/ho_so_ca_nhan/ho_so.html -->
                         <a target="content" href="/Main_page/home/ho_so_ca_nhan/ho_so.html"
                           ><i class="fas fa-user"></i>Hồ sơ cá nhân</a
@@ -78,7 +88,7 @@
             </ul>
           </div>
           <div class="navbar">
-            <a class="style_button_home" target="content" href="/Main_page/home/home.html"
+            <a class="style_button_home" target="content" href=""
               ><i class="fas fa-home"></i
             ></a>
             <a target="content" href="/edit_menu/frames/Danh_muc_mon_an/danh_muc_mon_an.html">DANH MỤC MÓN ĂN</a>
@@ -111,7 +121,7 @@
           </div>
 
       </div>
-
+      <script src="/Home_main_page/Home_main_pagejs/home_page.js"></script> 
   </body>
   <script src="./scripts/index.js"></script>
 </html>

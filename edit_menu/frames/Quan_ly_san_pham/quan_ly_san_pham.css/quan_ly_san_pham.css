@@ -45,11 +45,11 @@ ul{
     width: 100%;
 }
 .btn{
-
-    float: right;
+    position: absolute;
+    bottom: 1rem;
+    right: 12rem;
     width: 13rem;
     height: 4rem;
-    margin-right: 1rem;
 }
 .btn button{
     background-color: var(--color-button-main);
@@ -167,9 +167,12 @@ ul{
     height: 100%;
 }
 .scroll_table {
-    height: 300px;
+    margin-top: 2rem;
+    margin-left: 2%;
+    height: 50rem;
+    width: 95%;
     overflow-y: auto;
-    border: none;
+    border: 1px solid var(--color-background);
     border-collapse: collapse;
     text-align: center;
 }
@@ -179,8 +182,8 @@ ul{
 .scroll_table thead th{
     position: sticky !important;
     top: 0 !important;
-    background-color: grey;
-    color: white;
+    background-color: gray;
+    color: black;
 }
 .scroll_table input{
     width: 3rem;
@@ -237,4 +240,3 @@ color: var(--color-button-hover);
 .dropdown_more_btn:hover .dropdown_content_more {display: block;}
 
 .dropdown_more_btn:hover .more_button {color:var(--color-button-hover);}
-

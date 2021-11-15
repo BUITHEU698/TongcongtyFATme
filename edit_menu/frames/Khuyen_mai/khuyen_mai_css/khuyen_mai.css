@@ -1,0 +1,115 @@
+ul{
+    list-style-type: none;
+  }
+  *{
+    line-height: 35px;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  :root {
+    --color-primary: #ff5500;
+    --color-secondary: #ffb300;
+    --color-button-main: #ff5500;
+    --color-button-hover: #ff7c3a;
+    --color-button-edit: #ebebeb;
+    --color-background: #f5f5f5;
+}
+.khuyen_mai_container{
+    width: 1250px;
+    height: 800px;
+    margin-left: 1rem;
+}
+.khuyen_mai_container h3{
+    margin-top: 0.5rem;
+    color: var(--color-primary);
+    padding-left: 1rem;
+}
+.header{
+    width: 120rem;
+    height: 4.7rem;
+    border-radius: 1rem;
+    border: 0.5px solid var(--color-button-edit)
+}
+.header button{
+    float: right;
+    margin-right: 1rem;
+    margin-top: -3.5rem;
+    border: none;
+    background-color: var(--color-primary);
+    width: 15rem;
+    color: white;
+    border-radius: 1rem;
+}
+.header button:hover{
+    background-color: var(--color-button-hover);
+}
+.sap_xep{
+    /* padding-top: 0.5rem; */
+    
+    margin-top: 2rem;
+    width: 120rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 0.5px solid var(--color-button-edit)
+}
+.sap_xep ul,li{
+    float: left;
+    margin-left: 1rem;
+    margin-top: 0.35rem;
+}
+.all{
+    padding-top: -2rem !important;
+    margin-top: 0.5rem;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
+
+.sap_xep select,input,a{
+    margin-top: -1rem;
+    margin-left: 1rem;
+}
+.sap_xep select{
+    width: 13rem;
+    height: 3rem;
+}
+.time{
+    width: 20rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+}
+.thong_tin_khuyen_mai{
+    width: 120rem;
+    height: 50rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+.table_over{
+    /* width: 50rem;
+    height: 50rem; */
+    width: 120rem;
+}
+.in_table{
+    border: none;
+    height:80rem; 
+    overflow:auto !important;
+    width: 120rem;
+}
+
+.khuyen_mai_table table{
+    border: none;
+    text-align: center;
+}
+th,td{
+    width: 10rem;
+}
+.type_khuyen_mai{
+    width: 5rem !important;
+}

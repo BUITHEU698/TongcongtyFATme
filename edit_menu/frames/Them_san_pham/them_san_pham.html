@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,6 +26,9 @@
 
     <div class="container">
       <div class="container_left">
+        <div class="header">
+          <h1>Thêm sản phẩm</h1>
+        </div>
         <ul class="list_menu">
           <li>
             <label class="list_name" for="name_product">Tên sản phẩm<i class="fas fa-exclamation-circle"></i></label> <br>
@@ -72,8 +75,84 @@
             <textarea rows="5" placeholder="Nhập thông tin sản phẩm " id="info_product" type="text" ></textarea>
           </li>
         </ul>
+        <div class="save">
+          <button>Lưu</button>
+          <button>Huỷ</button>
+        </div>
       </div>
     </div>
    </form>
   <script src="./scripts/index.js"></script>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+    <link rel="stylesheet" href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_css/thong_tin_san_pham.css">
+    <link rel="stylesheet" href="./css/Them_san_pham.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/Home_main_page/css/reset.css">
+</head>
+<body>
+    <div class="thongtin_sanpham_container">
+        <div class="header_container">
+            <h1>Thêm sản sản phẩm</h1>
+        </div>
+        <div class="body_container">
+            <div class="thong_tin">
+                <div class="san_pham_moi">
+                    <h3>Tên sản phẩm</h3>
+                    <input type="text" placeholder="Nhập tên sản phẩm">
+                    <h3>Mô tả</h3>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mô tả sản phẩm ..."></textarea>
+                </div>
+                <div class="hinh_anh">
+                    <h3>Ảnh sản phẩm</h3>
+                    <div class="add_img">
+                        <i class="fas fa-images"></i><br>
+                        <button>Thêm hình ảnh</button>
+                    </div>
+                </div>
+                <!-- <div class="tim_kiem">
+                    <h3>Sản phẩm</h3>
+                    
+                </div> -->
+            </div>
+            <div class="trang_thai">
+                <h3>Trạng thái</h3>
+                <input type="radio"><a>Hiển thị</a><br>
+                <input type="radio"><a>Ẩn</a>
+                <h3>Giá tiền</h3>
+                <input type="number" class="money" placeholder="12000đ">
+                <h3>Phân loại</h3>
+                <select name="" id="">
+                    <option value="" disabled selected>Đồ ăn nhanh</option>
+                    <option value="">Đồ uống</option>
+                    <option value="">Lẩu</option>
+                </select>
+                <select style="margin-top: 2rem;" name="" id="">
+                    <option value="" disabled selected>Tiệm A</option>
+                    <option value="">Tiệm B</option>
+                    <option value="">Tiệm C</option>
+                </select><br>
+                <h3>Thời gian</h3>
+                <input class="money" type="datetime-local">
+                <div class="save">
+                  <button><h3>Lưu</h3></button>
+                  <button><h3>Huỷ</h3></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

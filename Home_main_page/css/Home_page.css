@@ -214,8 +214,8 @@ body {
   display: none;
   position: absolute;
   background-color: white;
-  width: 200px;
-  height: 183px;
+  width: 180px;
+  height: 237px;
   overflow: auto;
   z-index: 1;
   margin-top: 5px;
@@ -226,13 +226,6 @@ body {
   -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
 }
 
-/* .dropdown-content {
-  border-radius: 3px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, 10);
-  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
-  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
-} */
 .show {display: block;}
 .dropdown-content a {
   color: black;

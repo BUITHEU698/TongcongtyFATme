@@ -78,3 +78,6 @@ ul{
 .content-menu a:hover{
   color:var(--color-button-hover);
 }
+.content-menu a:focus{
+  color:var(--color-button-hover);
+}

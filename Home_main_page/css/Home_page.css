@@ -184,7 +184,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  margin-top: 1%;
+  margin-top: 7px;
   height: 600px;
   max-width: 1435px;
 }
@@ -307,7 +307,8 @@ body {
   font-size: 35px;
 }
 .frame_menu {
-  width: 100%;
+
+  width: 1450px;
   height: 100%;
 }
 .icon_more{

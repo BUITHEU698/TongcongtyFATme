@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="/edit_menu/css/edit_menu.css">
     <link rel="stylesheet" href="./css/Home_page.css" />
+    <link rel="stylesheet" href="/edit_menu/frames/Danh_muc_mon_an/css/danh_muc_mon_an.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -87,21 +89,56 @@
               </li>
             </ul>
           </div>
-          <div class="navbar">
-            <a class="style_button_home" target="content" href=""
-              ><i class="fas fa-home"></i
-            ></a>
-            <a target="content" href="../edit_menu/frames/Danh_muc_mon_an/danh_muc_mon_an.html">DANH MỤC MÓN ĂN</a>
-            <a target="content" href="../edit_menu/index.html" class="color_text_head"
-              >CHỈNH SỬA MENU</a
-            >
-            <a target="content" href="#">THỐNG KÊ DOANH THU</a>
-          </div>
         </div>
         <div class="body_container">
-          <iframe
-            class="frame_menu" name="content" frameborder="0"
-          ></iframe>
+          <div class="frame_menu" >
+            <div class="content-menu">
+              <ul class="menu">
+                     <h3><i class="fas fa-utensils"> &nbsp;&nbsp; </i>Sản Phẩm</h3>
+  
+                  <li>
+                      <ul class="sub-menu">
+                          <li> <a target="content-list" href="/edit_menu/frames/Quan_ly_san_pham/quan_ly_san_pham.html">Quản lý sản phẩm</a></li>
+                          <li> <a target="content-list" href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html">Thông tin sản phẩm</a></li>
+                      </ul>
+                  </li>
+              </ul>
+  
+              <ul class="menu"><h3><i class="fas fa-clipboard">&nbsp;&nbsp;</i>Đơn Hàng</h3>
+                  <li>
+                      <ul class="sub-menu">
+                          <li> <a target="content-list" href="">Tất cả đơn hàng</a></li>
+                          <li> <a target="content-list" href="">Tạo đơn hàng</a></li>
+                          <li> <a target="content-list" href="">Đơn hàng nháp</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <ul class="menu"><h3><i class="fas fa-gift">&nbsp;&nbsp;</i>Khuyến mãi</h3>
+                  <li>
+                      <ul class="sub-menu">
+                          <li> <a target="content-list" href="/edit_menu/frames/Khuyen_mai/khuyen_mai.html">Mã khuyến mãi</a></li>
+                          <li> <a target="content-list" href="">Chương trình khuyến mãi</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <ul class="menu"><h3><i class="fas fa-tools">&nbsp;&nbsp;</i>Cấu hình</h3>
+                  <li>
+                      <ul class="sub-menu">
+                          <li><a target="content-list" href="">Phương thức thanh toán</a></li>
+                          <li><a target="content-list" href="">Phương thức vận chuyển</a></li>
+                          <li><a target="content-list" href="">Thồn báo</a></li>
+                          <li><a target="content-list" href="">Tài khoản và phân quyền</a></li>
+                      </ul>
+                  </li>
+              </ul>
+            </div>
+            <div class="danh_muc_container">
+              <div class="noi_dung_container" >
+                
+                <iframe src="" frameborder="0" name="content-list"></iframe>
+              </div>
+          </div>
+          </div>
         </div>
         <!-- <div class="footer">
           <h1>FATME.com</h1>

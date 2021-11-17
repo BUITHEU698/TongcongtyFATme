@@ -33,6 +33,7 @@ ul{
     padding-left: 1rem;
 }
 .header{
+    background-color: white;
     width: 120rem;
     height: 4.7rem;
     border-radius: 1rem;
@@ -53,7 +54,7 @@ ul{
 }
 .sap_xep{
     /* padding-top: 0.5rem; */
-    
+    background-color: white;
     margin-top: 2rem;
     width: 120rem;
     height: 5rem;
@@ -86,6 +87,7 @@ ul{
     margin-bottom: 2rem;
 }
 .thong_tin_khuyen_mai{
+    background-color: white;
     width: 120rem;
     height: 50rem;
     border-radius: 1rem;
@@ -106,6 +108,7 @@ ul{
 .khuyen_mai_table table{
     border: none;
     text-align: center;
+    background-color: white;
 }
 th,td{
     width: 10rem;

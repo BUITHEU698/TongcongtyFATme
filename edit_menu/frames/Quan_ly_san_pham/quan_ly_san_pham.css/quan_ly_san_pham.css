@@ -235,7 +235,7 @@ color: var(--color-button-hover);
     text-decoration: none;
     display: block;
 }
-.dropdown_content_more a:hover {background-color: var(--color-button-hover);}
+.dropdown_content_more a:hover {color: var(--color-button-hover);}
 
 .dropdown_more_btn:hover .dropdown_content_more {display: block;}
 

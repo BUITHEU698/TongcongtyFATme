@@ -53,8 +53,8 @@ if (isset($_POST['email'])){
     />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
   </head>
@@ -75,7 +75,7 @@ if (isset($_POST['email'])){
               name="password"
               placeholder="Nhập mật khẩu"
               class="input-text"
-            /> 
+            />
             <i class="fas fa-eye showpwd" onclick="showPassword('passwd1', this)"></i>
           </div>
           <div class="relative">
@@ -87,7 +87,7 @@ if (isset($_POST['email'])){
               class="input-text"
             />
             <i class="fas fa-eye showpwd" onclick="showPassword('passwd2', this)"></i>
-            
+
           </div>
           <div class="dieukhoan">
             <input type="checkbox" name="checkbox" class="input-checkbox" id="checkbox" />

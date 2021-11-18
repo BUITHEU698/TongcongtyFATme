@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FATMe</title>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,26 +13,31 @@
     />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/app.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__top">
         <div class="header__logo">
           <a href="./index.html">
-            <img src="./images/logo.png" alt="logo" />
+            <img src="./images/logo-1.png" alt="logo" class="image_full"/>
+            <img src="./images/logo-2.png" alt="logo" class="image_mobile"/>
           </a>
         </div>
         <div class="header__nav">
           <ul class="header__nav-list">
-            <li class="header__nav-item btn-register">
-              <a href="../register/index.php">Trở thành nhà bán hàng</a>
+            <li>
+              <a href="../register/index.php" class="header__nav-item btn-register link-underline"
+                >Trở thành nhà bán hàng</a
+              >
             </li>
-            <li class="header__nav-item btn-login">
-              <a href="../login/index.php">Đăng nhập</a>
+            <li>
+              <a href="../login/index.php" class="header__nav-item btn-login">Đăng nhập</a>
             </li>
           </ul>
         </div>
@@ -46,15 +49,18 @@
         </p>
         <div class="header__content-search">
           <form action="../search/index.php" method="GET">
-            <input
-              type="text"
-              name="search"
-              placeholder="Tìm kiếm trên FATMe ..."
-              class="header__content-search-input"
-            />
-            <button type="submit" class="header__content-search-button">
-              <i class="fas fa-search"> Tìm kiếm</i>
-            </button>
+            <div class="search-input">
+              <input
+                type="text"
+                name="search"
+                placeholder="Tìm kiếm trên FATMe ..."
+                class="header__content-search-input"
+              />
+              <label class="header__content-search-icon" for="search-input">
+                <i class="far fa-search"></i>
+              </label>
+            </div>
+            <button type="submit" class="header__content-search-btn">Tìm kiếm</button>
           </form>
         </div>
       </div>

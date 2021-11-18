@@ -7,7 +7,7 @@ if(!empty($_SESSION['dangnhap'])){
 $mail= new Mailer();
 $error='';
 if (isset($_POST['submit'])){
-  $email=$_POST['email'];  
+  $email=$_POST['email'];
   if($email==''){
     $error='e-mail không được để trống';
   }
@@ -49,8 +49,8 @@ if (isset($_POST['submit'])){
     />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
   </head>

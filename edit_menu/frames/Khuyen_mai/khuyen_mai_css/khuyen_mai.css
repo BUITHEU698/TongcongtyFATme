@@ -23,8 +23,8 @@ ul{
     --color-background: #f5f5f5;
 }
 .khuyen_mai_container{
-    width: 1250px;
-    height: 800px;
+    width: 1200px;
+    height: 700px;
     margin-left: 1rem;
 }
 .khuyen_mai_container h3{
@@ -34,7 +34,7 @@ ul{
 }
 .header{
     background-color: white;
-    width: 120rem;
+    width: 115rem;
     height: 4.7rem;
     border-radius: 1rem;
     border: 0.5px solid var(--color-button-edit)
@@ -47,7 +47,7 @@ ul{
     background-color: var(--color-primary);
     width: 15rem;
     color: white;
-    border-radius: 1rem;
+    border-radius: 3rem;
 }
 .header button:hover{
     background-color: var(--color-button-hover);
@@ -56,8 +56,8 @@ ul{
     /* padding-top: 0.5rem; */
     background-color: white;
     margin-top: 2rem;
-    width: 120rem;
-    height: 5rem;
+    width: 115rem;
+    height: 65rem;
     border-radius: 1rem;
     border: 0.5px solid var(--color-button-edit)
 }
@@ -65,12 +65,6 @@ ul{
     float: left;
     margin-left: 1rem;
     margin-top: 0.35rem;
-}
-.all{
-    padding-top: -2rem !important;
-    margin-top: 0.5rem;
-    width: 2.5rem !important;
-    height: 2.5rem !important;
 }
 
 .sap_xep select,input,a{
@@ -86,33 +80,107 @@ ul{
     height: 3rem;
     margin-bottom: 2rem;
 }
-.thong_tin_khuyen_mai{
-    background-color: white;
-    width: 120rem;
-    height: 50rem;
-    border-radius: 1rem;
-    margin-top: 2rem;
-}
-.table_over{
-    /* width: 50rem;
-    height: 50rem; */
-    width: 120rem;
-}
-.in_table{
+.btn_del{
     border: none;
-    height:80rem; 
-    overflow:auto !important;
-    width: 120rem;
+    background-color: var(--color-primary);
+    color: white;
+    float: right;
+    margin-top: 1rem;
+    margin-right: 2.5rem;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 3rem;
 }
+.more_button_col{
+    width: 15rem !important;
+}
+.more_button{
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: unset;
+    font-size: 2rem;
+}
+.more_button i{
+    color: grey;
+}
+.more_button i:hover{
+color: var(--color-button-hover);
+}
+.dropdown_more_btn {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_content_more{
+    margin-left: -4rem;
+    text-align:left;
+    display: none;
+    position: absolute;
+    width: 130px;
+    height: 11rem;
+    padding-top: 1px;
+    z-index: 1;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 10);
+    -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
+    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
+}
+.dropdown_content_more i{
+    padding-right: 1rem;
+    /* padding-left: 1rem; */
+}
+.dropdown_content_more a {
+    color: black;
+    text-decoration: none;
+    margin-top: 1px;
+    display: block;
+}
+.dropdown_content_more a:hover {color: var(--color-button-hover);}
 
-.khuyen_mai_table table{
-    border: none;
+.dropdown_more_btn:hover .dropdown_content_more {display: block;}
+
+.dropdown_more_btn:hover .more_button {color:var(--color-button-hover);}
+.scroll_table {
+    margin-top: 2rem;
+    margin-left: 2%;
+    height: 50rem;
+    width: 95%;
+    overflow-y: auto;
+    border: 1px solid var(--color-background);
+    border-collapse: collapse;
     text-align: center;
-    background-color: white;
 }
-th,td{
+.scroll_table table{
+    width: 100%;
+}
+/* .scroll_table th,td{
+    width: 100rem;
+} */
+.scroll_table thead th{
+    position: sticky !important;
+    top: 0 !important;
+    background-color: gray;
+    color: black;
+}
+.scroll_table input{
+    width: 2rem;
+    height: 2rem;
+}
+.scroll_table img{
     width: 10rem;
+    height: 10rem;
 }
-.type_khuyen_mai{
-    width: 5rem !important;
+.checked_btn{
+    width: 8rem;
+    padding-top: 5px;
+    
+}
+.checked_btn input{
+    margin-left: -2rem ;
+}
+.all{
+    margin-left: 1px !important;
+    width: 2.2rem ;
+    height: 2.2rem;
 }

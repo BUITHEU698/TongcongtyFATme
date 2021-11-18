@@ -34,7 +34,8 @@ body {
 .header{
   width: 100%;
   background-color: white;
-  height: 5rem;
+  height: 6rem;
+  padding-top: 1rem;
   border-radius: 1rem;
   margin-bottom: 1rem;
   padding: 5px 10px ;

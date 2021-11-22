@@ -79,13 +79,25 @@ h2{
     height: 3rem;
 }
 .sap_xep input{
-    width: 200px;
+    width: 185px;
     height: 3rem;
 }
 .time{
-    width: 20rem;
+    width: 15rem !important;
     height: 3rem;
     margin-bottom: 2rem;
+}
+.btn_search{
+    width: 10rem;
+    height: 100%;
+    background-color: var(--color-button-main);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-left: 1rem;
+}
+.btn_search:hover{
+    background-color: var(--color-button-hover);
 }
 .btn_del{
     border: none;
@@ -123,9 +135,7 @@ color: var(--color-button-hover);
     text-align:left;
     display: none;
     position: absolute;
-    width: 130px;
-    height: 11rem;
-    padding-top: 1px;
+    min-width: 130px;
     z-index: 1;
     border-radius: 3px;
     background-color: rgb(255, 255, 255);

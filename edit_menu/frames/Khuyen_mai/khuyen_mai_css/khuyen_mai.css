@@ -84,7 +84,7 @@ ul{
     border-radius: 5px;
     margin-left: 8rem;
 }
-.sap_xep button:hover{
+.btn_search:hover{
     background-color: var(--color-button-hover);
 }
 .time{
@@ -117,7 +117,7 @@ ul{
     color: grey;
 }
 .more_button i:hover{
-color: var(--color-button-hover);
+    color: var(--color-button-hover);
 }
 .dropdown_more_btn {
     position: relative;
@@ -129,7 +129,7 @@ color: var(--color-button-hover);
     display: none;
     position: absolute;
     width: 130px;
-    height: 11rem;
+    /* height: 11rem; */
     padding-top: 1px;
     z-index: 1;
     border-radius: 3px;

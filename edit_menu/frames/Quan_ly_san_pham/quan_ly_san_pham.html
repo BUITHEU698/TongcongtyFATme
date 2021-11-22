@@ -19,44 +19,58 @@
     <link rel="stylesheet" href="./quan_ly_san_pham.css/quan_ly_san_pham.css" />
   </head>
   <body>
+    <script src="./Quan_ly_san_pham_js/quan_ly_san_pham.js"></script>
     <div class="quan_ly_san_pham_container">
       <div class="header_container">
         <ul>
-          <li><h2>Quản lý sản phẩm</h2></li>
+          <li><h3>Quản lý sản phẩm</h3></li>
+          <li class="btn_add">
+            <button onclick="add()">Thêm sản phẩm</button>
+          </li>
         </ul>
       </div>
       <div class="body_container">
-        <div class="part1">
+        <!-- <div class="part1">
           <ul>
             <li><i class="fas fa-download"></i><a href="">Nhập danh sách</a></li>
             <li><i class="fas fa-upload"></i><a href="">Xuất danh sách</a></li>
             <li><input type="radio" />Hiển thị <input type="radio" />Ẩn</li>
           </ul>
-        </div>
+          </div> -->
         <div class="sap_xep">
             <ul>
-                <li class="checkbox"><input type="checkbox" />All</li>
-                <li>
-                <select name="" id="">
-                    <option value="" disabled selected>Danh mục</option>
-                    <option value="">Đồ ăn nhanh</option>
-                    <option value="">Lẩu</option>
-                </select>
+                <li class="check_box"><input type="checkbox"/>All</li>
+                <li class="search">
+                  <input tyle="text" placeholder="Tên sản phẩm" />
                 </li>
                 <li>
-                <select name="" id="">
-                    <option value="" disabled selected>Giá</option>
-                    <option value="">10000đ - 100000đ</option>
-                    <option value=""></option>
-                </select>
+                  <select name="" id="">
+                      <option value="" disabled selected>Danh mục</option>
+                      <option value="">Đồ ăn nhanh</option>
+                      <option value="">Lẩu</option>
+                  </select>
+                </li>
+                <li>
+                  <select name="" id="">
+                      <option value="" disabled selected>Giá</option>
+                      <option value="">10000đ - 100000đ</option>
+                      <option value=""></option>
+                  </select>
                 </li>
                 <li class="date_time">
-                <input type="datetime-local" placeholder="Ngày đăng" />
+                  <input type="date" placeholder="Ngày đăng" />
                 </li>
-                <li class="search">
-                <input tyle="text" placeholder="Tên sản phẩm" />
-                <button><i class="fas fa-search"></i></button>
+                <li class="status">
+                  <select name="" id="">
+                    <option value="" disabled selected>Trạng thái</option>
+                    <option value="">Hiện</option>
+                    <option value="">Ẩn</option>
+                  </select>
                 </li>
+                <li>
+                  <button>Tìm kiếm</button>
+                </li>
+                
             </ul>
         </div>
         <div class="scroll_table">
@@ -89,38 +103,12 @@
                   <div class="dropdown_more_btn">
                     <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
                     <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
                       <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                     </div>
                   </div>
                 </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <img src="/edit_menu/frames/Them_san_pham/images/banh_trang_tron.jpeg" />
-                </td>
-                <td><a id="banh_trang">Bánh tráng</a></td>
-                <td>Đồ ăn nhanh</td>
-                <td>12000đ</td>
-                <td>01/10/2021</td>
-                <td>Hiện</td>
-                <td>
-                  <div class="dropdown_more_btn">
-                    <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
-                    <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
-                      <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
-                    </div>
-                  </div>
-                </td>
-                </tr>
-                <tr>
+              </tr><tr>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -131,19 +119,17 @@
                 <td>Đồ ăn nhanh</td>
                 <td>12000đ</td>
                 <td>01/10/2021</td>
-                <td>Hiện</td>
+                <td>Đã ẩn</td>
                 <td>
                   <div class="dropdown_more_btn">
                     <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
                     <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
+                      <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr><tr>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -154,19 +140,17 @@
                 <td>Đồ ăn nhanh</td>
                 <td>12000đ</td>
                 <td>01/10/2021</td>
-                <td>Hiện</td>
+                <td>Đã ẩn</td>
                 <td>
                   <div class="dropdown_more_btn">
                     <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
                     <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
+                      <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr><tr>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -177,19 +161,17 @@
                 <td>Đồ ăn nhanh</td>
                 <td>12000đ</td>
                 <td>01/10/2021</td>
-                <td>Hiện</td>
+                <td>Đã ẩn</td>
                 <td>
                   <div class="dropdown_more_btn">
                     <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
                     <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
+                      <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr><tr>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -200,19 +182,17 @@
                 <td>Đồ ăn nhanh</td>
                 <td>12000đ</td>
                 <td>01/10/2021</td>
-                <td>Hiện</td>
+                <td>Đã ẩn</td>
                 <td>
                   <div class="dropdown_more_btn">
                     <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
                     <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
+                      <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr><tr>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -223,60 +203,13 @@
                 <td>Đồ ăn nhanh</td>
                 <td>12000đ</td>
                 <td>01/10/2021</td>
-                <td>Hiện</td>
+                <td>Đã ẩn</td>
                 <td>
                   <div class="dropdown_more_btn">
                     <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
                     <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <img src="/edit_menu/frames/Them_san_pham/images/banh_trang_tron.jpeg" />
-                </td>
-                <td>Bánh tráng</td>
-                <td>Đồ ăn nhanh</td>
-                <td>12000đ</td>
-                <td>01/10/2021</td>
-                <td>Hiện</td>
-                <td>
-                  <div class="dropdown_more_btn">
-                    <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
-                    <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
-                      <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  <img src="/edit_menu/frames/Them_san_pham/images/banh_trang_tron.jpeg" />
-                </td>
-                <td>Bánh tráng</td>
-                <td>Đồ ăn nhanh</td>
-                <td>12000đ</td>
-                <td>01/10/2021</td>
-                <td>Hiện</td>
-                <td>
-                  <div class="dropdown_more_btn">
-                    <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
-                    <div class="dropdown_content_more">
-                      <a href="#"><i class="far fa-edit"></i>Chỉnh sửa</a>
-                      <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="#"><i class="fas fa-info"></i>Chi tiết</a>
+                      <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                     </div>
                   </div>
                 </td>

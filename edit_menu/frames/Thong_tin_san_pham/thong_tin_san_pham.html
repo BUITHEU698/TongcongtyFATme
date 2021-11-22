@@ -17,7 +17,7 @@
 <body>
     <div class="thongtin_sanpham_container">
         <div class="header_container">
-            <h1>Thông tin sản phẩm</h1>
+            <h3>Thông tin sản phẩm</h3>
         </div>
         <div class="body_container">
             <div class="thong_tin">
@@ -59,7 +59,12 @@
                 <h3>Thời gian</h3>
                 <input class="money" type="datetime-local">
             </div>
+            <div class="save">
+                <button id="save" onclick="saveInfo()"><h3>Lưu</h3></button>
+                <button id="cancle" onclick="cancle()"><h3>Huỷ</h3></button>
+              </div>
         </div>
     </div>
+    <script src="./thong_tinJS/thong_tin_san_pham.js"></script>
 </body>
 </html>

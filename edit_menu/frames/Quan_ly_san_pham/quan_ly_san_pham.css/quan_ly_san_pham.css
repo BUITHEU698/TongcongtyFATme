@@ -23,19 +23,19 @@ ul{
     --color-background: #f5f5f5;
   }
 .quan_ly_san_pham_container{
-    width: 1200px;
+    width: 1180px;
     height: 100%;
     font-size: 2rem;
 }
 .header_container{
     background-color: white;
-    height: 6rem;
+    height: 4.7rem;
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 5px;
     border: 1px solid var(--color-background);
-    border-radius: 1rem;
+    border-radius: 5px;
 }
-.header_container h2{
+.header_container h3{
     padding-left: 2rem;
     color: var(--color-primary);
 }
@@ -44,9 +44,26 @@ ul{
     float: left;
     width: 100%;
 }
+.btn_add{
+    width: 15rem;
+    height: 100%;
+    float: right;
+    padding-right: 1rem;
+}
+.btn_add button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-button-main);
+    color: white;
+}
+.btn_add button:hover{
+    background-color: var(--color-button-hover);
+}
 .btn{
     float: right;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-right: 3rem;
     width: 13rem;
     height: 4rem;
@@ -65,10 +82,10 @@ ul{
 .body_container{
     background-color: white;
     margin-top: 1rem;
-    height: 73rem;
+    height: 65rem;
     width: 100%;
     padding-top: 1rem;
-    border-radius: 1rem;
+    border-radius: 5px;
     border: 1px solid var(--color-background);
 }
 .part1{
@@ -100,8 +117,9 @@ ul{
     color: black;
 }
 .sap_xep{
-    width: 96%;
+    width: 100%;
     height: 5rem;
+    padding-left: 1rem;
 }
 .sap_xep ul{
     display: flex;
@@ -109,58 +127,76 @@ ul{
     width: 100%;
 }
 .sap_xep li{
-    width: 20rem;
+    width: 25rem;
     padding-left: 1rem;
 }
 .sap_xep i{
     font-size: 3rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
     color: var(--color-primary);
 }
+.status{
+    width: 19rem !important;
+    height: 100%;
+}
 .search input{
-    width: 2rem;
-    height: 2rem;
-    
+    width: 100% !important;
+    height: 2rem; 
 }
 .date_time{
-    width: 22rem !important;
+    width: 21.5rem !important;
     height: 100% !important;
-    border-radius: 1rem;
+    border-radius: 5px;
+    border: none;
 }
 .date_time input{
     width: 100%;
     height: 4rem;
-    border-radius: 1rem;
+    border-radius: 5px;
+    padding-left: 1rem;
+    border: solid 1px black;
 }
 .sap_xep select{
-    width: 90%;
+    width: 100%;
     height: 4rem;
-    border-radius: 1rem;
+    border-radius: 5px;
+    padding-left: 1rem;
+    border: solid 1px black;
+}
+.sap_xep button{
+    width: 60%;
+    height: 100%;
+    margin-left: 2rem;
+    background-color: var(--color-button-main);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    float: right;
+}
+.sap_xep button:hover{
+    background-color: var(--color-button-hover);
+}
+.check_box{
+    width: 6rem !important;
+    margin-left: 1rem;
 }
 
-.checkbox input{
-    width: 7rem !important;
-    /* margin-right: -1rem; */
-    height: 3rem;
+.check_box input{
+    width: 4rem;
+    height: 4rem;
+    margin-right: 3px;
 }
 .search{
-    margin-left: 3rem !important;
-    width: 36rem !important;
-    height: 4rem !important;
+    margin-left: 2rem !important;
+    width:100%;
+    height: 4rem;
 }
 .search input{
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding-left: 1rem;
-    border-radius: 1rem;
+    border-radius: 5px;
     border: 1px solid black;
-}
-.search button{
-    width: 6rem;
-    margin-left: -12%;
-    padding-top: 0.5%;
-    background-color: white;
-    border-radius: 0 1rem 1rem 0;
 }
 .thong_tin{
     width: 100%;

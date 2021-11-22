@@ -24,8 +24,8 @@ ul{
   }
 .danh_muc_container{
   float: left;
-  width: 1200px !important;
-  height: 100% !important;
+  width: 1200px;
+  height: 100%;
 }
 .menu_container{
   width: 100%;

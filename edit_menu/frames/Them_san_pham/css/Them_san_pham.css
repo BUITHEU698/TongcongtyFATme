@@ -14,6 +14,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.4;
 }
+
 :root {
   --color-primary: #ff5500;
   --color-secondary: #ffb300;
@@ -25,14 +26,15 @@ body {
 
 .container
 {
-  height: 800px;
+  height: 100vh;
   margin-top: 1%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
 }
 .header{
-  width: 100%;
+ 
   background-color: white;
   height: 6rem;
   padding-top: 1rem;

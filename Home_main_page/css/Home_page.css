@@ -18,14 +18,15 @@ body {
   position: fixed;
   width: 100%;
   height: 100vh;
-  max-height: 1500px;
+ 
 }
 
 .header_container {
   left: 0;
   right: 0;
   margin: auto;
-  max-width: 1500px;
+  max-width: 1400px;
+  box-shadow: rgb(0 0 0 / 7%) 1px 0px 4px 0px;
 }
 .centered {
   background-image: url(../images/background-img.gif);
@@ -184,9 +185,10 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  margin-top: 7px;
-  height: 600px;
-  max-width: 1500px;
+  
+  height: 100vh;
+  max-width: 1400px;
+ 
 }
 .dropbtn {
   background-color: white;
@@ -300,10 +302,35 @@ body {
   font-size: 35px;
 }
 .frame_menu {
-
-  width: 1450px;
+ 
   height: 100%;
+  display: flex;
+  
+  
 }
+.content-menu{
+  box-shadow: rgb(0 0 0 / 7%) 1px 0px 4px 0px;
+  flex-basis: 15%;
+  border: none;
+}
+.danh_muc_container {
+  flex-basis: 85%;
+  padding: 15px;
+ 
+}
+.danh_muc_container > iframe{
+
+  left:0;
+  right:0;
+  margin:auto; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh  ;
+  display: flex; 
+}
+
+.con
 .icon_more{
   position: relative;
   display: inline-block;
@@ -379,3 +406,4 @@ body {
 .show_more{
   display: block;
 }
+

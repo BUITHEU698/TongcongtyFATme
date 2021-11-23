@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/CTKM.css">
 </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="them_ma_container">
         <div class="title">
             <ul>
@@ -31,9 +32,9 @@
             </div>
             <div class="value">
                 <h2>Loại khuyến mãi</h2>
-                <input type="radio">Theo phần trăm<br>
-                <input type="radio">Theo số tiền<br>
-                <input type="radio">Đồng giá
+                <input type="radio" name="loai_km">Theo phần trăm<br>
+                <input type="radio" name="loai_km">Theo số tiền<br>
+                <input type="radio" name="loai_km">Đồng giá
             </div>
             <div class="apply">
                 <h2>Giá trị</h2>
@@ -41,10 +42,17 @@
                 <input type="number">
             </div>
             <div class="apply_condition">
-                <h2>Ap dụng cho</h2>
-                <input type="radio">Tất cả sản phẩm<br>
-                <input type="radio">Danh mục sản phẩm<br>
-                <input type="radio">Sản phẩm<br>
+                <h2>Áp dụng cho</h2>
+                <input type="radio" name="dk_apdung">Tất cả sản phẩm<br>
+                <input type="radio" id="apply_cd" name="dk_apdung">Danh mục sản phẩm
+                <div id="show" class="hide_select">
+                    <select name="" id="">
+                        <option value="">Sinh nhật</option>
+                        <option value="">Tiệc tại gia</option>
+                        <option value="">Kỉ niệm ngày cưới</option>
+                    </select>
+                </div>
+                <br><input type="radio" name="dk_apdung">Sản phẩm<br>
             </div>
             <div class="time">
                 <h2>Thời gian</h2>
@@ -60,5 +68,6 @@
         </div>
     </div>
     <script src="./js/CTKM.js"></script>
+    
 </body>
 </html>

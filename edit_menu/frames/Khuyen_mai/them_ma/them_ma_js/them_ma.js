@@ -1,15 +1,4 @@
-// function checkRadio() {
-    
-//     var radioBox = document.getElementById("apply_4");
-    
-//     var text = document.getElementById("show");
-//     if (radioBox.checked == true){
-//         text.style.display = "block";
-//       } 
-//     else {
-//         text.style.display = "none";
-//       }
-// }
+
 function CheckBox() {
     var checkBox = document.getElementById("showCheckBox");
     var text = document.getElementById("show_checkbox");

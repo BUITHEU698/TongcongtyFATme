@@ -24,15 +24,18 @@ ul{
     --color-background: #f5f5f5;
 }
 .them_ma_container{
-    width: 1200px;
+    width: 1180px;
     height: 500px;
 }
 .title{
     width: 100%;
     height: 6rem;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     background-color: white;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
 }
 h2{
     color: var(--color-primary);
@@ -59,7 +62,7 @@ h2{
     height: 100%;
     background-color: var(--color-primary);
     border: none;
-    border-radius: 1rem;
+    border-radius: 3px;
     color: white;
 }
 .right button:hover{
@@ -67,12 +70,12 @@ h2{
 }
 .main{
     width: 100%;
-    height: 90rem;
+    height: 83rem;
+    margin-top: 7rem;
 }
 .create_code{
     background-color: white;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     margin-top: 1rem;
     width: 100%;
     height: 12rem;
@@ -85,7 +88,7 @@ h2{
 .create_code_input{
     width: 110rem;
     height: 4rem;
-    /* padding-left: 1rem; */
+    padding-left: 1rem;
 }
 .create_code_checkbox{
     width: 2rem;
@@ -97,7 +100,6 @@ h2{
 .value{
     background-color: white;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     margin-top: 1rem;
     width: 100%;
     height: 16rem;
@@ -113,10 +115,9 @@ h2{
 .apply{
     background-color: white;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     margin-top: 1rem;
     width: 100%;
-    height: 17rem;
+    height: 15rem;
     padding-left: 1rem;
     padding-top: 1rem;
 }
@@ -124,14 +125,14 @@ h2{
     margin-right: 1rem;
     width: 40%;
     height: 3rem;
+    padding-left: 1rem;
 }
 .apply_condition{
     background-color: white;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     margin-top: 1rem;
     width: 100%;
-    height: 22rem;
+    height: 18rem;
     padding-left: 1rem;
     padding-top: 1rem;
 }
@@ -151,7 +152,6 @@ h2{
 .max_value{
     background-color: white;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     margin-top: 1rem;
     width: 100%;
     height: 15rem;
@@ -169,7 +169,6 @@ h2{
 .time{
     background-color: white;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     margin-top: 1rem;
     width: 100%;
     height: 15rem;
@@ -179,14 +178,25 @@ h2{
 .time input{
     width: 80%;
     height: 4rem;
+    padding-left: 1rem;
 }
 .part1_time{
     float: left;
     width: 50%;
-    /* padding-left: 1rem; */
 }
 .part1_time{
     float: right;
     width: 50%;
-    /* padding-left: 1rem; */
+}
+#show{
+    display: none;
+}
+.hide_select{
+    float: right;
+    margin-right: 67%;
+    display: none;
+}
+.hide_select select{
+    width: 20rem;
+    height: 3rem;
 }

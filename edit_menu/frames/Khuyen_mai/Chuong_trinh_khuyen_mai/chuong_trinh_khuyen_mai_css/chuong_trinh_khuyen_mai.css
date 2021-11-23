@@ -24,14 +24,13 @@ ul{
     --color-background: #f5f5f5;
 }
 .ct_khuyen_mai_container{
-    width: 1200px;
+    width: 1180px;
     height: 500px;
 }
 .title{
     width: 100%;
     height: 5rem;
     border: 1px solid var(--color-button-edit);
-    border-radius: 1rem;
     background-color: white;
     padding-top: 2px;
 }
@@ -61,7 +60,7 @@ h2{
     margin-top: 2rem;
     width: 100%;
     height: 65rem;
-    border-radius: 1rem;
+    
     border: 0.5px solid var(--color-button-edit)
 }
 .sap_xep ul,li{

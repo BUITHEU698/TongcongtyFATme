@@ -120,3 +120,14 @@ i{
 .save button:hover{
   background-color: var(--color-button-hover);
 }
+.local{
+  width: 30rem;
+  height: 3rem;
+}
+.trang_thai{
+  height: 43rem;
+}
+.trang_thai label{
+  color: var(--color-primary);
+
+}

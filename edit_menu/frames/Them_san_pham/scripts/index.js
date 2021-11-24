@@ -15,10 +15,10 @@ function saveInfo(){
         document.getElementById("mon_an").innerHTML = "Vui lòng nhập tên sản phẩm";
         document.getElementById("name").style.borderColor = "red"
     }
-    if(x.img ==""){
+    else if(x.img ==""){
         document.getElementById("img_error").innerHTML = "Vui lòng thêm hình ảnh";
     }
-    if(x.money ==""){
+    else if(x.money ==""){
         document.getElementById("idMoney").innerHTML = "Vui lòng nhập giá tiền";
         document.getElementById("money1").style.borderColor = "red"
     }

@@ -17,52 +17,56 @@
 <body>
     <div class="thongtin_sanpham_container">
         <div class="header_container">
-            <h3>Thông tin sản phẩm</h3>
+            <h2>Thêm món ăn</h2>
         </div>
         <div class="body_container">
             <div class="thong_tin">
                 <div class="san_pham_moi">
-                    <h3>Tên sản phẩm</h3>
-                    <input type="text" placeholder="Nhập tên sản phẩm">
+                    <h3>Tên món ăn (*)</h3>
+                    <input type="text" id="name" placeholder="Nhập tên món ăn">
+                      <div class="error">
+                        <a id="mon_an"></a>
+                      </div>
                     <h3>Mô tả</h3>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Mô tả sản phẩm ..."></textarea>
-                </div>
+                    <textarea name="" id="describe" cols="30" rows="10" placeholder="Mô tả món ăn ..."></textarea>
+                </div><br>
+                
                 <div class="hinh_anh">
-                    <h3>Ảnh sản phẩm</h3>
+                    <h3>Ảnh món ăn (*)</h3>
                     <div class="add_img">
                         <!-- <i class="fas fa-images"></i><br> -->
-                        <input type="file">
+                        <input type="file" value="" id="img" required>
+                    </div>
+                    <div class="error">
+                      <a id="img_error"></a>
                     </div>
                 </div>
-                <!-- <div class="tim_kiem">
-                    <h3>Sản phẩm</h3>
-                    
-                </div> -->
             </div>
             <div class="trang_thai">
                 <h3>Trạng thái</h3>
-                <input type="radio"><a>Hiển thị</a><br>
-                <input type="radio"><a>Ẩn</a>
-                <h3>Giá tiền</h3>
-                <input type="number" class="money" placeholder="12000đ">
+                <input type="radio" checked><a>Hiển thị</a><br>
+                <input type="radio"><a>Ẩn</a><br>
+                <h3 style="display: inline;">Giá tiền (*)</h3><a style="color: red" id="idMoney"></a> <br>
+                <input type="number" id="money1" class="money" placeholder="Nhập giá tiền">
                 <h3>Danh mục</h3>
-                <select name="" id="">
-                    <option value="" disabled selected>Đồ ăn nhanh</option>
+                <select name="" id="type">
+                    <option value="" >Đồ ăn nhanh</option>
                     <option value="">Đồ uống</option>
                     <option value="">Lẩu</option>
-                </select>
-                <!-- <select style="margin-top: 2rem;" name="" id="">
-                    <option value="" disabled selected>Tiệm A</option>
-                    <option value="">Tiệm B</option>
-                    <option value="">Tiệm C</option>
                 </select><br>
-                <h3>Thời gian</h3>
-                <input class="money" type="datetime-local"> -->
+                <!-- <label for="">Địa chỉ</label><br>
+                <input type="text" class="local" placeholder="Địa chỉ nhập món ăn">
+                <br>
+                <label>Thời gian</label><br>
+                <input class="money" id="time" type="datetime-local"> -->
+                <div class="save">
+                  <button id="save" onclick="saveInfo()"><h3>Lưu</h3></button>
+                  <button id="cancle" onclick="cancleInfo()"><h3>Huỷ</h3></button>
+                </div>
+                <div class="trung">
+                    <span>Món ăn đã tồn tại</span>
+                </div>
             </div>
-            <div class="save">
-                <button id="save" onclick="saveInfo()"><h3>Lưu</h3></button>
-                <button id="cancle" onclick="cancle()"><h3>Huỷ</h3></button>
-              </div>
         </div>
     </div>
     <script src="./thong_tinJS/thong_tin_san_pham.js"></script>

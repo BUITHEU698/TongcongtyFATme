@@ -86,7 +86,7 @@ h2{
     font-weight: unset !important;
 }
 .create_code_input{
-    width: 110rem;
+    width: 95rem;
     height: 4rem;
     /* padding-left: 1rem; */
 }
@@ -183,7 +183,7 @@ h2{
     padding-top: 1rem;
 }
 .time input{
-    width: 80%;
+    width: 63%;
     height: 4rem;
 }
 .time a{
@@ -195,13 +195,18 @@ h2{
     width: 50%;
     /* padding-left: 1rem; */
 }
-.part2_time{
-    float: right;
-    width: 50%;
-    /* padding-left: 1rem; */
-}
+
 #show{
     float: right;
     margin-right: 72%;
     display: none;
+}
+#name{
+    border: 1px solid black;
+}
+#timeStart{
+    border: 1px solid black;
+}
+#timeEnd{
+    border: 1px solid black;
 }

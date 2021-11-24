@@ -58,7 +58,7 @@ if (isset($_POST['submit'])){
       <form action="" class="form-forgot"method="post">
         <!-- icon back -->
         <div class="form-forgot-icon">
-          <a href="../login/index.html"><i class="fas fa-arrow-left sub-link"></i></a>
+          <a href="../login/index.php"><i class="fas fa-arrow-left sub-link"></i></a>
         </div>
         <h1 class="header-text bold">Mật khẩu mới</h1>
         <span><?php echo(isset($error)?$error:'')?></span>

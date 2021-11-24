@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="/edit_menu/css/edit_menu.css">
+    <link rel="stylesheet" href="../edit_menu/css/edit_menu.css">
     <link rel="stylesheet" href="./css/Home_page.css" />
-    <link rel="stylesheet" href="/edit_menu/frames/Danh_muc_mon_an/css/menu.css">
+    <link rel="stylesheet" href="../edit_menu/frames/Danh_muc_mon_an/css/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -50,11 +50,11 @@
                     <!-- <div class="dropdown_more">
                       <i class="style_more fas fa-bars"></i>
                       <div id="moreDropdown" class="dropdown_more_content">
-                        <a target="content" onclick="more()" href="/edit_menu/frames/Them_san_pham/them_san_pham.html"
+                        <a target="content" onclick="more()" href="../edit_menu/frames/Them_san_pham/them_san_pham.html"
                           ><i class="fas fa-plus-square"></i></i>Thêm sản phẩm</a
                         >
 
-                        <a target="content" href="/edit_menu/frames/Danh_sach_san_pham/Danh_sach_san_pham.html"><i class="fas fa-list"></i>Danh sách sản phẩm</a>
+                        <a target="content" href="../edit_menu/frames/Danh_sach_san_pham/Danh_sach_san_pham.html"><i class="fas fa-list"></i>Danh sách sản phẩm</a>
 
                       </div>
                     </div> -->
@@ -97,8 +97,8 @@
 
                   <li>
                       <ul class="sub-menu">
-                          <li> <a target="content-list" href="/edit_menu/frames/Quan_ly_san_pham/quan_ly_san_pham.html">Danh sách món ăn</a></li>
-                          <li> <a target="content-list" href="/edit_menu/frames/Danh_muc_mon_an/danh_muc_mon_an.html">Danh mục món ăn</a></li>
+                          <li> <a target="content-list" href="../edit_menu/frames/Quan_ly_san_pham/quan_ly_san_pham.html">Danh sách món ăn</a></li>
+                          <li> <a target="content-list" href="../edit_menu/frames/Danh_muc_mon_an/danh_muc_mon_an.html">Danh mục món ăn</a></li>
                       </ul>
                   </li>
               </ul>
@@ -115,9 +115,9 @@
               <ul class="menu"><h3><i class="fas fa-gift">&nbsp;&nbsp;</i>Khuyến mãi</h3>
                   <li>
                       <ul class="sub-menu">
-                          <li> <a target="content-list" href="/edit_menu/frames/Khuyen_mai/khuyen_mai.html">Mã khuyến mãi</a></li>
-                          <li> <a target="content-list" href="/edit_menu/frames/Khuyen_mai/Chuong_trinh_khuyen_mai/CTKM.html">Chương trình khuyến mãi</a></li>
-                          <!-- <li> <a target="content-list" href="/edit_menu/frames/Khuyen_mai/Chuong_trinh_khuyen_mai/chuong_trinh_khuyen_mai.php">Chương trình khuyến mãi</a></li> -->
+                          <li> <a target="content-list" href="../edit_menu/frames/Khuyen_mai/khuyen_mai.html">Mã khuyến mãi</a></li>
+                          <li> <a target="content-list" href="../edit_menu/frames/Khuyen_mai/Chuong_trinh_khuyen_mai/CTKM.html">Chương trình khuyến mãi</a></li>
+                          <!-- <li> <a target="content-list" href="../edit_menu/frames/Khuyen_mai/Chuong_trinh_khuyen_mai/chuong_trinh_khuyen_mai.php">Chương trình khuyến mãi</a></li> -->
                       </ul>
                   </li>
               </ul>

@@ -28,8 +28,9 @@
             </div>
             <div class="main">
                 <div class="create_code">
-                    <a>Tên chương trình khuyến mãi</a><a class="error_header" id="header"></a><br>
-                    <input class="create_code_input" type="text" id="name" placeholder="Nhập tên chương trình khuyến mãi">
+                    <a>Tên chương trình khuyến mãi (*)</a><br>
+                    <input class="create_code_input" type="text" id="name" autofocus placeholder="Nhập tên chương trình khuyến mãi">
+                    <a class="error_header" id="header"></a><br>
                     <!-- <p>Khách hàng sẽ nhập mã khuyến mãi này ở màn hình thanh toán</p> -->
                     <!-- <input class="create_code_checkbox" type="checkbox"><a>Áp dụng cùng với chương trình khuyến mãi</a> -->
                 </div>
@@ -59,19 +60,18 @@
                     <input type="radio" name="apply">Sản phẩm<br> -->
                 </div>
                 <div class="time">
-                    <h2>Thời gian</h2>
+                    <h2>Thời gian (*)</h2>
                     <div class="part1_time">
-                        <label for="">Thời gian bắt đầu</label><a id="start"></a><br>
-                        <input type="datetime-local" id="timeStart">
+                        <label for="">Thời gian bắt đầu</label><br>
+                        <input type="datetime-local" id="timeStart"><a id="start"></a>
                     </div>
-                    <div class="part2_time">
-                        <label for="">Thời gian kết thúc</label><a id="end"></a><br>
-                        <input type="datetime-local" id="timeEnd">
+                    <div class="part1_time">
+                        <label for="">Thời gian kết thúc</label><br>
+                        <input type="datetime-local" id="timeEnd"><a id="end"></a>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <!-- <script src="./them_ma_js/them_ma.js"></script> -->
 </body>
 </html>

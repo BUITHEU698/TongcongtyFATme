@@ -21,15 +21,16 @@ function save()
   }
   var x = formSubmit;
   if(x.name == ""){
-    document.getElementById("header").innerHTML ="Nhập tên";
-    document.getElementById("name").style.borderColor ="unset";
+    document.getElementById("header").innerHTML ="Vui lòng nhập tên chương trình";
     document.getElementById("name").style.borderColor = "red";
   }
-  if(x.timeStart == ""){
+  else if(x.timeStart == ""){
     document.getElementById("start").innerHTML ="Chọn thời gian bắt đầu";
+    document.getElementById("timeStart").style.borderColor = "red";
   }
-  if(x.timeEnd == ""){
+  else if(x.timeEnd == ""){
     document.getElementById("end").innerHTML ="Chọn thời gian kết thúc";
+    document.getElementById("timeEnd").style.borderColor = "red";
   }
   else alert("saved")
 

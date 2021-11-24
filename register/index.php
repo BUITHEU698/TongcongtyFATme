@@ -96,7 +96,7 @@ if (isset($_POST['email'])){
           <button type="submit">Đăng ký</button>
         </div>
         <span><?php echo(isset($error)?$error:'')?></span>
-        <p class="m-20-0"><a href="#" class="semi-bold sub-link">Quên mật khẩu</a></p>
+        <p class="m-20-0"><a href="../forgot_password/index.php" class="semi-bold sub-link">Quên mật khẩu</a></p>
         <div class="m-40-0 upcase light or">
           <span class="abs-text">hoặc</span>
           <hr />

@@ -298,14 +298,14 @@ body {
 }
 .frame_menu {
   display: flex;
-  height: 100%;;
+  height: 100%;
 }
 .content-menu{
   box-shadow: rgb(0 0 0 / 7%) 1px 0px 4px 0px;
   flex-basis: 15%;
   border: none;
   min-width: 200px;
-  height: 100%;;
+  height: 100%;
 }
 .danh_muc_container {
   width: 100%;

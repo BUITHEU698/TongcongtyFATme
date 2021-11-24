@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm Mã Khuyến Mãi</title>
+    <title>Thông tin mã Khuyến Mãi</title>
     <link rel="stylesheet" href="./css/thong_tin_MKM.css">
+    <link rel="stylesheet" href="/Home_main_page/css/reset.css">
 </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./Thong_tin_MKM_js/MKM.js"></script>
     <div class="them_ma_container">
         <div class="title">
             <ul>
                 <li>
-                    <h2>Thêm mã khuyến mãi</h2>
+                    <h2>Thông tin mã khuyến mãi</h2>
                 </li>
                 <li class="right">
                     <button>Lưu</button>
                 </li>
                 <li class="right">
-                    <button>Huỷ</button>
+                    <button onclick="cancle()">Huỷ</button>
                 </li>
             </ul>
         </div>
@@ -27,7 +30,16 @@
                 <h2>Mã khuyến mãi</h2>
                 <input class="create_code_input" type="text" id="" placeholder="Nhập mã khuyến mãi">
                 <p>Khách hàng sẽ nhập mã khuyến mãi này ở màn hình thanh toán</p>
-                <input class="create_code_checkbox" type="checkbox"><a>Áp dụng cùng với chương trình khuyến mãi</a>
+                <input class="create_code_checkbox" type="checkbox" id="checkBoxDanhMuc" onclick="CheckBox2()"><a>Áp dụng cùng với chương trình khuyến mãi</a>
+                <div id="checkbox_danh_muc" class="hide_select">
+                    <select name="" id="">
+                        <option value="" disabled selected>Loại danh mục</option>
+                        <option value="">Sinh nhật</option>
+                        <option value="">Tiệc tại gia</option>
+                        <option value="">Kỉ niệm ngày cưới</option>
+                    </select>
+                </div>
+                <br>
             </div>
             <div class="value">
                 <h2>Giá trị</h2>
@@ -40,19 +52,22 @@
                     <input type="number">
                 </div>
             </div>
-            <div class="apply">
+            <!-- <div class="apply">
                 <h2>Áp dụng cho</h2>
-                <input type="radio">Tất cả sản phẩm<br>
-                <input type="radio">Danh mục sản phẩm<br>
-                <input type="radio">Sản phẩm
-            </div>
+                <input type="radio" id="" name="1">Tất cả sản phẩm<br>
+                <input type="radio" id="" name="1">Sản phẩm<br>
+                <input type="radio" id="danh_muc" name="1">Danh mục sản phẩm
+                <div id="show2" >
+                    <input class="count" type="number" placeholder="Nhập số lượng" id="">
+                </div>
+            </div> -->
             <div class="apply_condition">
                 <h2>Điều kiện áp dụng cho</h2>
-                <input type="radio">Không có<br>
-                <input type="radio">Tổng giá trị đơn hàng tối thiểu<br>
-                <input type="radio">Tổng sản phẩm được khuyến mãi tối thiểu<br>
-                <input type="radio" name="apply4" id="apply_4" onclick="checkRadio();">Tổng số lượng sản phẩm được khuyến mãi tối thiểu
-                <div id="show" class="hide">
+                <input type="radio" id="" value="a" name="2">Không có<br>
+                
+                <input type="radio" id="" value="b" name="2">Tổng giá trị đơn hàng tối thiểu<br>
+                <input type="radio" name="2" value="c" id="apply_4">Tổng số lượng sản phẩm được khuyến mãi tối thiểu
+                <div id="show" >
                     <input class="count" type="number" placeholder="Nhập số lượng" id="">
                 </div>
             </div>
@@ -78,6 +93,5 @@
             </div>
         </div>
     </div>
-    <script src="./them_ma_js/them_ma.js"></script>
 </body>
 </html>

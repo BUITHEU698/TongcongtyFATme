@@ -74,7 +74,7 @@ body {
   font-weight: 400;
 }
 .form-login .error {
-  color: #ff3333;
+  color: #ff3333 !important;
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 1.6rem;

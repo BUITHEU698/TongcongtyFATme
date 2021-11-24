@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm Mã Khuyến Mãi</title>
+    <title>Thông tin chương trình khuyến Mãi</title>
     <link rel="stylesheet" href="./css/thong_tin_CTKM.css">
+    <link rel="stylesheet" href="/Home_main_page/css/reset.css">
 </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/thong_tin_CTKM.js"></script>
     <div class="them_ma_container">
         <div class="title">
@@ -32,9 +34,9 @@
             </div>
             <div class="value">
                 <h2>Loại khuyến mãi</h2>
-                <input type="radio">Theo phần trăm<br>
-                <input type="radio">Theo số tiền<br>
-                <input type="radio">Đồng giá
+                <input type="radio" name="type_code">Theo phần trăm<br>
+                <input type="radio" name="type_code">Theo số tiền<br>
+                <input type="radio" name="type_code">Đồng giá
             </div>
             <div class="apply">
                 <h2>Giá trị</h2>
@@ -43,9 +45,17 @@
             </div>
             <div class="apply_condition">
                 <h2>Áp dụng cho</h2>
-                <input type="radio">Tất cả sản phẩm<br>
-                <input type="radio">Danh mục sản phẩm<br>
-                <input type="radio">Sản phẩm<br>
+                <input type="radio" name="apply" value="a">Tất cả sản phẩm<br>
+                <input type="radio" name="apply" id="apply_cd" value="b">Danh mục sản phẩm
+                    <div id="show">
+                        <select name="" id="">
+                            <option value="">Sinh nhật</option>
+                            <option value="">Tiệc tại gia</option>
+                            <option value="">Tiệc kỉ niệm ngày cưới</option>
+                        </select>
+                    </div>
+                <br>
+                <input type="radio" name="apply">Sản phẩm<br>
             </div>
             <div class="time">
                 <h2>Thời gian</h2>

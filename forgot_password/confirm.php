@@ -60,10 +60,10 @@ if(isset($_POST['submit'])){
         </p>
         <div class="form-group">
           <div class="number-code">
-            <input type="text" name="code1" id="" class="input-code" required autocomplete="off"/>
-            <input type="text" name="code2" id="" class="input-code" required autocomplete="off"/>
-            <input type="text" name="code3" id="" class="input-code" required autocomplete="off"/>
-            <input type="text" name="code4" id="" class="input-code" required autocomplete="off"/>
+            <input type="text" name="code1" id="" class="input-code" />
+            <input type="text" name="code2" id="" class="input-code" />
+            <input type="text" name="code3" id="" class="input-code" />
+            <input type="text" name="code4" id="" class="input-code" />
           </div>
           <span class="error sub-text"><?php echo(isset($error)?$error:'')?></span>
           <button type="submit"name="submit">Gửi</button>

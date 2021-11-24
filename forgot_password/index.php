@@ -9,7 +9,7 @@ $error='';
 if (isset($_POST['submit'])){
   $email=$_POST['email'];
   if($email==''){
-    $error='e-mail không được để trống';
+    $error='E-mail không được để trống';
   }
   if(empty($error)){
     $sql="SELECT *FROM khachhang WHERE email='$email'";
@@ -29,9 +29,6 @@ if (isset($_POST['submit'])){
   }
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,15 +57,15 @@ if (isset($_POST['submit'])){
         <!-- icon back -->
         <div class="form-forgot-icon">
           <a href="../login/index.php"><i class="fas fa-arrow-left sub-link"></i></a>
-          <span class="error sub-text"><?php echo(isset($error)?$error:'')?></span>
         </div>
         <h1 class="header-text bold">Quên mật khẩu</h1>
-        <p class="sub-text">
+        <span class="error sub-text" id="error"><?php echo(isset($error)?$error:'')?></span>
+        <p class="m-10-0 sub-text">
           Nhập email của bạn để nhận mã xác nhận!
         </p>
         <div class="form-group">
           <input type="email" name="email" placeholder="Nhập email" class="input-text" />
-          <button type="submit"name="submit">Gửi</button>
+          <button type="submit"name="submit" onclick="addClass(error)">Gửi</button>
         </div>
       </form>
     </div>

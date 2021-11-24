@@ -13,16 +13,16 @@ if (isset($_POST['email'])){
   if(empty($email)){
     $error='Bạn chưa nhập e-mail';
   }
-  if(empty($password)){
+  elseif(empty($password)){
     $error='Bạn chưa nhập mật khẩu';
   }
-  if($password!=$repassword){
+  elseif($password!=$repassword){
     $error='Mật khẩu nhập lại không đúng';
   }
-  if(!isset($_POST['checkbox'])){
+  elseif(!isset($_POST['checkbox'])){
     $error='Bạn chưa chấp nhận điều khoản';
   }
-  if (empty($error)){
+  elseif (empty($error)){
     $sql="INSERT INTO khachhang(email,password)  VALUES('$email','$password')";
     $query=mysqli_query($conn,$sql);
     if($query==false){
@@ -95,7 +95,7 @@ if (isset($_POST['email'])){
           </div>
           <button type="submit">Đăng ký</button>
         </div>
-        <span><?php echo(isset($error)?$error:'')?></span>
+        <span class="error"><?php echo(isset($error)?$error:'')?></span>
         <p class="m-20-0"><a href="../forgot_password/index.php" class="semi-bold sub-link">Quên mật khẩu</a></p>
         <div class="m-40-0 upcase light or">
           <span class="abs-text">hoặc</span>

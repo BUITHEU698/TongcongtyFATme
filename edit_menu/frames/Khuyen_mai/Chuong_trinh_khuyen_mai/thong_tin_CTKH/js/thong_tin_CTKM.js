@@ -11,3 +11,26 @@ $(document).ready(function() {
       }
     });
 });
+
+function save()
+{
+  const formSubmit ={
+    name: document.getElementById("name").value,
+    timeStart: document.getElementById("timeStart").value,
+    timeEnd : document.getElementById("timeEnd").value,
+  }
+  var x = formSubmit;
+  if(x.name == ""){
+    document.getElementById("header").innerHTML ="Nhập tên";
+    document.getElementById("name").style.borderColor ="unset";
+    document.getElementById("name").style.borderColor = "red";
+  }
+  if(x.timeStart == ""){
+    document.getElementById("start").innerHTML ="Chọn thời gian bắt đầu";
+  }
+  if(x.timeEnd == ""){
+    document.getElementById("end").innerHTML ="Chọn thời gian kết thúc";
+  }
+  else alert("saved")
+
+}

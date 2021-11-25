@@ -9,36 +9,41 @@
     <link rel="stylesheet" href="./css/them_danh_muc.css">
 </head>
 <body>
+    <script src="./js/them_danh_muc.js"></script>
     <div class="them_ma_container">
             <div class="title">
                 <ul>
                     <li><h2>Thêm danh mục sản phẩm</h2></li>
                     <li class="right">
-                        <button>Lưu</button>
+                        <button onclick="save()">Lưu</button>
                     </li>
                     <li class="right">
-                        <button>Huỷ</button>
+                        <button onclick="cancle()">Huỷ</button>
                     </li>
                 </ul>
             </div>
             <div class="main">
                 <div class="content">
-                    <label for="">Tên danh mục</label><br>
-                    <input type="text" placeholder="Nhập tên danh mục"><br>
-                    <label for="">Trạng thái</label>
-                    <select name="" id="">
-                        <option value="">Đang áp dụng</option>
-                        <option value="">Sắp xảy ra</option>
-                        <option value="">Ngưng áp dụng</option>
-                    </select>
+                    <div class="left">
+                        <label for="">Tên danh mục (*)</label><a id="show_error"></a><br>
+                        <input class="ten" type="text" id="name" placeholder="Nhập tên danh mục"><br>
+                        <label for="">Mô tả (*)</label><a id="content_error"></a><br>
+                        <textarea name="" id="descript" cols="30" rows="10" placeholder="Nhập nội dung danh mục sản phẩm"></textarea>
+                        <br>
+                    </div>
+                    <div class="right">
+                        <label for="">Trạng thái</label><br>
+                        <select name="" id="">
+                            <option value="">Đang áp dụng</option>
+                            <option value="">Sắp xảy ra</option>
+                            <option value="">Ngưng áp dụng</option>
+                        </select>
+                        <br>
+                        <label for="">Thời gian (*)</label><br>
+                        <input type="date" class="date_time" id="date">
+                        <p style="color: red" id="error"></p>
                     <br>
-                    <label for="">Miêu tả</label><br>
-                    <textarea name="" id="" cols="30" rows="10" plav></textarea>
-                    <label for="">Thời gian bắt đầu</label>
-                    <input type="date">
-                    <br>
-                    <label for="">Thời gian kết thúc</label>
-                    <input type="date">
+                    </div>
                 </div>
             </div>
     </div>

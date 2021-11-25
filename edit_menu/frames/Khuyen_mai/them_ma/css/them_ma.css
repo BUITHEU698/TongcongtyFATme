@@ -152,16 +152,12 @@ h2{
 }
 #show{
     float: right;
-    margin-right: 40%;
+    margin-right: 30%;
     display: none;
-    width: 30rem !important;
+    width: 40rem !important;
 }
-.count{
-    border: 1px solid black;
-    width: 12rem;
-    height: 3rem;
-    padding-left: 1rem;
-}
+
+
 .max_value{
     background-color: white;
     border: 1px solid var(--color-button-edit);
@@ -176,9 +172,17 @@ h2{
 }
 .hide_checkbox{
     float: right;
-    margin-right: 50%;
+    margin-right: 36%;
     display: none;
+    width: 40rem;
 }
+.count{
+    border: 1px solid black;
+    width: 12rem;
+    height: 3rem;
+    padding-left: 1rem;
+}
+
 .hide_select{
     float: right;
     margin-right: 53%;

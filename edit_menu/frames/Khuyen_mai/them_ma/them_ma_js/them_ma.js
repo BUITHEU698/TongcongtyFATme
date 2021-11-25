@@ -1,22 +1,4 @@
 
-// function CheckBox() {
-//     var checkBox = document.getElementById("showCheckBox");
-//     var text = document.getElementById("show_checkbox");
-//     if (checkBox.checked == true){
-//       text.style.display = "block";
-//     } else {
-//       text.style.display = "none";
-//     }
-//   }
-//   function CheckBox2() {
-//     var checkBox2 = document.getElementById("checkBoxDanhMuc");
-//     var text = document.getElementById("checkbox_danh_muc");
-//     if (checkBox2.checked == true){
-//       text.style.display = "block";
-//     } else {
-//       text.style.display = "none";
-//     }
-//   }
 function cancle(){
     alert("Bạn chắc chắn muốn huỷ ?")
     location.href = "/edit_menu/frames/Khuyen_mai/khuyen_mai.html";
@@ -47,6 +29,7 @@ function save(){
     timeStart : document.getElementById("timeStart").value,
     timeEnd : document.getElementById("timeEnd").value,
     num : document.getElementById("num").textContent,
+    value_count:  document.getElementById("showid").textContent,
   }
   var x = discout;
   if(x.code == "")
@@ -74,11 +57,22 @@ function save(){
     document.getElementById("time2").innerHTML = "Vui lòng nhập mã khuyến mãi";
     document.getElementById("timeEnd").style.borderColor = "red";
   }
-  // else if( )
-  // {
-  //   document.getElementById("count1").innerHTML = "Vui lòng nhập số lượng";
-  //   console.log("count1 : ");
-  //   document.getElementById("nume").style.borderColor = "red";
-  // }
+  else if(document.getElementById('apply_4').checked)
+  {
+    if(x.value_count =="")
+      {
+        document.getElementById("value_error").innerHTML = "Vui lòng nhập số lượng";
+        console.log("count1 : ");
+        document.getElementById("showid").style.borderColor = "red";
+      }
+  }
+  else if(document.getElementById('showCheckBox').checked)
+  {
+    if(x.num =="")
+      {
+        document.getElementById("count1").innerHTML = "Vui lòng nhập số lượng";
+        document.getElementById("num").style.borderColor = "red";
+      }
+  }
   else alert("Lưu thành công");
 }

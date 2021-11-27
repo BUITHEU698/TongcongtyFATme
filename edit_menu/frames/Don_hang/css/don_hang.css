@@ -72,7 +72,7 @@ ul{
     margin-left: 1rem;
     padding-left:5px;
 }
-.sap_xep select{
+.sap_xep select,input{
     width: 15rem;
     height: 3rem;
 }
@@ -84,7 +84,7 @@ ul{
     background-color: var(--color-button-main);
     color: white;
     border-radius: 5px;
-    margin-left: 13rem;
+    margin-left: 5rem;
 }
 .btn_search:hover{
     background-color: var(--color-button-hover);

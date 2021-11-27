@@ -19,40 +19,36 @@
     <link rel="stylesheet" href="/Home_main_page/css/reset.css" />
   </head>
   <body>
-    <script src="./js/danh_muc_mon_an.js"></script>
+    
+    <script src="./js/don_hang.js"></script>
     <!-- <img src="/edit_menu/frames/Danh_muc_mon_an/Them_danh_muc/them_danh_muc.html" alt=""> -->
     <div class="khuyen_mai_container">
       <div class="header">
-        <h3>Danh mục món ăn</h3>
-        <button onclick="add_danh_muc()">Thêm danh mục</button>
+        <h3>Danh sách đơn hàng</h3>
+        <button onclick="them_dh()">Thêm đơn hàng</button>
       </div>
       <div class="sap_xep">
         <ul>
           <li>
-            <select name="" id="">
-              <option value="" disabled selected>Loại danh mục</option>
-              <option value="">Sinh nhật</option>
-              <option value="">Quốc tế phụ nữ</option>
-              <option value="">Đám cưới</option>
-              <option value="">Tiệc tại gia</option>
-            </select>
+            <input type="text" placeholder="Mã đơn hàng">
+          </li>
+          <li>
+            <input type="text" placeholder="Tên khách hàng">
+          </li>
+          <li>
+            <a>Ngày tạo</a>
+            <input class="time" type="date" />
           </li>
           <li>
             <select name="" id="">
               <option value="" disabled selected>Trạng thái</option>
-              <option value="">Hiện</option>
-              <option value="">Ẩn</option>
-              <option value="">Chưa áp dụng</option>
-              <option value="">Ngưng áp dụng</option>
+              <option value="">Đang giao dịch</option>
+              <option value="">Hoàn thành</option>
+              <option value="">Ngưng giao dịch</option>
             </select>
           </li>
           <li>
-            <a>Số lượng món ăn</a>
-            <input class="time" type="number" placeholder="Nhập số lượng" />
-          </li>
-          <li>
-            <a>Ngày bắt đầu</a>
-            <input class="time" type="date" />
+            <input  type="number" placeholder="Giá thành">
           </li>
           <li>
             <button class="btn_search">Tìm kiếm</button>
@@ -64,20 +60,22 @@
             <thead>
               <tr>
                 <th class="checked_btn"><input class="all" type="checkbox" /> All</th>
-                <th>Loại danh mục</th>
-                <th>Trạng thái</th>
-                <th>Số lượng</th>
+                <th>Mã đơn hàng</th>
+                <th>Tên khách hàng</th>
                 <th>Ngày bắt đầu</th>
+                <th>Trạng thái</th>
+                <th>Giá thành</th>
                 <th class="more_button_col"></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -85,7 +83,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                      <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -94,10 +92,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -105,7 +104,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -114,10 +113,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -125,7 +125,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -134,10 +134,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -145,7 +146,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -154,10 +155,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -165,7 +167,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -174,10 +176,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -185,7 +188,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -194,10 +197,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -205,7 +209,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -214,10 +218,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -225,7 +230,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -234,10 +239,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -245,7 +251,7 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
@@ -254,10 +260,11 @@
               </tr>
               <tr>
                 <td class="checked_btn"><input type="checkbox" /></td>
-                <td>Sinh nhật</td>
-                <td>Hiện</td>
-                <td>5</td>
+                <td>DH0001</td>
+                <td>Nguyễn Minh Tuấn</td>
                 <td>15/11/2021</td>
+                <td>Đang giao dịch</td>
+                <td>100000</td>
                 <td class="more_button_col">
                   <div class="dropdown_more_btn">
                     <button class="more_button">
@@ -265,13 +272,14 @@
                     </button>
                     <div class="dropdown_content">
                       <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                      <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"
+                       <a href="./Thong_tin_DH/thong_tin_DH.html"
                         ><i class="fas fa-info"></i>Chi tiết</a
                       >
                     </div>
                   </div>
                 </td>
               </tr>
+
             </tbody>
           </table>
         </div>

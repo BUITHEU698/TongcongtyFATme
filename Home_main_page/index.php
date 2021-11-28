@@ -33,7 +33,6 @@
               <li  class="search">
                 <div>
                   <i class="fas fa-search" style="font-size: 25px"></i>
-
                   <input class="type_search" type="text" placeholder="Bạn muốn tìm..." />
                   <button>Tìm kiếm</button>
                 </div>
@@ -133,7 +132,7 @@
               </ul>
             </div>
             <div class="danh_muc_container">
-              <iframe  src="" frameborder="0" name="content-list"></iframe>
+              <iframe  src="../edit_menu/frames/Quan_ly_san_pham/quan_ly_san_pham.html" frameborder="0" name="content-list"></iframe>
             </div>
           </div>
         </div>

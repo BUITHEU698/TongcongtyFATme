@@ -1,3 +1,12 @@
+<?php
+include'../../../connect/connect.php';
+$email=$_SESSION['email'];
+$sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE email_khachhang=$email";
+$query=mysqli_query($conn,$sql);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +22,7 @@
 </head>
 
 <body>
-
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -42,7 +51,7 @@
         });
     </script>
 
-
+<form action=""method="post"enctype="multipart/form-data>
     <div class="quan_ly_san_pham_container">
         <div class="header_container">
             <ul>
@@ -65,14 +74,13 @@
             <div class="sap_xep">
                 <ul>
                     <li class="check_box"><input type="checkbox" id="select_all" />All</li>
-                    <li class="search">
-                        <input tyle="text" placeholder="Tên sản phẩm" />
-                    </li>
+                    <li class="search"><input tyle="text" placeholder="Tên sản phẩm" /></li>
                     <li>
                         <select name="" id="">
-                      <option value="" disabled selected>Danh mục</option>
-                      <option value="">Đồ ăn nhanh</option>
-                      <option value="">Lẩu</option>
+                            <option value="" disabled selected>Danh mục</option>
+                            <option value="">Đồ ăn nhanh</option>
+                            <option value="">Lẩu</option>
+                        </select>
                   </select>
                     </li>
                     <li>
@@ -112,79 +120,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="checkbox" />
-                            </td>
-                            <td>
-                                <img src="../../../edit_menu/frames/Them_san_pham/images/banh_trang_tron.jpeg" />
-                            </td>
-                            <td>Bánh tráng</td>
-                            <td>Đồ ăn nhanh</td>
-                            <td>12000đ</td>
-                            <td>
-                                <p id="today"></p>
-                            </td>
-                            <td>Đã ẩn</td>
-                            <td>
-                                <div class="dropdown_more_btn">
-                                    <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
-                                    <div class="dropdown_content_more">
-                                        <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                                        <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="checkbox" />
-                            </td>
-                            <td>
-                                <img src="/edit_menu/frames/Them_san_pham/images/banh_trang_tron.jpeg" />
-                            </td>
-                            <td>Bánh tráng</td>
-                            <td>Đồ ăn nhanh</td>
-                            <td>12000đ</td>
-                            <td>
-                                <p id="today2"></p>
-                            </td>
-                            <td>Đã ẩn</td>
-                            <td>
-                                <div class="dropdown_more_btn">
-                                    <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
-                                    <div class="dropdown_content_more">
-                                        <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                                        <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="checkbox" />
-                            </td>
-                            <td>
-                                <img src="/edit_menu/frames/Them_san_pham/images/banh_trang_tron.jpeg" />
-                            </td>
-                            <td>Bánh tráng</td>
-                            <td>Đồ ăn nhanh</td>
-                            <td>12000đ</td>
-                            <td>
-                                <p id="today3"></p>
-                            </td>
-                            <td>Đã ẩn</td>
-                            <td>
-                                <div class="dropdown_more_btn">
-                                    <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
-                                    <div class="dropdown_content_more">
-                                        <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                                        <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
 
+                <?php foreach($query as $key=>$value)  { ?>
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="checkbox" />
+                        </td>
+                        <td>
+                        <img src="../../../edit_menu/frames/Them_san_pham/images/<?php echo $value['IMAGE']?>" alt="lỗi">
+                        </td>
+                        <td><?php echo $value['TENMONAN']?></td>
+                        <td><?php echo $value['TENDANHMUC']?></td>
+                        <td><?php echo $value['GIA']?></td>
+                        <td><?php echo $value['NGAYDANG']?></td>
+                        <?php if ($value['TINHTRANG']==1){ ?>
+                            <td>Hiện</td>
+                        <?php } else {?>
+                            <td>Ẩn</td>
+                        <?php }?>
+                        <td>
+                            <div class="dropdown_more_btn">
+                                <button class="more_button"><i class="fas fa-ellipsis-h"></i></button>
+                                <div class="dropdown_content_more">
+                                    <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
+                                    <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <?php }?> 
                     </tbody>
                 </table>
             </div>
@@ -193,7 +157,9 @@
             </div>
         </div>
     </div>
+</form>
     <script src="./Quan_ly_san_pham_js/quan_ly_san_pham.js"></script>
+    
 </body>
 
 </html>

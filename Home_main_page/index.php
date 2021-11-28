@@ -132,7 +132,7 @@
               </ul>
             </div>
             <div class="danh_muc_container">
-              <iframe  src="../edit_menu/frames/Quan_ly_san_pham/quan_ly_san_pham.html" frameborder="0" name="content-list"></iframe>
+              <iframe  src="../edit_menu/frames/Quan_ly_san_pham/quan_ly_san_pham.php" frameborder="0" name="content-list"></iframe>
             </div>
           </div>
         </div>

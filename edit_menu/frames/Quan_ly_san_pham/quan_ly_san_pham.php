@@ -1,8 +1,11 @@
 <?php
 include'../../../connect/connect.php';
 $email=$_SESSION['email'];
-$sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE email_khachhang=$email";
+$sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'";
 $query=mysqli_query($conn,$sql);
+if(isset($_POST['Them_mon'])){
+    header("location: ../Them_san_pham/them_san_pham.php");
+}
 ?>
 
 
@@ -59,7 +62,7 @@ $query=mysqli_query($conn,$sql);
                     <h3>Danh sách món ăn</h3>
                 </li>
                 <li class="btn_add">
-                    <button onclick="add()">Thêm món</button>
+                    <button onclick="add()"name="Them_mon">Thêm món</button>
                 </li>
             </ul>
         </div>
@@ -120,7 +123,6 @@ $query=mysqli_query($conn,$sql);
                         </tr>
                     </thead>
                     <tbody>
-
                 <?php foreach($query as $key=>$value)  { ?>
                     <tr>
                         <td>

@@ -4,11 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thông tin đơn hàng</title>
+    <link rel="stylesheet" href="./css/thong_tin_DH.css">
+    <link rel="stylesheet" href="/Home_main_page/css/reset.css" />
 </head>
 <body>
     <div class="container">
-        
+        <div class="title">
+            <ul>
+            <li>
+                <h1>Thông tin đơn hàng</h1>
+            </li>
+            <li>
+                <button onclick="save()">Lưu</button>
+            </li>
+            <li>
+                <button onclick="cancle()">Huỷ</button>
+            </li>
+            </ul>
+        </div>
+        <div class="don_hang">
+            <input type="text" placeholder="Mã đơn hàng">
+            <input type="text" placeholder="Họ và tên khách hàng">
+            <input type="number" placeholder="Số điện thoại">
+            <input type="text" placeholder="Địa chỉ">
+        </div>
+        <div class="san_pham">
+            <table>
+                <head>
+                    <th>Hình ảnh</th>
+                    <th>Tên món ăn</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                </head>
+                <tbody>
+                    <td>
+                        <img src="/Home_main_page/images/anh-anime.jpg" alt="">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Cháo vịt">
+                    </td>
+                    <td>
+                        <input type="number" placeholder="4">
+                    </td>
+                    <td>
+                        <input type="number" placeholder="20000">
+                    </td>
+                </tbody>
+            </table>
+        </div>
+        <div class="time_set">
+            <ul>
+                <li>
+                    <label for="">Ngày khởi tạo</label><br>
+                    <input type="datetime-local">
+                </li>
+                <li>
+                    <label for="">Ngày giao</label><br>
+                    <input type="datetime-local">
+                </li>    
+            </ul>
+        </div>
     </div>
 </body>
 </html>

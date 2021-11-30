@@ -84,7 +84,7 @@ ul{
     background-color: var(--color-button-main);
     color: white;
     border-radius: 5px;
-    margin-left: 13rem;
+    margin-left: 9rem;
 }
 .btn_search:hover{
     background-color: var(--color-button-hover);

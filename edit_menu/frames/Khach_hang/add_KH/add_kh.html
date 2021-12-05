@@ -22,13 +22,13 @@
         <div class="title">
             <ul class="title_list">
                 <li class="header">
-                    <h2>Thông tin danh mục sản phẩm</h2>
-                </li>
-                <li class="right_btn">
-                    <button onclick="save()">Lưu</button>
+                    <h2>Thông tin khách hàng</h2>
                 </li>
                 <li class="right_btn">
                     <button onclick="cancle()">Huỷ</button>
+                </li>
+                <li class="right_btn">
+                    <button onclick="save()">Lưu</button>
                 </li>
             </ul>
         </div>
@@ -45,20 +45,20 @@
                 <div class="inside1">
                     <ul>
                         <li>
-                            <input class="input_1" type="text" placeholder="KH001">
+                            <input class="input_1" id="code" type="text" placeholder="KH001">
                         </li>
                         <li>
-                            <input class="input_2" type="text" placeholder="Nguyễn Minh Tuấn">
+                            <input class="input_2" id="name" type="text" placeholder="Nguyễn Minh Tuấn">
                         </li>
                         <li>
-                            <input class="time" type="datetime-local">
+                            <input class="time" id="date" type="datetime-local">
                         </li>
                         
                             <li>
-                                <input class="input_2" type="text" placeholder="Quận 1 Thành phố Hồ Chí Minh">
+                                <textarea id="local" class="location" type="text" placeholder="Quận 1 Thành phố Hồ Chí Minh"></textarea>
                             </li>
-                            <li><input class="input_2" type="text" placeholder="Quận 1 Thành phố Hồ Chí Minh"></li>
-                            <li><input class="input_2" type="text" placeholder="Quận 1 Thành phố Hồ Chí Minh"></li>
+                            <!-- <li><input class="input_2" type="text" placeholder="Quận 1 Thành phố Hồ Chí Minh"></li>
+                            <li><input class="input_2" type="text" placeholder="Quận 1 Thành phố Hồ Chí Minh"></li> -->
                         
                     </ul>
                 </div>
@@ -75,14 +75,14 @@
                 <div class="inside1">
                     <ul>
                         <li>
-                            <input class="input_2" type="text" placeholder="19522471@gm.uit.edu.vn">
+                            <input id="email" class="input_2" type="text" placeholder="19522471@gm.uit.edu.vn">
                         </li>
                         <li>
-                            <input class="input_2" type="number" placeholder="0901422185">
+                            <input id="phone" class="input_2" type="number" placeholder="0901422185">
                         </li>
                         <li>
-                            <select name="" id="" class="input_1">
-                                <option value="">Nam</option>
+                            <select id="sex" name="" class="input_1">
+                                <option value="" >Nam</option>
                                 <option value="">Nữ</option>
                                 <option value="">Khác</option>
                             </select>
@@ -91,5 +91,6 @@
                 </div>
             </div>
         </div>
+        <script src="./js/add_kh.js"></script>
     </body>
 </html>

@@ -1,10 +1,14 @@
 <?php
 include'../../../connect/connect.php';
-$email=$_SESSION['email'];
-$sql="SELECT *FROM danhmuc WHERE email_khachhang= '$email'";
-$danhmucmonan = mysqli_query($conn,$sql);
-if(isset($_POST['them_danh_muc'])){
-    header("location: Them_danh_muc/them_danh_muc.php");
+if(empty($_SESSION['email'])){
+    header("location: ../../../login/index.php");
+}else{
+    $email=$_SESSION['email'];
+    $sql="SELECT *FROM danhmuc WHERE email_khachhang= '$email'";
+    $danhmucmonan = mysqli_query($conn,$sql);
+    if(isset($_POST['them_danh_muc'])){
+        header("location: Them_danh_muc/them_danh_muc.php");
+    }
 }
 ?>
 
@@ -16,7 +20,7 @@ if(isset($_POST['them_danh_muc'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danh mục sản phầm</title>
-    <link rel="stylesheet" href="/edit_menu/frames/Danh_muc_mon_an/css/danh_muc_mon_an.css">
+    <link rel="stylesheet" href="./css/danh_muc_mon_an.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
     <link rel="stylesheet" href="/Home_main_page/css/reset.css" />

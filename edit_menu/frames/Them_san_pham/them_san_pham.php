@@ -87,12 +87,44 @@
 
 <?php
 include'../../../connect/connect.php';
-
-
-
-
-
-
+if(empty($_SESSION['email'])){
+  header("location: ../../../login/index.php");
+}else{
+  $email=$_SESSION['email'];
+  $error='';
+  $danhmuc = mysqli_query($conn,"SELECT *FROM danhmuc WHERE email_khachhang='$email'");
+  if(isset($_POST['luu'])){
+    $TENMONAN=$_POST['TENMONAN'];
+    $MOTA=$_POST['MOTA'];
+    if (isset($_FILES['image'])){
+      $file=$_FILES['image'];
+      $file_name=$file['name'];
+      move_uploaded_file($file['tmp_name'],'img-uploads/'.$file_name);
+    }
+    $TRANGTHAI=$_POST['TRANGTHAI'];
+    $GIA=$_POST['GIA'];
+    $id_danhmuc=$_POST['TENDANHMUC'];
+    if(empty($id_danhmuc)){
+      $error='Bạn chọn danh mục';
+    }else if(empty($GIA)){
+      $error='Bạn chưa nhập giá';
+    }else if(empty($MOTA)){
+      $error='Bạn chưa nhập mô tả';
+    }else if(empty($TENMONAN)){
+      $error='Bạn chưa nhập tên món ăn';
+    }
+    if (empty($error)){
+      $sql="INSERT INTO monan(email_khachhang,TENMONAN,MOTA,id_danhmuc,GIA,TRANGTHAI,IMAGE) VALUES('$email','$TENMONAN','$MOTA','$id_danhmuc','$GIA','$TRANGTHAI','$file_name')";
+      $query=mysqli_query($conn,$sql);
+      if($query){
+        header("location: ../Quan_ly_san_pham/quan_ly_san_pham.php");
+      }
+      else{
+        $error="Món ăn này đã tồn tại";
+      } 
+    }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,6 +142,7 @@ include'../../../connect/connect.php';
 </head>
 
 <body>
+  <form action=""method="post"enctype="multipart/form-data">
     <div class="thongtin_sanpham_container">
         <div class="header_container">
             <h2>Thêm món ăn</h2>
@@ -118,19 +151,19 @@ include'../../../connect/connect.php';
             <div class="thong_tin">
                 <div class="san_pham_moi">
                     <h3>Tên món ăn (*)</h3>
-                    <input type="text" id="name" placeholder="Nhập tên món ăn">
+                    <input type="text" id="name"name="TENMONAN" placeholder="Nhập tên món ăn"required>
                     <div class="error">
                         <a id="mon_an"></a>
                     </div>
                     <h3>Mô tả</h3>
-                    <textarea name="" id="describe" cols="30" rows="10" placeholder="Mô tả món ăn ..."></textarea>
+                    <textarea name="MOTA" id="describe" cols="30" rows="10" placeholder="Mô tả món ăn ..."required></textarea>
                 </div><br>
 
                 <div class="hinh_anh">
                     <h3>Ảnh món ăn (*)</h3>
                     <div class="add_img">
                         <!-- <i class="fas fa-images"></i><br> -->
-                        <input type="file" value="" id="img" required>
+                        <input type="file"name="IMAGE" value="" id="img" required>
                     </div>
                     <div class="error">
                         <a id="img_error"></a>
@@ -139,16 +172,17 @@ include'../../../connect/connect.php';
             </div>
             <div class="trang_thai">
                 <h3>Trạng thái</h3>
-                <input type="radio" checked><a>Hiển thị</a><br>
-                <input type="radio"><a>Ẩn</a><br>
+                <input type="radio" name="TRANGTHAI" value="1" checked><a>Hiện</a><br>
+                <input type="radio" name="TRANGTHAI" value="0"><a>Ẩn</a><br>
                 <h3 style="display: inline;">Giá tiền (*)</h3>
                 <a style="color: red" id="idMoney"></a> <br>
-                <input type="number" id="money1" class="money" placeholder="Nhập giá tiền">
+                <input type="number"name="GIA" id="money1" class="money" placeholder="Nhập giá tiền"required>
                 <h3>Danh mục</h3>
-                <select name="" id="type">
-                  <option value="" >Đồ ăn nhanh</option>
-                  <option value="">Đồ uống</option>
-                  <option value="">Lẩu</option>
+                <select name="TENDANHMUC" id="type">
+                  <option value="">________Tên danh mục________</option>
+                  <?php foreach($danhmuc as $key => $value) {?>
+                    <option value="<?php echo $value['id_danhmuc'] ?>"><?php echo $value['TENDANHMUC'] ?></option>
+                    <?php  }?>
               </select><br>
                 <!-- <label for="">Địa chỉ</label><br>
               <input type="text" class="local" placeholder="Địa chỉ nhập món ăn">
@@ -156,15 +190,16 @@ include'../../../connect/connect.php';
               <label>Thời gian</label><br>
               <input class="money" id="time" type="datetime-local"> -->
                 <div class="save">
-                    <button id="save" onclick="saveInfo()"><h3>Lưu</h3></button>
-                    <button id="cancle" onclick="cancleInfo()"><h3>Huỷ</h3></button>
+                    <button id="save"name="luu" onclick="saveInfo()"><h3>Lưu</h3></button>
+                    <button id="cancle"name="huy" onclick="cancleInfo()"><h3>Huỷ</h3></button>
                 </div>
                 <div class="trung">
-                    <span>Món ăn đã tồn tại</span>
+                <span><?php echo(isset($error)?$error:'')?></span>
                 </div>
             </div>
         </div>
     </div>
+  </form>
     <script src="./scripts/index.js"></script>
 </body>
 

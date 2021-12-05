@@ -1,10 +1,14 @@
 <?php
 include'../../../connect/connect.php';
-$email=$_SESSION['email'];
-$sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'";
-$query=mysqli_query($conn,$sql);
-if(isset($_POST['Them_mon'])){
-    header("location: ../Them_san_pham/them_san_pham.php");
+if(empty($_SESSION['email'])){
+    header("location: ../../../login/index.php");
+}else{
+    $email=$_SESSION['email'];
+    $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'";
+    $query=mysqli_query($conn,$sql);
+    if(isset($_POST['Them_mon'])){
+        header("location: ../Them_san_pham/them_san_pham.php");
+    }
 }
 ?>
 
@@ -129,13 +133,13 @@ if(isset($_POST['Them_mon'])){
                             <input type="checkbox" class="checkbox" />
                         </td>
                         <td>
-                        <img src="../../../edit_menu/frames/Them_san_pham/images/<?php echo $value['IMAGE']?>" alt="lỗi">
+                        <img src="../../../img-uploads/<?php echo $value['IMAGE']?>" alt="lỗi">
                         </td>
                         <td><?php echo $value['TENMONAN']?></td>
                         <td><?php echo $value['TENDANHMUC']?></td>
                         <td><?php echo $value['GIA']?></td>
                         <td><?php echo $value['NGAYDANG']?></td>
-                        <?php if ($value['TINHTRANG']==1){ ?>
+                        <?php if ($value['TRANGTHAI']==1){ ?>
                             <td>Hiện</td>
                         <?php } else {?>
                             <td>Ẩn</td>

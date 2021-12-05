@@ -96,10 +96,10 @@ if(empty($_SESSION['email'])){
   if(isset($_POST['luu'])){
     $TENMONAN=$_POST['TENMONAN'];
     $MOTA=$_POST['MOTA'];
-    if (isset($_FILES['image'])){
-      $file=$_FILES['image'];
+    if (isset($_FILES['IMAGE'])){
+      $file=$_FILES['IMAGE'];
       $file_name=$file['name'];
-      move_uploaded_file($file['tmp_name'],'img-uploads/'.$file_name);
+      move_uploaded_file($file['tmp_name'],'../../../img-uploads/'.$file_name);
     }
     $TRANGTHAI=$_POST['TRANGTHAI'];
     $GIA=$_POST['GIA'];

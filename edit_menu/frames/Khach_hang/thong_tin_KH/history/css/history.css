@@ -51,15 +51,7 @@ ul{
 .header button:hover{
     background-color: var(--color-button-hover);
 }
-.sap_xep{
-    /* padding-top: 0.5rem; */
-    background-color: white;
-    margin-top: 1rem;
-    width: 100%;
-    height: 63rem;
-    border-radius: 3px;
-    border: 0.5px solid var(--color-button-edit)
-}
+
 .sap_xep ul,li{
     float: left;
     margin-left: 9px;
@@ -155,7 +147,7 @@ ul{
 
 .dropdown_more_btn:hover .more_button {color:var(--color-button-hover);}
 .scroll_table {
-    
+    margin-top: 1rem;
     margin-left: 2%;
     height: 50rem;
     width: 95%;
@@ -166,7 +158,7 @@ ul{
 }
 .scroll_table table{
     width: 100%;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 /* .scroll_table th,td{
     width: 100rem;

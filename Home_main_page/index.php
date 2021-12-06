@@ -108,9 +108,9 @@ if(empty($_SESSION['email'])){
                             <h3><i class="fas fa-clipboard">&nbsp;&nbsp;</i>Đơn Hàng</h3>
                             <li>
                                 <ul class="sub-menu">
-                                    <li> <a target="content-list" href="">Tất cả đơn hàng</a></li>
-                                    <li> <a target="content-list" href="">Tạo đơn hàng</a></li>
-                                    <li> <a target="content-list" href="">Đơn hàng nháp</a></li>
+                                    <li> <a target="content-list" href="../edit_menu/frames/Don_hang/don_hang.html">Tất cả đơn hàng</a></li>
+                                    <!-- <li> <a target="content-list" href="">Tạo đơn hàng</a></li>
+                                    <li> <a target="content-list" href="">Đơn hàng nháp</a></li> -->
                                 </ul>
                             </li>
                         </ul>
@@ -125,15 +125,24 @@ if(empty($_SESSION['email'])){
                             </li>
                         </ul>
                         <ul class="menu">
-                            <h3><i class="fas fa-tools">&nbsp;&nbsp;</i>Cấu hình</h3>
+                            <h3><i class="fas fa-tools">&nbsp;&nbsp;</i>Khách hàng</h3>
                             <li>
+                                <ul class="sub-menu">
+                                    <li><a target="content-list" href="../edit_menu/frames/Khach_hang/khach_hang.html">Phương thức thanh toán</a></li>
+                                    <!-- <li><a target="content-list" href="">Phương thức vận chuyển</a></li>
+                                    <li><a target="content-list" href="">Thông báo</a></li>
+                                    <li><a target="content-list" href="">Tài khoản và phân quyền</a></li> -->
+                                </ul>
+                            </li>
+                            <h3><i class="fas fa-tools">&nbsp;&nbsp;</i>Cấu hình</h3>
+                            <!-- <li>
                                 <ul class="sub-menu">
                                     <li><a target="content-list" href="">Phương thức thanh toán</a></li>
                                     <li><a target="content-list" href="">Phương thức vận chuyển</a></li>
                                     <li><a target="content-list" href="">Thông báo</a></li>
                                     <li><a target="content-list" href="">Tài khoản và phân quyền</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="danh_muc_container">

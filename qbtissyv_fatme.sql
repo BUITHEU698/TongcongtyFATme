@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 24, 2021 lúc 03:27 PM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.12
+-- Thời gian đã tạo: Th12 06, 2021 lúc 09:08 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `fatme`
+-- Cơ sở dữ liệu: `qbtissyv_fatme`
 --
 
 -- --------------------------------------------------------
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `chuongtrinh_khuyenmai` (
+  `email_khachhang` varchar(255) NOT NULL,
   `id_chuongtrinh` int(11) NOT NULL,
   `tenchuongtrinh` varchar(255) NOT NULL,
   `loaikhuyenmai` int(11) NOT NULL,
@@ -37,14 +38,6 @@ CREATE TABLE `chuongtrinh_khuyenmai` (
   `tonggiay_ketthuc` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `chuongtrinh_khuyenmai`
---
-
-INSERT INTO `chuongtrinh_khuyenmai` (`id_chuongtrinh`, `tenchuongtrinh`, `loaikhuyenmai`, `thoigian_batdau`, `tonggiay_batdau`, `thoigian_ketthuc`, `tonggiay_ketthuc`) VALUES
-(22, 'Ngày nhà giáo Việt Nam', 1, '2021-11-22 02:56:00', 1637546160, '2021-11-28 02:56:00', 1638064560),
-(23, 'Ngày nhà giáo Việt Nam 1', 2, '2021-11-03 15:20:00', 1635949200, '2021-11-06 15:21:00', 1636208460);
-
 -- --------------------------------------------------------
 
 --
@@ -52,18 +45,20 @@ INSERT INTO `chuongtrinh_khuyenmai` (`id_chuongtrinh`, `tenchuongtrinh`, `loaikh
 --
 
 CREATE TABLE `danhmuc` (
+  `email_khachhang` varchar(255) NOT NULL,
   `id_danhmuc` int(11) NOT NULL,
   `TENDANHMUC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `TRANGTHAI` tinyint(4) NOT NULL
+  `MOTA` varchar(255) NOT NULL,
+  `TRANGTHAI` tinyint(4) NOT NULL,
+  `NGAYDANG` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `danhmuc`
 --
 
-INSERT INTO `danhmuc` (`id_danhmuc`, `TENDANHMUC`, `TRANGTHAI`) VALUES
-(80, 'các món phụ 123', 1),
-(85, 'tuấn đẹp trai', 1);
+INSERT INTO `danhmuc` (`email_khachhang`, `id_danhmuc`, `TENDANHMUC`, `MOTA`, `TRANGTHAI`, `NGAYDANG`) VALUES
+('19522049@gm.uit.edu.vn', 86, 'phụng đẹp trai', 'phụng đẹp trai vc', 1, '6/12/2021 15:7:17');
 
 -- --------------------------------------------------------
 
@@ -82,9 +77,7 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`id`, `email`, `password`) VALUES
-(58, '19522049@gm.uit.edu.vn', '202cb962ac59075b964b07152d234b70'),
-(59, 'anhdagia7321@gmail.com', '202cb962ac59075b964b07152d234b70'),
-(60, '19522254@gm.uit.edu.vn', '202cb962ac59075b964b07152d234b70');
+(61, '19522049@gm.uit.edu.vn', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -93,13 +86,13 @@ INSERT INTO `khachhang` (`id`, `email`, `password`) VALUES
 --
 
 CREATE TABLE `monan` (
-  `sdt_khachhang` varchar(255) NOT NULL,
+  `email_khachhang` varchar(255) NOT NULL,
   `id_monan` int(11) NOT NULL,
   `TENMONAN` varchar(255) NOT NULL,
+  `MOTA` varchar(255) NOT NULL,
   `id_danhmuc` int(11) NOT NULL,
   `GIA` bigint(20) NOT NULL,
-  `GIAKHUYENMAI` bigint(20) NOT NULL,
-  `TINHTRANG` tinyint(4) NOT NULL,
+  `TRANGTHAI` tinyint(4) NOT NULL,
   `IMAGE` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -107,8 +100,8 @@ CREATE TABLE `monan` (
 -- Đang đổ dữ liệu cho bảng `monan`
 --
 
-INSERT INTO `monan` (`sdt_khachhang`, `id_monan`, `TENMONAN`, `id_danhmuc`, `GIA`, `GIAKHUYENMAI`, `TINHTRANG`, `IMAGE`) VALUES
-('1', 21, '2121', 80, 21212, 1212121, 1, '');
+INSERT INTO `monan` (`email_khachhang`, `id_monan`, `TENMONAN`, `MOTA`, `id_danhmuc`, `GIA`, `TRANGTHAI`, `IMAGE`) VALUES
+('19522049@gm.uit.edu.vn', 22, 'phụng trùm', '123', 86, 123123, 1, 'R (1).jfif');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -140,6 +133,7 @@ ALTER TABLE `khachhang`
 --
 ALTER TABLE `monan`
   ADD PRIMARY KEY (`id_monan`),
+  ADD UNIQUE KEY `TENMONAN` (`TENMONAN`),
   ADD KEY `fk_danhmuc_monan` (`id_danhmuc`);
 
 --
@@ -156,19 +150,19 @@ ALTER TABLE `chuongtrinh_khuyenmai`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT cho bảng `monan`
 --
 ALTER TABLE `monan`
-  MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

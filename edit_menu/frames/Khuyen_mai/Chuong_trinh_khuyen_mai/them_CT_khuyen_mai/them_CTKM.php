@@ -1,6 +1,7 @@
 <?php
 include'../../../../../connect/connect.php';
 $error='';
+$email=$_SESSION['email'];
 if(isset($_POST['tenchuongtrinh'])){
     $tenchuongtrinh=$_POST['tenchuongtrinh'];
     $loaikhuyenmai=$_POST['loaikhuyenmai'];
@@ -21,7 +22,7 @@ if(isset($_POST['tenchuongtrinh'])){
         $error="Thời gian kết thúc không được nhỏ hơn thời gian bắt đầu";
     }
     else if(empty($error)){
-        $sql="INSERT INTO chuongtrinh_khuyenmai(tenchuongtrinh,loaikhuyenmai,thoigian_batdau,tonggiay_batdau,thoigian_ketthuc,tonggiay_ketthuc) VALUES ('$tenchuongtrinh','$loaikhuyenmai','$thoigian_batdau','$tonggiay_batdau','$thoigian_ketthuc','$tonggiay_ketthuc')";
+        $sql="INSERT INTO chuongtrinh_khuyenmai(email_khachhang,tenchuongtrinh,loaikhuyenmai,thoigian_batdau,tonggiay_batdau,thoigian_ketthuc,tonggiay_ketthuc) VALUES ('$email','$tenchuongtrinh','$loaikhuyenmai','$thoigian_batdau','$tonggiay_batdau','$thoigian_ketthuc','$tonggiay_ketthuc')";
         $query=mysqli_query($conn,$sql);
         if ($query==false) $error='error:Đã có danh mục này';
         else header('location: ../chuong_trinh_khuyen_mai.php');

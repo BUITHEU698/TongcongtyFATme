@@ -123,6 +123,8 @@ if(empty($_SESSION['email'])){
         $error="Món ăn này đã tồn tại";
       } 
     }
+  }else if (isset($_POST['huy'])){
+    header("location: ../Quan_ly_san_pham/quan_ly_san_pham.php");
   }
 }
 ?>
@@ -151,19 +153,19 @@ if(empty($_SESSION['email'])){
             <div class="thong_tin">
                 <div class="san_pham_moi">
                     <h3>Tên món ăn (*)</h3>
-                    <input type="text" id="name"name="TENMONAN" placeholder="Nhập tên món ăn"required>
+                    <input type="text" id="name"name="TENMONAN" placeholder="Nhập tên món ăn">
                     <div class="error">
                         <a id="mon_an"></a>
                     </div>
                     <h3>Mô tả</h3>
-                    <textarea name="MOTA" id="describe" cols="30" rows="10" placeholder="Mô tả món ăn ..."required></textarea>
+                    <textarea name="MOTA" id="describe" cols="30" rows="10" placeholder="Mô tả món ăn ..."></textarea>
                 </div><br>
 
                 <div class="hinh_anh">
                     <h3>Ảnh món ăn (*)</h3>
                     <div class="add_img">
                         <!-- <i class="fas fa-images"></i><br> -->
-                        <input type="file"name="IMAGE" value="" id="img" required>
+                        <input type="file"name="IMAGE" value="" id="img" >
                     </div>
                     <div class="error">
                         <a id="img_error"></a>
@@ -176,7 +178,7 @@ if(empty($_SESSION['email'])){
                 <input type="radio" name="TRANGTHAI" value="0"><a>Ẩn</a><br>
                 <h3 style="display: inline;">Giá tiền (*)</h3>
                 <a style="color: red" id="idMoney"></a> <br>
-                <input type="number"name="GIA" id="money1" class="money" placeholder="Nhập giá tiền"required>
+                <input type="number"name="GIA" id="money1" class="money" placeholder="Nhập giá tiền">
                 <h3>Danh mục</h3>
                 <select name="TENDANHMUC" id="type">
                   <option value="">________Tên danh mục________</option>

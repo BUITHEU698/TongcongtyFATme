@@ -151,8 +151,8 @@
                                             <button class="more_button">
                                                 <i class="fas fa-ellipsis-h"></i>
                                             </button>
-                                            <div class="dropdown_content_more">
-                                                <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
+                                            <div class="dropdown_content_more"name="xoa">
+                                                <a href="xoa_mon_an.php?id=<?php echo $value['id_monan']; ?>"><i class="fas fa-trash-alt"></i>Xoá</a>
                                                 <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
                                             </div>
                                         </div>

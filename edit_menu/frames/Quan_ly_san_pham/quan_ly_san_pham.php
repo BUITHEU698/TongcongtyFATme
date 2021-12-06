@@ -6,9 +6,16 @@
         $email=$_SESSION['email'];
         $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'";
         $query=mysqli_query($conn,$sql);
-        if(isset($_POST['Them_mon'])){
-            header("location: ../Them_san_pham/them_san_pham.php");
-        }
+        // if(isset($_POST['Them_mon'])){
+        //     header("location: ../Them_san_pham/them_san_pham.php");
+        // }
+    // if(isset($_POST['xoa_all'])){
+    //     $del=$_POST['del'];
+        // var_dump($del);
+       
+
+
+    // }
     }
 ?>
 
@@ -54,7 +61,7 @@
         });
     </script>
 
-    <form action=""method="post"enctype="multipart/form-data>
+    <form action="xoa_nhieu.php"method="post"enctype="multipart/form-data>
         <div class="quan_ly_san_pham_container">
             <div class="header_container">
                 <ul>
@@ -62,7 +69,8 @@
                         <h3>Danh sách món ăn</h3>
                     </li>
                     <li class="btn_add">
-                        <button onclick="add()"name="Them_mon">Thêm món</button>
+                        <button onclick="add()">Thêm món</button>
+                        <!-- <a href="../Them_san_pham/them_san_pham.php"></a> -->
                     </li>
                 </ul>
             </div>
@@ -124,7 +132,7 @@
                             <?php foreach($query as $key=>$value)  { ?>
                                 <tr>
                                     <td>
-                                        <input type="checkbox" class="checkbox" />
+                                        <input type="checkbox" name="del[]" value="<?php echo $value['id_monan']?>" class="checkbox" />
                                     </td>
                                     <td>
                                         <img src="../../../img-uploads/<?php echo $value['IMAGE']?>" alt="lỗi">
@@ -169,7 +177,7 @@
         </div>
     </form>
 
-    <script src="./Quan_ly_san_pham_js/quan_ly_san_pham.js"></script>
+    <script src="Quan_ly_san_pham_js/quan_ly_san_pham.js"></script>
 
 </body>
 

@@ -87,6 +87,25 @@
 
 <?php
 include'../../../connect/connect.php';
+function formatMoney($number, $fractional=false) {  
+  if ($fractional) {  
+      $number = sprintf('%.2f', $number);  
+  }  
+  while (true) {  
+      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
+      if ($replaced != $number) {  
+          $number = $replaced;  
+      } else {  
+          break;  
+      }  
+  }  
+  return $number;  
+}
+
+
+
+
+
 if(empty($_SESSION['email'])){
   header("location: ../../../login/index.php");
 }else{
@@ -103,6 +122,7 @@ if(empty($_SESSION['email'])){
     }
     $TRANGTHAI=$_POST['TRANGTHAI'];
     $GIA=$_POST['GIA'];
+    // $GIA=formatMoney($GIA)." vnđ";
     $id_danhmuc=$_POST['TENDANHMUC'];
     if(empty($id_danhmuc)){
       $error='Bạn chọn danh mục';
@@ -114,7 +134,9 @@ if(empty($_SESSION['email'])){
       $error='Bạn chưa nhập tên món ăn';
     }
     if (empty($error)){
-      $sql="INSERT INTO monan(email_khachhang,TENMONAN,MOTA,id_danhmuc,GIA,TRANGTHAI,IMAGE) VALUES('$email','$TENMONAN','$MOTA','$id_danhmuc','$GIA','$TRANGTHAI','$file_name')";
+      $now=getdate();
+      $NGAYDANG=$now['mday'].'/'.$now['mon'].'/'.$now['year'].' '.$now['hours'].':'.$now['minutes'].':'.$now['seconds'];
+      $sql="INSERT INTO monan(email_khachhang,TENMONAN,MOTA,id_danhmuc,GIA,NGAYDANG,TRANGTHAI,IMAGE) VALUES('$email','$TENMONAN','$MOTA','$id_danhmuc','$GIA','$NGAYDANG','$TRANGTHAI','$file_name')";
       $query=mysqli_query($conn,$sql);
       if($query){
         header("location: ../Quan_ly_san_pham/quan_ly_san_pham.php");
@@ -178,7 +200,7 @@ if(empty($_SESSION['email'])){
                 <input type="radio" name="TRANGTHAI" value="0"><a>Ẩn</a><br>
                 <h3 style="display: inline;">Giá tiền (*)</h3>
                 <a style="color: red" id="idMoney"></a> <br>
-                <input type="number"name="GIA" id="money1" class="money" placeholder="Nhập giá tiền">
+                <input type="number" name="GIA" id="money1" class="money" placeholder="Nhập giá tiền">
                 <h3>Danh mục</h3>
                 <select name="TENDANHMUC" id="type">
                   <option value="">________Tên danh mục________</option>

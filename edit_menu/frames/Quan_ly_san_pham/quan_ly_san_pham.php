@@ -7,6 +7,40 @@
         $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'";
         $query=mysqli_query($conn,$sql);
     }
+    if(isset($_POST['xoa_all'])){
+        require_once("xoa_nhieu.php");
+        // header("location: xoa_nhieu.php");
+        
+    }
+    if (isset($_POST['timkiem'])){
+        $TK_tu_khoa=isset($_POST['TK_tu_khoa'])?$_POST['TK_tu_khoa']:'';
+        $TK_ten_danh_muc=isset($_POST['TK_ten_danh_muc'])?$_POST['TK_ten_danh_muc']:'';
+        $TK_gia_min=0;
+        $TK_gia_max=0;
+        if (isset($_POST['TK_gia'])){
+            $TK_gia=$_POST['TK_gia'];
+            if ($TK_gia==1){
+                $TK_gia_min=0;
+                $TK_gia_max=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_min=10000;
+                $TK_gia_max=100000;
+            }else {
+                $TK_gia_min=100000;
+                $TK_gia_max=100000000000;
+            }
+        }
+        if (isset($_POST['TK_ngay_dang'])){
+            $ngay=$_POST['TK_ngay_dang'];
+            $tach_ngay = explode("-", $ngay);
+            $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            
+        }else $TK_ngay_dang='';
+        $TK_trang_thai=isset($_POST['TK_trang_thai'])?$_POST['TK_trang_thai']:'';
+        $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc ='$TK_ten_danh_muc'AND monan.GIA BETWEEN '$TK_gia_min' AND '$TK_gia_max' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI LIKE '%$TK_trang_thai%'";
+        $query=mysqli_query($conn,$sql);
+    }
+    $timkiem=mysqli_query($conn,"SELECT *FROM danhmuc WHERE email_khachhang='$email'");
 ?>
 
 
@@ -80,7 +114,7 @@
         });
     </script>
 
-<form action="xoa_nhieu.php"method="post"enctype="multipart/form-data">
+<form action=""method="post"enctype="multipart/form-data">
     <div class="quan_ly_san_pham_container">
         <div class="header_container">
             <ul>
@@ -88,6 +122,7 @@
                     <h3>Danh sách món ăn</h3>
                 </li>
                 <li class="btn_add">
+                    
                     <a href="../../frames/Them_san_pham/them_san_pham.php" class="btn_a_them_mon">Thêm món</a>
                     <!-- <button onclick="add()">Thêm món</button> -->
                 </li>
@@ -104,37 +139,40 @@
             <div class="sap_xep">
                 <ul>
                     <li class="search">
-                        <input tyle="text" placeholder="Tên món ăn" />
+                        <input tyle="text" placeholder="Tên món ăn" name="TK_tu_khoa"/>
                     </li>
                     <li>
-                        <select name="" id="">
-                      <option value="" disabled selected>Danh mục</option>
-                      <option value="">Đồ ăn nhanh</option>
-                      <option value="">Lẩu</option>
-                  </select>
+                        <select name="TK_ten_danh_muc" id="">
+                            <option value="" disabled selected>Danh mục</option>
+                            <?php foreach($timkiem as $key => $value) {?>
+                                <option value="<?php echo $value['id_danhmuc'] ?>"><?php echo $value['TENDANHMUC'] ?></option>
+                            <?php  }?>
+                        </select>
                     </li>
                     <li>
-                        <select name="" id="">
-                      <option value="" disabled selected>Giá</option>
-                      <option value="">10000đ - 100000đ</option>
-                      <option value=""></option>
-                  </select>
+                        <select name="TK_gia" id="">
+                            <option value="" disabled selected>Giá</option>
+                            <option value="1">< 10,000 vnđ </option>
+                            <option value="2">10,000 - 100000 vnđ</option>
+                            <option value="3">> 100,000 vnđ</option>
+                        </select>
                     </li>
                     <li class="date_time">
-                        <input type="date" placeholder="Ngày đăng" />
+                        <input type="date"name="TK_ngay_dang" placeholder="Ngày đăng" />
                     </li>
                     <li class="status">
-                        <select name="" id="">
-                    <option value="" disabled selected>Trạng thái</option>
-                    <option value="">Hiện</option>
-                    <option value="">Ẩn</option>
-                  </select>
+                        <select name="TK_trang_thai" id="">
+                            <option value="" disabled selected>Trạng thái</option>
+                            <option value="1">Hiện</option>
+                            <option value="0">Ẩn</option>
+                        </select>
                     </li>
                     <li>
-                        <button>Tìm kiếm</button>
+                        <button name="timkiem">Tìm kiếm</button>
                     </li>
 
                 </ul>
+                
             </div>
             <div class="scroll_table">
                 <table>
@@ -152,9 +190,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($query as $key=>$value)  { ?>
+                        <?php 
+                        function formatMoney($number, $fractional=false){  
+                            if ($fractional) {  
+                                $number = sprintf('%.2f', $number);  
+                            }  
+                            while (true) {  
+                                $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
+                                if ($replaced != $number) {  
+                                    $number = $replaced;  
+                                } else {  
+                                    break;  
+                                }  
+                            }  
+                            return $number;  
+                        }
+                        
+                        foreach($query as $key=>$value)  { 
+                            
+                        ?>
                                     <tr>
-                                        
                                         <td>
                                             <input type="checkbox" name="del[]" value="<?php echo $value['id_monan']?>" class="checkbox" />
                                         </td>
@@ -171,7 +226,7 @@
                                             <?php echo $value['TENDANHMUC']?>
                                         </td>
                                         <td>
-                                            <?php echo $value['GIA']?>
+                                            <?php echo formatMoney($value['GIA'])." vnđ"?>
                                         </td>
                                         <td>
                                             <?php echo $value['NGAYDANG']?>
@@ -198,7 +253,7 @@
                     </table>
                 </div>
             <div class="btn">
-                <button>Xoá sản phẩm</button>
+                <button name="xoa_all">Xoá sản phẩm</button>
             </div>
         </div>
     </div>

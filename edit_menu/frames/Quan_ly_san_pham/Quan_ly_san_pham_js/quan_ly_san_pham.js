@@ -1,5 +1,5 @@
 function add() {
-    location.href = "../edit_menu/frames/Them_san_pham/them_san_pham.html";
+    location.href = "../../frames/Them_san_pham/them_san_pham.php";
 }
 // var d = new Date();
 // var month = d.getMonth() + 1;

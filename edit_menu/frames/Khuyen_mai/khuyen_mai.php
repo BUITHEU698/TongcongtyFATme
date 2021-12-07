@@ -131,7 +131,9 @@
                     </tbody>
                 </table>
             </div>
-            <button class="btn_del">Xoá mã khuyến mãi</button>
+            <form action="">
+                <button class="btn_del">Xoá mã khuyến mãi</button>
+            </form>
         </div>
     </div>
 </body>

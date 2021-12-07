@@ -70,7 +70,7 @@ if(empty($_SESSION['email'])){
         });
     </script>
     <!-- <img src="/edit_menu/frames/Danh_muc_mon_an/Them_danh_muc/them_danh_muc.html" alt=""> -->
-    <form action="xoa_nhieu.php"method="post">
+    <form action=""method="post">
         <div class="khuyen_mai_container">
             <div class="header">
                 <h3>Danh mục món ăn</h3>
@@ -123,7 +123,9 @@ if(empty($_SESSION['email'])){
                         <tbody>
                         <?php foreach($danhmucmonan as $key=>$value)  { ?>   
                         <tr>
-                            <td class="checked_btn"><input type="checkbox"class="checkbox" /></td>
+                            <td class="checked_btn">
+                                <input type="checkbox"name="del[]"value="<?php echo $value['id_danhmuc']?>" class="checkbox" />
+                            </td>
                             <td><?php echo$key+1 ?></td>
                             <td><?php echo $value['TENDANHMUC']   ?></td>
                             <?php if ($value['TRANGTHAI']==1){ ?>
@@ -148,7 +150,9 @@ if(empty($_SESSION['email'])){
                     </tbody>
                 </table>
             </div>
-            <button onclick="del()" class="btn_del">Xoá</button>
+            <form action="xoa_nhieu.php">
+                <button onclick="del()" class="btn_del">Xoá</button>
+            </form>
         </div>
     </form>
 </body>

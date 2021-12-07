@@ -6,9 +6,6 @@ if(empty($_SESSION['email'])){
     $email=$_SESSION['email'];
     $sql="SELECT *FROM danhmuc WHERE email_khachhang= '$email'";
     $danhmucmonan = mysqli_query($conn,$sql);
-    if(isset($_POST['them_danh_muc'])){
-        header("location: Them_danh_muc/them_danh_muc.php");
-    }
 }
 ?>
 
@@ -24,6 +21,27 @@ if(empty($_SESSION['email'])){
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
     <link rel="stylesheet" href="/Home_main_page/css/reset.css" />
+    <style>
+.header a {
+    float: right;
+    margin-right: 1rem;
+    margin-top: -3.5rem;
+    border: none;
+    background-color: var(--color-primary);
+    width: 15rem;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align:center;
+}
+
+.header a:hover {
+    background-color: var(--color-button-hover);
+}
+
+    </style>
+
+
 </head>
 
 <body>
@@ -52,11 +70,11 @@ if(empty($_SESSION['email'])){
         });
     </script>
     <!-- <img src="/edit_menu/frames/Danh_muc_mon_an/Them_danh_muc/them_danh_muc.html" alt=""> -->
-    <form action=""method="post">
+    <form action="xoa_nhieu.php"method="post">
         <div class="khuyen_mai_container">
             <div class="header">
                 <h3>Danh mục món ăn</h3>
-                <button onclick="add_danh_muc()"name="them_danh_muc">Thêm danh mục</button>
+                <a href="Them_danh_muc/them_danh_muc.php"name="them_danh_muc">Thêm danh mục</a>
             </div>
             <div class="sap_xep">
                 <ul>

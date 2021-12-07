@@ -1,20 +1,24 @@
-ul{
+ul {
     list-style-type: none;
-  }
-  *{
+}
+
+* {
     line-height: 35px;
     padding: 0;
     margin: 0;
-  }
-  html {
+}
+
+html {
     font-size: 62.5%;
-  }
-  body {
+}
+
+body {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.6rem;
     line-height: 1.4;
-  }
-  :root {
+}
+
+ :root {
     --color-primary: #ff5500;
     --color-secondary: #ffb300;
     --color-button-main: #ff5500;
@@ -22,23 +26,27 @@ ul{
     --color-button-edit: #ebebeb;
     --color-background: #f5f5f5;
 }
-.khuyen_mai_container{
+
+.khuyen_mai_container {
     width: 1180px;
     height: 700px;
 }
-.khuyen_mai_container h3{
+
+.khuyen_mai_container h3 {
     margin-top: 0.5rem;
     color: var(--color-primary);
     padding-left: 1rem;
 }
-.header{
+
+.header {
     background-color: white;
     width: 100%;
     height: 4.7rem;
     border-radius: 3px;
     border: 0.5px solid var(--color-button-edit)
 }
-.header button{
+
+.header button {
     float: right;
     margin-right: 1rem;
     margin-top: -3.5rem;
@@ -48,10 +56,12 @@ ul{
     color: white;
     border-radius: 5px;
 }
-.header button:hover{
+
+.header button:hover {
     background-color: var(--color-button-hover);
 }
-.sap_xep{
+
+.sap_xep {
     /* padding-top: 0.5rem; */
     background-color: white;
     margin-top: 1rem;
@@ -60,24 +70,28 @@ ul{
     border-radius: 3px;
     border: 0.5px solid var(--color-button-edit)
 }
-.sap_xep ul,li{
+
+.sap_xep ul,
+li {
     float: left;
     margin-left: 1rem;
     margin-top: 0.35rem;
     margin-right: 1rem;
 }
 
-.sap_xep select,input{
+.sap_xep select,
+input {
     margin-top: -1rem;
     margin-left: 1rem;
-    padding-left:5px;
+    padding-left: 5px;
 }
-.sap_xep select{
+
+.sap_xep select {
     width: 15rem;
     height: 3rem;
 }
 
-.btn_search{
+.btn_search {
     width: 10rem;
     height: 100%;
     border: none;
@@ -86,15 +100,18 @@ ul{
     border-radius: 5px;
     margin-left: 9rem;
 }
-.btn_search:hover{
+
+.btn_search:hover {
     background-color: var(--color-button-hover);
 }
-.time{
+
+.time {
     width: 14rem;
     height: 3rem;
     margin-bottom: 2rem;
 }
-.btn_del{
+
+.btn_del {
     border: none;
     background-color: var(--color-primary);
     color: white;
@@ -105,27 +122,33 @@ ul{
     height: 4rem;
     border-radius: 5px;
 }
-.more_button_col{
+
+.more_button_col {
     width: 15rem !important;
 }
-.more_button{
+
+.more_button {
     width: 3rem;
     height: 3rem;
     border: none;
     background-color: unset;
     font-size: 2rem;
 }
-.more_button i{
+
+.more_button i {
     color: grey;
 }
-.more_button i:hover{
+
+.more_button i:hover {
     color: var(--color-button-hover);
 }
+
 .dropdown_more_btn {
     position: relative;
     display: inline-block;
 }
-.dropdown_content{
+
+.dropdown_content {
     width: 90px !important;
     margin-left: -3rem;
     text-align: left;
@@ -140,20 +163,30 @@ ul{
     -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
     -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 10);
 }
-.dropdown_content i{
+
+.dropdown_content i {
     padding-right: 5px;
 }
+
 .dropdown_content a {
     color: black;
     text-decoration: none;
     margin-top: 1px;
     display: block;
 }
-.dropdown_content a:hover {color: var(--color-button-hover);}
 
-.dropdown_more_btn:hover .dropdown_content {display: block;}
+.dropdown_content a:hover {
+    color: var(--color-button-hover);
+}
 
-.dropdown_more_btn:hover .more_button {color:var(--color-button-hover);}
+.dropdown_more_btn:hover .dropdown_content {
+    display: block;
+}
+
+.dropdown_more_btn:hover .more_button {
+    color: var(--color-button-hover);
+}
+
 .scroll_table {
     margin-top: 2rem;
     margin-left: 2%;
@@ -164,36 +197,44 @@ ul{
     border-collapse: collapse;
     text-align: center;
 }
-.scroll_table table{
+
+.scroll_table table {
     width: 100%;
 }
+
+
 /* .scroll_table th,td{
     width: 100rem;
 } */
-.scroll_table thead th{
+
+.scroll_table thead th {
     position: sticky !important;
     top: 0 !important;
     background-color: gray;
     color: black;
 }
-.scroll_table input{
+
+.scroll_table input {
     width: 2rem;
     height: 2rem;
 }
-.scroll_table img{
+
+.scroll_table img {
     width: 10rem;
     height: 10rem;
 }
-.checked_btn{
+
+.checked_btn {
     width: 8rem;
     padding-top: 5px;
-    
 }
-.checked_btn input{
-    margin-left: -2rem ;
+
+.checked_btn input {
+    margin-left: -2rem;
 }
-.all{
+
+.all {
     margin-left: 1px !important;
-    width: 2.2rem ;
+    width: 2.2rem;
     height: 2.2rem;
 }

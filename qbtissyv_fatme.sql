@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 06, 2021 lúc 09:08 AM
+-- Thời gian đã tạo: Th12 08, 2021 lúc 09:45 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.0.13
 
@@ -58,7 +58,9 @@ CREATE TABLE `danhmuc` (
 --
 
 INSERT INTO `danhmuc` (`email_khachhang`, `id_danhmuc`, `TENDANHMUC`, `MOTA`, `TRANGTHAI`, `NGAYDANG`) VALUES
-('19522049@gm.uit.edu.vn', 86, 'phụng đẹp trai', 'phụng đẹp trai vc', 1, '6/12/2021 15:7:17');
+('19522049@gm.uit.edu.vn', 94, 'Thức ăn nhanh', 'Bao gồm các món như: Bánh tráng trộn, Nem nướng, Bánh tráng nướng,...', 1, '7/12/2021 23:48:6'),
+('19522049@gm.uit.edu.vn', 95, 'Lẩu', 'Bao gồm các món ăn chính', 1, '7/12/2021 23:48:34'),
+('19522049@gm.uit.edu.vn', 96, 'Thức uốn', 'Bao gồm các loại nước', 1, '7/12/2021 23:48:50');
 
 -- --------------------------------------------------------
 
@@ -92,16 +94,10 @@ CREATE TABLE `monan` (
   `MOTA` varchar(255) NOT NULL,
   `id_danhmuc` int(11) NOT NULL,
   `GIA` bigint(20) NOT NULL,
+  `NGAYDANG` varchar(255) NOT NULL,
   `TRANGTHAI` tinyint(4) NOT NULL,
   `IMAGE` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `monan`
---
-
-INSERT INTO `monan` (`email_khachhang`, `id_monan`, `TENMONAN`, `MOTA`, `id_danhmuc`, `GIA`, `TRANGTHAI`, `IMAGE`) VALUES
-('19522049@gm.uit.edu.vn', 22, 'phụng trùm', '123', 86, 123123, 1, 'R (1).jfif');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -150,7 +146,7 @@ ALTER TABLE `chuongtrinh_khuyenmai`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
@@ -162,7 +158,7 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT cho bảng `monan`
 --
 ALTER TABLE `monan`
-  MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

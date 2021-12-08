@@ -554,7 +554,7 @@
                         ?>
                                     <tr>
                                         <td> 
-                                            <input class="checkbox-con" type="checkbox" name="del[]" values="<?php echo $value['id_monan']?>"/>
+                                        <input type="checkbox" name="id_monan[]" value="<?php echo $value['id_monan']?>" class="checkbox-con" />
                                         </td>
                                         <td>
                                             <?php echo $key+1 ?>

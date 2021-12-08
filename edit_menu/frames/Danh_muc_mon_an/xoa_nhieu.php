@@ -1,5 +1,5 @@
 <?php
-    include'../../../connect/connect.php';
+echo "ahihi";
     $del=isset($_POST['del'])?$_POST['del']:'';
     if(empty($del)){
     header("location:danh_muc_mon_an.php");

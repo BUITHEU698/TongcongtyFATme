@@ -135,7 +135,15 @@ if(empty($_SESSION['email'])){
     }
     if (empty($error)){
       $now=getdate();
-      $NGAYDANG=$now['mday'].'/'.$now['mon'].'/'.$now['year'].' '.$now['hours'].':'.$now['minutes'].':'.$now['seconds'];
+      $ngay_nho=$now['mday'];
+      if($ngay_nho<10){
+        $ngay_nho='0'.$ngay_nho;
+      }
+      $thang_nho=$now['mon'];
+      if ($thang_nho<10){
+        $thang_nho='0'.$thang_nho;
+      }
+      $NGAYDANG=$ngay_nho.'/'.$thang_nho.'/'.$now['year'].' '.$now['hours'].':'.$now['minutes'].':'.$now['seconds'];
       $sql="INSERT INTO monan(email_khachhang,TENMONAN,MOTA,id_danhmuc,GIA,NGAYDANG,TRANGTHAI,IMAGE) VALUES('$email','$TENMONAN','$MOTA','$id_danhmuc','$GIA','$NGAYDANG','$TRANGTHAI','$file_name')";
       $query=mysqli_query($conn,$sql);
       if($query){

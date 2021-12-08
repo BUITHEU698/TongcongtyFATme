@@ -13,12 +13,24 @@
         
     }
     if (isset($_POST['timkiem'])){
-        if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_tu_khoa'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%';";
-        }else if (!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc';";
+        if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
         }else if (empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
             $TK_gia=$_POST['TK_gia'];
             $TK_gia_goc='100000000';
@@ -32,74 +44,6 @@
                 $TK_gia_goc=1000000;
             }
             $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.GIA < '$TK_gia_goc';";
-        }else if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
-        }else if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
-            $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $TK_gia=$_POST['TK_gia'];
-            $TK_gia_goc='100000000';
-            if ($TK_gia==1){
-                $TK_gia_goc=10000;
-            }else if ($TK_gia==2){
-                $TK_gia_goc=100000;
-            }else if($TK_gia==3) {
-                $TK_gia_goc=200000;
-            }else if($TK_gia==4) {
-                $TK_gia_goc=1000000;
-            }
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.GIA < '$TK_gia_goc';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $TK_gia=$_POST['TK_gia'];
-            $TK_gia_goc='100000000';
-            if ($TK_gia==1){
-                $TK_gia_goc=10000;
-            }else if ($TK_gia==2){
-                $TK_gia_goc=100000;
-            }else if($TK_gia==3) {
-                $TK_gia_goc=200000;
-            }else if($TK_gia==4) {
-                $TK_gia_goc=1000000;
-            }
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc';";
-        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
-        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_gia=$_POST['TK_gia'];
-            $TK_gia_goc='100000000';
-            if ($TK_gia==1){
-                $TK_gia_goc=10000;
-            }else if ($TK_gia==2){
-                $TK_gia_goc=100000;
-            }else if($TK_gia==3) {
-                $TK_gia_goc=200000;
-            }else if($TK_gia==4) {
-                $TK_gia_goc=1000000;
-            }
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.GIA < '$TK_gia_goc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
         }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
             $TK_gia=$_POST['TK_gia'];
             $TK_gia_goc='100000000';
@@ -114,12 +58,68 @@
             }
             $TK_trang_thai=$_POST['TK_trang_thai'];
             $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.GIA < '$TK_gia_goc'AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
+        }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.GIA < '$TK_gia_goc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
             $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc';";
+        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
             $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
             $TK_gia=$_POST['TK_gia'];
             $TK_gia_goc='100000000';
@@ -132,32 +132,7 @@
             }else if($TK_gia==4) {
                 $TK_gia_goc=1000000;
             }
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc' AND monan.GIA < '$TK_gia_goc';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
-            $TK_tu_khoa=$_POST['TK_tu_khoa'];
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc' AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
-            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
-            $TK_gia=$_POST['TK_gia'];
-            $TK_gia_goc='100000000';
-            if ($TK_gia==1){
-                $TK_gia_goc=10000;
-            }else if ($TK_gia==2){
-                $TK_gia_goc=100000;
-            }else if($TK_gia==3) {
-                $TK_gia_goc=200000;
-            }else if($TK_gia==4) {
-                $TK_gia_goc=1000000;
-            }
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc';";
         }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
             $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
             $TK_gia=$_POST['TK_gia'];
@@ -173,7 +148,8 @@
             }
             $TK_trang_thai=$_POST['TK_trang_thai'];
             $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
             $TK_gia=$_POST['TK_gia'];
             $TK_gia_goc='100000000';
             if ($TK_gia==1){
@@ -185,10 +161,153 @@
             }else if($TK_gia==4) {
                 $TK_gia_goc=1000000;
             }
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
             $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_tu_khoa'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.GIA < '$TK_gia_goc';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.GIA < '$TK_gia_goc'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.GIA < '$TK_gia_goc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_gia=$_POST['TK_gia'];
+            $TK_gia_goc='100000000';
+            if ($TK_gia==1){
+                $TK_gia_goc=10000;
+            }else if ($TK_gia==2){
+                $TK_gia_goc=100000;
+            }else if($TK_gia==3) {
+                $TK_gia_goc=200000;
+            }else if($TK_gia==4) {
+                $TK_gia_goc=1000000;
+            }
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.GIA < '$TK_gia_goc'AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            $sql="SELECT monan.IMAGE,monan.TENMONAN,danhmuc.TENDANHMUC,monan.GIA,monan.NGAYDANG,monan.TRANGTHAI,monan.id_monan FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc' AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
             $TK_tu_khoa=$_POST['TK_tu_khoa'];
             $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
             $TK_gia=$_POST['TK_gia'];
@@ -202,8 +321,7 @@
             }else if($TK_gia==4) {
                 $TK_gia_goc=1000000;
             }
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc';";
         }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
             $TK_tu_khoa=$_POST['TK_tu_khoa'];
             $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
@@ -219,8 +337,9 @@
                 $TK_gia_goc=1000000;
             }
             $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.TRANGTHAI = '$TK_trang_thai';";
-        }else if (empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc'AND monan.TRANGTHAI = '$TK_trang_thai';";
+        }else  if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
             $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
             $TK_gia=$_POST['TK_gia'];
             $TK_gia_goc='100000000';
@@ -233,9 +352,12 @@
             }else if($TK_gia==4) {
                 $TK_gia_goc=1000000;
             }
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
-            $TK_trang_thai=$_POST['TK_trang_thai'];
-            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%' AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%';";
         }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ten_danh_muc'])&&!empty($_POST['TK_gia'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
             $TK_tu_khoa=$_POST['TK_tu_khoa'];
             $TK_ten_danh_muc=$_POST['TK_ten_danh_muc'];
@@ -250,7 +372,11 @@
             }else if($TK_gia==4) {
                 $TK_gia_goc=1000000;
             }
-            $TK_ngay_dang=$_POST['TK_ngay_dang'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
             $TK_trang_thai=$_POST['TK_trang_thai'];
             $sql="SELECT * FROM danhmuc INNER JOIN monan ON danhmuc.id_danhmuc = monan.id_danhmuc WHERE monan.email_khachhang='$email'AND monan.TENMONAN LIKE '%$TK_tu_khoa%'AND monan.id_danhmuc = '$TK_ten_danh_muc'AND monan.GIA < '$TK_gia_goc' AND monan.NGAYDANG LIKE '%$TK_ngay_dang%'AND monan.TRANGTHAI = '$TK_trang_thai';";
         }
@@ -310,18 +436,18 @@
         $(document).ready(function() {
             $('#select_all').on('click', function() {
                 if (this.checked) {
-                    $('.checkbox').each(function() {
+                    $('.checkbox-con').each(function() {
                         this.checked = true;
                     });
                 } else {
-                    $('.checkbox').each(function() {
+                    $('.checkbox-con').each(function() {
                         this.checked = false;
                     });
                 }
             });
 
-            $('.checkbox').on('click', function() {
-                if ($('.checkbox:checked').length == $('.checkbox').length) {
+            $('.checkbox-con').on('click', function() {
+                if ($('.checkbox-con:checked').length == $('.checkbox-con').length) {
                     $('#select_all').prop('checked', true);
                 } else {
                     $('#select_all').prop('checked', false);
@@ -427,8 +553,8 @@
                             
                         ?>
                                     <tr>
-                                        <td>
-                                            <input type="checkbox" name="del[]" value="<?php echo $value['id_monan']?>" class="checkbox" />
+                                        <td> 
+                                            <input class="checkbox-con" type="checkbox" name="del[]" values="<?php echo $value['id_monan']?>"/>
                                         </td>
                                         <td>
                                             <?php echo $key+1 ?>

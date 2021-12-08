@@ -197,7 +197,7 @@ if(empty($_SESSION['email'])){
             <div class="trang_thai">
                 <h3>Trạng thái</h3>
                 <input type="radio" name="TRANGTHAI" value="1" checked><a>Hiện</a><br>
-                <input type="radio" name="TRANGTHAI" value="0"><a>Ẩn</a><br>
+                <input type="radio" name="TRANGTHAI" value="2"><a>Ẩn</a><br>
                 <h3 style="display: inline;">Giá tiền (*)</h3>
                 <a style="color: red" id="idMoney"></a> <br>
                 <input type="number" name="GIA" id="money1" class="money" placeholder="Nhập giá tiền">

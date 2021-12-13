@@ -12,13 +12,13 @@
 .auth {
   display: flex;
   gap: 0 13px;
-  margin-left: 100px;
+  margin-left: 40px;
 }
 .menu {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0 38px;
+  gap: 0 40px;
   list-style: none;
   &-link {
     color: inherit;
@@ -65,6 +65,9 @@
     display: flex;
     align-items: center;
     gap: 0 36px;
+  }
+  &-image img {
+    border-radius: 8px;
   }
 }
 .watch {

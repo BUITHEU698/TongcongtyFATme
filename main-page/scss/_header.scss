@@ -1,6 +1,15 @@
 .toggle {
   margin-left: auto;
   display: none;
+  &-close {
+    display: none;
+    margin: 15px 0;
+    img {
+      padding: 15px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
 }
 .navigation {
   padding: 30px 20px 40px;
@@ -110,7 +119,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 300px;
+    width: 320px;
     flex-direction: column;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -133,6 +142,9 @@
   }
   .toggle {
     display: block;
+    &-close {
+      display: block;
+    }
   }
 }
 @media screen and (max-width: 767px) {

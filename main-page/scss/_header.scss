@@ -3,12 +3,15 @@
   display: none;
   &-close {
     display: none;
-    margin: 15px 0;
+    margin: 30px 0 15px;
     img {
       padding: 15px;
       display: inline-block;
       cursor: pointer;
     }
+  }
+  &-check {
+    display: none;
   }
 }
 .navigation {
@@ -119,7 +122,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 320px;
+    width: 300px;
     flex-direction: column;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -127,9 +130,6 @@
     align-items: stretch;
     transition: all 0.2s linear;
     transform: translateX(100%);
-    &.is-show {
-      transform: translateX(0);
-    }
     &-link {
       padding: 15px;
     }
@@ -143,8 +143,26 @@
   .toggle {
     display: block;
     &-close {
-      display: block;
+      display: inline-block;
     }
+    &-check {
+      &:checked ~ .menu {
+        transform: translateX(0);
+      }
+      &:checked ~ .overlay {
+        display: block;
+      }
+    }
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 998;
   }
 }
 @media screen and (max-width: 767px) {

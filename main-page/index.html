@@ -14,12 +14,16 @@
     <title>FATMe</title>
   </head>
   <body>
+    <div class="totop">
+      <a href="#" class="goto-top"></a>
+    </div>
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
           <img class="header-logo" srcset="./images/logo.png 2x" />
+          <input type="checkbox" name="" id="toggle-check" class="toggle-check">
           <ul class="menu">
-            <span class="menu-item toggle-close"><img src="./images/menu-close.png" alt="Close"></span>
+            <div class="menu-item toggle-close"><label for="toggle-check"><img src="./images/menu-close.png" alt="Close"></label></div>
             <li class="menu-item"><a class="menu-link" href="#!">Trang chủ</a></li>
             <li class="menu-item"><a class="menu-link" href="#!">Món ăn</a></li>
             <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
@@ -27,20 +31,19 @@
             <li class="menu-item"><a class="menu-link" href="#!">Liên hệ</a></li>
             <li class="auth">
               <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
+              ><a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
             </li>
           </ul>
-          <div class="toggle"><img src="./images/menu.png" alt="Menu"></div>
+          <label for="toggle-check" class="toggle"><img src="./images/menu.png" alt="Menu"></label>
+          <label for="toggle-check" class="overlay"></label>
         </div>
         <div class="header-main container">
           <div class="header-content">
-            <span class="global-caption">Chúng tôi</span>
-            <h1 class="global-heading global-heading--huge header-heading">
+            <span class="global-caption show-on-scroll">Chúng tôi</span>
+            <h1 class="global-heading global-heading--huge header-heading show-on-scroll">
               Food At The Moment everytime
             </h1>
-            <p class="global-text header-desc">
+            <p class="global-text header-desc show-on-scroll">
               Chúng tôi là công ty cung cấp dịch vụ vận chuyển thức ăn chuyên nghiệp với nhiều
               thương hiệu nổi tiếng.
             </p>
@@ -52,7 +55,7 @@
               >
             </div>
           </div>
-          <div class="header-image"><img srcset="./images/img-header.png 2x" /></div>
+          <div class="header-image show-on-scroll"><img srcset="./images/img-header.png 2x" /></div>
         </div>
       </header>
       <main>
@@ -66,17 +69,17 @@
         <section class="service">
           <div class="container">
             <div class="service-header">
-              <span class="global-caption service-caption">CHÚNG TÔI LÀM GÌ</span>
-              <h2 class="global-heading global-heading--big service-heading">
+              <span class="global-caption service-caption show-on-scroll">CHÚNG TÔI LÀM GÌ</span>
+              <h2 class="global-heading global-heading--big service-heading show-on-scroll">
                 Liên kết các cửa hàng với bạn nhanh chóng
               </h2>
-              <p class="global-text service-desc">
+              <p class="global-text service-desc show-on-scroll">
                 Hướng đến việc tiện lợi khi ở nhà mà cũng có đồ ăn mọi lúc mọi nơi, chúng tôi sẽ là
                 người giúp các bạn thực hiện việc đó dễ dàng hơn.
               </p>
             </div>
             <div class="service-list">
-              <div class="service-item">
+              <div class="service-item show-on-scroll">
                 <div class="service-icon"><img src="./images/icon-food.png" /></div>
                 <h3 class="global-heading global-heading--normal service-title">
                   Thực phẩm đa dạng
@@ -85,7 +88,7 @@
                   Chúng tôi đảm bảo thức ăn luôn được tươi mới, thơm ngon.
                 </p>
               </div>
-              <div class="service-item">
+              <div class="service-item show-on-scroll">
                 <div class="service-icon"><img src="./images/icon-delivery.png" /></div>
                 <h3 class="global-heading global-heading--normal service-title">
                   Miễn phí vận chuyển
@@ -94,7 +97,7 @@
                   Miễn phí vận chuyển 1 đơn hàng đầu tiên trong ngày.
                 </p>
               </div>
-              <div class="service-item">
+              <div class="service-item show-on-scroll">
                 <div class="service-icon"><img src="./images/icon-restaurant.png" /></div>
                 <h3 class="global-heading global-heading--normal service-title">
                   Hơn 100 nghìn nhà hàng
@@ -111,11 +114,11 @@
             <div class="who-container">
               <div class="who-image"><img srcset="./images/img-who.png 2x" /></div>
               <div class="who-content">
-                <span class="global-caption">Ai muốn gì?</span>
-                <h2 class="global-heading global-heading--big">
+                <span class="global-caption show-on-scroll">Ai muốn gì?</span>
+                <h2 class="global-heading global-heading--big show-on-scroll">
                   Vươn tầm sánh bước cùng các bạn mọi nơi
                 </h2>
-                <p class="global-text">
+                <p class="global-text show-on-scroll">
                   Nunc venenalis Iorem sed risus trlstque sent per. Duls porta, rutruni tempus,
                   lectus risus imDerdiet tellus, sed faucibus sum ipsum ncn neque. Curubilu r
                   eleirend, erut ullamcorper porta. eras turpis.
@@ -128,19 +131,67 @@
         <section class="mission">
           <div class="container">
             <div class="mission-container">
-              <div class="mission-content">
-                <span class="global-caption">OUR MISSION &amp; GOAL</span>
-                <h2 class="global-heading global-heading--big">
+              <div class="mission-header">
+                <span class="global-caption mission-caption show-on-scroll">Chúng tôi tôi có gì?</span>
+                <h2 class="global-heading global-heading--big mission-heading show-on-scroll">
                   Realize Your Business Goals For Profit
                 </h2>
-                <p class="global-text">
+                <p class="global-text show-on-scroll">
                   Nunc venenalis Iorem sed risus trlstque sent per. Duls porta, rutruni tempus,
                   lectus risus imDerdiet tellus, sed faucibus sum ipsum ncn neque. Curubilu r
                   eleirend, erut ullamcorper porta. eras turpis.
                 </p>
-                <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
               </div>
-              <div class="mission-image"><img srcset="./images/img-mission.png 2x" /></div>
+              <!-- <div class="mission-list">
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-image">
+                    <img
+                      srcset="
+                        https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80
+                      "
+                    />
+                  </div>
+                  <div class="mission-content">
+                    <h3 class="mission-title">SEO tips and tricks for new</h3>
+                    <p class="mission-desc">
+                      Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a
+                      porititar ju-to ode id oros. Proin lloborti*
+                    </p>
+                  </div>
+                </div>
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-image">
+                    <img
+                      srcset="
+                        https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80
+                      "
+                    />
+                  </div>
+                  <div class="mission-content">
+                    <h3 class="mission-title">SEO tips and tricks for new</h3>
+                    <p class="mission-desc">
+                      Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a
+                      porititar ju-to ode id oros. Proin lloborti*
+                    </p>
+                  </div>
+                </div>
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-image">
+                    <img
+                      srcset="
+                        https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80
+                      "
+                    />
+                  </div>
+                  <div class="mission-content">
+                    <h3 class="mission-title">SEO tips and tricks for new</h3>
+                    <p class="mission-desc">
+                      Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a
+                      porititar ju-to ode id oros. Proin lloborti*
+                    </p>
+                  </div>
+                </div>
+              </div> -->
             </div>
           </div>
         </section>
@@ -150,7 +201,7 @@
               <div class="review-list">
                 <img class="review-bg" srcset="./images/review-bg.png 2x" />
                 <div>
-                  <div class="review-card">
+                  <div class="review-card show-on-scroll">
                     <div class="review-avatar"><img srcset="https://source.unsplash.com/random 2x" /></div>
                     <h3 class="review-name">Mark Parker</h3>
                     <span class="review-job">CEO of Fiverr</span>
@@ -163,7 +214,7 @@
                     </div>
                     <div class="review-quote"><img srcset="./images/icon-quote.png 2x" /></div>
                   </div>
-                  <div class="review-card">
+                  <div class="review-card show-on-scroll">
                     <div class="review-avatar"><img srcset="https://source.unsplash.com/random 2x" /></div>
                     <h3 class="review-name">Mark Parker</h3>
                     <span class="review-job">CEO of Fiverr</span>
@@ -178,7 +229,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="review-card">
+                  <div class="review-card show-on-scroll">
                     <div class="review-avatar"><img srcset="https://source.unsplash.com/random 2x" /></div>
                     <h3 class="review-name">Mark Parker</h3>
                     <span class="review-job">CEO of Fiverr</span>
@@ -194,15 +245,14 @@
                 </div>
               </div>
               <div class="review-content">
-                <span class="global-caption">TESTMONIALS</span>
-                <h2 class="global-heading global-heading--big">Clients Fedback</h2>
-                <p class="global-text">
-                  Why I say okl chap that is. sprffing aff his rut car blimey valmor gooxo blaka
-                  krcus up bobby shed a-50 William cock Richard. Bloke fanny around cheseci
+                <span class="global-caption show-on-scroll">Đã làm những gì</span>
+                <h2 class="global-heading global-heading--big show-on-scroll">Phản hồi tích cực</h2>
+                <p class="global-text show-on-scroll">
+                  Ok oke okk Ok oke okk Ok oke okk Ok oke okk Ok oke okk Ok oke okkOk oke okk Ok oke okk Ok oke okk
                 </p>
-                <div class="review-number">
+                <div class="review-number show-on-scroll">
                   <div class="review-check"><img srcset="./images/icon-check.png 2x" /></div>
-                  <span class="review-count">450+</span><span>Client"s Feedback</span>
+                  <span class="review-count">450+</span><span>Phản hồi từ khách hàng</span>
                 </div>
                 <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
               </div>
@@ -212,13 +262,13 @@
         <section class="blog">
           <div class="container">
             <div class="blog-header">
-              <h2 class="global-heading global-heading--big">Our Regular Updated Blog Posts</h2>
-              <p class="global-text">
+              <h2 class="global-heading global-heading--big show-on-scroll">Our Regular Updated Blog Posts</h2>
+              <p class="global-text show-on-scroll">
                 tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
               </p>
             </div>
             <div class="blog-list">
-              <div class="blog-item">
+              <div class="blog-item show-on-scroll">
                 <div class="blog-image">
                   <img
                     srcset="
@@ -234,7 +284,7 @@
                   </p>
                 </div>
               </div>
-              <div class="blog-item">
+              <div class="blog-item show-on-scroll">
                 <div class="blog-image">
                   <img
                     srcset="
@@ -250,7 +300,7 @@
                   </p>
                 </div>
               </div>
-              <div class="blog-item">
+              <div class="blog-item show-on-scroll">
                 <div class="blog-image">
                   <img
                     srcset="
@@ -273,8 +323,8 @@
           <div class="container subscribe-container">
             <div class="subscribe-main">
               <div class="subscribe-content">
-                <h2 class="global-haeding subscribe-heading">Sign up to Our Newsletter</h2>
-                <p class="global-text subscribe-desc">
+                <h2 class="global-haeding subscribe-heading show-on-scroll">Sign up to Our Newsletter</h2>
+                <p class="global-text subscribe-desc show-on-scroll">
                   You need to get positive results when you spend hard earned revenue and time.
                 </p>
               </div>

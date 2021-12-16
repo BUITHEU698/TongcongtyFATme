@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1;
@@ -45,6 +48,15 @@ body {
     }
   }
 }
+.show-on-scroll {
+  opacity: 0;
+  transform: translateY(50%);
+  &.is-visible {
+    transition: all .5s .25s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .global {
   &-caption {
     text-transform: uppercase;
@@ -78,6 +90,26 @@ body {
     color: $gray-blur;
   }
 }
+.goto-top {
+  border-radius: 100rem;
+  width: 50px;
+  height: 50px;
+  background: url(../images/gototop.svg) no-repeat center,linear-gradient(45deg, #f67102 5.1%, #f4a91e 86.29%);
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &.is-visible {
+    opacity: 1;
+  }
+
+}
 @media screen and (max-width: 767px) {
   .button {
     padding: 10px 20px;
@@ -95,11 +127,6 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
-  transition-property: opacity, visibility, top, right, bottom, left;
-  transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s;
-  transition-timing-function: ease, ease, ease, ease, ease, ease;
-  transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
@@ -110,6 +137,7 @@ body {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   background: #a7a7a7;
+  border: transparent 3px solid;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #6d6d6d;

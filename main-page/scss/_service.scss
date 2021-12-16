@@ -66,23 +66,7 @@
       scroll-padding: 20px;
       padding: 20px;
       grid-template-columns: unset;
-    }
-    &-list::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-    &-list::-webkit-scrollbar-track {
-      background-color: #fff;
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-    }
-    &-list::-webkit-scrollbar-thumb {
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-      background: #a7a7a7;
-    }
-    &-list::-webkit-scrollbar-thumb:hover {
-      background: #6d6d6d;
+      position: relative;
     }
     &-list > * {
       scroll-snap-align: start;

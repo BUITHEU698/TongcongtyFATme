@@ -149,6 +149,32 @@ body {
     font-size: 14px;
   }
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  transition-property: opacity, visibility, top, right, bottom, left;
+  transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s;
+  transition-timing-function: ease, ease, ease, ease, ease, ease;
+  transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #a7a7a7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d6d6d;
+}
+
 .toggle {
   margin-left: auto;
   display: none;
@@ -413,9 +439,10 @@ body {
     justify-content: flex-start;
     grid-auto-columns: 300px;
     grid-auto-flow: column;
-    grid-gap: 1.5rem;
+    grid-gap: 2rem;
     overflow: auto;
     overflow-y: hidden;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-snap-stop: always;
     -ms-touch-action: manipulation;
@@ -424,16 +451,23 @@ body {
     scroll-padding: 20px;
     padding: 20px;
     grid-template-columns: unset;
-    margin-left: -20px;
   }
   .service-list::-webkit-scrollbar {
-    width: 6px;
-    background-color: #F5F5F5;
+    width: 10px;
+    height: 10px;
+  }
+  .service-list::-webkit-scrollbar-track {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
   }
   .service-list::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #555;
+    background: #a7a7a7;
+  }
+  .service-list::-webkit-scrollbar-thumb:hover {
+    background: #6d6d6d;
   }
   .service-list > * {
     scroll-snap-align: start;
@@ -582,6 +616,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 100rem;
 }
 .review-name {
   color: #051441;
@@ -710,12 +745,24 @@ body {
     -webkit-overflow-scrolling: touch;
     scroll-padding: 20px;
     padding: 20px;
-    margin-left: -20px;
     grid-template-columns: unset;
   }
   .blog-list::-webkit-scrollbar {
-    display: none;
-    width: 0;
+    width: 10px;
+    height: 10px;
+  }
+  .blog-list::-webkit-scrollbar-track {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .blog-list::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #a7a7a7;
+  }
+  .blog-list::-webkit-scrollbar-thumb:hover {
+    background: #6d6d6d;
   }
   .blog-list > * {
     scroll-snap-align: start;
@@ -803,6 +850,106 @@ body {
   }
   .subscribe-form {
     max-width: 100%;
+  }
+}
+
+.footer {
+  background-color: #052347;
+  padding-bottom: 30px;
+  padding-top: 90px;
+  font-size: 14px;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  grid-gap: 0 126px;
+}
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.footer-desc {
+  margin-bottom: 20px;
+  color: #afaccd;
+  line-height: 1.5714285714;
+}
+.footer-heading {
+  margin-bottom: 20px;
+  color: #d9e1f0;
+  font-size: 18px;
+}
+.footer-links {
+  list-style-type: none;
+  color: #e7e7e7;
+}
+.footer-item {
+  margin-bottom: 10px;
+}
+.footer-link {
+  color: #afaccd;
+  line-height: 1.875;
+  position: relative;
+  transition: all 0.2s linear;
+  display: inline-block;
+}
+.footer-link:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  background-color: #ff7d00;
+  width: 0;
+  transition: all 0.2s linear;
+}
+.footer-link:hover {
+  color: #ff7d00;
+}
+.footer-link:hover:before {
+  width: 100%;
+}
+.footer-link-none {
+  color: #afaccd;
+  line-height: 1.875;
+}
+.footer .social {
+  display: flex;
+  align-items: center;
+}
+.footer .social img {
+  margin-right: 12px;
+  height: 30px;
+}
+.footer .copyright {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: #7f8ea1 solid 1px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer {
+    padding: 30px 0;
+  }
+  .footer-item {
+    display: block;
+  }
+  .footer-link {
+    display: inline-block;
+  }
+
+  .footer-container {
+    gap: 0 30px;
+  }
+
+  .copyright {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer-container {
+    grid-template-columns: 100%;
+    grid-gap: 30px 0;
   }
 }
 

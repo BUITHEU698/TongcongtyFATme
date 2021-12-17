@@ -647,11 +647,6 @@ iframe {
     padding-top: 50px;
 }
 
-.colorfullPanel {
-    color: #fff;
-    background-size: 40px 40px
-}
-
 .colorfullPanel h3 {
     margin-top: 40px;
     margin-bottom: 15px;
@@ -667,10 +662,16 @@ iframe {
 }
 
 .colorfullPanel h2 span {
-    font-size: 36px;
-    color: #85a900;
-    position: relative;
-}
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+    left: 0;
+    right: 0;
+    color: #000000;
+    position:absolute;}
+    
 
 .colorfullPanel p {
     margin-bottom: 40px;
@@ -678,7 +679,11 @@ iframe {
 }
 
 .colorfullPanel:hover {
-    background-color: rgba(112, 112, 112, 0.205);
+    border-color: #ddd;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    transform: scale(1.15);
+    transition: all ease-in-out 0.1s;
+   
 }
 
 
@@ -958,7 +963,6 @@ div#news-slider .owl-next {
 .navbar.active {
     background: #ffffff;
     border-radius: 0px;
-    padding-bottom: 10px;
     box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
 }
 

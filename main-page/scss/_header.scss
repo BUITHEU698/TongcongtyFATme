@@ -44,6 +44,7 @@
   align-items: center;
   gap: 0 40px;
   list-style: none;
+  margin-bottom: 0;
   &-link {
     color: inherit;
     position: relative;
@@ -90,24 +91,24 @@
     align-items: center;
     gap: 0 36px;
   }
-  &-image img {
-    border-radius: 8px;
+  &-image video {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
   }
 }
 .watch {
   &-video {
     display: flex;
     align-items: center;
-    gap: 0 36px;
+    gap: 0 20px;
     color: $gray-dark;
-    font-weight: 500;
+    box-shadow: 0px 17px 25px rgba(140, 141, 146, 0.12);
+    line-height: 20px;
+    scale: 1;
   }
   &-icon {
-    width: 59px;
-    height: 59px;
-    border-radius: 100rem;
     background-color: white;
-    box-shadow: 0px 17px 25px rgba(140, 141, 146, 0.12);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,6 +152,9 @@
       flex-direction: column;
       gap: 20px;
     }
+    &-desc {
+      margin-bottom: 30px;
+    }
   }
   .toggle {
     display: block;
@@ -183,7 +187,6 @@
       font-size: 35px;
     }
     &-actions {
-      flex-direction: column;
       gap: 30px;
     }
   }

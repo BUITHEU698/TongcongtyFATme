@@ -43,7 +43,7 @@ window.addEventListener("scroll", function () {
 });
 
 // slider
-$('.slider-responsive').slick({
+$(".slider-responsive").slick({
   arrows: true,
   infinite: true,
   slidesToShow: 3,
@@ -55,30 +55,70 @@ $('.slider-responsive').slick({
     {
       breakpoint: 1023,
       settings: {
-        slidesToShow: 2
-      }
+        slidesToShow: 2,
+      },
     },
     {
       breakpoint: 767,
       settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
+        slidesToShow: 1,
+      },
+    },
+  ],
 });
 
 var filtered = false;
 
-$('.js-filter').on('click', function(){
+$(".js-filter").on("click", function () {
   if (filtered === false) {
-    $('.filtering').slick('slickFilter',':even');
-    $(this).text('Unfilter Slides');
+    $(".filtering").slick("slickFilter", ":even");
+    $(this).text("Unfilter Slides");
     filtered = true;
   } else {
-    $('.filtering').slick('slickUnfilter');
-    $(this).text('Filter Slides');
+    $(".filtering").slick("slickUnfilter");
+    $(this).text("Filter Slides");
     filtered = false;
   }
 });
 
 // video play
+//lấy ra các giá trị chứa class btn-watch
+var video = document.querySelector(".video");
+var btnWatch = document.querySelector(".btn-watch");
+function togglePlayPause() {
+  if (video.paused) {
+    document.querySelector('.watch-icon').innerHTML = '<img srcset="./images/icon-pause.png 2x" />';
+    document.querySelector('.watch-icon1').innerHTML = '<img srcset="./images/icon-pause.png 2x" />';
+    video.play();
+  } else {
+    document.querySelector('.watch-icon').innerHTML = '<img srcset="./images/icon-play.png 2x" />';
+    document.querySelector('.watch-icon1').innerHTML = '<img srcset="./images/icon-play.png 2x" />';
+    video.pause();
+  }
+}
+btnWatch.onclick = function () {
+  togglePlayPause();
+};
+var btnWatch1 = document.querySelector(".btn-watch1");
+function togglePlayPause1() {
+  if (video.paused) {
+    document.querySelector('.watch-icon1').innerHTML = '<img srcset="./images/icon-pause.png 2x" />';
+    document.querySelector('.watch-icon').innerHTML = '<img srcset="./images/icon-pause.png 2x" />';
+    video.play();
+  } else {
+    document.querySelector('.watch-icon1').innerHTML = '<img srcset="./images/icon-play.png 2x" />';
+    document.querySelector('.watch-icon').innerHTML = '<img srcset="./images/icon-play.png 2x" />';
+    video.pause();
+  }
+}
+btnWatch1.onclick = function () {
+  togglePlayPause1();
+};
+
+// link-active
+$(document).ready(function () {
+  $(".menu .menu-link").click(function () {
+    $(".menu .menu-link").removeClass("link-active");
+    $(this).addClass("link-active");
+  });
+});

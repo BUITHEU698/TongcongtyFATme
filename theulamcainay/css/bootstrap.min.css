@@ -2504,7 +2504,7 @@
                                                     width: 41.66666667%
                                                 }
                                                 .col-md-4 {
-                                                    width: 195px;
+                                                    width: 125px;
                                                 }
                                                 .col-md-3 {
                                                     width: 25%
@@ -5025,7 +5025,7 @@
                                             
                                             .navbar {
                                                 position: relative;
-                                                min-height: 50px;
+                                                min-height: 100px;
                                                 margin-bottom: 20px;
                                                 border: 1px solid transparent
                                             }
@@ -5394,8 +5394,8 @@
                                             }
                                             
                                             .navbar-default {
-                                                background-color: #f8f8f8;
-                                                border-color: #e7e7e7
+                                                background-color: #ffffff;
+                                                border-color: #ffffff
                                             }
                                             
                                             .navbar-default .navbar-brand {

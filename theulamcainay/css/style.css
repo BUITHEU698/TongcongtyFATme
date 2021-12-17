@@ -10,9 +10,17 @@ body{
 a{
     text-decoration: none;
 }
-
+.other{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 15px;
+    font-weight: 600;
+    color:#fe7f02;
+    
+}
 .box{
-    width: 300px;
+    width: 227px;
     /* height: auto; */
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -25,7 +33,7 @@ a{
 }
 
 .slide-img{
-    height: 450px;
+    height: 130px;
     position: relative;
 }
 

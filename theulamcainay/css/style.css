@@ -132,9 +132,9 @@ a{
 }
 
 
-.card-title {
+.card-title > span{
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .product-card .card {
     margin: 10px;
@@ -163,10 +163,15 @@ margin-top: 30px;
 .product-card ul.card-action-buttons {
     margin: -18px 7px 0 0;
     text-align: right;
+    
 }
 .product-card ul.card-action-buttons li {
     display: inline-block;
-    padding-left: 7px;
+
+}
+.product-card ul.card-action-buttons li {
+    width: 35px;
+    height: 35px;
 }
 .product {
     width: 20%;
@@ -182,8 +187,9 @@ margin-top: 30px;
 
 
 
-
-
+.card-content{
+    padding:10px;
+}
 .box1{
    width: 250px;
 }
@@ -191,5 +197,7 @@ margin-top: 30px;
     background-color: #FF0000;
 }
 .imgfreeship{
-    width: 40%;
-    align-items: left;}
+    width: 25%;
+   
+}
+

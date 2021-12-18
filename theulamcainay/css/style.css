@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #eef8ff;
+     color: #635f85;
 }
 
 a{
@@ -70,10 +71,6 @@ a{
 }
 
 
-.type span{
-    color: rgba(26, 26, 26, 0.5);
-}
-
 .price{
     color: #ff0000;
     font-weight: 600;
@@ -133,8 +130,8 @@ a{
 
 
 .card-title > span{
-    font-weight: 500;
-    font-size: 1.5rem;
+    font-weight: 300;
+    font-size: 1rem;
 }
 .product-card .card {
     margin: 10px;
@@ -187,18 +184,10 @@ margin-top: 30px;
 
 
 
-.row{
-    padding:0px 5px;
-    margin-bottom: 0px;
-}
 .box1{
    width: 250px;
 }
 .card-image>a {
     background-color: #FF0000;
-}
-.imgfreeship{
-    width: 25%;
-   
 }
 

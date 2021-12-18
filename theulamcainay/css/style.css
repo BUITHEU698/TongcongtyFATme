@@ -187,8 +187,9 @@ margin-top: 30px;
 
 
 
-.card-content{
-    padding:10px;
+.row{
+    padding:0px 5px;
+    margin-bottom: 0px;
 }
 .box1{
    width: 250px;

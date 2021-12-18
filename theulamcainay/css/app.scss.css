@@ -376,6 +376,9 @@ body {
 .menu-link:hover:before {
   width: 100%;
 }
+.menu-link:focus {
+  text-decoration: none;
+}
 .menu .link-active {
   color: #ff7d00;
 }

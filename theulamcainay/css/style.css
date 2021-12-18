@@ -19,7 +19,8 @@ a{
     color:#000000;
 }
 .box{
-    width: 353px;
+    width: 265px;
+    
     /* height: auto; */
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -32,7 +33,7 @@ a{
 }
 
 .slide-img{
-    height: 200px;
+    height: 135px;
     position: relative;
 }
 

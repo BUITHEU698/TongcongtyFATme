@@ -1,7 +1,9 @@
 //scroll animation fade in
-var scroll = window.requestAnimationFrame || function (callback) {
-  window.setTimeout(callback, 1000 / 60);
-};
+var scroll =
+  window.requestAnimationFrame ||
+  function (callback) {
+    window.setTimeout(callback, 1000 / 60);
+  };
 var elementsToShow = document.querySelectorAll(".show-on-scroll");
 function loop() {
   elementsToShow.forEach(function (element) {
@@ -22,11 +24,9 @@ function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
   return (
     (rect.top <= 0 && rect.bottom >= 0) ||
-    (rect.bottom >=
-      (window.innerHeight || document.documentElement.clientHeight) &&
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
       rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
-    (rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+    (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
   );
 }
 // go to top button
@@ -41,3 +41,44 @@ window.addEventListener("scroll", function () {
     nav.classList.remove("navigation-fixed");
   }
 });
+
+// slider
+$('.slider-responsive').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  dots: true,
+  responsive: [
+    {
+      breakpoint: 1023,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+
+var filtered = false;
+
+$('.js-filter').on('click', function(){
+  if (filtered === false) {
+    $('.filtering').slick('slickFilter',':even');
+    $(this).text('Unfilter Slides');
+    filtered = true;
+  } else {
+    $('.filtering').slick('slickUnfilter');
+    $(this).text('Filter Slides');
+    filtered = false;
+  }
+});
+
+// video play

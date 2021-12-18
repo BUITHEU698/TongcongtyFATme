@@ -37,6 +37,7 @@ body {
     line-height: 1.5;
     background: linear-gradient(103.38deg, #f67102 5.1%, #f4a91e 86.29%);
     &:hover {
+      color: white;
       background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
     }
   }
@@ -44,6 +45,7 @@ body {
     color: $primary-color;
     border: 2px solid $gray-light;
     &:hover {
+      color: $primary-color;
       border: 2px solid $primary-color;
     }
   }

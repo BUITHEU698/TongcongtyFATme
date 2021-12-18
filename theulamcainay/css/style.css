@@ -135,6 +135,7 @@ a{
 }
 .product-card .card {
     margin: 17px;
+    border-radius: 8px;
     overflow: hidden;
 }
 .product-card .card .card-content {

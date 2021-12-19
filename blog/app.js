@@ -9,9 +9,10 @@ function loop() {
   elementsToShow.forEach(function (element) {
     if (isElementInViewport(element)) {
       element.classList.add("is-visible");
-    } else {
-      element.classList.remove("is-visible");
     }
+    // else {
+    //   element.classList.remove("is-visible");
+    // }
   });
   scroll(loop);
 }
@@ -48,8 +49,8 @@ $(".slider-responsive").slick({
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 2,
-  autoplay: false,
-  autoplaySpeed: 4000,
+  autoplay: true,
+  autoplaySpeed: 3500,
   dots: true,
   adaptiveHeight: true,
   responsive: [
@@ -74,12 +75,8 @@ $(".slider-responsive-2").slick({
   infinite: true,
   slidesToScroll: 1,
   dots: true,
-  adaptiveHeight: true
+  adaptiveHeight: true,
 });
-
-
-
-
 
 
 var filtered = false;

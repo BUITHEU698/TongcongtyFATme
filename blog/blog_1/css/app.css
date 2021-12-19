@@ -600,14 +600,13 @@ body {
   font-weight: 300;
 }
 .post-feature {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-gap: 0 60px;
   align-items: center;
-  margin-bottom: 40px;
 }
 .post-feature-media {
   margin-bottom: 0;
+}
+.post-feature-info {
+  padding: 20px 0;
 }
 .post-feature-image {
   border-radius: 10px;
@@ -739,16 +738,6 @@ body {
     max-width: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 .footer {
   background-color: #052347;
@@ -889,6 +878,17 @@ body {
   color: #ff7d00;
   font-size: 50px;
   opacity: 0.5;
+}
+@media screen and (max-width: 767px) {
+  .slick-prev,
+.slick-next {
+    width: 30px;
+    height: 30px;
+  }
+  .slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+  }
 }
 
 .slick-dots li button:before {

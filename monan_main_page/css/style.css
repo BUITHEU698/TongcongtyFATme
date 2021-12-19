@@ -70,7 +70,7 @@ a {
 }
 
 .price {
-  color: #ff0000;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
@@ -131,7 +131,7 @@ a {
   font-size: 1rem;
 }
 .product-card .card {
-  margin: 17px;
+  margin: 14px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -150,7 +150,7 @@ a {
   font-weight: 600;
   font-size: 0.85rem;
   line-height: 37px;
-  margin: 10px;
+  margin: 5px;
   position: absolute;
   top: 0;
   letter-spacing: 0;
@@ -178,7 +178,7 @@ a {
 }
 
 .box1 {
-  width: 250px;
+  width: 225px;
 }
 .card-image > a {
   background-color: #ff0000;

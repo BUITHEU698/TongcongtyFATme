@@ -54,7 +54,7 @@ $(document).ready(function() {
   });
   
   function click_box() {
-    location.href = "../../main-page/index.html";
+    location.href = "./monan1/index.html";
 }
     document.getElementById("a1").onclick = function(){
       click_box();

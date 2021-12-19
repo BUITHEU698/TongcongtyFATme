@@ -1,0 +1,378 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/images-main/logo-main.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+ 
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+    />
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/app.css" />
+    <title>FATMe - Blog</title>
+  </head>
+  <body>
+    <div class="totop">
+      <a
+        href="#"
+        class="goto-top"
+        style="
+          background: url(./images/images-main/gototop.svg) no-repeat center,
+            linear-gradient(45deg, #f67102 5.1%, #f4a91e 86.29%);
+        "
+      ></a>
+    </div>
+    <div class="wrapper">
+      <header class="header">
+        <div class="navigation">
+          <img class="header-logo" srcset="./images/images-main/logo.png 2x" />
+          <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
+          <ul class="menu">
+            <div class="menu-item toggle-close">
+              <label for="toggle-check"
+                ><img src="./images/images-main/menu-close.png" alt="Close"
+              /></label>
+            </div>
+            <li class="menu-item"><a class="menu-link" href="../main-page/index.html">Trang chủ</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../monan_main_page/">Món ăn</a>
+            </li>
+            <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
+            <li class="menu-item"><a class="menu-link" href="./index.html">Liên hệ</a></li>
+            <li class="auth">
+              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
+              ><a class="button button--primary auth-signup" href="../register/index.php"
+                >Đăng ký</a
+              >
+            </li>
+          </ul>
+          <label for="toggle-check" class="toggle"
+            ><img src="./images/images-main/menu.png" alt="Menu"
+          /></label>
+          <label for="toggle-check" class="overlay"></label>
+        </div>
+    
+
+
+
+      </header>
+      <section class=" ">
+        <div class="container">
+          <h1 class="mb-4">Cài Đặt</h1>
+          <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+            <div class="profile-tab-nav border-right">
+              <div class="p-4">
+                <div class="img-circle text-center mb-3" >
+                  <img style="max-width: max-content; margin: 0 auto;"  src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow">
+                </div>
+                <h4 class="text-center">FATMe</h4>
+              </div>
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+                  <i class="fa fa-home text-center mr-1"></i> 
+                  Hồ sơ
+                </a>
+                <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+                  <i class="fa fa-key text-center mr-1"></i> 
+                  Mật khẩu
+                </a>
+             
+               
+                <a class="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
+                  <i class="fa fa-bell text-center mr-1"></i> 
+                  Thông Báo
+                </a>
+              </div>
+            </div>
+            <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                <h3 class="mb-4">Account Settings</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" value="Kiran">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" value="Acharya">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" value="kiranacharya287@gmail.com">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Phone number</label>
+                        <input type="text" class="form-control" value="+91 9876543215">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" class="form-control" value="Kiran Workspace">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Designation</label>
+                        <input type="text" class="form-control" value="UI Developer">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Bio</label>
+                      <textarea class="form-control" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vero enim error similique quia numquam ullam corporis officia odio repellendus aperiam consequatur laudantium porro voluptatibus, itaque laboriosam veritatis voluptatum distinctio!</textarea>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                <h3 class="mb-4">Password Settings</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Old password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>New password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Confirm new password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                <h3 class="mb-4">Security Settings</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Login</label>
+                        <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Two-factor auth</label>
+                        <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="recovery">
+                        <label class="form-check-label" for="recovery">
+                        Recovery
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
+                <h3 class="mb-4">Application Settings</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="app-check">
+                        <label class="form-check-label" for="app-check">
+                        App check
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+                        <label class="form-check-label" for="defaultCheck2">
+                        Lorem ipsum dolor sit.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+                <h3 class="mb-4">Notification Settings</h3>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="notification1">
+                    <label class="form-check-label" for="notification1">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium accusamus, neque cupiditate quis
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="notification2" >
+                    <label class="form-check-label" for="notification2">
+                      hic nesciunt repellat perferendis voluptatum totam porro eligendi.
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="notification3" >
+                    <label class="form-check-label" for="notification3">
+                      commodi fugiat molestiae tempora corporis. Sed dignissimos suscipit
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer my-5 " >
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-column">
+            <a href="index.html" class="footer-logo">
+              <img srcset="./images/images-main/logo.png 2x" alt="" />
+            </a>
+            <p class="footer-desc text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, qui error,
+              aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
+              repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
+            </p>
+            <div class="social">
+              <a href="#" class="social-item">
+                <img srcset="./images/images-main/facebook.png 2x" alt="" />
+              </a>
+              <a href="#" class="social-item">
+                <img srcset="./images/images-main/twitter.png 2x" alt="" />
+              </a>
+              <a href="#" class="social-item">
+                <img srcset="./images/images-main/instagram.png 2x" alt="" />
+              </a>
+              <a href="#" class="social-item">
+                <img srcset="./images/images-main/apple.png 2x" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Dịch vụ</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Hỗ trợ</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Liên hệ</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="mailto:congtyfatme@gmail.com" class="footer-link-none"
+                  >congtyfatme@gmail.com</a
+                >
+              </li>
+              <li class="footer-item">
+                <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
+              </li>
+              <li class="footer-item">
+                <span href="#" class="footer-link-none"
+                  >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">All Right Reserved by Us! Copyright FATMe 2021</div>
+      </div>
+    </footer>
+    <!-- script link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- script -->
+    <script src="./app.js"></script>
+  </body>
+</html>

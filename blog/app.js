@@ -83,42 +83,6 @@ $(".js-filter").on("click", function () {
   }
 });
 
-// video play
-//lấy ra các giá trị chứa class btn-watch
-var video = document.querySelector(".video");
-var btnWatch = document.querySelector(".btn-watch");
-function togglePlayPause() {
-  if (video.paused) {
-    document.querySelector(".watch-icon").innerHTML = '<img srcset="./images/icon-pause.png 2x" />';
-    document.querySelector(".watch-icon1").innerHTML =
-      '<img srcset="./images/icon-pause.png 2x" />';
-    video.play();
-  } else {
-    document.querySelector(".watch-icon").innerHTML = '<img srcset="./images/icon-play.png 2x" />';
-    document.querySelector(".watch-icon1").innerHTML = '<img srcset="./images/icon-play.png 2x" />';
-    video.pause();
-  }
-}
-btnWatch.onclick = function () {
-  togglePlayPause();
-};
-var btnWatch1 = document.querySelector(".btn-watch1");
-function togglePlayPause1() {
-  if (video.paused) {
-    document.querySelector(".watch-icon1").innerHTML =
-      '<img srcset="./images/icon-pause.png 2x" />';
-    document.querySelector(".watch-icon").innerHTML = '<img srcset="./images/icon-pause.png 2x" />';
-    video.play();
-  } else {
-    document.querySelector(".watch-icon1").innerHTML = '<img srcset="./images/icon-play.png 2x" />';
-    document.querySelector(".watch-icon").innerHTML = '<img srcset="./images/icon-play.png 2x" />';
-    video.pause();
-  }
-}
-btnWatch1.onclick = function () {
-  togglePlayPause1();
-};
-
 // link-active
 $(document).ready(function () {
   $(".menu .menu-link").click(function () {

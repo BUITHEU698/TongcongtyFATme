@@ -47,24 +47,35 @@ $(".slider-responsive").slick({
   arrows: true,
   infinite: true,
   slidesToShow: 3,
-  slidesToScroll: 1,
+  slidesToScroll: 2,
   autoplay: true,
   autoplaySpeed: 4000,
   dots: true,
+  fade: true,
+  swipeToSlide: true,
   responsive: [
     {
       breakpoint: 1023,
       settings: {
         slidesToShow: 2,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 767,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
   ],
+});
+$('.one-time').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  adaptiveHeight: true
 });
 
 var filtered = false;

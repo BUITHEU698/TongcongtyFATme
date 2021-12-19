@@ -4,9 +4,14 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run sass",
+      "label": "Run sass main page",
       "type": "shell",
       "command": "sass ./main-page/scss/app.scss ./main-page/css/app.css --watch",
+    },
+    {
+      "label": "Run sass blog",
+      "type": "shell",
+      "command": "sass ./blog/scss/app.scss ./blog/css/app.css --watch",
     }
   ]
 }

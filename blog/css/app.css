@@ -471,7 +471,7 @@ body {
   box-shadow: 0px 46px 100px -31px rgba(0, 0, 0, 0.1);
 }
 .blog-item:hover .blog-title,
-.blog-item:hover .blog-more {
+.blog-item:hover .blog-more a {
   color: #f4a11a;
 }
 .blog-content {
@@ -502,11 +502,12 @@ body {
 .blog-more {
   font-weight: 600;
   font-size: 18px;
-  line-height: 27px;
-  color: #051441;
-  margin-bottom: 9px;
   transition: all 0.2s linear;
-  text-align: right;
+  display: flex;
+  justify-content: end;
+}
+.blog-more a {
+  color: #7f8ea1;
 }
 .blog .global-heading {
   max-width: 454px;
@@ -600,9 +601,6 @@ body {
   font-weight: 300;
 }
 .post-feature {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-gap: 0 60px;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -627,6 +625,9 @@ body {
   width: 100%;
   max-width: 100%;
   word-break: break-word;
+}
+.post-feature-title:hover {
+  color: #ff7d00;
 }
 .post-feature-list {
   align-items: center;
@@ -881,9 +882,6 @@ body {
   opacity: 0.5;
 }
 
-.slick-dots {
-  bottom: -15px;
-}
 .slick-dots li button:before {
   font-size: 10px;
   opacity: 0.15;

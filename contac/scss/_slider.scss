@@ -34,9 +34,15 @@
     font-size: 50px;
     opacity: 0.5;
   }
+  @media screen and (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+    &:before {
+      font-size: 30px;
+    }
+  }
 }
 .slick-dots {
-  bottom: -15px;
   li {
     button:before {
       font-size: 10px;

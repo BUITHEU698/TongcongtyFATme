@@ -51,6 +51,7 @@ $(".slider-responsive").slick({
   autoplay: false,
   autoplaySpeed: 4000,
   dots: true,
+  adaptiveHeight: true,
   responsive: [
     {
       breakpoint: 1023,
@@ -71,11 +72,9 @@ $(".slider-responsive").slick({
 $(".slider-responsive-2").slick({
   arrows: true,
   infinite: true,
-  slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: false,
-  autoplaySpeed: 4000,
   dots: true,
+  adaptiveHeight: true
 });
 
 

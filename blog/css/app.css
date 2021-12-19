@@ -602,7 +602,9 @@ body {
 }
 .post-feature {
   align-items: center;
-  margin-bottom: 40px;
+}
+.post-feature-info {
+  padding: 20px 0;
 }
 .post-feature-media {
   margin-bottom: 0;
@@ -631,6 +633,7 @@ body {
 }
 .post-feature-list {
   align-items: center;
+  margin-bottom: 50px !important;
 }
 @media screen and (max-width: 1023px) {
   .post-list {
@@ -880,6 +883,17 @@ body {
   color: #ff7d00;
   font-size: 50px;
   opacity: 0.5;
+}
+@media screen and (max-width: 767px) {
+  .slick-prev,
+.slick-next {
+    width: 30px;
+    height: 30px;
+  }
+  .slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+  }
 }
 
 .slick-dots li button:before {

@@ -891,9 +891,6 @@ body {
   opacity: 0.5;
 }
 
-.slick-dots {
-  bottom: -15px;
-}
 .slick-dots li button:before {
   font-size: 10px;
   opacity: 0.15;

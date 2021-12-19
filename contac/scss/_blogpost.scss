@@ -89,6 +89,9 @@
     &-media {
       margin-bottom: 0;
     }
+    &-info {
+      padding: 20px 0;
+    }
     &-image {
       border-radius: 10px;
       object-fit: cover;
@@ -110,6 +113,7 @@
     }
     &-list {
       align-items: center;
+      margin-bottom: 50px;
     }
   }
   @media screen and (max-width: 1023px) {

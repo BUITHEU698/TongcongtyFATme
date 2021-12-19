@@ -48,7 +48,7 @@ $(".slider-responsive").slick({
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 2,
-  autoplay: true,
+  autoplay: false,
   autoplaySpeed: 4000,
   dots: true,
   responsive: [
@@ -68,6 +68,20 @@ $(".slider-responsive").slick({
     },
   ],
 });
+$(".slider-responsive-2").slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 4000,
+  dots: true,
+});
+
+
+
+
+
 
 var filtered = false;
 

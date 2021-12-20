@@ -676,7 +676,6 @@ body {
   .post-feature-content {
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
-    grid-gap: 20px 0;
   }
 }
 

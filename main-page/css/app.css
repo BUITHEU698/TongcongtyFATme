@@ -638,7 +638,7 @@ body {
 }
 .mission-item:hover {
   background: #ffffff;
-  box-shadow: 0px 46px 100px -31px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .mission-item:hover .blog-title {
   color: #f4a11a;
@@ -835,7 +835,7 @@ body {
 }
 .blog-item:hover {
   background: #ffffff;
-  box-shadow: 0px 46px 100px -31px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .blog-item:hover .blog-title {
   color: #f4a11a;

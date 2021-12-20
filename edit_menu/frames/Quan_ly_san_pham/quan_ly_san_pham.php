@@ -8,9 +8,7 @@
         $query=mysqli_query($conn,$sql);
     }
     if(isset($_POST['xoa_all'])){
-        require_once("xoa_nhieu.php");
-        // header("location: xoa_nhieu.php");
-        
+        require_once("xoa_nhieu.php");        
     }
     if (isset($_POST['timkiem'])){
         if (empty($_POST['TK_ten_danh_muc'])&&empty($_POST['TK_gia'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])&&empty($_POST['TK_tu_khoa'])){
@@ -586,7 +584,7 @@
                                                 </button>
                                                 <div class="dropdown_content_more"name="xoa">
                                                     <a href="xoa_mon_an.php?id=<?php echo $value['id_monan']; ?>"><i class="fas fa-trash-alt"></i>Xoá</a>
-                                                    <a href="/edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.html"><i class="fas fa-info"></i>Thông tin</a>
+                                                    <a href="../../../edit_menu/frames/Thong_tin_san_pham/thong_tin_san_pham.php?id=<?php echo $value['id_monan']; ?>"><i class="fas fa-info"></i>Sửa</a>
                                                 </div>
                                             </div>
                                         </td>

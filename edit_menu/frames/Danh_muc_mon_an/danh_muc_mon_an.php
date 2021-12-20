@@ -6,6 +6,55 @@ if(empty($_SESSION['email'])){
     $email=$_SESSION['email'];
     $sql="SELECT *FROM danhmuc WHERE email_khachhang= '$email'";
     $danhmucmonan = mysqli_query($conn,$sql);
+    if (isset($_POST['xoa_all'])){
+        require_once("xoa_nhieu.php");
+    }
+    if (isset($_POST['timkiem'])){
+        if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND TENDANHMUC LIKE '%$TK_tu_khoa%';";
+        }else if(empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND NGAYDANG LIKE '%$TK_ngay_dang%'AND TRANGTHAI = '$TK_trang_thai';";
+        }else if(empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND TRANGTHAI = '$TK_trang_thai';";
+        }else if(empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ngay_dang'])&&empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            if (isset($_POST['TK_ngay_dang'])){
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND TENDANHMUC LIKE '%$TK_tu_khoa%'AND NGAYDANG LIKE '%$TK_ngay_dang%';";
+        }else if (!empty($_POST['TK_tu_khoa'])&&empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            $TK_tu_khoa=$_POST['TK_tu_khoa'];
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND TENDANHMUC LIKE '%$TK_tu_khoa%' AND TRANGTHAI = '$TK_trang_thai';";
+        }else if(!empty($_POST['TK_tu_khoa'])&&!empty($_POST['TK_ngay_dang'])&&!empty($_POST['TK_trang_thai'])){
+            if (isset($_POST['TK_ngay_dang'])){
+                $TK_tu_khoa=$_POST['TK_tu_khoa'];
+                $ngay=$_POST['TK_ngay_dang'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ngay_dang=$tach_ngay[2].'/'.$tach_ngay[1].'/'.$tach_ngay[0]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $sql="SELECT * FROM danhmuc WHERE email_khachhang='$email' AND NGAYDANG LIKE '%$TK_ngay_dang%'AND TRANGTHAI = '$TK_trang_thai'AND TENDANHMUC LIKE '%$TK_tu_khoa%';";
+        }
+        $danhmucmonan = mysqli_query($conn,$sql);
+    }
 }
 ?>
 
@@ -79,6 +128,10 @@ if(empty($_SESSION['email'])){
             <div class="sap_xep">
                 <ul>
                     <li>
+                        <a>Tên Danh Mục</a>
+                        <input class="time" name="TK_tu_khoa" type="text" placeholder="Nhập tên danh mục" />
+                    </li>
+                    <!-- <li>
                         <select name="" id="">
                             <option value="" disabled selected>Loại danh mục</option>
                             <option value="">Sinh nhật</option>
@@ -86,26 +139,20 @@ if(empty($_SESSION['email'])){
                             <option value="">Đám cưới</option>
                             <option value="">Tiệc tại gia</option>
                         </select>
-                    </li>
+                    </li> -->
                     <li>
-                        <select name="" id="">
+                        <select name="TK_trang_thai" id="">
                             <option value="" disabled selected>Trạng thái</option>
-                            <option value="">Hiện</option>
-                            <option value="">Ẩn</option>
-                            <option value="">Chưa áp dụng</option>
-                            <option value="">Ngưng áp dụng</option>
+                            <option value="1">Hiện</option>
+                            <option value="2">Ẩn</option>
                         </select>
                     </li>
                     <li>
-                        <a>Số lượng món ăn</a>
-                        <input class="time" type="number" placeholder="Nhập số lượng" />
-                    </li>
-                    <li>
                         <a>Ngày bắt đầu</a>
-                        <input class="time" type="date" />
+                        <input class="time" name="TK_ngay_dang"type="date" />
                     </li>
                     <li>
-                        <button class="btn_search">Tìm kiếm</button>
+                        <button class="btn_search"name="timkiem">Tìm kiếm</button>
                     </li>
                 </ul>
                 <div class="scroll_table">
@@ -141,7 +188,7 @@ if(empty($_SESSION['email'])){
                                     </button>
                                     <div class="dropdown_content">
                                         <a href="xoa_danh_muc.php?id=<?php echo $value['id_danhmuc']; ?>"><i class="fas fa-trash-alt"></i>Xoá</a>
-                                        <a href="./thong_tin_danh_muc/thong_tin_danh_muc.html"><i class="fas fa-info"></i>Chi tiết</a>
+                                        <a href="./thong_tin_danh_muc/thong_tin_danh_muc.php?id=<?php echo $value['id_danhmuc']; ?>"><i class="fas fa-info"></i>Sửa</a>
                                     </div>
                                 </div>
                             </td>
@@ -150,9 +197,7 @@ if(empty($_SESSION['email'])){
                     </tbody>
                 </table>
             </div>
-            <form action="xoa_nhieu.php">
-                <button onclick="del()" class="btn_del">Xoá</button>
-            </form>
+            <button name="xoa_all"class="btn_del">Xoá tất cả</button>
         </div>
     </form>
 </body>

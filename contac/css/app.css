@@ -836,70 +836,13 @@ body {
     margin-top: 30px;
   }
 }
-@media screen and (max-width: 767px) {
-  .footer-container {
-    grid-template-columns: 100%;
-    grid-gap: 30px 0;
-  }
-}
-.slick-slide {
-  height: fit-content;
-}
-
-.slick-initialized .slick-slide {
-  margin: 0 20px;
-}
-
-.slick-prev {
-  top: 40%;
-  transform: translateY(-50%);
-  left: -60px;
-}
-.slick-next {
-  top: 40%;
-  transform: translateY(-50%);
-  right: -60px;
-}
-@media screen and (max-width: 1279px) {
-  .slick-prev {
-    left: -10px;
-  }
-  .slick-next {
-    right: -10px;
-  }
-}
-
-.slick-prev,
-.slick-next {
-  width: 50px;
-  height: 50px;
-  z-index: 10;
-}
-.slick-prev:before,
-.slick-next:before {
-  color: #ff7d00;
-  font-size: 50px;
-  opacity: 0.5;
-}
-
-.slick-dots li button:before {
-  font-size: 10px;
-  opacity: 0.15;
-}
-.slick-dots li.slick-active button:before {
-  opacity: 0.7;
-  color: #ff7d00;
-}
-
-/*# sourceMappingURL=app.css.map */
-/* css phần nội dung */
 
 body {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.8;
   font-weight: normal;
-  background: #fafafa;
+  background: #ffffff;
   color: #666666;
 }
 
@@ -962,7 +905,7 @@ h5,
 
 .form-control {
   height: 36px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
   border-radius: 2px;

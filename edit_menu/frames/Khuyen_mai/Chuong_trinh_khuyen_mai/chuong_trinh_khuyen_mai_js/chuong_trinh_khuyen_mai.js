@@ -1,5 +1,5 @@
 function khuyen_mai(){
-    location.href="./them_CT_khuyen_mai/them_CTKM.html";
+    // location.href="./them_CT_khuyen_mai/them_CTKM.php";
 }
 // $(document).ready(function() {
 //     $('#select_all').on('click', function() {

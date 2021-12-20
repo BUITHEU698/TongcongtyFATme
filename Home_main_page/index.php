@@ -13,7 +13,8 @@ if(empty($_SESSION['email'])){
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Quản Lý bán hàng</title>
+        <link rel="shortcut icon" href="../monan_main_page/img/logo/logo-main.png" type="image/x-icon" />
         <link rel="stylesheet" href="./css/reset.css" />
         <link rel="stylesheet" href="../edit_menu/css/edit_menu.css">
         <link rel="stylesheet" href="./css/Home_page.css" />

@@ -63,7 +63,7 @@
                     <div class="right">
                         <label for="">Trạng thái</label><br>
                         <input type="radio" name="TRANGTHAI" checked="checked" value="1">Hiện
-                        <input type="radio" name="TRANGTHAI" value="0">Ẩn
+                        <input type="radio" name="TRANGTHAI" value="2">Ẩn
                         <!-- <select name="" id="">
                             <option value="">Đang áp dụng</option>
                             <option value="">Sắp xảy ra</option>

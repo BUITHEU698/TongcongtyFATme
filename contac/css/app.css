@@ -468,7 +468,7 @@ body {
 }
 .blog-item:hover {
   background: #ffffff;
-  box-shadow: 0px 46px 100px -31px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .blog-item:hover .blog-title,
 .blog-item:hover .blog-more {
@@ -954,30 +954,39 @@ textarea.form-control {
 
 .dbox {
   width: 100%;
-  margin-bottom: 25px; }
-  @media (max-width: 767.98px) {
-    .dbox {
-      margin-bottom: 25px !important;
-      padding: 0 20px; } }
-  .dbox p {
-    margin-bottom: 0; }
-    .dbox p span {
-      font-weight: 500;
-      color: #000; }
-    .dbox p a {
-      color: #ff7d00; }
-  .dbox .icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #ff7d00;
-    margin: 0 auto;
-    margin-bottom: 20px; }
-    .dbox .icon span {
-      font-size: 20px;
-      color: #fff; }
-  .dbox .text {
-    width: 100%; }
+  margin-bottom: 25px;
+}
+@media (max-width: 767.98px) {
+  .dbox {
+    margin-bottom: 25px !important;
+    padding: 0 20px;
+  }
+}
+.dbox p {
+  margin-bottom: 0;
+}
+.dbox p span {
+  font-weight: 500;
+  color: #000;
+}
+.dbox p a {
+  color: #ff7d00;
+}
+.dbox .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff7d00;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.dbox .icon span {
+  font-size: 20px;
+  color: #fff;
+}
+.dbox .text {
+  width: 100%;
+}
 
 .btn {
   padding: 12px 16px;
@@ -993,21 +1002,30 @@ textarea.form-control {
   margin-bottom: 20px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s; }
-  @media (prefers-reduced-motion: reduce) {
-    .btn {
-      -webkit-transition: none;
-      -o-transition: none;
-      transition: none; } }
-  .btn:hover, .btn:active, .btn:focus {
-    outline: none !important; }
-  .btn.btn-primary {
-    background: #ff7d00 !important;
-    border-color: #ff7d00 !important;
-    color: #fff; }
-    .btn.btn-primary:hover, .btn.btn-primary:focus {
-      border-color:#ff7d00!important;
-      background: #ff7d00!important; }
+  transition: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none !important;
+}
+.btn.btn-primary {
+  background: #ff7d00 !important;
+  border-color: #ff7d00 !important;
+  color: #fff;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  border-color: #ff7d00 !important;
+  background: #ff7d00 !important;
+}
 
 .contactForm .label {
   color: #000;

@@ -468,7 +468,7 @@ body {
 }
 .blog-item:hover {
   background: #ffffff;
-  box-shadow: 0px 46px 100px -31px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .blog-item:hover .blog-title,
 .blog-item:hover .blog-more {
@@ -641,7 +641,8 @@ body {
     padding-top: 56.25%;
     height: 0;
   }
-  .post-image, .post-feature-image {
+  .post-image,
+  .post-feature-image {
     height: 100%;
     position: absolute;
     top: 0;
@@ -739,16 +740,6 @@ body {
     max-width: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 .footer {
   background-color: #052347;
@@ -907,39 +898,39 @@ body {
 /* css phần nội dung */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 body {
-	background: #ffffff!important;
-	font-family: "Roboto", sans-serif;
+  background: #ffffff !important;
+  font-family: "Roboto", sans-serif;
 }
 
 .shadow {
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
 .profile-tab-nav {
-	min-width: 250px;
+  min-width: 250px;
 }
 
 .tab-content {
-	flex: 1;
+  flex: 1;
 }
 
 .form-group {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .nav-pills a.nav-link {
-	padding: 15px 20px;
-	border-bottom: 1px solid #ddd;
-	border-radius: 0;
-	color: #333;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  color: #333;
 }
 .nav-pills a.nav-link i {
-	width: 20px;
+  width: 20px;
 }
 
 .img-circle img {
-	height: 100px;
-	width: 100px;
-	border-radius: 100%;
-	border: 5px solid #fff;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  border: 5px solid #fff;
 }

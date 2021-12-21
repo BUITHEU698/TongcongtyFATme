@@ -51,7 +51,6 @@ $(".slider-responsive").slick({
   autoplay: true,
   autoplaySpeed: 4000,
   dots: true,
-  fade: true,
   swipeToSlide: true,
   responsive: [
     {
@@ -69,13 +68,6 @@ $(".slider-responsive").slick({
       },
     },
   ],
-});
-$('.one-time').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  adaptiveHeight: true
 });
 
 var filtered = false;

@@ -9,14 +9,8 @@ if(empty($_SESSION['email'])){
     $danhsach= mysqli_fetch_assoc($khuyenmai);
 }
 $chuongtrinh_khuyenmai=mysqli_query($conn,"SELECT *FROM chuongtrinh_khuyenmai WHERE email_khachhang='$email'");
-if (isset($_POST['sua'])){
-
-}
-
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +28,7 @@ if (isset($_POST['sua'])){
         <div class="them_ma_container">
             <div class="title">
                 <ul>
-                    <li>
+                    <li>z
                         <h2>Thông tin mã khuyến mãi</h2>
                     </li>
                     <li class="right">
@@ -48,19 +42,39 @@ if (isset($_POST['sua'])){
             <div class="main">
                 <div class="create_code">
                     <h2>Mã khuyến mãi (*)</h2>
-                    <input class="create_code_input" type="text" id="code" placeholder="Nhập mã khuyến mãi">
+                    <input class="create_code_input" type="text" id="code" value="<?php echo $danhsach['TENMAKHUYENMAI']?>">
                     <a id="code_cr"></a>
                     <p>Khách hàng sẽ nhập mã khuyến mãi này ở màn hình thanh toán</p>
-                    <input class="create_code_checkbox" type="checkbox" id="checkBoxDanhMuc" onclick="CheckBox2()"><a style="color: black">Áp dụng cùng với chương trình khuyến mãi</a>
-                    <div id="checkbox_danh_muc" class="hide_select">
-                        <select name="" id="">
-                            <option value="" disabled selected>Loại danh mục</option>
-                            <option value="">Sinh nhật</option>
-                            <option value="">Tiệc tại gia</option>
-                            <option value="">Kỉ niệm ngày cưới</option>
-                        </select>
-                    </div>
-                    <br>
+                    <?php if ($danhsach['id_chuongtrinh']>0) ?>
+                        <input class="create_code_checkbox" type="checkbox"checked id="checkBoxDanhMuc" onclick="CheckBox2()">
+                            <a style="color: black">Áp dụng cùng với chương trình khuyến mãi</a>
+                        <div id="checkbox_danh_muc" class="hide_select">
+                            <select name="" id="">
+                                <option value="" disabled selected>Loại danh mục</option>
+                                <?php foreach($chuongtrinh_khuyenmai as $key => $value) { ?>
+                                    <option selected value="<?php echo $value['id_chuongtrinh'] ?>">
+                                        <?php echo $value['TENCHUONGTRINH'] ?>
+                                    </option>
+                                <?php  }?>
+                            </select>
+                        </div>
+                        <br>
+                    <?php  ?>
+                        <input class="create_code_checkbox" type="checkbox" id="checkBoxDanhMuc" onclick="CheckBox2()">
+                            <a style="color: black">Áp dụng cùng với chương trình khuyến mãi</a>
+                        <div id="checkbox_danh_muc" class="hide_select">
+                            <select name="" id="">
+                                <option value="" disabled selected>Loại danh mục</option>
+                                <?php foreach($chuongtrinh_khuyenmai as $key => $value) { ?>
+                                    <option selected value="<?php echo $value['id_chuongtrinh'] ?>">
+                                        <?php echo $value['TENCHUONGTRINH'] ?>
+                                    </option>
+                                <?php  }?>
+                            </select>
+                        </div>
+                        <br>
+                        
+                    <?php?>
                 </div>
                 <div class="value">
                     <h2>Giá trị (*)</h2>

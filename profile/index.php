@@ -56,7 +56,7 @@ include'../connect/connect.php';
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/"
+          <a href="../main-page/index.html"
             ><img class="header-logo" srcset="./images/images-main/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -70,7 +70,7 @@ include'../connect/connect.php';
               <a class="menu-link" href="../main-page/index.html">Trang chủ</a>
             </li>
             <li class="menu-item">
-              <a class="menu-link" href="../monan_main_page/">Món ăn</a>
+              <a class="menu-link" href="../monan_main_page/index.html">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
             <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
@@ -182,7 +182,7 @@ include'../connect/connect.php';
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                    
+
                       <select name="day" id="" class="form-control"  >
                         <option value="">Ngày</option>
                         <option value="1">Ngày 1</option>
@@ -247,7 +247,7 @@ include'../connect/connect.php';
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                     
+
                       <select name="nam" id=""class="form-control" >
                         <option value="">Năm</option>
                         <option value="1989">Năm 1989</option>
@@ -272,12 +272,12 @@ include'../connect/connect.php';
                         <option value="2008">Năm 2008</option>
                         <option value="2009">Năm 2009</option>
                         <option value="2010">Năm 2010</option>
-                                        
+
                       </select>
-                      
+
                     </div>
                   </div>
-                
+
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Email</label>
@@ -290,7 +290,7 @@ include'../connect/connect.php';
                       <input type="tel" class="form-control" value="(84+) 971 29 28 38" />
                     </div>
                   </div>
-                  
+
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Giói Thiệu Bản Thân </label>

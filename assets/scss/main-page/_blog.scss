@@ -76,7 +76,7 @@
     }
   }
   .global-heading {
-    max-width: 454px;
+    max-width: 545px;
     margin: 0 auto 25px;
   }
   @media screen and (max-width: 1023px) {
@@ -144,11 +144,20 @@
     display: block;
     color: black;
     text-transform: capitalize;
+    &-heading {
+      color: black;
+      font-weight: 600;
+      font-size: 30px;
+      margin-bottom: 50px;
+      margin-left: 20px;
+      text-align: center;
+    }
   }
   &-desc {
+    line-height: 1.4;
     font-weight: 300;
     font-size: 14px;
-    color: #999;
+    color: $gray-blur-dark;
     margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -158,6 +167,12 @@
     width: 100%;
     max-width: 100%;
     word-break: break-word;
+    a {
+      color: inherit;
+      &:hover {
+        color: $primary-color;
+      }
+    }
   }
   &-author {
     display: flex;
@@ -190,7 +205,7 @@
       grid-template-columns: 1.5fr 1fr;
       grid-gap: 0 60px;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       border-radius: 12px;
       transition: all 0.3s linear;
       &:hover {

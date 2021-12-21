@@ -21,6 +21,17 @@ $(document).ready(function() {
     }
   });
 });
+$(document).ready(function() {
+  $('input[type="checkbox"]').checked(function() {
+    if ($(this).attr('id') == 'checkBoxDanhMuc') {
+      $('#checkbox_danh_muc').show();
+    } else {
+      $('#checkbox_danh_muc').hide();
+    }
+  });
+});
+
+
 function save(){
   const discout ={
     code : document.getElementById("code").value,

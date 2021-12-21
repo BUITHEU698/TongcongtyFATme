@@ -519,7 +519,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="checked_btn"><input class="all" type="checkbox" id="select_all" /> All</th>
+                            <th class="checked_btn"><input class="all" type="checkbox" id="select_all" />All</th>
                             <th>STT</th>
                             <th>Hình ảnh</th>
                             <th>Tên sản phẩm</th>

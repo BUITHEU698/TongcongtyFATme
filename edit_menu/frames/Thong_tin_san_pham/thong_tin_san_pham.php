@@ -8,7 +8,7 @@ if(empty($_SESSION['email'])){
     $monan=mysqli_query($conn,$sql);
     $danhsachmonan= mysqli_fetch_assoc($monan);
 }
-$danhmuc = mysqli_query($conn,"SELECT *FROM DANHMUC");
+$danhmuc = mysqli_query($conn,"SELECT *FROM DANHMUC WHERE email_khachhang='$email'");
 if(isset($_POST['sua'])){
     $TenMonAn=$_POST['TenMonAn'];
     $MOTA=$_POST['MOTA'];
@@ -97,7 +97,7 @@ if(isset($_POST['huy'])){
                     <label>Thời gian</label><br>
                     <input class="money" id="time" type="datetime-local"> -->
                     <div class="save">
-                    <button id="save" onclick="saveInfo()"name="sua"><h3>Lưu</h3></button>
+                    <button id="save" onclick="saveInfo()"name="sua"><h3>Sửa</h3></button>
                     <button id="cancle" onclick="cancleInfo()"name="huy"><h3>Huỷ</h3></button>
                     </div>
                     <div class="trung">

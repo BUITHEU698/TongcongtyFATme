@@ -39,6 +39,7 @@ if (isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đặt lại mật khẩu</title>
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="shortcut icon" href="../monan_main_page/img/logo/logo-main.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

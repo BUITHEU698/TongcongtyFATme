@@ -6,13 +6,102 @@ if(empty($_SESSION['email'])){
     $email=$_SESSION['email'];
     $sql="SELECT * FROM ma_khuyenmai  WHERE email_khachhang='$email'";
     $query=mysqli_query($conn,$sql);
-
-
-
     if (isset($_POST['them'])){
         header("location: them_ma/them_ma.php");
     }
-
+    if (isset($_POST['timkiem'])){
+        if (empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_bat_dau'])&&!empty($_POST['TK_ket_thuc'])){
+            if (isset($_POST['TK_bat_dau'])){
+                $ngay=$_POST['TK_bat_dau'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_bat_dau=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            if (isset($_POST['TK_ket_thuc'])){
+                $ngay=$_POST['TK_ket_thuc'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ket_thuc=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%' AND THOIGIAN_KETTHUC LIKE '%$TK_ket_thuc%';";
+        }else if (empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_bat_dau'])&&empty($_POST['TK_ket_thuc'])){
+            if (isset($_POST['TK_bat_dau'])){
+                $ngay=$_POST['TK_bat_dau'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_bat_dau=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+        }else if (empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_bat_dau'])&&empty($_POST['TK_ket_thuc'])){
+            if (isset($_POST['TK_ket_thuc'])){
+                $ngay=$_POST['TK_ket_thuc'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ket_thuc=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND THOIGIAN_KETTHUC LIKE '%$TK_ket_thuc%';";
+        }else if (!empty($_POST['TK_trang_thai'])&&empty($_POST['TK_bat_dau'])&&empty($_POST['TK_ket_thuc'])){
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $hientai=time();
+            if ($TK_trang_thai==1){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC >'$hientai';";
+            } else if ($TK_trang_thai==2){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU > '$hientai' AND TONGGIAY_KETTHUC >'$hientai';";
+            } else {
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC <'$hientai';";
+            }
+        }else if (!empty($_POST['TK_trang_thai'])&&empty($_POST['TK_bat_dau'])&&!empty($_POST['TK_ket_thuc'])){
+            if (isset($_POST['TK_ket_thuc'])){
+                $ngay=$_POST['TK_ket_thuc'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ket_thuc=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $hientai=time();
+            if ($TK_trang_thai==1){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC >'$hientai'AND THOIGIAN_KETTHUC LIKE '%$TK_ket_thuc%';";
+            } else if ($TK_trang_thai==2){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU > '$hientai' AND TONGGIAY_KETTHUC >'$hientai'AND THOIGIAN_KETTHUC LIKE '%$TK_ket_thuc%';";
+            } else {
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC <'$hientai'AND THOIGIAN_KETTHUC LIKE '%$TK_ket_thuc%';";
+            }
+        }else if (!empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_bat_dau'])&&empty($_POST['TK_ket_thuc'])){
+            if (isset($_POST['TK_bat_dau'])){
+                $ngay=$_POST['TK_bat_dau'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_bat_dau=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $hientai=time();
+            if ($TK_trang_thai==1){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC >'$hientai'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+            } else if ($TK_trang_thai==2){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU > '$hientai' AND TONGGIAY_KETTHUC >'$hientai'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+            } else {
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC <'$hientai'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+            }
+        }else if (!empty($_POST['TK_trang_thai'])&&!empty($_POST['TK_bat_dau'])&&!empty($_POST['TK_ket_thuc'])){
+            if (isset($_POST['TK_bat_dau'])){
+                $ngay=$_POST['TK_bat_dau'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_bat_dau=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            if (isset($_POST['TK_ket_thuc'])){
+                $ngay=$_POST['TK_ket_thuc'];
+                $tach_ngay = explode("-", $ngay);
+                $TK_ket_thuc=$tach_ngay[0].'-'.$tach_ngay[1].'-'.$tach_ngay[2]; 
+            }
+            $TK_trang_thai=$_POST['TK_trang_thai'];
+            $hientai=time();
+            if ($TK_trang_thai==1){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC >'$hientai'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+            } else if ($TK_trang_thai==2){
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU > '$hientai' AND TONGGIAY_KETTHUC >'$hientai'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+            } else {
+                $sql="SELECT * FROM ma_khuyenmai WHERE email_khachhang='$email' AND TONGGIAY_BATDAU < '$hientai' AND TONGGIAY_KETTHUC <'$hientai'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%'AND THOIGIAN_BATDAU LIKE '%$TK_bat_dau%';";
+            }
+        }
+        $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['xoa_all'])){
+        require_once("xoa_nhieu.php");
+    }
 }
 ?>
 
@@ -38,18 +127,18 @@ if(empty($_SESSION['email'])){
         $(document).ready(function() {
             $('#select_all').on('click', function() {
                 if (this.checked) {
-                    $('.checkbox').each(function() {
+                    $('.checkbox-con').each(function() {
                         this.checked = true;
                     });
                 } else {
-                    $('.checkbox').each(function() {
+                    $('.checkbox-con').each(function() {
                         this.checked = false;
                     });
                 }
             });
 
-            $('.checkbox').on('click', function() {
-                if ($('.checkbox:checked').length == $('.checkbox').length) {
+            $('.checkbox-con').on('click', function() {
+                if ($('.checkbox-con:checked').length == $('.checkbox-con').length) {
                     $('#select_all').prop('checked', true);
                 } else {
                     $('#select_all').prop('checked', false);
@@ -69,7 +158,7 @@ if(empty($_SESSION['email'])){
             <div class="sap_xep">
                 <ul>
                     <!-- <li><input type="checkbox" class="all"> All</li> -->
-                    <li>
+                    <!-- <li>
                         <select name="" id="">
                             <option value="" disabled selected>Loại khuyến mãi</option>
                             <option value="">Freeship</option>
@@ -77,26 +166,25 @@ if(empty($_SESSION['email'])){
                             <option value="">Giảm giá</option>
                             
                         </select>
-                    </li>
+                    </li> -->
                     <li>
-                        <select name="" id="">
+                        <select name="TK_trang_thai" id="">
                             <option value="" disabled selected>Trạng thái</option>
-                            <option value="">Tất cả</option>
-                            <option value="">Đã áp dụng</option>
-                            <option value="">Chưa áp dụng</option>
-                            <option value="">Ngưng áp dụng</option>
+                            <option value="1">Đang áp dụng</option>
+                            <option value="2">Sắp diễn ra</option>
+                            <option value="3">Mã hết hạn</option>
                         </select>
                     </li>
                     <li>
                         <a>Thời gian bắt đầu</a>
-                        <input class="time" type="date">
+                        <input class="time" name="TK_bat_dau"type="date">
                     </li>
                     <li>
                         <a>Thời gian kết thúc</a>
-                        <input class="time" type="date">
+                        <input class="time" name="TK_ket_thuc"type="date">
                     </li>
                     <li>
-                        <button class="btn_search">Tìm kiếm</button>
+                        <button class="btn_search"name="timkiem">Tìm kiếm</button>
                     </li>
                 </ul>
 
@@ -104,7 +192,7 @@ if(empty($_SESSION['email'])){
                     <table>
                         <thead>
                             <tr>
-                                <th class="checked_btn"><input class="all" type="checkbox" id="select_all"> All</th>
+                                <th class="checked_btn"><input class="all" type="checkbox" id="select_all">All</th>
                                 <th>STT</th>
                                 <th>Mã khuyến mãi</th>
                                 <th>Trạng thái</th>
@@ -169,8 +257,8 @@ if(empty($_SESSION['email'])){
                                                     <a><i class="fas fa-ellipsis-h"></i></a>
                                                 </button>
                                                 <div class="dropdown_content_more">
-                                                    <a href="#"><i class="fas fa-trash-alt"></i>Xoá</a>
-                                                    <a href="./Thong_tin_MKM/thong_tin_MKM.html"><i class="fas fa-info"></i>Chi tiết</a>
+                                                    <a href="xoa_ma.php?id=<?php echo$value['id_makhuyenmai']?>"><i class="fas fa-trash-alt"></i>Xoá</a>
+                                                    <a href="./Thong_tin_MKM/thong_tin_MKM.php?id=<?php echo$value['id_makhuyenmai']?>"><i class="fas fa-info"></i>sửa</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -180,7 +268,7 @@ if(empty($_SESSION['email'])){
                     </table>
                 </div>
                 <form action="">
-                    <button class="btn_del">Xoá mã khuyến mãi</button>
+                    <button class="btn_del"name="xoa_all">Xoá mã khuyến mãi</button>
                 </form>
             </div>
         </div>

@@ -10,6 +10,7 @@ if(empty($_SESSION['email'])){
     if (isset($_POST['luu'])){
         $error='';
         $TENMAKHUYENMAI=$_POST['TENMAKHUYENMAI'];
+        $APDUNG=isset($_POST['APDUNG'])?'1':'0';
         $id_chuongtrinh=isset($_POST['id_chuongtrinh'])?$_POST['id_chuongtrinh']:'0';
         $GIATRIKHUYENMAI=$_POST['GIATRIKHUYENMAI'];
         $GIATRIGIAMTOIDA=$_POST['GIATRIGIAMTOIDA'];
@@ -98,7 +99,7 @@ if(empty($_SESSION['email'])){
                     <input class="create_code_input" type="text" id="code"name="TENMAKHUYENMAI" placeholder="Nhập mã khuyến mãi">
                     <a id="code_cr"></a>
                     <p>Khách hàng sẽ nhập mã khuyến mãi này ở màn hình thanh toán</p>
-                    <input class="create_code_checkbox" type="checkbox" id="checkBoxDanhMuc" onclick="CheckBox2()"><a style="color: black">Áp dụng cùng với chương trình khuyến mãi</a>
+                    <input class="create_code_checkbox" type="checkbox" id="checkBoxDanhMuc" onclick="CheckBox2()"name="APDUNG"><a style="color: black">Áp dụng cùng với chương trình khuyến mãi</a>
                     <div id="checkbox_danh_muc" class="hide_select">
                         <select name="id_chuongtrinh" id="">
                             <option value="" disabled selected>Tên chương trình</option>

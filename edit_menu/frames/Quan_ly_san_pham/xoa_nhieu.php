@@ -17,7 +17,6 @@
     }
     // echo $strIn;
     $sql_del="DELETE FROM monan WHERE id_monan in($strIn)";
-    echo $sql_del;
     $xoa=mysqli_query($conn,$sql_del);
     if ($xoa){
         header("location:quan_ly_san_pham.php");

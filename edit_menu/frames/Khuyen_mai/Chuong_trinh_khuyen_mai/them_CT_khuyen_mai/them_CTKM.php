@@ -22,12 +22,11 @@ if(isset($_POST['tenchuongtrinh'])){
         $error="Thời gian kết thúc không được nhỏ hơn thời gian bắt đầu";
     }
     else if(empty($error)){
-        $sql="INSERT INTO chuongtrinh_khuyenmai(email_khachhang,tenchuongtrinh,loaikhuyenmai,thoigian_batdau,tonggiay_batdau,thoigian_ketthuc,tonggiay_ketthuc) VALUES ('$email','$tenchuongtrinh','$loaikhuyenmai','$thoigian_batdau','$tonggiay_batdau','$thoigian_ketthuc','$tonggiay_ketthuc')";
+        $sql="INSERT INTO chuongtrinh_khuyenmai(email_khachhang,TENCHUONGTRINH,LOAIKHUYENMAI,THOIGIAN_BATDAU,TONGGIAY_BATDAU,THOIGIAN_KETTHUC,TONGGIAY_KETTHUC) VALUES ('$email','$tenchuongtrinh','$loaikhuyenmai','$thoigian_batdau','$tonggiay_batdau','$thoigian_ketthuc','$tonggiay_ketthuc')";
         $query=mysqli_query($conn,$sql);
         if ($query==false) $error='error:Đã có danh mục này';
         else header('location: ../chuong_trinh_khuyen_mai.php');
     }
-
 }
 ?>
 <!DOCTYPE html>
@@ -40,6 +39,7 @@ if(isset($_POST['tenchuongtrinh'])){
     <link rel="stylesheet" href="./css/CTKM.css">
 </head>
 <body>
+
     <form action=""method="post">
         <div class="them_ma_container">
             <div class="title">

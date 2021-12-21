@@ -1,7 +1,60 @@
 <?php
 include'../connect/connect.php';
+if(empty($_SESSION['email'])){
+  header("location: ../login/index.php");
+}else {
+  $email=$_SESSION['email'];
+  $sql="SELECT * FROM khachhang WHERE email='$email'";
+  $query=mysqli_query($conn,$sql);
+  $taikhoan= mysqli_fetch_assoc($query);
 
+  if (isset($_POST['account'])){
+    require_once("index.php");
+  }
+  if (isset($_POST['luu'])){
+    $HOTEN=$_POST['HOTEN'];
+    $CMND=$_POST['CMND'];
+    $day=$_POST['day'];
+    $month=$_POST['month'];
+    $year=$_POST['year'];
+    $SODIENTHOAI=$_POST['SODIENTHOAI'];
+    $MOTA=$_POST['MOTA'];
+    $email=$_SESSION['email'];
+    $sql="UPDATE khachhang SET HOTEN='$HOTEN',CMND='$CMND',NGAY='$day',THANG='$month',NAM='$year',SODIENTHOAI='$SODIENTHOAI',MOTA='$MOTA' WHERE email='$email'";
+    $query=mysqli_query($conn,$sql);
+    if ($query==false){
+      echo "lỗi";
+    }else {
+      header("location:index.php");
+    }
+  }
+  if (isset($_POST['thaydoi'])){
+    $error='';
+    $old=md5($_POST['old']);
+    $new=md5($_POST['new']);
+    $renew=md5($_POST['renew']);
+    if(empty($old)){
+      $error='Bạn chưa nhập mật khẩu cũ';
+    } else if(empty($new)){
+      $error='Bạn chưa nhập mật khẩu mới';
+    }else if($new!=$renew){
+      $error='Mật khẩu nhập lại không đúng';
+    } else if ($old!=$taikhoan['password']){
+      $error='Mật khẩu cũ không đúng';
+    }else if (!empty($error)){
 
+    }
+    else if (empty($error)){
+      $sql="UPDATE khachhang SET password= '$new' WHERE email='$email'";
+      $query=mysqli_query($conn,$sql);
+      if ($query){
+        header("location:index.php");
+      } 
+    }
+  }else if (isset($_POST['huy'])){
+    header("location:index.php");
+  }
+}
 
 ?>
 
@@ -43,6 +96,7 @@ include'../connect/connect.php';
     <title>FATMe - Blog</title>
   </head>
   <body >
+    <form action=""method="post">
     <div class="totop">
       <a
         href="#"
@@ -56,7 +110,7 @@ include'../connect/connect.php';
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/"
+          <a href="../main-page/index.php"
             ><img class="header-logo" srcset="./images/images-main/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -67,20 +121,30 @@ include'../connect/connect.php';
               /></label>
             </div>
             <li class="menu-item">
-              <a class="menu-link" href="../main-page/index.html">Trang chủ</a>
+              <a class="menu-link" href="../main-page/index.php">Trang chủ</a>
             </li>
+            <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
             <li class="menu-item">
-              <a class="menu-link" href="../monan_main_page/">Món ăn</a>
+              <a class="menu-link" href="../monan_main_page/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="./index.html">Liên hệ</a></li>
-            <li class="auth">
-              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
-            </li>
+            <li class="menu-item"><a class="menu-link link-active" href="../blog/blog.php">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="../service/service.php">Dịch vụ</a></li>
+            <li class="menu-item"><a class="menu-link" href="./index.php">Liên hệ</a></li>
+            <?php if (empty($_SESSION['email'])){ ?>
+                <li class="auth">
+                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+                </li>
+            <?php } else {?>
+                <li class="auth">
+                    <button class="button button--primary auth-signup"name="account">Account</button>
+
+                </li>
+            <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
             ><img src="./images/images-main/menu.png" alt="Menu"
@@ -101,7 +165,7 @@ include'../connect/connect.php';
                     class="shadow"
                   />
                 </div>
-                <h4 class="text-center"><?php echo $taikhoan['HOTEN']?></h4>
+                <h4 class="text-center"><?php if (empty($taikhoan['HOTEN'])) { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
               </div>
               <div
                 class="nav flex-column nav-pills"
@@ -171,20 +235,19 @@ include'../connect/connect.php';
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Họ & Tên </label>
-                      <input type="text" class="form-control" value="FATMe "/>
+                      <input type="text" class="form-control"name="HOTEN" value="<?php echo$taikhoan['HOTEN']?>"/>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Tên Tài Khoản</label>
-                      <input type="text" class="form-control" value="FATMe" />
+                      <label>CMND/CCCD</label>
+                      <input type="text" name="CMND"class="form-control" value="<?php echo$taikhoan['CMND']?>" />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                     
                       <select name="day" id="" class="form-control"  >
-                        <option value="">Ngày</option>
                         <option value="1">Ngày 1</option>
                         <option value="2">Ngày 2</option>
                         <option value="3">Ngày 3</option>
@@ -227,8 +290,7 @@ include'../connect/connect.php';
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                    <select name="day" id=""class="form-control" >
-                        <option value="">Tháng</option>
+                    <select name="month" id=""class="form-control" >
                         <option value="1">Tháng 1</option>
                         <option value="2">Tháng 2</option>
                         <option value="3">Tháng 3</option>
@@ -247,9 +309,7 @@ include'../connect/connect.php';
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                     
-                      <select name="nam" id=""class="form-control" >
-                        <option value="">Năm</option>
+                      <select name="year" id=""class="form-control" >
                         <option value="1989">Năm 1989</option>
                         <option value="1990">Năm 1990</option>
                         <option value="1991">Năm 1991</option>
@@ -281,26 +341,26 @@ include'../connect/connect.php';
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Email</label>
-                      <input type="mail" class="form-control" value="congtyfatme@gmail.com" />
+                      <input type="mail"name="email" disabled class="form-control" value="<?php echo$taikhoan['email'] ?>" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Số Điện Thoại</label>
-                      <input type="tel" class="form-control" value="(84+) 971 29 28 38" />
+                      <input type="tel" class="form-control"name="SODIENTHOAI" value="<?php echo $taikhoan['SODIENTHOAI']?>" />
                     </div>
                   </div>
                   
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Giói Thiệu Bản Thân </label>
-                      <textarea class="form-control" rows="4"> I love you</textarea
+                      <textarea class="form-control"name="MOTA" rows="4"><?php echo $taikhoan['MOTA']?></textarea
                       >
                     </div>
                   </div>
                 </div>
                 <div>
-                  <button class="btn btn-primary">Lưu</button>
+                  <button class="btn btn-primary"name="luu">Lưu</button>
                 </div>
               </div>
               <div
@@ -309,57 +369,44 @@ include'../connect/connect.php';
                 role="tabpanel"
                 aria-labelledby="password-tab"
               >
-                <h3 class="mb-4">Password Settings</h3>
+                <h3 class="mb-4">Thay đổi mật khẩu</h3>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Old password</label>
-                      <input type="password" class="form-control" />
+                      <label>Mật khẩu cũ</label>
+                      <input type="password" name="old"class="form-control" />
                     </div>
                   </div>
                 </div>
                 <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
-                      </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                      </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Mật khẩu mới</label>
+                      <input type="password" name="new"class="form-control" />
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                      </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nhập lại mật khẩu mới</label>
+                      <input type="password" name="renew"class="form-control" />
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Accordion Item #3
-                      </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                  
+                  
                 </div>
                 <div>
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-light">Cancel</button>
+                  <button class="btn btn-primary"name="thaydoi">Thay đổi</button>
+                  <button class="btn btn-light"name="huy">Hủy</button>
                 </div>
+                <div>
+                  <br>
+                <span><?php echo(isset($error)?$error:'')?></span>
+                </div>
+                
               </div>
               <div
                 class="tab-pane fade"
@@ -565,5 +612,6 @@ include'../connect/connect.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->
     <script src="./app.js"></script>
+    </form>
   </body>
 </html>

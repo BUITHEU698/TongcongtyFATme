@@ -1,3 +1,10 @@
+<?php
+include'../connect/connect.php';
+
+
+?>
+
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -44,18 +51,28 @@
               /></label>
             </div>
             <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+            <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
             <li class="menu-item">
               <a class="menu-link" href="../monan_main_page/index.php">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="/service/service.html">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="#!">Liên hệ</a></li>
-            <li class="auth">
-              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
-            </li>
+            <li class="menu-item"><a class="menu-link" href="../service/service.php">Dịch vụ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
+            <?php if (empty($_SESSION['email'])){ ?>
+                <li class="auth">
+                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+                </li>
+            <?php } else {?>
+                <li class="auth">
+                    <button class="button button--primary auth-signup">Account</button>
+
+                </li>
+            <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
             ><img src="../assets/images/main-images/menu.png" alt="Menu"
@@ -78,7 +95,7 @@
             <div class="post-feature-list slider-responsive-2">
               <div class="post-feature show-on-scroll">
                 <div class="post-feature-content">
-                  <a href="./blog_1/" class="post-feature-media post-media show-on-scroll show-on-scroll">
+                  <a href="./blog_1/index.php" class="post-feature-media post-media show-on-scroll show-on-scroll">
                     <img
                       src="https://cdn.dribbble.com/users/33073/screenshots/15238065/media/5df5a84f3ed908ad7bad36fa645e3d4a.png?compress=1&resize=1200x900"
                       alt=""
@@ -88,7 +105,7 @@
                   <div class="post-feature-info">
                     <a href="#" class="post-category">The newest</a>
                     <h2>
-                      <a href="./blog_1/" class="post-feature-title post-title"
+                      <a href="./blog_1/index.php" class="post-feature-title post-title"
                         >HowmmmmHowmmmmHowmmmmHowmmmmHHowmmmm</a
                       >
                     </h2>
@@ -103,7 +120,7 @@
               </div>
               <div class="post-feature show-on-scroll">
                 <div class="post-feature-content">
-                  <a href="./blog_1/" class="post-feature-media post-media show-on-scroll show-on-scroll">
+                  <a href="./blog_1/index.php" class="post-feature-media post-media show-on-scroll show-on-scroll">
                     <img
                       src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
                       alt=""
@@ -113,7 +130,7 @@
                   <div class="post-feature-info">
                     <a href="#" class="post-category">The newest</a>
                     <h2>
-                      <a href="./blog_1/" class="post-feature-title post-title"
+                      <a href="./blog_1/index.php" class="post-feature-title post-title"
                         >HowmmmmHowmmmmHowmmmmHowmmmmHHowmmmm</a
                       >
                     </h2>
@@ -128,7 +145,7 @@
               </div>
               <div class="post-feature show-on-scroll">
                 <div class="post-feature-content">
-                  <a href="./blog_1/" class="post-feature-media post-media show-on-scroll show-on-scroll">
+                  <a href="./blog_1/index.php" class="post-feature-media post-media show-on-scroll show-on-scroll">
                     <img
                       src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
                       alt=""
@@ -138,7 +155,7 @@
                   <div class="post-feature-info">
                     <a href="#" class="post-category">The newest</a>
                     <h2>
-                      <a href="./blog_1/" class="post-feature-title post-title"
+                      <a href="./blog_1/index.php" class="post-feature-title post-title"
                         >Howmmmm</a
                       >
                     </h2>
@@ -408,7 +425,7 @@
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.html" class="footer-logo">
+            <a href="index.php" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">

@@ -1,3 +1,9 @@
+<?php
+include'../connect/connect.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,8 +39,12 @@
     <!-- <link rel="stylesheet" href="./css/TESST.CSS" /> -->
     <link rel="stylesheet" href="./css/app.scss.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
     <title>FATMe - Món ăn</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
   </head>
 
   <body>
@@ -49,15 +59,28 @@
           <div class="menu-item toggle-close">
             <label for="toggle-check"><img src="./img/logo/menu-close.png" alt="Close" /></label>
           </div>
-          <li class="menu-item"><a class="menu-link" href="../main-page/">Trang chủ</a></li>
-          <li class="menu-item"><a class="menu-link link-active" href="#">Món ăn</a></li>
-          <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
+          <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+          <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
+          <li class="menu-item"><a class="menu-link link-active" href="index.php">Món ăn</a></li>
+          
+          <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
           <li class="menu-item"><a class="menu-link" href="/service/service.html">Dịch vụ</a></li>
           <li class="menu-item"><a class="menu-link" href="../contac/index.html">Liên hệ</a></li>
-          <li class="auth">
-            <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-            ><a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
-          </li>
+          <?php if (empty($_SESSION['email'])){ ?>
+                <li class="auth">
+                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+                </li>
+            <?php } else {?>
+                <li class="auth">
+                    <button class="button button--primary auth-signup">Account</button>
+
+                </li>
+            <?php }?>
         </ul>
         <label for="toggle-check" class="toggle"
           ><img src="./img/logo/menu.png" alt="Menu"

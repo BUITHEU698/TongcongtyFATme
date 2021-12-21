@@ -1,3 +1,7 @@
+<?php
+include'../../connect/connect.php';
+?>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -36,7 +40,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../../main-page/"
+          <a href="../../main-page/index.php"
             ><img class="header-logo" srcset="../../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -46,20 +50,29 @@
                 ><img src="../../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="../main-page/">Trang chủ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../../main-page/index.php">Trang chủ</a></li>
+            <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
             <li class="menu-item">
-              <a class="menu-link" href="../../monan_main_page/">Món ăn</a>
+              <a class="menu-link" href="../../monan_main_page/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link link-active" href="../../blog/">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="../../contact/">Liên hệ</a></li>
-            <li class="auth">
-              <a class="button button--secondary auth-login" href="../../login/index.php"
-                >Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../../register/index.php"
-                >Đăng ký</a
-              >
-            </li>
+            <li class="menu-item"><a class="menu-link link-active" href="../../blog/index.php">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="../../service/service.php">Dịch vụ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../../contact/index.php">Liên hệ</a></li>
+            <?php if (empty($_SESSION['email'])){ ?>
+                <li class="auth">
+                    <a class="button button--secondary auth-login" href="../../login/index.php">Đăng nhập</a>
+                    <a class="button button--primary auth-signup" href="../../register/index.php">Đăng ký</a>
+                </li>
+            <?php } else {?>
+                <li class="auth">
+                    <button class="button button--primary auth-signup">Account</button>
+
+                </li>
+            <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
             ><img src="../../assets/images/main-images/menu.png" alt="Menu"
@@ -72,9 +85,9 @@
         <div class="blog_post-container container">
           <div class="blog_post-header">
             <div class="blog_post-link">
-              <a href="../../blog/" class="blog_post-link-item menu-link">Blog </a>
+              <a href="../../blog/index.php" class="blog_post-link-item menu-link">Blog </a>
               <img src="../../assets/images/main-images/icon-arrow-right.png" alt="" class="" />
-              <a href="../blog_1/" class="blog_post-link-item">Blog_1 </a>
+              <a href="../blog_1/index.php" class="blog_post-link-item">Blog_1 </a>
             </div>
             <div class="">
               <p class="blog_post-time global-text show-on-scroll">22 tháng 12 năm 2021</p>
@@ -241,7 +254,7 @@
           </div>
           <div class="blog-list slider-responsive">
             <div class="post-item show-on-scroll">
-              <a href="../blog_2/" class="post-media">
+              <a href="../blog_2/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog8.jpg"
                   alt=""
@@ -251,7 +264,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_2/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_2/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
@@ -261,7 +274,7 @@
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_3/" class="post-media">
+              <a href="../blog_3/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog2.jpg"
                   alt=""
@@ -271,7 +284,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_3/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_3/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
@@ -281,7 +294,7 @@
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_4/" class="post-media">
+              <a href="../blog_4/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog3.jpg"
                   alt=""
@@ -291,7 +304,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_4/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_4/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
@@ -301,7 +314,7 @@
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_5/" class="post-media">
+              <a href="../blog_5/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog4.jpg"
                   alt=""
@@ -311,7 +324,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_5/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_5/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
@@ -321,7 +334,7 @@
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_6/" class="post-media">
+              <a href="../blog_6/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog5.jpg"
                   alt=""
@@ -331,7 +344,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_6/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_6/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
@@ -341,7 +354,7 @@
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_7/" class="post-media">
+              <a href="../blog_7/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog6.jpg"
                   alt=""
@@ -351,7 +364,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_7/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_7/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
@@ -361,7 +374,7 @@
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_8/" class="post-media">
+              <a href="../blog_8/index.php" class="post-media">
                 <img
                   src="../../assets/images/blog-images/blog7.jpg"
                   alt=""
@@ -371,7 +384,7 @@
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_8/" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_8/index.php" class="post-title">How to choose best bike for spring in Australia</a>
                 </h3>
                 <p class="post-desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae

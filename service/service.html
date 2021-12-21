@@ -49,9 +49,9 @@
             <label for="toggle-check"><img src="/monan_main_page/img/logo/menu-close.png" alt="Close" /></label>
           </div>
           <li class="menu-item"><a class="menu-link" href="../main-page/">Trang chủ</a></li>
-          <li class="menu-item"><a class="menu-link link-active" href="#">Món ăn</a></li>
+          <li class="menu-item"><a class="menu-link" href="#">Món ăn</a></li>
           <li class="menu-item"><a class="menu-link" href="/blog/index.html">Blog</a></li>
-          <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
+          <li class="menu-item"><a class="menu-link link-active" href="#">Dịch vụ</a></li>
           <li class="menu-item"><a class="menu-link" href="../contac/index.html">Liên hệ</a></li>
           <li class="auth">
             <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
@@ -67,32 +67,110 @@
     
     <div class="service_container">
         <div class="service_header">
-            <img src="./img/header.png" alt="header">
-            <div class="centered">
-                <div class="header_content">
-                    <div class="right">
-                        <h1>TIỆC TRỌN GÓI LƯU ĐỘNG</h1>
-                        <h1>TẠI NHÀ – TIỆC OUTSIDE</h1>
-                        <hr>
-                        <ul>
-                          <li>Tiệc từ 1 bàn đến 300 bàn </li>
-                          <li> Tất cả các loại tiệc từ đơn giản đến phức tạp, từ bình dân đến cao cấp</li>
-                          <li>Tổ chức tiệc tại khu vực TPHCM và các tỉnh lân cận: Long An, Tiền Giang, Bến Tre, Tây Ninh, Bình Dương, Đồng Nai, Vũng Tàu</li>
-                          <li> Tiệc BBQ mới là đẳng cấp, năng lực đáp ứng lên đến 100 bàn</li>
-                        </ul>
-                        <h2>Tiêu chuẩn các loại dịch vụ  tiệc của FLYFOOD:</h2>
-                        <ul>
-                          <li>Tiêu chuẩn Standard: Phổ biến nhất vì ưu điểm chi phí thấp và mặt bằng chật hẹp</li>
-                          <li>Tiêu chuẩn VIP: Thích hợp các tiệc quan trọng: tiệc cưới, tiệc Công ty, liên hoan...</li>
-                          <li> Tiêu Chuẩn Supper VIP: Tiệc cao cấp, tương đương các nhà hàng 4 sao</li>
-                        </ul>
-                    </div>
-                    <div class="left">
-                        <img src="./img/header.png" alt="">
-                    </div>
+            <div class="header_content">
+                <div class="right">
+                    <h1>TIỆC TRỌN GÓI LƯU ĐỘNG</h1>
+                    <h1>TẠI NHÀ – TIỆC OUTSIDE</h1>
+                    <hr>
+                    <ul>
+                      <li>Tiệc từ 1 bàn đến 300 bàn </li>
+                      <li> Tất cả các loại tiệc từ đơn giản đến phức tạp, từ bình dân đến cao cấp</li>
+                      <li>Tổ chức tiệc tại khu vực TPHCM và các tỉnh lân cận: Long An, Tiền Giang, Bến Tre, Tây Ninh, Bình Dương, Đồng Nai, Vũng Tàu</li>
+                      <li> Tiệc BBQ mới là đẳng cấp, năng lực đáp ứng lên đến 100 bàn</li>
+                    </ul>
+                    <h2>Tiêu chuẩn các loại dịch vụ  tiệc của FATFOOD:</h2>
+                    <ul>
+                      <li>Tiêu chuẩn Standard: Phổ biến nhất vì ưu điểm chi phí thấp và mặt bằng chật hẹp</li>
+                      <li>Tiêu chuẩn VIP: Thích hợp các tiệc quan trọng: tiệc cưới, tiệc Công ty, liên hoan...</li>
+                      <li> Tiêu Chuẩn Supper VIP: Tiệc cao cấp, tương đương các nhà hàng 4 sao</li>
+                    </ul>
+                </div>
+                <div class="left">
+                    <img src="./img/header.png" alt="">
                 </div>
             </div>
-        </div>    
+        
+           
+        </div>
+        <div class="body_service">
+            <div class="step_1">
+              <h2>Bước 1: Chọn để tham khảo giá</h2>
+              <ul>
+                <li>
+                  <div class="show_step">
+                    <div class="name_tag">  
+                      <img src="./img/standard.png" alt="standar">
+                      <div class="name_header">
+                        <h3>STANDARD</h3>
+                      </div>
+                    </div>
+                    <div class="content_tag">
+                      <p>Ghế innox không tựa lưng</p>
+                      <p>Màu sắc tự chọn</p>
+                    </div>
+                    <input onclick="change()" type="button" value="Chọn gói STANDARD" id="changeOne"></input>
+                  </div>
+                </li>
+                <li>
+                  <div class="show_step">
+                    <div class="name_tag">  
+                      <img src="./img/vip.png" alt="standar">
+                      <div class="name_header">
+                        <h3>VIP</h3>
+                      </div>
+                    </div>
+                    <div class="content_tag">
+                      <p>Ghế Tựa Lưng, Trùm Áo Cột Nơ</p>
+                      <p>Màu sắc tự chọn</p>
+                      <p>Ly Có Chân</p>
+                    </div>
+                    <input onclick="change1()" type="button" value="Chọn gói VIP" id="changeTwo"></input>
+                  </div>
+                </li>
+                <li>
+                  <div class="show_step">
+                    <div class="name_tag">  
+                      <img src="./img/suppervip.png" alt="standar">
+                      <div class="name_header">
+                        <h3>SUPER VIP</h3>
+                      </div>
+                    </div>
+                    <div class="content_tag">
+                      <p>Ghế Tựa Lưng, Trùm Áo Cột Nơ</p>
+                      <p>Màu sắc tự chọn</p>
+                      <p>Ly Có Chân</p>
+                      <p>Bàn Ăn, Khăn Ăn, Hoa Tươi</p>
+                    </div>
+                    <input onclick="change2()" type="button" value="Chọn gói SUPER VIP" id="changeThree"></input>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="step_2">
+              <h2>Bước 2: Nhập để tham khảo giá</h2>
+                <ul>
+                  <li>
+                    <label for="">Ngày bắt đầu</label>
+                    <input type="datetime-local">
+                  </li>
+                  <li>
+                    <label for="">Địa chỉ</label>
+                   <input type="text" placeholder="Nhập địa chỉ">
+                  </li>
+                  <li>
+                    <label for="">Số khách</label>
+                    <input type="number" placeholder="Nhập số khách tham dự">
+                  </li>
+                  <li>
+                    <label for="">Số bàn</label>
+                    <input type="number" placeholder="Nhập số bàn">
+                  </li>
+                </ul>
+            </div>
+            <div class="step_3">
+               <h2>Bước 3: Tạo Menu món ăn</h2>
+            </div>
+        </div>
     </div>
    <br><br><br><br><br>
     <footer class="footer">
@@ -185,20 +263,7 @@
         <div class="copyright">All Right Reserved by Us! Copyright FATMe 2021</div>
       </div>
     </footer>
-
-    <!-- script link -->
-    <script type="text/javascript" src="./js/script.js"></script>
-    <!-- <script src="js/jquery-1.12.0.min.js "></script> -->
-    <script src="js/owl.carousel.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script src="js/main.js "></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyIMWhs-crjT0yhctbRjfJFq75FlEhSzE&callback=initMap "
-    ></script>
-    <!-- <img src="./img/slider/1900x1000.png" alt=""> -->
-    <!-- my script -->
-    <script src="./js/app.js"></script>
+    <script src="./js/service.js"></script>
+    
   </body>
 </html>

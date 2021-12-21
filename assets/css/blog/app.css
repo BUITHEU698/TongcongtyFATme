@@ -1334,10 +1334,12 @@ body {
   height: 16px;
 }
 .blog_post-time {
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 .blog_post-heading {
   margin-bottom: 30px;
+  padding: 0 5%;
 }
 .blog_post-desc {
   margin-bottom: 30px;
@@ -1361,6 +1363,7 @@ body {
 }
 .blog_post-text p {
   text-align: justify;
+  margin-bottom: 10px;
 }
 .blog_post-text img {
   margin: 0 auto;
@@ -1386,6 +1389,9 @@ body {
   .blog_post-header {
     margin-bottom: 20px;
   }
+  .blog_post-heading {
+    padding: 0;
+  }
   .blog_post-link {
     margin-left: 0;
     margin-bottom: 20px;
@@ -1410,6 +1416,14 @@ body {
     height: 30px;
     margin-bottom: 10px;
   }
+}
+
+.header {
+  padding-bottom: 20px;
+}
+
+.global-text {
+  color: #635f85;
 }
 
 /*# sourceMappingURL=app.css.map */

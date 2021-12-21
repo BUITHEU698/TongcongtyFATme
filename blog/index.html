@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/images-main/logo-main.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/images/main-images/logo-main.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,10 +13,6 @@
     <!-- css link -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
     />
     <link
@@ -24,7 +20,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
     />
     <!-- my css -->
-    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="../assets/css/main-page/app.css" />
     <title>FATMe - Blog</title>
   </head>
   <body>
@@ -32,23 +28,19 @@
       <a
         href="#"
         class="goto-top"
-        style="
-          background: url(./images/images-main/gototop.svg) no-repeat center,
-            linear-gradient(45deg, #f67102 5.1%, #f4a91e 86.29%);
-        "
       ></a>
     </div>
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
           <a href="../main-page/"
-            ><img class="header-logo" srcset="./images/images-main/logo.png 2x"
+            ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
           <ul class="menu">
             <div class="menu-item toggle-close">
               <label for="toggle-check"
-                ><img src="./images/images-main/menu-close.png" alt="Close"
+                ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
             <li class="menu-item"><a class="menu-link" href="../main-page/">Trang chủ</a></li>
@@ -66,248 +58,12 @@
             </li>
           </ul>
           <label for="toggle-check" class="toggle"
-            ><img src="./images/images-main/menu.png" alt="Menu"
+            ><img src="../assets/images/main-images/menu.png" alt="Menu"
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
-        <!-- <div class="header-main container">
-          <div class="header-content">
-            <span class="global-caption show-on-scroll">Chúng tôi</span>
-            <h1 class="global-heading global-heading--huge header-heading show-on-scroll">
-              Food At The Moment everytime
-            </h1>
-            <p class="global-text header-desc show-on-scroll">
-              Chúng tôi là công ty cung cấp dịch vụ vận chuyển thức ăn chuyên nghiệp với nhiều
-              thương hiệu nổi tiếng.
-            </p>
-            <div class="header-actions">
-              <a class="button button--primary" href="#!">Đăng nhập</a
-              ><a class="watch-video button button--secondary btn-watch" href="#!"
-                ><div class="watch-icon"><img srcset="./images/images-main/icon-play.png 2x" /></div>
-                <span>Xem Video</span></a
-              >
-            </div>
-          </div>
-          <div class="header-image show-on-scroll">
-            <video class="video" loop controls poster="./images/images-main/img-header.png">
-              <source src="./video/videofatme.mp4" type="video/mp4" />
-            </video>
-            <button id="play-pause" class="btn-watch btn-watch1">
-              <div class="watch-icon watch-icon1"><img srcset="./images/images-main/icon-play.png 2x" /></div>
-            </button>
-          </div>
-        </div> -->
       </header>
       <main>
-        <!-- <section class="brand">
-          <div class="brand-item"><img src="./images/images-main/brand-baemin.png" /></div>
-          <div class="brand-item"><img src="./images/images-main/brand-grab.png" /></div>
-          <div class="brand-item"><img src="./images/images-main/brand-shopeefood.png" /></div>
-          <div class="brand-item"><img src="./images/images-main/brand-gojek.png" /></div>
-          <div class="brand-item"><img src="./images/images-main/brand-loship.png" /></div>
-        </section>
-        <section class="service">
-          <div class="container">
-            <div class="service-header">
-              <span class="global-caption service-caption show-on-scroll">CHÚNG TÔI LÀM GÌ</span>
-              <h2 class="global-heading global-heading--big service-heading show-on-scroll">
-                Liên kết các cửa hàng với bạn nhanh chóng
-              </h2>
-              <p class="global-text service-desc show-on-scroll">
-                Hướng đến việc tiện lợi khi ở nhà mà cũng có đồ ăn mọi lúc mọi nơi, chúng tôi sẽ là
-                người giúp các bạn thực hiện việc đó dễ dàng hơn.
-              </p>
-            </div>
-            <div class="service-list">
-              <div class="service-item show-on-scroll">
-                <div class="service-icon"><img src="./images/images-main/icon-food.png" /></div>
-                <h3 class="global-heading global-heading--normal service-title">
-                  Thực phẩm đa dạng
-                </h3>
-                <p class="global-text service-text">
-                  Chúng tôi đảm bảo thức ăn luôn được tươi mới, thơm ngon.
-                </p>
-              </div>
-              <div class="service-item show-on-scroll">
-                <div class="service-icon"><img src="./images/images-main/icon-delivery.png" /></div>
-                <h3 class="global-heading global-heading--normal service-title">
-                  Miễn phí vận chuyển
-                </h3>
-                <p class="global-text service-text">
-                  Miễn phí vận chuyển 1 đơn hàng đầu tiên trong ngày.
-                </p>
-              </div>
-              <div class="service-item show-on-scroll">
-                <div class="service-icon"><img src="./images/images-main/icon-restaurant.png" /></div>
-                <h3 class="global-heading global-heading--normal service-title">
-                  Hơn 100 nghìn nhà hàng
-                </h3>
-                <p class="global-text service-text">
-                  Nhiều sự lựa chọn, cho các bạn đặt đồ ăn thoải mái nhé.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="who">
-          <div class="container">
-            <div class="who-container">
-              <div class="who-image"><img srcset="./images/images-main/img-who.png 2x" /></div>
-              <div class="who-content">
-                <span class="global-caption show-on-scroll">Ai muốn gì?</span>
-                <h2 class="global-heading global-heading--big show-on-scroll">
-                  Vươn tầm sánh bước cùng các bạn mọi nơi
-                </h2>
-                <p class="global-text show-on-scroll">
-                  Nunc venenalis Iorem sed risus trlstque sent per. Duls porta, rutruni tempus,
-                  lectus risus imDerdiet tellus, sed faucibus sum ipsum ncn neque. Curubilu r
-                  eleirend, erut ullamcorper porta. eras turpis.
-                </p>
-                <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="mission">
-          <div class="container">
-            <div class="mission-container">
-              <div class="mission-header">
-                <span class="global-caption mission-caption show-on-scroll"
-                  >Chúng tôi tôi có gì?</span
-                >
-                <h2 class="global-heading global-heading--big mission-heading show-on-scroll">
-                  Realize Your Business Goals For Profit
-                </h2>
-                <p class="global-text show-on-scroll">
-                  Nunc venenalis Iorem sed risus trlstque sent per. Duls porta, rutruni tempus,
-                  lectus risus imDerdiet tellus, sed faucibus sum ipsum ncn neque. Curubilu r
-                  eleirend, erut ullamcorper porta. eras turpis.
-                </p>
-              </div>
-              <!-- <div class="mission-list">
-                <div class="mission-item show-on-scroll">
-                  <div class="mission-image">
-                    <img
-                      srcset="
-                        https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80
-                      "
-                    />
-                  </div>
-                  <div class="mission-content">
-                    <h3 class="mission-title">Tên Blog món ăn</h3>
-                    <p class="mission-desc">
-                      Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a
-                      porititar ju-to ode id oros. Proin lloborti*
-                    </p>
-                  </div>
-                </div>
-                <div class="mission-item show-on-scroll">
-                  <div class="mission-image">
-                    <img
-                      srcset="
-                        https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80
-                      "
-                    />
-                  </div>
-                  <div class="mission-content">
-                    <h3 class="mission-title">Tên Blog món ăn</h3>
-                    <p class="mission-desc">
-                      Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a
-                      porititar ju-to ode id oros. Proin lloborti*
-                    </p>
-                  </div>
-                </div>
-                <div class="mission-item show-on-scroll">
-                  <div class="mission-image">
-                    <img
-                      srcset="
-                        https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80
-                      "
-                    />
-                  </div>
-                  <div class="mission-content">
-                    <h3 class="mission-title">Tên Blog món ăn</h3>
-                    <p class="mission-desc">
-                      Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a
-                      porititar ju-to ode id oros. Proin lloborti*
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="review">
-          <div class="container">
-            <div class="review-container">
-              <div class="review-list">
-                <img class="review-bg" srcset="./images/images-main/review-bg.png 2x" />
-                <div>
-                  <div class="review-card show-on-scroll">
-                    <div class="review-avatar">
-                      <img srcset="https://source.unsplash.com/random 2x" />
-                    </div>
-                    <h3 class="review-name">Mark Parker</h3>
-                    <span class="review-job">CEO of Fiverr</span>
-                    <p class="review-desc">
-                      Cura bitur susci pit nequeut lacus interd sit amet dictum nunc eleifend.
-                      Mauris pulvinar odio at nunc labortis.
-                    </p>
-                    <div class="review-rating">
-                      <img srcset="./images/images-main/icon-star.png 2x" /><span>4.5</span>
-                    </div>
-                    <div class="review-quote"><img srcset="./images/images-main/icon-quote.png 2x" /></div>
-                  </div>
-                  <div class="review-card show-on-scroll">
-                    <div class="review-avatar">
-                      <img srcset="https://source.unsplash.com/random 2x" />
-                    </div>
-                    <h3 class="review-name">Mark Parker</h3>
-                    <span class="review-job">CEO of Fiverr</span>
-                    <p class="review-desc">
-                      Cura bitur susci pit nequeut lacus interd sit amet dictum nunc eleifend.
-                      Mauris pulvinar odio at nunc labortis.
-                    </p>
-                    <div class="review-rating">
-                      <img srcset="./images/images-main/icon-star.png 2x" /><span>4.5</span>
-                    </div>
-                    <div class="review-quote"><img srcset="./images/images-main/icon-quote.png 2x" /></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="review-card show-on-scroll">
-                    <div class="review-avatar">
-                      <img srcset="https://source.unsplash.com/random 2x" />
-                    </div>
-                    <h3 class="review-name">Mark Parker</h3>
-                    <span class="review-job">CEO of Fiverr</span>
-                    <p class="review-desc">
-                      Cura bitur susci pit nequeut lacus interd sit amet dictum nunc eleifend.
-                      Mauris pulvinar odio at nunc labortis.
-                    </p>
-                    <div class="review-rating">
-                      <img srcset="./images/images-main/icon-star.png 2x" /><span>4.5</span>
-                    </div>
-                    <div class="review-quote"><img srcset="./images/images-main/icon-quote.png 2x" /></div>
-                  </div>
-                </div>
-              </div>
-              <div class="review-content">
-                <span class="global-caption show-on-scroll">Đã làm những gì</span>
-                <h2 class="global-heading global-heading--big show-on-scroll">Phản hồi tích cực</h2>
-                <p class="global-text show-on-scroll">
-                  Ok oke okk Ok oke okk Ok oke okk Ok oke okk Ok oke okk Ok oke okkOk oke okk Ok oke
-                  okk Ok oke okk
-                </p>
-                <div class="review-number show-on-scroll">
-                  <div class="review-check"><img srcset="./images/images-main/icon-check.png 2x" /></div>
-                  <span class="review-count">450+</span><span>Phản hồi từ khách hàng</span>
-                </div>
-                <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
-              </div>
-            </div>
-          </div>
-        </section> -->
         <section class="blog">
           <div class="container">
             <div class="blog-header">
@@ -536,10 +292,13 @@
               </div>
             </div>
             <!-- blog list -->
+            <p class="global-heading--normal">
+              Có thể bạn thích
+            </p>
             <div class="blog-list slider-responsive">
               <div class="blog-item show-on-scroll">
                 <div class="blog-image img-responsive">
-                  <img src="./images/images-main/img-blog1.jpg" />
+                  <img src="../assets/images/main-images/img-blog1.jpg" />
                 </div>
                 <div class="blog-content">
                   <h3 class="blog-title">Tên Blog món ăn</h3>
@@ -552,7 +311,7 @@
               </div>
               <div class="blog-item show-on-scroll">
                 <div class="blog-image">
-                  <img src="./images/images-main/img-blog1.jpg" />
+                  <img src="../assets/images/main-images/img-blog1.jpg" />
                 </div>
                 <div class="blog-content">
                   <h3 class="blog-title">Tên Blog món ăn</h3>
@@ -562,7 +321,7 @@
               </div>
               <div class="blog-item show-on-scroll">
                 <div class="blog-image">
-                  <img src="./images/images-main/img-blog1.jpg" />
+                  <img src="../assets/images/main-images/img-blog1.jpg" />
                 </div>
                 <div class="blog-content">
                   <h3 class="blog-title">Tên Blog món ăn</h3>
@@ -577,7 +336,7 @@
               </div>
               <div class="blog-item show-on-scroll">
                 <div class="blog-image">
-                  <img src="./images/images-main/img-blog1.jpg" />
+                  <img src="../assets/images/main-images/img-blog1.jpg" />
                 </div>
                 <div class="blog-content">
                   <h3 class="blog-title">Tên Blog món ăn</h3>
@@ -592,7 +351,7 @@
               </div>
               <div class="blog-item show-on-scroll">
                 <div class="blog-image">
-                  <img src="./images/images-main/img-blog1.jpg" />
+                  <img src="../assets/images/main-images/img-blog1.jpg" />
                 </div>
                 <div class="blog-content">
                   <h3 class="blog-title">Tên Blog món ăn</h3>
@@ -607,7 +366,7 @@
               </div>
               <div class="blog-item show-on-scroll">
                 <div class="blog-image">
-                  <img src="./images/images-main/img-blog1.jpg" />
+                  <img src="../assets/images/main-images/img-blog1.jpg" />
                 </div>
                 <div class="blog-content">
                   <h3 class="blog-title">Tên Blog món ăn</h3>
@@ -650,7 +409,7 @@
         <div class="footer-container">
           <div class="footer-column">
             <a href="index.html" class="footer-logo">
-              <img srcset="./images/images-main/logo.png 2x" alt="" />
+              <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, qui error,
@@ -659,16 +418,16 @@
             </p>
             <div class="social">
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/facebook.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/twitter.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/twitter.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/instagram.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/apple.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/apple.png 2x" alt="" />
               </a>
             </div>
           </div>
@@ -739,6 +498,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->
-    <script src="./app.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

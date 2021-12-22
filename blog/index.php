@@ -1,13 +1,16 @@
+<?php
+include'../connect/connect.php';
+
+
+?>
+
+
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/images/main-images/logo-main.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../assets/images/main-images/logo-main.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,12 +32,15 @@
   </head>
   <body>
     <div class="totop">
-      <a href="#" class="goto-top"></a>
+      <a
+        href="#"
+        class="goto-top"
+      ></a>
     </div>
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index.html"
+          <a href="../main-page/"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -45,21 +51,28 @@
               /></label>
             </div>
             <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+            <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
             <li class="menu-item">
               <a class="menu-link" href="../monan_main_page/index.php">Món ăn</a>
             </li>
-            <li class="menu-item">
-              <a class="menu-link" href="../monan_main_page/index.html">Món ăn</a>
-            </li>
-            <li class="menu-item"><a class="menu-link link-active" href="#">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
-            <li class="auth">
-              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
-            </li>
+            <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="../service/service.php">Dịch vụ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
+            <?php if (empty($_SESSION['email'])){ ?>
+                <li class="auth">
+                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+                </li>
+            <?php } else {?>
+                <li class="auth">
+                    <button class="button button--primary auth-signup">Account</button>
+
+                </li>
+            <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
             ><img src="../assets/images/main-images/menu.png" alt="Menu"
@@ -72,7 +85,7 @@
           <div class="container">
             <div class="blog-header">
               <h2 class="global-heading global-heading--big show-on-scroll">
-                Các bài blog được cập nhật thường xuyên của chúng tôi
+                Our Regular Updated Blog Posts
               </h2>
               <p class="global-text show-on-scroll">
                 tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
@@ -82,12 +95,9 @@
             <div class="post-feature-list slider-responsive-2">
               <div class="post-feature show-on-scroll">
                 <div class="post-feature-content">
-                  <a
-                    href="./blog_1/index.html"
-                    class="post-feature-media post-media show-on-scroll show-on-scroll"
-                  >
+                  <a href="./blog_1/index.php" class="post-feature-media post-media show-on-scroll show-on-scroll">
                     <img
-                      src="../assets/images/blog-images/blog1.jpg"
+                      src="https://cdn.dribbble.com/users/33073/screenshots/15238065/media/5df5a84f3ed908ad7bad36fa645e3d4a.png?compress=1&resize=1200x900"
                       alt=""
                       class="post-feature-image"
                     />
@@ -95,27 +105,24 @@
                   <div class="post-feature-info">
                     <a href="#" class="post-category">The newest</a>
                     <h2>
-                      <a href="./blog_1/index.html" class="post-feature-title post-title"
-                        >Những món ăn nhất định phải thử một lần khi sống trong đời</a
+                      <a href="./blog_1/index.php" class="post-feature-title post-title"
+                        >HowmmmmHowmmmmHowmmmmHowmmmmHHowmmmm</a
                       >
                     </h2>
                     <p class="post-desc">
-                      <a
-                        href="https://www.blogamthuc.com/nhung-mon-an-nhat-dinh-phai-thu-mot-lan-khi-song-trong-doi.html"
-                        >https://www.blogamthuc.com/nhung-mon-an-nhat-dinh-phai-thu-mot-lan-khi-song-trong-doi.html</a
-                      >
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur quas
+                      distinctio, quis minima magni sint accusamus! Aliquid distinctio unde porro
+                      adipisci totam itaque, laudantium natus! Repudiandae perferendis mollitia
+                      ipsam repellendus.
                     </p>
                   </div>
                 </div>
               </div>
               <div class="post-feature show-on-scroll">
                 <div class="post-feature-content">
-                  <a
-                    href="./blog_2/index.html"
-                    class="post-feature-media post-media show-on-scroll show-on-scroll"
-                  >
+                  <a href="./blog_1/index.php" class="post-feature-media post-media show-on-scroll show-on-scroll">
                     <img
-                      src="../assets/images/blog-images/blog2.jpg"
+                      src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
                       alt=""
                       class="post-feature-image"
                     />
@@ -123,27 +130,24 @@
                   <div class="post-feature-info">
                     <a href="#" class="post-category">The newest</a>
                     <h2>
-                      <a href="./blog_2/index.html" class="post-feature-title post-title"
-                        >Người Nhật Bản ăn gì vào đêm trăng rằm?
-                      </a>
+                      <a href="./blog_1/index.php" class="post-feature-title post-title"
+                        >HowmmmmHowmmmmHowmmmmHowmmmmHHowmmmm</a
+                      >
                     </h2>
                     <p class="post-desc">
-                      <a
-                        href="https://www.blogamthuc.com/nguoi-nhat-ban-an-gi-vao-dem-trang-ram.html"
-                        >https://www.blogamthuc.com/nguoi-nhat-ban-an-gi-vao-dem-trang-ram.html</a
-                      >
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur quas
+                      distinctio, quis minima magni sint accusamus! Aliquid distinctio unde porro
+                      adipisci totam itaque, laudantium natus! Repudiandae perferendis mollitia
+                      ipsam repellendus.
                     </p>
                   </div>
                 </div>
               </div>
               <div class="post-feature show-on-scroll">
                 <div class="post-feature-content">
-                  <a
-                    href="./blog_3/index.html"
-                    class="post-feature-media post-media show-on-scroll show-on-scroll"
-                  >
+                  <a href="./blog_1/index.php" class="post-feature-media post-media show-on-scroll show-on-scroll">
                     <img
-                      src="../assets/images/blog-images/blog3.jpg"
+                      src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
                       alt=""
                       class="post-feature-image"
                     />
@@ -151,150 +155,163 @@
                   <div class="post-feature-info">
                     <a href="#" class="post-category">The newest</a>
                     <h2>
-                      <a href="./blog_3/index.html" class="post-feature-title post-title"
-                        >Khám phá khu phố Tàu giữa lòng Sài Gòn</a
+                      <a href="./blog_1/index.php" class="post-feature-title post-title"
+                        >Howmmmm</a
                       >
                     </h2>
                     <p class="post-desc">
-                      <a href="https://lyhoangdong.weebly.com/am-thuc-duong-pho/pho-tau"
-                        >https://lyhoangdong.weebly.com/am-thuc-duong-pho/pho-tau</a
-                      >
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur quas
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <p class="post-title-heading">Blog mới gần đây</p>
             <div class="post-list">
               <div class="post-item show-on-scroll">
-                <a href="./blog_2/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_2/index.html" class="post-title"
-                      >Người Nhật Bản ăn gì vào đêm trăng rằm?
-                    </a>
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    <a href="https://www.blogamthuc.com/nguoi-nhat-ban-an-gi-vao-dem-trang-ram.html"
-                      >https://www.blogamthuc.com/nguoi-nhat-ban-an-gi-vao-dem-trang-ram.html</a
-                    >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="./blog_3/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_3/index.html" class="post-title"
-                      >Khám phá khu phố Tàu giữa lòng Sài Gòn</a
-                    >
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    Khu phố Tàu Thành phố Hồ Chí Minh, nằm ở trung tâm quận 5, có vẻ yên tĩnh vào
-                    buổi sáng nhưng nhộn nhịp vào ban đêm.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="./blog_4/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_4/index.html" class="post-title"
-                      >Chỉ Với 30k Thì Ăn Gì Ở Sài Gòn?</a
-                    >
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    Với 30k, bạn có thể ăn món gì ở Sài Gòn? Một câu hỏi tưởng chừng rất dễ trả lời
-                    nhưng lại khiến nhiều bạn lúng túng.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="./blog_5/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_5/index.html" class="post-title"
-                      >TOP 8 loại quả đắt đỏ nhất thế giới
-                    </a>
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    <a
-                      href="https://blogchiasekienthuc.com/kien-thuc/8-loai-qua-dat-do-nhat-the-gioi.html"
-                      >https://blogchiasekienthuc.com/kien-thuc/8-loai-qua-dat-do-nhat-the-gioi.html</a
-                    >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="./blog_6/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog6.png" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_6/index.html" class="post-title"
-                      >FOOD STYLIST – NHỮNG NGƯỜI NGHỆ SĨ BIẾN HOÁ TRÊN BÀN ĂN
-                    </a>
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    Đằng sau những món ăn “nhìn là thấy đói” xuất hiện trên các bức ảnh, menu nhà
-                    hàng, bìa sách, tạp chí hay mạng internet mà chúng ta bắt gặp hằng ngày chính là
-                    sự sáng tạo không ngừng của các food stylist.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="./blog_7/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_7/index.html" class="post-title"
-                      >CÁCH LÀM “ROSÉ ROLL CAKE” – BÁNH CUỘN KEM PHOMAI BẰNG… CHẢO
-                    </a>
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    <a
-                      href="https://www.esheepkitchen.com/cach-lam-rose-roll-cake-banh-cuon-kem-phomai-bang-chao/"
-                      >https://www.esheepkitchen.com/cach-lam-rose-roll-cake-banh-cuon-kem-phomai-bang-chao/</a
-                    >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="./blog_8/index.html" class="post-media">
-                  <img src="../assets/images/blog-images/blog8.png" alt="" class="post-image" />
+                <a href="#" class="post-media">
+                  <img
+                    src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
+                    alt=""
+                    class="post-image"
+                  />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="./blog_8/index.html" class="post-title"
-                      >6 LỢI ÍCH CỦA VIỆC NẤU ĂN TẠI NHÀ</a
-                    >
+                    <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
                   </h3>
                   <p class="post-desc">
-                    <a href="https://bepxua.vn/6-loi-ich-cua-viec-nau-an-tai-nha/"
-                      >https://bepxua.vn/6-loi-ich-cua-viec-nau-an-tai-nha/</a
-                    >
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
+                    architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
+                    asperiores ipsa repellat sit odit eos quia nostrum quae.
                   </p>
                 </div>
               </div>
             </div>
             <!-- blog list -->
-            <p class="post-title-heading">Có thể bạn thích</p>
+            <p class="global-heading--normal">
+              Có thể bạn thích
+            </p>
             <div class="blog-list slider-responsive">
               <div class="blog-item show-on-scroll">
                 <div class="blog-image img-responsive">
@@ -408,7 +425,7 @@
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.html" class="footer-logo">
+            <a href="index.php" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">

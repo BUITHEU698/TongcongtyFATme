@@ -31,7 +31,7 @@ if (isset($_POST['email'])){
     else{
       $_SESSION['email']=$email;
       $_SESSION['dangnhap']=true;
-      header("location: ../profile/index.html");
+      header("location: ../profile/index.php");
     }
   }
 }

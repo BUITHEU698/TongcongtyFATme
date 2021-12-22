@@ -1,3 +1,9 @@
+<?php
+include'../connect/connect.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,8 +39,12 @@
     <!-- <link rel="stylesheet" href="./css/TESST.CSS" /> -->
     <link rel="stylesheet" href="./css/app.scss.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
     <title>FATMe - Món ăn</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
   </head>
 
   <body>
@@ -49,22 +59,28 @@
           <div class="menu-item toggle-close">
             <label for="toggle-check"><img src="./img/logo/menu-close.png" alt="Close" /></label>
           </div>
-          <li class="menu-item">
-            <a class="menu-link" href="../main-page/index.html">Trang chủ</a>
-          </li>
-          <li class="menu-item"><a class="menu-link link-active" href="#">Món ăn</a></li>
-          <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
-          <<<<<<< HEAD
-          <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
-          <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
-          =======
+          <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+          <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
+          <li class="menu-item"><a class="menu-link link-active" href="index.php">Món ăn</a></li>
+          
+          <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
           <li class="menu-item"><a class="menu-link" href="/service/service.html">Dịch vụ</a></li>
-          <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
-          >>>>>>> 58050e316c68b9c5e02415592beee8d69f478764
-          <li class="auth">
-            <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-            ><a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
-          </li>
+          <li class="menu-item"><a class="menu-link" href="../contac/index.html">Liên hệ</a></li>
+          <?php if (empty($_SESSION['email'])){ ?>
+                <li class="auth">
+                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+                </li>
+            <?php } else {?>
+                <li class="auth">
+                    <button class="button button--primary auth-signup">Account</button>
+
+                </li>
+            <?php }?>
         </ul>
         <label for="toggle-check" class="toggle"
           ><img src="./img/logo/menu.png" alt="Menu"
@@ -74,7 +90,10 @@
       
     </header>
 
-    <section id="section0" style="height: 550px" class="slider-area">
+
+
+
+    <section id="section0" style="height: 550px" class="slider-area ">
       <div class="main-slider owl-theme owl-carousel">
         <div
           class="single-slide item"
@@ -163,6 +182,7 @@
       </div>
       <div class="container">
         <div class="row">
+
           <a href="#" class="col-md-4 col-sm-4 col-xs-12">
             <div class="panel panel-default">
               <div
@@ -285,6 +305,7 @@
       </div>
     </section>
 
+   
     <section id="section1" class="show-on-scroll">
       <div class="container">
         <div class="other">
@@ -425,7 +446,8 @@
         </ul>
       </div>
     </section>
-
+    
+    
     <section id="section2" class="show-on-scroll">
       <div class="container">
         <div class="other">
@@ -495,7 +517,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -593,7 +615,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -691,7 +713,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -789,7 +811,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -887,7 +909,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -985,7 +1007,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -1083,7 +1105,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -1181,7 +1203,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -1279,7 +1301,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -1377,7 +1399,7 @@
                                 font-size: 14px;
                                 height: 55px;
                                 line-height: 22px;
-                                font-weight: 700;
+                                font-weight:700;
                               "
                               >Cơm Chiên Cá Mặn ngon như cơm mẹ chiên</strong
                             >
@@ -1414,10 +1436,11 @@
               </div>
             </div>
           </li>
+
         </ul>
       </div>
     </section>
-    <br /><br /><br /><br /><br />
+   <br><br><br><br><br>
     <footer class="footer">
       <div class="container">
         <div class="footer-container">
@@ -1430,7 +1453,7 @@
               aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
               repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
             </p>
-
+            
             <div class="social">
               <a href="#" class="social-item">
                 <img srcset="./img/logo/facebook.png 2x" alt="" />

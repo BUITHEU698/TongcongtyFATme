@@ -1,5 +1,5 @@
 <?php
-header("location:login/");
+header("location:main-page/index.php");
 
 
 ?>

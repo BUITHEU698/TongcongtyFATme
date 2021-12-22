@@ -28,7 +28,7 @@ $chuongtrinh_khuyenmai=mysqli_query($conn,"SELECT *FROM chuongtrinh_khuyenmai WH
         <div class="them_ma_container">
             <div class="title">
                 <ul>
-                    <li>z
+                    <li>
                         <h2>Thông tin mã khuyến mãi</h2>
                     </li>
                     <li class="right">

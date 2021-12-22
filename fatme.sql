@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 21, 2021 lúc 04:54 AM
+-- Thời gian đã tạo: Th12 21, 2021 lúc 11:58 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.0.13
 
@@ -80,7 +80,14 @@ INSERT INTO `danhmuc` (`email_khachhang`, `id_danhmuc`, `TENDANHMUC`, `MOTA`, `T
 
 CREATE TABLE `khachhang` (
   `id` int(11) NOT NULL,
+  `HOTEN` varchar(255) DEFAULT NULL,
+  `CMND` text DEFAULT NULL,
+  `NGAY` int(11) DEFAULT NULL,
+  `THANG` int(11) DEFAULT NULL,
+  `NAM` int(11) DEFAULT NULL,
   `email` char(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `SODIENTHOAI` text DEFAULT NULL,
+  `MOTA` mediumtext DEFAULT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -88,8 +95,8 @@ CREATE TABLE `khachhang` (
 -- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
-INSERT INTO `khachhang` (`id`, `email`, `password`) VALUES
-(61, '19522049@gm.uit.edu.vn', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `khachhang` (`id`, `HOTEN`, `CMND`, `NGAY`, `THANG`, `NAM`, `email`, `SODIENTHOAI`, `MOTA`, `password`) VALUES
+(61, 'Nguyễn Minh Phụng', '212587269', 7, 3, 2001, '19522049@gm.uit.edu.vn', '0899312618', '123', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -101,6 +108,7 @@ CREATE TABLE `ma_khuyenmai` (
   `email_khachhang` varchar(255) NOT NULL,
   `id_makhuyenmai` int(11) NOT NULL,
   `TENMAKHUYENMAI` varchar(255) NOT NULL,
+  `APDUNG` int(11) NOT NULL,
   `id_chuongtrinh` int(11) DEFAULT NULL,
   `GIATRIKHUYENMAI` int(11) NOT NULL,
   `GIATRIGIAMTOIDA` int(11) NOT NULL,
@@ -118,8 +126,9 @@ CREATE TABLE `ma_khuyenmai` (
 -- Đang đổ dữ liệu cho bảng `ma_khuyenmai`
 --
 
-INSERT INTO `ma_khuyenmai` (`email_khachhang`, `id_makhuyenmai`, `TENMAKHUYENMAI`, `id_chuongtrinh`, `GIATRIKHUYENMAI`, `GIATRIGIAMTOIDA`, `DIEUKIEN`, `DK_SOLUONG`, `GIOIHAN`, `GH_SOLUONG`, `THOIGIAN_BATDAU`, `TONGGIAY_BATDAU`, `THOIGIAN_KETTHUC`, `TONGGIAY_KETTHUC`) VALUES
-('19522049@gm.uit.edu.vn', 14, '123', 0, 123, 123, 1, 0, 1, 0, '2021-12-17 08:54:00', 1639706040, '2021-12-31 08:54:00', 1640915640);
+INSERT INTO `ma_khuyenmai` (`email_khachhang`, `id_makhuyenmai`, `TENMAKHUYENMAI`, `APDUNG`, `id_chuongtrinh`, `GIATRIKHUYENMAI`, `GIATRIGIAMTOIDA`, `DIEUKIEN`, `DK_SOLUONG`, `GIOIHAN`, `GH_SOLUONG`, `THOIGIAN_BATDAU`, `TONGGIAY_BATDAU`, `THOIGIAN_KETTHUC`, `TONGGIAY_KETTHUC`) VALUES
+('19522049@gm.uit.edu.vn', 14, '123', 0, 0, 123, 123, 1, 0, 1, 0, '2021-12-17 08:54:00', 1639706040, '2021-12-31 08:54:00', 1640915640),
+('19522049@gm.uit.edu.vn', 15, '123412', 0, 27, 123, 121, 1, 0, 1, 0, '2021-12-05 12:30:00', 1638682200, '2021-12-26 12:30:00', 1640496600);
 
 -- --------------------------------------------------------
 
@@ -203,7 +212,7 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT cho bảng `ma_khuyenmai`
 --
 ALTER TABLE `ma_khuyenmai`
-  MODIFY `id_makhuyenmai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_makhuyenmai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `monan`

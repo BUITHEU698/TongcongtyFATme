@@ -401,10 +401,10 @@ include'../connect/connect.php';
             <div class="subscribe-main">
               <div class="subscribe-content">
                 <h2 class="global-haeding subscribe-heading show-on-scroll">
-                  Sign up to Our Newsletter
+                  Nhận thông báo mới nhất
                 </h2>
                 <p class="global-text subscribe-desc show-on-scroll">
-                  You need to get positive results when you spend hard earned revenue and time.
+                  Nhập gmail để không bỏ lỡ những thông báo mới nhất và các ưu đãi hấp dẫn đến từ Fatme nhé !!!
                 </p>
               </div>
               <div class="subscribe-form">
@@ -425,11 +425,7 @@ include'../connect/connect.php';
             <a href="index.php" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, qui error,
-              aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
-              repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
-            </p>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
             <div class="social">
               <a href="#" class="social-item">
                 <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />

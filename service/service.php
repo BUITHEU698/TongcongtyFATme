@@ -85,7 +85,7 @@ include'../connect/connect.php';
                       <li>Tổ chức tiệc tại khu vực TPHCM và các tỉnh lân cận: Long An, Tiền Giang, Bến Tre, Tây Ninh, Bình Dương, Đồng Nai, Vũng Tàu</li>
                       <li> Tiệc BBQ mới là đẳng cấp, năng lực đáp ứng lên đến 100 bàn</li>
                     </ul>
-                    <h2>Tiêu chuẩn các loại dịch vụ  tiệc của FATFOOD:</h2>
+                    <h2>Tiêu chuẩn các loại dịch vụ  tiệc của FatMe:</h2>
                     <ul>
                       <li>Tiêu chuẩn Standard: Phổ biến nhất vì ưu điểm chi phí thấp và mặt bằng chật hẹp</li>
                       <li>Tiêu chuẩn VIP: Thích hợp các tiệc quan trọng: tiệc cưới, tiệc Công ty, liên hoan...</li>
@@ -455,11 +455,7 @@ include'../connect/connect.php';
             <a href="/monan_main_page/index.php" class="footer-logo">
               <img srcset="/monan_main_page/img/logo/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, qui error,
-              aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
-              repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
-            </p>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
 
             <div class="social">
               <a href="#" class="social-item">

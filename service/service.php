@@ -35,7 +35,9 @@ include'../connect/connect.php';
     </div>
     <header class="header">
       <div class="navigation">
-        <img class="header-logo" srcset="/monan_main_page/img/logo/logo.png 2x" />
+      <a href="../main-page/index.php"
+            ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
+          /></a>
         <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
         <ul class="menu">
           <div class="menu-item toggle-close">

@@ -86,7 +86,7 @@ body {
   justify-content: center;
   outline: none;
   border: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
@@ -629,54 +629,69 @@ body {
 }
 .mission-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 34px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.mission-heading {
+  max-width: 426px;
+  margin: 0 auto 32px;
 }
 .mission-item {
-  border-radius: 17px;
+  border: 2px solid #f4f6ff;
+  border-radius: 13px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: all 0.2s linear;
+  background-color: white;
+  box-shadow: 0px 10px 30px rgba(150, 182, 212, 0.01);
 }
 .mission-item:hover {
-  background: #ffffff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: 0px 24px 60px rgba(94, 122, 148, 0.1);
+  border-color: transparent;
 }
-.mission-item:hover .blog-title {
-  color: #f4a11a;
+.mission-item:hover .mission-title {
+  color: #ff7d00;
 }
-.mission-content {
-  padding: 33px 23px;
-}
-.mission-image {
-  height: 322px;
-}
-.mission-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 17px 17px 0px 0px;
-}
-.mission-title {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 27px;
-  color: #051441;
-  margin-bottom: 9px;
+.mission-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 26px;
   transition: all 0.2s linear;
 }
-.mission-desc {
-  font-size: 13px;
-  line-height: 20px;
-  color: #7f8ea1;
+.mission-icon img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100rem;
+  transition: all 0.2s linear;
+}
+.mission-title {
+  font-size: 18px;
+  transition: all 0.2s linear;
+}
+.mission-text {
+  font-size: 18px;
 }
 .mission .global-heading {
   max-width: 443px;
-  margin: 0 auto 25px;
+  margin: 0 auto 10px;
+}
+.mission .global-text {
+  margin-bottom: 20px;
 }
 .mission .global-caption {
   margin-bottom: 18px;
 }
-.mission .global-text {
-  margin-bottom: 34px;
+.mission-button {
+  width: 100%;
+  max-width: 250px;
+}
+.mission-button img {
+  height: 20px;
+  margin-right: 15px;
 }
 @media screen and (max-width: 1023px) {
   .mission {
@@ -689,10 +704,19 @@ body {
   .mission-content {
     max-width: 100%;
   }
+  .mission-header {
+    margin-bottom: 33px;
+  }
+  .mission-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 767px) {
   .mission {
     padding: 50px 0;
+  }
+  .mission-list {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

@@ -44,6 +44,11 @@ include'../connect/connect.php';
             <label for="toggle-check"><img src="/monan_main_page/img/logo/menu-close.png" alt="Close" /></label>
           </div>
           <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+          <?php if (!empty($_SESSION['email'])){ ?>
+                <li class="menu-item">
+                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
+                </li>
+            <?php }?>
           <li class="menu-item"><a class="menu-link" href="../monan_main_page/index.php">Món ăn</a></li>
           <li class="menu-item"><a class="menu-link" href="/blog/index.php">Blog</a></li>
           <li class="menu-item"><a class="menu-link link-active" href="#">Dịch vụ</a></li>

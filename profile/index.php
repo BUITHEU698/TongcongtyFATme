@@ -110,11 +110,7 @@ if(empty($_SESSION['email'])){
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-<<<<<<< HEAD
           <a href="../main-page/index.html"
-=======
-          <a href="../main-page/index.php"
->>>>>>> e8517f1316d72afea63009981ff2141645405304
             ><img class="header-logo" srcset="./images/images-main/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -133,7 +129,6 @@ if(empty($_SESSION['email'])){
                 </li>
             <?php }?>
             <li class="menu-item">
-<<<<<<< HEAD
               <a class="menu-link" href="../monan_main_page/index.html">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
@@ -144,9 +139,6 @@ if(empty($_SESSION['email'])){
               ><a class="button button--primary auth-signup" href="../register/index.php"
                 >Đăng ký</a
               >
-=======
-              <a class="menu-link" href="../monan_main_page/index.php">Món ăn</a>
->>>>>>> e8517f1316d72afea63009981ff2141645405304
             </li>
             <li class="menu-item"><a class="menu-link link-active" href="../blog/blog.php">Blog</a></li>
             <li class="menu-item"><a class="menu-link" href="../service/service.php">Dịch vụ</a></li>

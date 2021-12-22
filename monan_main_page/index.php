@@ -66,10 +66,10 @@ include'../connect/connect.php';
                 </li>
             <?php }?>
           <li class="menu-item"><a class="menu-link link-active" href="index.php">Món ăn</a></li>
-          
+
           <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
           <li class="menu-item"><a class="menu-link" href="/service/service.html">Dịch vụ</a></li>
-          <li class="menu-item"><a class="menu-link" href="../contac/index.html">Liên hệ</a></li>
+          <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
           <?php if (empty($_SESSION['email'])){ ?>
                 <li class="auth">
                     <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
@@ -87,7 +87,7 @@ include'../connect/connect.php';
         /></label>
         <label for="toggle-check" class="menu-overlay"></label>
       </div>
-      
+
     </header>
 
 
@@ -305,7 +305,7 @@ include'../connect/connect.php';
       </div>
     </section>
 
-   
+
     <section id="section1" class="show-on-scroll">
       <div class="container">
         <div class="other">
@@ -446,8 +446,8 @@ include'../connect/connect.php';
         </ul>
       </div>
     </section>
-    
-    
+
+
     <section id="section2" class="show-on-scroll">
       <div class="container">
         <div class="other">
@@ -1453,7 +1453,7 @@ include'../connect/connect.php';
               aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
               repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
             </p>
-            
+
             <div class="social">
               <a href="#" class="social-item">
                 <img srcset="./img/logo/facebook.png 2x" alt="" />

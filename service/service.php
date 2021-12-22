@@ -45,7 +45,7 @@ include'../connect/connect.php';
           <li class="menu-item"><a class="menu-link" href="../monan_main_page/index.php">Món ăn</a></li>
           <li class="menu-item"><a class="menu-link" href="/blog/index.php">Blog</a></li>
           <li class="menu-item"><a class="menu-link link-active" href="#">Dịch vụ</a></li>
-          <li class="menu-item"><a class="menu-link" href="../contac/index.php">Liên hệ</a></li>
+          <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
           <?php if (empty($_SESSION['email'])){ ?>
                 <li class="auth">
                     <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
@@ -64,7 +64,7 @@ include'../connect/connect.php';
         <label for="toggle-check" class="menu-overlay"></label>
       </div>
     </header>
-    
+
     <div class="service_container">
         <div class="service_header">
             <div class="header_content">
@@ -89,8 +89,8 @@ include'../connect/connect.php';
                     <img src="../assets/images/service-img/header.png" alt="">
                 </div>
             </div>
-        
-           
+
+
         </div>
         <div class="body_service">
             <div class="step_1">
@@ -98,7 +98,7 @@ include'../connect/connect.php';
               <ul>
                 <li>
                   <div class="show_step">
-                    <div class="name_tag">  
+                    <div class="name_tag">
                       <img src="../assets/images/service-img/standard.png" alt="standar">
                       <div class="name_header">
                         <h3>STANDARD</h3>
@@ -113,7 +113,7 @@ include'../connect/connect.php';
                 </li>
                 <li>
                   <div class="show_step">
-                    <div class="name_tag">  
+                    <div class="name_tag">
                       <img src="../assets/images/service-img/vip.png" alt="standar">
                       <div class="name_header">
                         <h3>VIP</h3>
@@ -129,7 +129,7 @@ include'../connect/connect.php';
                 </li>
                 <li>
                   <div class="show_step">
-                    <div class="name_tag">  
+                    <div class="name_tag">
                       <img src="../assets/images/service-img/suppervip.png" alt="standar">
                       <div class="name_header">
                         <h3>SUPER VIP</h3>
@@ -192,7 +192,7 @@ include'../connect/connect.php';
                     <h3 class="blog-title">Chả Ốc</h3>
                     <p class="blog-desc">
                       Giá: 120 000đ
-                    </p>                    
+                    </p>
                   </div>
                 </div>
                 <div class="blog-item show-on-scroll">
@@ -204,7 +204,7 @@ include'../connect/connect.php';
                     <p class="blog-desc">
                      150 000đ
                     </p>
-                    
+
                   </div>
                 </div>
                 <div class="blog-item show-on-scroll">
@@ -216,7 +216,7 @@ include'../connect/connect.php';
                     <p class="blog-desc">
                       180 000đ
                     </p>
-                   
+
                   </div>
                 </div>
                 <div class="blog-item show-on-scroll">
@@ -243,7 +243,7 @@ include'../connect/connect.php';
                 </div>
               </div>
 
-              
+
             <p class="global-heading--normal">
               Món súp bổ dưỡng
             </p>
@@ -267,7 +267,7 @@ include'../connect/connect.php';
                   <h3 class="blog-title">Cơm Chiên Tôm</h3>
                   <p class="blog-desc">
                     Giá: 95 000đ
-                  </p>                    
+                  </p>
                 </div>
               </div>
               <div class="blog-item show-on-scroll">
@@ -279,7 +279,7 @@ include'../connect/connect.php';
                   <p class="blog-desc">
                   200 000đ
                   </p>
-                  
+
                 </div>
               </div>
               <div class="blog-item show-on-scroll">
@@ -291,7 +291,7 @@ include'../connect/connect.php';
                   <p class="blog-desc">
                     220 000đ
                   </p>
-                
+
                 </div>
               </div>
               <div class="blog-item show-on-scroll">
@@ -329,7 +329,7 @@ include'../connect/connect.php';
                   <h3 class="blog-title">Tôm Sú Rang Muối HongKong</h3>
                   <p class="blog-desc">
                     Giá: 180 000đ
-                  </p>                    
+                  </p>
                 </div>
               </div>
               <div class="blog-item show-on-scroll">
@@ -341,7 +341,7 @@ include'../connect/connect.php';
                   <p class="blog-desc">
                   150 000đ
                   </p>
-                  
+
                 </div>
               </div>
               <div class="blog-item show-on-scroll">
@@ -353,7 +353,7 @@ include'../connect/connect.php';
                   <p class="blog-desc">
                     250 000đ
                   </p>
-                
+
                 </div>
               </div>
               <div class="blog-item show-on-scroll">
@@ -391,10 +391,10 @@ include'../connect/connect.php';
                   <h3 class="blog-title">Gà Hấp Nước Mắm</h3>
                   <p class="blog-desc">
                     Giá: 250 000đ
-                  </p>                    
+                  </p>
                 </div>
               </div>
-              
+
             </div>
             <p class="global-heading--normal">
               Món nấu - Kì công
@@ -419,12 +419,12 @@ include'../connect/connect.php';
                   <h3 class="blog-title">Lẩu Vịt Nấu Chao</h3>
                   <p class="blog-desc">
                     Giá: 280 000đ
-                  </p>                    
+                  </p>
                 </div>
               </div>
-              
+
             </div>
-            
+
             </div>
             <div class="step_4">
               <h2>Bước 4: Thanh toán</h2>
@@ -453,7 +453,7 @@ include'../connect/connect.php';
               aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
               repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
             </p>
-            
+
             <div class="social">
               <a href="#" class="social-item">
                 <img srcset="/monan_main_page/img/logo/facebook.png 2x" alt="" />
@@ -536,6 +536,6 @@ include'../connect/connect.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="./js/service.js"></script>
     <script src="../assets/js/main.js"></script>
-    
+
   </body>
 </html>

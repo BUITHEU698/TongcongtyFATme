@@ -28,7 +28,8 @@ ul{
     margin-left: 1rem;
     width: 1150px;
     height: 550px;
-    border: 1px solid var(--color-button-edit)
+    border: 1px solid var(--color-button-edit);
+    background-color: white;
 }
 .right{
     margin-right: 1.1rem;

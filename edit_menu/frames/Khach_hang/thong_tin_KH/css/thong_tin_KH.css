@@ -24,7 +24,7 @@ ul{
 }
 .khuyen_mai_container{
     width: 1180px;
-    height: 700px;
+    height: 600px;
 }
 .khuyen_mai_container h3{
     margin-top: 0.5rem;
@@ -110,7 +110,7 @@ h2{
     background-color: white;
     /* margin-top: 10px; */
     width: 100%;
-    height: 63rem;
+    height: 60rem;
     border-radius: 3px;
     border: 0.5px solid var(--color-button-edit)
 }

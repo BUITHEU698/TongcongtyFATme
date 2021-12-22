@@ -1490,7 +1490,7 @@ include'../connect/connect.php';
             </ul>
           </div>
           <div class="footer-column">
-            <h3 class="footer-heading heading-small">Hỗ trợ</h3>
+            <h3 class="footer-heading heading-small">Món ăn</h3>
             <ul class="footer-links">
               <li class="footer-item">
                 <a href="#" class="footer-link">Làm gì đó</a>

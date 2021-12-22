@@ -49,7 +49,7 @@ $(".slider-responsive").slick({
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 2,
-  autoplay: false,
+  autoplay: true,
   autoplaySpeed: 3500,
   dots: true,
   adaptiveHeight: true,

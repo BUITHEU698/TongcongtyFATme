@@ -97,7 +97,7 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .button--primary {
-  color: black;
+  color: white;
   line-height: 1.5;
   background: linear-gradient(103.38deg, #f67102 5.1%, #f4a91e 86.29%);
 }

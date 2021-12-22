@@ -49,7 +49,7 @@ if(empty($_SESSION['email'])){
       $query=mysqli_query($conn,$sql);
       if ($query){
         header("location:index.php");
-      } 
+      }
     }
   }else if (isset($_POST['huy'])){
     header("location:index.php");
@@ -410,8 +410,8 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-                  
-                  
+
+
                 </div>
                 <div>
                   <button class="btn btn-primary"name="thaydoi">Thay đổi</button>
@@ -421,7 +421,7 @@ if(empty($_SESSION['email'])){
                   <br>
                 <span><?php echo(isset($error)?$error:'')?></span>
                 </div>
-                
+
               </div>
               <div
                 class="tab-pane fade"
@@ -580,7 +580,7 @@ if(empty($_SESSION['email'])){
             </ul>
           </div>
           <div class="footer-column">
-            <h3 class="footer-heading heading-small">Hỗ trợ</h3>
+            <h3 class="footer-heading heading-small">Món ăn</h3>
             <ul class="footer-links">
               <li class="footer-item">
                 <a href="#" class="footer-link">Làm gì đó</a>

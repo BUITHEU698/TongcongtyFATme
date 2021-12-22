@@ -279,7 +279,7 @@ include'../connect/connect.php';
             <a href="index.php" class="footer-logo">
               <img srcset="./images/images-main/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatFood thật nhanh, giao tận tay khách</p>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
             <div class="social">
               <a href="#" class="social-item">
                 <img srcset="./images/images-main/facebook.png 2x" alt="" />

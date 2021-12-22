@@ -141,19 +141,23 @@
                 <ul>
                   <li>
                     <label for="">Ngày bắt đầu</label>
-                    <input type="datetime-local">
+                    <input type="datetime-local" id="time">
+                    <p id="showTime"></p>
                   </li>
                   <li>
                     <label for="">Địa chỉ</label>
-                   <input type="text" placeholder="Nhập địa chỉ">
+                   <input type="text" id="location" placeholder="Nhập địa chỉ">
+                   <p id="showLcation"></p>
                   </li>
                   <li>
                     <label for="">Số khách</label>
-                    <input type="number" placeholder="Nhập số khách tham dự">
+                    <input type="number" id="numCus" placeholder="Nhập số khách tham dự">
+                    <p id="showCus"></p>
                   </li>
                   <li>
                     <label for="">Số bàn</label>
-                    <input type="number" placeholder="Nhập số bàn">
+                    <input type="number" id="numDesk" placeholder="Nhập số bàn">
+                    <p id="showDesk"></p>
                   </li>
                 </ul>
             </div>
@@ -426,7 +430,7 @@
                 <option value="">Momo</option>
                 <option value="">Banking</option>
               </select>
-              <button>Xác nhận</button>
+              <button onclick="submit()">Xác nhận</button>
             </div>
         </div>
     </div>

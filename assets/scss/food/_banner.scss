@@ -1,0 +1,25 @@
+.banner {
+  padding-bottom: var(--section-spacing);
+  &-item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    justify-items: center;
+  }
+  &-item {
+    width: 100%;
+    &-img {
+      scale: 1.5;
+      object-fit: cover;
+    }
+  }
+  &-caption {
+    margin-bottom: 30px;
+  }
+  &-heading {
+    margin-bottom: 30px;
+  }
+  &-desc {
+    margin-bottom: 30px;
+  }
+}

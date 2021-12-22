@@ -12,6 +12,11 @@
       "label": "Run sass blog",
       "type": "shell",
       "command": "sass ./assets/scss/blog/app.scss ./assets/css/blog/app.css --watch",
+    },
+    {
+      "label": "Run sass food",
+      "type": "shell",
+      "command": "sass ./assets/scss/food/app.scss ./assets/css/food/app.css --watch",
     }
   ]
 }

@@ -1,0 +1,88 @@
+:root {
+  --section-spacing: 140px;
+}
+@media screen and (max-width: 1279px) {
+  :root {
+    --section-spacing: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --section-spacing: 50px;
+  }
+}
+
+.header {
+  padding-bottom: 20px;
+}
+
+.button--dark {
+  border-radius: 8px;
+  color: white;
+  line-height: 1.5;
+  background-color: #051441;
+}
+.button--dark:hover {
+  color: white;
+  background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
+}
+.button--orange {
+  border-radius: 8px;
+  color: white;
+  line-height: 1.5;
+  background-color: #ffb12b;
+}
+.button--orange:hover {
+  color: white;
+  background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
+}
+.button--green {
+  border-radius: 8px;
+  color: white;
+  line-height: 1.5;
+  background-color: #62ce86;
+}
+.button--green:hover {
+  color: white;
+  background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
+}
+
+.green {
+  color: #62ce86;
+}
+
+.orange {
+  color: #ffb12b;
+}
+
+.blue-dark {
+  color: #051441;
+}
+
+.banner {
+  padding-bottom: var(--section-spacing);
+}
+.banner-item {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  justify-items: center;
+}
+.banner-item {
+  width: 100%;
+}
+.banner-item-img {
+  scale: 1.5;
+  object-fit: cover;
+}
+.banner-caption {
+  margin-bottom: 30px;
+}
+.banner-heading {
+  margin-bottom: 30px;
+}
+.banner-desc {
+  margin-bottom: 30px;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,44 @@
+.header {
+  padding-bottom: 20px;
+}
+.button {
+  &--dark {
+    border-radius: 8px;
+    color: white;
+    line-height: 1.5;
+    background-color: $blue-dark;
+    &:hover {
+      color: white;
+      background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
+    }
+  }
+  &--orange {
+    border-radius: 8px;
+    color: white;
+    line-height: 1.5;
+    background-color: $orange;
+    &:hover {
+      color: white;
+      background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
+    }
+  }
+  &--green {
+    border-radius: 8px;
+    color: white;
+    line-height: 1.5;
+    background-color: $green;
+    &:hover {
+      color: white;
+      background: linear-gradient(103.38deg, #f4a91e 5.1%, #f67102 86.29%);
+    }
+  }
+}
+.green {
+  color: $green;
+}
+.orange {
+  color: $orange;
+}
+.blue-dark {
+  color: $blue-dark;
+}

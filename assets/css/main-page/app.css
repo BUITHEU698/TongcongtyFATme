@@ -666,6 +666,7 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 100rem;
+  object-fit: cover;
   transition: all 0.2s linear;
 }
 .mission-title {

@@ -1,5 +1,6 @@
 <?php
 include'../connect/connect.php';
+
 ?>
 
 
@@ -66,7 +67,7 @@ include'../connect/connect.php';
                 </li>
             <?php } else {?>
                 <li class="auth">
-                    <button class="button button--primary auth-signup">Account</button>
+                    <button class="button button--primary auth-signup"name="account">Account</button>
 
                 </li>
             <?php }?>

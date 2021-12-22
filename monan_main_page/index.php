@@ -68,8 +68,13 @@ include'../connect/connect.php';
           <li class="menu-item"><a class="menu-link link-active" href="index.php">Món ăn</a></li>
 
           <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
+<<<<<<< HEAD
           <li class="menu-item"><a class="menu-link" href="/service/service.html">Dịch vụ</a></li>
           <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+=======
+          <li class="menu-item"><a class="menu-link" href="/service/service.php">Dịch vụ</a></li>
+          <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
+>>>>>>> c6a585d64ced031fb27b028fce7711bd1b0d6fa8
           <?php if (empty($_SESSION['email'])){ ?>
                 <li class="auth">
                     <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>

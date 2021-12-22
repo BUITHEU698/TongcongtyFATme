@@ -32,7 +32,8 @@ if(empty($_SESSION['email'])){
                 <div class="centered">
                     <ul class="list_menu">
                         <li class="img_li">
-                            <img class="img_icon" src="./images/Logo .png" />
+                            <a href=""><img class="img_icon" src="./images/Logo .png" /></a>
+                            
                         </li>
                         <li class="search">
                             <div>

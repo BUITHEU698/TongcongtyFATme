@@ -151,7 +151,7 @@
   line-height: 1.4;
   font-weight: 300;
   font-size: 14px;
-  color: #635f85;
+  color: #6b7d92;
   margin-bottom: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -392,7 +392,7 @@
 }
 
 .header {
-  padding-bottom: 20px;
+  padding-bottom: 0;
 }
 
 .global-text {

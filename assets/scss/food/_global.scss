@@ -11,7 +11,7 @@
   &-food {
     &-heading {
       font-size: 30px;
-      line-height: calc(40/30);
+      line-height: calc(40 / 30);
     }
   }
 }
@@ -84,5 +84,46 @@
   }
   &-bgfull {
     background-color: $red;
+  }
+}
+.food {
+  &-container {
+    padding: 0 20px;
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  &-more {
+    color: $gray-dark;
+    display: flex;
+    align-items: center;
+    a {
+      z-index: 3;
+      &:hover {
+        & ~ img {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease;
+    }
+  }
+}
+.heart {
+  width: 35px;
+  height: 35px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
   }
 }

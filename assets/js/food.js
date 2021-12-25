@@ -58,3 +58,13 @@ $(".slider-responsive-category-list").slick({
     },
   ],
 });
+
+// get class heart click to change innerhtml image and get back
+$(".heart").click(function () {
+  if ($(this).attr("src") == "../assets/images/main-images/icon-heart.png") {
+    $(this).attr("src", "../assets/images/main-images/icon-heart-fill.png");
+  } else {
+    $(this).attr("src", "../assets/images/main-images/icon-heart.png");
+  }
+});
+

@@ -13,7 +13,7 @@
     a {
       z-index: 3;
       &:hover {
-        &~ img {
+        & ~ img {
           opacity: 1;
           transform: translateX(0);
         }

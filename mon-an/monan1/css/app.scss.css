@@ -160,7 +160,7 @@ body {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1440px;
   width: 100% !important;
   padding: 0 20px;
   margin-left: auto;
@@ -354,9 +354,12 @@ body {
   list-style: none;
   margin-bottom: 0;
 }
+
 .menu-link {
+  text-decoration: none;
   color: inherit;
   position: relative;
+  direction: no;
   transition: all 0.2s linear;
   display: block;
 }

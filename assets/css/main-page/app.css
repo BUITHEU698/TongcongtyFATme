@@ -1103,10 +1103,6 @@ body {
   }
 }
 
-.header {
-  padding-bottom: 0;
-}
-
 .subscribe {
   margin-bottom: var(--section-spacing);
 }

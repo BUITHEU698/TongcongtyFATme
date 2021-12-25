@@ -1,3 +1,20 @@
+:root {
+  --section-spacing: 100px;
+  @media screen and (max-width: 1279px) {
+    --section-spacing: 70px;
+  }
+  @media screen and (max-width: 767px) {
+    --section-spacing: 50px;
+  }
+}
+.global {
+  &-food {
+    &-heading {
+      font-size: 30px;
+      line-height: calc(40/30);
+    }
+  }
+}
 .header {
   padding-bottom: 0;
 }
@@ -36,24 +53,36 @@
 .green {
   color: $green;
   &-bg {
-    background-color: rgba(98, 206, 134, 0.1);
+    background-color: rgba(98, 206, 134, 0.08);
+  }
+  &-bgfull {
+    background-color: $green;
   }
 }
 .orange {
   color: $orange;
   &-bg {
-    background-color: rgba(255, 177, 43, 0.1);
+    background-color: rgba(255, 177, 43, 0.08);
+  }
+  &-bgfull {
+    background-color: $orange;
   }
 }
 .blue-dark {
   color: $blue-dark;
   &-bg {
-    background-color: rgba(5, 20, 65, 0.1);
+    background-color: rgba(5, 20, 65, 0.08);
+  }
+  &-bgfull {
+    background-color: $blue-dark;
   }
 }
 .red {
   color: $red;
   &-bg {
-    background-color: rgba(255, 76, 59, 0.1);
+    background-color: rgba(255, 76, 59, 0.08);
+  }
+  &-bgfull {
+    background-color: $red;
   }
 }

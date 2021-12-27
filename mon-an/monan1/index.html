@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/logo/logo-main.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/app.scss.css" />
+    <title>FATMe - Món ăn</title>
+  </head>
+
+  <body>
+    <div class="totop">
+      <a href="#" class="goto-top"></a>
+    </div>
+    <header class="header">
+      <div class="navigation">
+        <img class="header-logo" srcset="./img/logo/logo.png 2x" />
+        <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
+        <ul class="menu">
+          <div class="menu-item toggle-close">
+            <label for="toggle-check"><img src="./img/logo/menu-close.png" alt="Close" /></label>
+          </div>
+          <li class="menu-item">
+            <a class="menu-link" href="../main-page/index.html">Trang chủ</a>
+          </li>
+          <li class="menu-item"><a class="menu-link" href="#!">Món ăn</a></li>
+          <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
+          <li class="menu-item"><a class="menu-link" href="../../blog/index.html">Blog</a></li>
+          <li class="menu-item">
+            <a class="menu-link" href="../../contact/index.html">Liên hệ</a>
+          </li>
+          <li class="auth">
+            <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
+            ><a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+          </li>
+        </ul>
+        <label for="toggle-check" class="toggle"
+          ><img src="./img/logo/menu.png" alt="Menu"
+        /></label>
+        <label for="toggle-check" class="menu-overlay"></label>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="card">
+          <!-- card left -->
+          <div class="product-imgs">
+            <div class="img-display">
+              <div class="img-showcase">
+                <img src="./img/nd/image.jpg" alt="shoe image" />
+                <img src="./img/nd/image (1).jpg"  alt="shoe image" />
+                <img src="./img/nd/image (2).jpg"  alt="shoe image" />
+                <img src="./img/nd/image (3).jpg"  alt="shoe image" />
+              </div>
+            </div>
+            <div class="img-select">
+              <div class="img-item">
+                <a href="#" data-id="1">
+                  <img src="./img/nd/image.jpg" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="2">
+                  <img src="./img/nd/image (1).jpg" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="3">
+                  <img src="./img/nd/image (2).jpg" alt="shoe image" />
+                </a>
+              </div>
+              <div class="img-item">
+                <a href="#" data-id="4">
+                  <img src="./img/nd/image (3).jpg"alt="shoe image" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- card right -->
+          <div class="product-content">
+            <h2 class="product-title">Cơm chiên cá mặn</h2>
+            <!-- <a href="#" class="product-link">visit nike store</a> -->
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.7(21)</span>
+            </div>
+
+            <div class="product-price">
+              <p class="last-price">Giá cũ: <span>50 000</span></p>
+              <p class="new-price">Giá mới: <span>45 000 (10%)</span></p>
+            </div>
+
+            <div class="product-detail">
+              <h2>Thông tin món ăn:</h2>
+              <p>
+                <a href="" style="font-weight: bold; color: black">Cơm chiên cá mặn </a> với những
+                thành phần như cá mặn xé nhỏ, trứng vịt muối, bơ, hành phi…chiên cùng với cơm tạo
+                nên món cơm chiên cá mặn có mùi vị độc đáo, đầy tầng lớp hương vị.
+              </p>
+              <p>Khi mua sẽ được bảo quản trong hộp giữ nhiệt FatMe với những tính năng:</p>
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i>Chất liệu
+                  <p>
+                    <span
+                      >Làm bằng giấy giấy Kraft tự hủy của Nhật Bản, hộp đựng đồ của FLYFOOD thân
+                      thiện với môi trường.
+                    </span>
+                  </p>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>Kiểu dáng:
+                  <p>
+                    <span>Hình dáng hộp đa dạng, riêng biệt theo đặc thù của từng món. </span>
+                  </p>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>Khả năng giữ nhiệt:
+                  <p>
+                    <span
+                      >Hộp đựng thức ăn của FLYFOOD đảm bảo giữ được độ nóng giòn cho các món ăn (gà
+                      bó xôi, cá tai tượng chiên xù…)
+                    </span>
+                  </p>
+                </li>
+                <!-- <li>
+                  <i class="fas fa-check-circle"></i>Shipping Area: <span>All over the world</span>
+                </li>
+                <li><i class="fas fa-check-circle"></i>Shipping Fee: <span>Free</span></li> -->
+              </ul>
+            </div>
+
+            <div class="purchase-info">
+              <input type="number" min="0" value="1" />
+              <button type="button" class="btn">
+                Add to Cart <i class="fas fa-shopping-cart"></i>
+              </button>
+              <button type="button" class="btn">Compare</button>
+            </div>
+
+            <div class="social-links">
+              <p>Share</p>
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-column">
+            <a href="index.html" class="footer-logo">
+              <img srcset="./img/logo/logo.png 2x" alt="" />
+            </a>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
+            <div class="social">
+              <a href="#" class="social-item">
+                <img srcset="./img/logo/facebook.png 2x" alt="" />
+              </a>
+              <a href="#" class="social-item">
+                <img srcset="./img/logo/twitter.png 2x" alt="" />
+              </a>
+              <a href="#" class="social-item">
+                <img srcset="./img/logo/instagram.png 2x" alt="" />
+              </a>
+              <a href="#" class="social-item">
+                <img srcset="./img/logo/apple.png 2x" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Dịch vụ</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Tên dịch vụ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Món ăn</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+              <li class="footer-item">
+                <a href="#" class="footer-link">Làm gì đó</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Liên hệ</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="mailto:congtyfatme@gmail.com" class="footer-link-none"
+                  >congtyfatme@gmail.com</a
+                >
+              </li>
+              <li class="footer-item">
+                <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
+              </li>
+              <li class="footer-item">
+                <span href="#" class="footer-link-none"
+                  >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">All Right Reserved by Us! Copyright FATMe 2021</div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

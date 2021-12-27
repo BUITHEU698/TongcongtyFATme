@@ -33,6 +33,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
@@ -43,6 +44,8 @@
     />
     <!-- my css -->
     <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="../assets/css/main-page/app.css" />
+    <link rel="stylesheet" href="../assets/css/profile/profile.css">
     <title>FATMe - Blog</title>
   </head>
   <body>
@@ -57,15 +60,104 @@
       ></a>
     </div>
     <div class="wrapper">
-      <header id="header">
+      <header class="header">
+        <div class="navigation">
+          <a href="#"
+            ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
+          /></a>
+          <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
+          <ul class="menu">
+            <div class="menu-item toggle-close">
+              <label for="toggle-check"
+                ><img src="../assets/images/main-images/menu-close.png" alt="Close"
+              /></label>
+            </div>
+            <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../monan_main_page/index.html">Món ăn</a>
+            </li>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../service/service.html">Dịch vụ</a>
+            </li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+            <li class="auth">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="#!">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
+                  <span class="auth-username">Win Lax</span>
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <label for="toggle-check" class="toggle"
+            ><img src="../assets/images/main-images/menu.png" alt="Menu"
+          /></label>
+          <label for="toggle-check" class="overlay"></label>
+        </div>
        
       </header>
-     
-      <script> 
-        $(function(){
-            $("#header").load("../Header/index2.html"); 
-        });
-    </script>
+      
       <section class="">
         <div class="container">
           <h1 class="mb-5">Account Settings</h1>
@@ -574,8 +666,7 @@
       </div>
     </footer>
     <!-- script link -->
- 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->

@@ -1,5 +1,3 @@
-
-// go to top button
 const gotoTop = document.querySelector(".goto-top");
 const nav = document.querySelector(".navigation");
 window.addEventListener("scroll", function () {

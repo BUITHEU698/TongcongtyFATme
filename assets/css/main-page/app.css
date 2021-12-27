@@ -303,7 +303,7 @@ body {
   top: 50px;
   right: 0;
   background-color: white;
-  display: block;
+  display: none;
   list-style-type: none;
   width: 100%;
   z-index: -10;
@@ -312,7 +312,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: all 0.3s ease-in-out;
   transform: translateY(-10px);
-  opacity: 0;
 }
 .auth-like-dropdown-item {
   margin-bottom: 10px;
@@ -355,7 +354,7 @@ body {
   top: 50px;
   right: 0;
   background-color: white;
-  display: block;
+  display: none;
   list-style-type: none;
   width: 100%;
   z-index: -10;
@@ -364,7 +363,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: all 0.3s ease-in-out;
   transform: translateY(-10px);
-  opacity: 0;
 }
 .auth-shoppingcart-dropdown-item {
   margin-bottom: 10px;
@@ -420,7 +418,7 @@ body {
   left: 0;
   right: 0;
   background-color: white;
-  display: block;
+  display: none;
   list-style-type: none;
   width: 100%;
   z-index: -10;
@@ -428,7 +426,6 @@ body {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transform: translateY(-10px);
-  opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 .auth-user-dropdown-link {

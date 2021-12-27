@@ -52,7 +52,7 @@ include'../connect/connect.php';
             </div>
             <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
+              <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
             <li class="menu-item">
@@ -153,9 +153,15 @@ include'../connect/connect.php';
               thương hiệu nổi tiếng.
             </p>
             <div class="header-actions">
-              <a class="button button--primary" href="../mon-an/index.html">Khám phá</a
-              ><a class="watch-video button button--secondary btn-watch" href="#!"
-                ><div class="watch-icon">
+
+
+            <?php if (empty($_SESSION['email'])){ ?>
+              <a class="button button--primary" href="../login/index.php">Đăng nhập</a>
+            <?php } else {?>
+              <a class="button button--primary" href="../mon-an/index.php">Khám phá</a>
+            <?php }?>
+              <a class="watch-video button button--secondary btn-watch" href="#!">
+                <div class="watch-icon">
                   <img srcset="../assets/images/main-images/icon-play.png 2x" />
                 </div>
                 <span>Xem Video</span></a
@@ -250,7 +256,11 @@ include'../connect/connect.php';
                 <p class="global-text show-on-scroll">
                   Bất cứ nơi đâu, với 1 cuộc điện thoại chúng tôi sẽ phục vụ cho bạn những món ngon trọn hương vị
                 </p>
-                <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
+                <?php if (empty($_SESSION['email'])){ ?>
+                  <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
+            <?php } else {?>
+              <a class="button button--primary" href="../blog/index.php">Xem thêm</a>
+            <?php }?>
               </div>
             </div>
           </div>
@@ -414,7 +424,12 @@ include'../connect/connect.php';
                   </div>
                   <span class="review-count">450+</span><span>Phản hồi từ khách hàng</span>
                 </div>
-                <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
+
+                <?php if (empty($_SESSION['email'])){ ?>
+                  <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
+            <?php } else {?>
+              <a class="button button--primary" href="../contact/index.php">Liên hệ với chúng tôi</a>
+            <?php }?>
               </div>
             </div>
           </div>

@@ -1,3 +1,9 @@
+<?php
+include'../connect/connect.php';
+if(empty($_SESSION['email'])){
+    header("location: ../login/index.php");
+  }
+?>
 <html>
   <head>
     <meta charset="UTF-8" />

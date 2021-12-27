@@ -34,7 +34,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index.html"
+          <a href="../main-page/index-main.html"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -44,21 +44,82 @@
                 ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
+            <li class="menu-item"><a class="menu-link" href="../main-page/index-main.html">Trang chủ</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../main-page/index.html">Trang chủ</a>
+              <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
             </li>
-
+            <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../../mon-an/index.html" >Món ăn</a>
+              <a class="menu-link" href="../service/service.html">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link link-active" href="#">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="../service/service.html">Dịch vụ</a></li>
             <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
             <li class="auth">
-              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="../profile/index.php">Tài khoản</a>
+                  </li>
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.html">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
+                  <span class="auth-username">Win Lax</span>
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../profile/index.html">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
           <label for="toggle-check" class="toggle"
@@ -66,6 +127,7 @@
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
+       
       </header>
       <main>
         <section class="blog">

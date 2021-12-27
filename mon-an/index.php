@@ -2,6 +2,20 @@
 include'../connect/connect.php';
 if(empty($_SESSION['email'])){
     header("location: ../login/index.php");
+  }else {
+    $email = $_SESSION['email'];
+    if (isset($_POST['mua1'])){
+      $TENMONAN='Xôi Xá Xíu';
+      $GIA='35000';
+      $THELOAI='Xôi';
+      $IMAGE='xoixaxiu.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+
+    $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'");
+
+
   }
 ?>
 <html>
@@ -35,6 +49,9 @@ if(empty($_SESSION['email'])){
     <title>FATMe - Món ăn</title>
   </head>
   <body>
+
+
+  <form action=""method="post"enctype="multipart/form-data">
     <div class="totop">
       <a href="#" class="goto-top"></a>
     </div>
@@ -52,16 +69,16 @@ if(empty($_SESSION['email'])){
               /></label>
             </div>
             <li class="menu-item">
-              <a class="menu-link" href="../main-page/index-main.html">Trang chủ</a>
+              <a class="menu-link" href="../main-page/index.php">Trang chủ</a>
             </li>
             <li class="menu-item">
-              <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
+              <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../service/service.html">Dịch vụ</a>
+              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
             <li class="auth">
               <div class="auth-like">
                 <div class="auth-like-top">
@@ -146,18 +163,17 @@ if(empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
                   <li class="auth-shoppingcart-dropdown-item">
-                    <a href="" class="dropdown-item">
-                      <img
-                        src="../assets/images/food/xoixaxiu.jpeg"
-                        alt="Hình thức ăn"
-                        class="dropdown-item-image"
-                      />
-                      <div class="dropdown-item-text">
-                        <div class="dropdown-item-text-desc">Xôi</div>
-                        <div class="dropdown-item-text-title">Xôi Xá Xíu</div>
-                        <div class="dropdown-item-text-price"><span class="price">35.000</span>đ</div>
-                      </div>
-                      <div class="dropdown-item-right">
+                    <div href="" class="dropdown-item">
+                      <?php  foreach($dsgiohang as $key=>$value)  { ?>
+                      <img src="../assets/images/food/<?php echo $value['IMAGE']?>" alt="Hình thức ăn"
+                        class="dropdown-item-image">
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          
+                          <div class="dropdown-item-text-price"><span class="price"><?php echo $value['GIA']?></span>đ</div>
+                        </div>
+                        <div class="dropdown-item-right">
                         <img
                           class="trash"
                           src="../assets/images/main-images/icon-trash.png"
@@ -169,7 +185,8 @@ if(empty($_SESSION['email'])){
                           alt="heart"
                         />
                       </div>
-                    </a>
+                        <?php }?> 
+                    </div>
                   </li>
                   <li class="auth-shoppingcart-dropdown-item">
                     <div class="auth-shoppingcart-dropdown-link" href="#!">
@@ -603,15 +620,14 @@ if(empty($_SESSION['email'])){
               </h2>
             </div>
             <div class="product-list slider-responsive-product-list">
-              <a href="https://loship.vn/xoibanhmicochang?pItem=62007355">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
                       <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
                     </div>
                     <div class="product-item-image">
-                      <img src="../assets/images/food/xoixaxiu.jpeg" alt="" />
+                      <img src="../assets/images/food/xoixaxiu.jpeg" alt="" name="IMAGE"/>
                     </div>
                     <div class="product-item-name">
                       <div class="product-item-special global-text show-on-scroll">Xôi</div>
@@ -619,8 +635,7 @@ if(empty($_SESSION['email'])){
                         class="
                           product-item-title
                           global-heading global-heading--normal
-                          show-on-scroll
-                        "
+                          show-on-scroll"
                       >
                         Xôi Xá Xíu
                       </div>
@@ -639,29 +654,20 @@ if(empty($_SESSION['email'])){
                       <div class="product-item-number">
                         <div class="buttons_added">
                           <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name=""
-                            type="number"
-                            value="1"
-                          />
+                          <input aria-label="quantity"class="input-qty"max="10"min="1"name=""type="number"value="1"/>
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua1">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://loship.vn/delicapizzagaranandmiynguyenvandau?pItem=62657806">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
@@ -716,11 +722,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a
-                href="https://jollibee.com.vn/tin-tuc/no-phu-phe-ngon-quen-loi-ve-voi-combo-cap-doi-an-y-cho-toan-quoc"
-              >
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -778,9 +780,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://kfcvietnam.com.vn/vi/thuc-don/13/menu-uu-dai.html">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -837,9 +837,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://www.lotteria.vn/combo-79-000d.html">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -896,9 +894,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://www.lotteria.vn/combo-ga-s-t-tr-ng-mu-i-38-000d.html">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -959,9 +955,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://shopeefood.vn/ha-noi/tra-sua-tocotoco-le-trong-tan">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá 50%</div>
@@ -1020,7 +1014,6 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
             </div>
           </div>
         </section>
@@ -1032,8 +1025,7 @@ if(empty($_SESSION['email'])){
               </h2>
             </div>
             <div class="product-list slider-responsive-product-list">
-              <a href="https://loship.vn/steakbinduongso8?pItem=87617">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Đang hot</div>
@@ -1088,9 +1080,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://loship.vn/sushiwayquan1?pItem=63673332">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Đang hot</div>
@@ -1145,9 +1135,7 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
-              <a href="https://loship.vn/gachanhganuongtopmoshoponline?pItem=8711331">
-                <div class="producr-list-item">
+                <div class="product-list-item">
                   <div class="product-item">
                     <div class="product-item-top">
                       <!-- <div class="product-item-sale">Giảm giá <span class="percent">50</span>%</div> -->
@@ -1202,7 +1190,6 @@ if(empty($_SESSION['email'])){
                     </div>
                   </div>
                 </div>
-              </a>
             </div>
           </div>
         </section>
@@ -1326,5 +1313,6 @@ if(empty($_SESSION['email'])){
     <!-- script -->
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/food.js"></script>
+    </form>
   </body>
 </html>

@@ -37,6 +37,14 @@
   display: flex;
   gap: 0 13px;
   margin-left: 40px;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  &-user,
+  &-shoppingcart {
+    display: flex;
+  }
 }
 .menu {
   margin-left: auto;

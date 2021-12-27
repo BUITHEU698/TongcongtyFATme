@@ -29,6 +29,11 @@
   }
   &-list-item {
     border-radius: 8px;
+    margin-bottom: 20px;
+    transition: all 0.2s linear;
+    &:hover {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
   }
   &-item {
     padding: 30px;

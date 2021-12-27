@@ -259,6 +259,13 @@ body {
   gap: 0 13px;
   margin-left: 40px;
 }
+.auth img {
+  width: 40px;
+  height: 40px;
+}
+.auth-user, .auth-shoppingcart {
+  display: flex;
+}
 
 .menu {
   margin-left: auto;

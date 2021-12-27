@@ -59,12 +59,83 @@ include'../connect/connect.php';
               <a class="menu-link" href="../service/service.html">Dịch vụ</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
-            <li class="auth">
-              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
+
+            <?php if (empty($_SESSION['email'])){ ?>
+              <li class="auth">
+              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+              <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
             </li>
+            <?php } else {?>
+              <li class="auth">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="#!">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
+                  <span class="auth-username">Win Lax</span>
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
             ><img src="../assets/images/main-images/menu.png" alt="Menu"
@@ -82,7 +153,7 @@ include'../connect/connect.php';
               thương hiệu nổi tiếng.
             </p>
             <div class="header-actions">
-              <a class="button button--primary" href="#!">Đăng nhập</a
+              <a class="button button--primary" href="../mon-an/index.html">Khám phá</a
               ><a class="watch-video button button--secondary btn-watch" href="#!"
                 ><div class="watch-icon">
                   <img srcset="../assets/images/main-images/icon-play.png 2x" />
@@ -213,7 +284,7 @@ include'../connect/connect.php';
                   <p class="global-text">
                     Gia Lai
                   </p>
-                  <a class="button button--secondary mission-button" href="https://www.facebook.com/2108win">
+                  <a class="button button--secondary mission-button" href="https://www.facebook.com/100005212668434">
                     <img src="../assets/images/main-images/messenger.png" alt="">
                     Liên hệ</a>
                 </div>
@@ -228,9 +299,9 @@ include'../connect/connect.php';
                     19522049
                   </p>
                   <p class="global-text">
-                    Hồ Chí Minh
+                    Quảng Ngãi
                   </p>
-                  <a class="button button--secondary mission-button" href="https://www.facebook.com/MupChuAi.info">
+                  <a class="button button--secondary mission-button" href="https://www.facebook.com/100008231018356">
                     <img src="../assets/images/main-images/messenger.png" alt="">
                     Liên hệ</a>
                 </div>
@@ -247,7 +318,7 @@ include'../connect/connect.php';
                   <p class="global-text">
                     Khánh Hòa
                   </p>
-                  <a class="button button--secondary mission-button" href="https://www.facebook.com/ngmituan">
+                  <a class="button button--secondary mission-button" href="https://www.facebook.com/100005694195660">
                     <img src="../assets/images/main-images/messenger.png" alt="">
                     Liên hệ</a>
                 </div>
@@ -262,9 +333,9 @@ include'../connect/connect.php';
                     19522254
                   </p>
                   <p class="global-text">
-                    o dau z
+                    Hải Dương
                   </p>
-                  <a class="button button--secondary mission-button" href="https://www.facebook.com/MongNhaNe">
+                  <a class="button button--secondary mission-button" href="https://www.facebook.com/100019172957606">
                     <img src="../assets/images/main-images/messenger.png" alt="">
                     Liên hệ</a>
                 </div>
@@ -363,7 +434,7 @@ include'../connect/connect.php';
             <div class="blog-list slider-responsive">
               <div class="post-item show-on-scroll">
                 <a href="../blog_1/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -377,7 +448,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_2/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -391,7 +462,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_3/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -405,7 +476,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_4/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -419,7 +490,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_5/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -435,7 +506,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_6/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog6.png" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog6.png" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -449,7 +520,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_7/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -463,7 +534,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_8/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -477,7 +548,7 @@ include'../connect/connect.php';
               </div>
               <div class="post-item show-on-scroll">
                 <a href="../blog/blog_9/index.html" class="post-media">
-                  <img src="../../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
+                  <img src="../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
@@ -582,8 +653,8 @@ include'../connect/connect.php';
             <h3 class="footer-heading heading-small">Liên hệ</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="mailto:congtyfatme@gmail.com" class="footer-link-none"
-                  >congtyfatme@gmail.com</a
+                <a href="mailto:TongCongTyFATMe@gmail.com" class="footer-link-none"
+                  >TongCongTyFATMe@gmail.com</a
                 >
               </li>
               <li class="footer-item">

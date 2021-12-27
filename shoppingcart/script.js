@@ -30,10 +30,10 @@ $(document).ready(function () {
 
     /* Update totals display */
     $(".totals-value").fadeOut(fadeTime, function () {
-      $("#cart-subtotal").html(subtotal.toFixed(2));
-      $("#cart-tax").html(tax.toFixed(2));
-      $("#cart-shipping").html(shipping.toFixed(2));
-      $("#cart-total").html(total.toFixed(2));
+      $("#cart-subtotal").html(subtotal.toFixed(3));
+      $("#cart-tax").html(tax.toFixed(3));
+      $("#cart-shipping").html(shipping.toFixed(3));
+      $("#cart-total").html(total.toFixed(3));
       if (total == 0) {
         $(".checkout").fadeOut(fadeTime);
       } else {
@@ -54,7 +54,7 @@ $(document).ready(function () {
     /* Update line price display and recalc cart totals */
     productRow.children(".product-line-price").each(function () {
       $(this).fadeOut(fadeTime, function () {
-        $(this).text(linePrice.toFixed(2));
+        $(this).text(linePrice.toFixed(3));
         recalculateCart();
         $(this).fadeIn(fadeTime);
       });
@@ -71,3 +71,24 @@ $(document).ready(function () {
     });
   }
 });
+
+
+$('input.input-qty').each(function() {
+  var $this = $(this),
+    qty = $this.parent().find('.is-form'),
+    min = Number($this.attr('min')),
+    max = Number($this.attr('max'))
+  if (min == 0) {
+    var d = 0
+  } else d = min
+  $(qty).on('click', function() {
+    if ($(this).hasClass('minus')) {
+      if (d > min) d += -1
+    } else if ($(this).hasClass('plus')) {
+      var x = Number($this.val()) + 1
+      if (x <= max) d += 1
+    }
+    $this.attr('value', d).val(d)
+  })
+})
+

@@ -649,6 +649,7 @@ body {
   align-items: center;
   gap: 0 55px;
   margin-bottom: var(--section-spacing);
+  margin-top: var(--section-spacing);
 }
 .brand-item img {
   height: 32px;

@@ -1,3 +1,8 @@
+<?php
+include'../connect/connect.php';
+
+?>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -47,26 +52,80 @@
             </div>
             <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
+              <a class="menu-link" href="../monan_main_page/index.html">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="../service/service.html">Dịch vụ</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../service/service.html">Dịch vụ</a>
+            </li>
             <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
             <li class="auth">
-              <img class="heart" src="../assets/images/main-images/icon-heart.png" alt="heart">
-              <a href="#!">
-                <div class="auth-shoppingcart">
-                  <img src="../assets/images/main-images/icon-shoppingcart-header.png" alt="">
-                  <img src="../assets/images/main-images/icon-arrow-down.png" alt="arrow-down">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
                 </div>
-              </a>
-              <a href="#!" class="">
-                <div class="auth-user">
-                  <img src="../assets/images/main-images/icon-user.png" alt="user">
+                <ul class="auth-like-dropdown">
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="#!">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
                   <span class="auth-username">Win Lax</span>
-                  <img src="../assets/images/main-images/icon-arrow-down.png" alt="arrow-down">
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
                 </div>
-              </a>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
           <label for="toggle-check" class="toggle"
@@ -107,6 +166,7 @@
         </div>
       </header>
       <main>
+        <!-- brand -->
         <section class="brand">
           <div class="brand-item"><img src="../assets/images/main-images/brand-baemin.png" /></div>
           <div class="brand-item"><img src="../assets/images/main-images/brand-grab.png" /></div>
@@ -116,6 +176,7 @@
           <div class="brand-item"><img src="../assets/images/main-images/brand-gojek.png" /></div>
           <div class="brand-item"><img src="../assets/images/main-images/brand-loship.png" /></div>
         </section>
+        <!-- service -->
         <section class="service">
           <div class="container">
             <div class="service-header">
@@ -165,6 +226,7 @@
             </div>
           </div>
         </section>
+        <!-- who -->
         <section class="who">
           <div class="container">
             <div class="who-container">
@@ -177,15 +239,15 @@
                   Vươn tầm sánh bước cùng các bạn mọi nơi
                 </h2>
                 <p class="global-text show-on-scroll">
-                  Nunc venenalis Iorem sed risus trlstque sent per. Duls porta, rutruni tempus,
-                  lectus risus imDerdiet tellus, sed faucibus sum ipsum ncn neque. Curubilu r
-                  eleirend, erut ullamcorper porta. eras turpis.
+                  Bất cứ nơi đâu, với 1 cuộc điện thoại chúng tôi sẽ phục vụ cho bạn những món ngon
+                  trọn hương vị
                 </p>
                 <a class="button button--primary" href="../register/index.php">Nhấn đăng ký</a>
               </div>
             </div>
           </div>
         </section>
+        <!-- mission -->
         <section class="mission">
           <div class="container">
             <div class="mission-container">
@@ -194,7 +256,7 @@
                   >Chúng tôi tôi có gì?</span
                 >
                 <h2 class="global-heading global-heading--big mission-heading show-on-scroll">
-                  Realize Your Business Goals For Profit
+                  Các nhà sáng lập của chúng tôi
                 </h2>
                 <p class="global-text show-on-scroll">
                   Nunc venenalis Iorem sed risus trlstque sent per. Duls porta, rutruni tempus,
@@ -202,9 +264,76 @@
                   eleirend, erut ullamcorper porta. eras turpis.
                 </p>
               </div>
+              <div class="mission-list">
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-icon">
+                    <img src="../assets/images/avatar_mainpage/win.jpg" />
+                  </div>
+                  <h3 class="global-heading global-heading--normal mission-title">Lã Mai Win</h3>
+                  <p class="global-text mission-text">19522550</p>
+                  <p class="global-text">Gia Lai</p>
+                  <a
+                    class="button button--secondary mission-button"
+                    href="https://www.facebook.com/2108win"
+                  >
+                    <img src="../assets/images/main-images/messenger.png" alt="" />
+                    Liên hệ</a
+                  >
+                </div>
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-icon">
+                    <img src="../assets/images/avatar_mainpage/phung.jpg" />
+                  </div>
+                  <h3 class="global-heading global-heading--normal mission-title">
+                    Nguyễn Minh Phụng
+                  </h3>
+                  <p class="global-text mission-text">19522049</p>
+                  <p class="global-text">Hồ Chí Minh</p>
+                  <a
+                    class="button button--secondary mission-button"
+                    href="https://www.facebook.com/MupChuAi.info"
+                  >
+                    <img src="../assets/images/main-images/messenger.png" alt="" />
+                    Liên hệ</a
+                  >
+                </div>
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-icon">
+                    <img src="../assets/images/avatar_mainpage/tuan.jpg" />
+                  </div>
+                  <h3 class="global-heading global-heading--normal mission-title">
+                    Nguyễn Minh Tuấn
+                  </h3>
+                  <p class="global-text mission-text">19522471</p>
+                  <p class="global-text">Khánh Hòa</p>
+                  <a
+                    class="button button--secondary mission-button"
+                    href="https://www.facebook.com/ngmituan"
+                  >
+                    <img src="../assets/images/main-images/messenger.png" alt="" />
+                    Liên hệ</a
+                  >
+                </div>
+                <div class="mission-item show-on-scroll">
+                  <div class="mission-icon">
+                    <img src="../assets/images/avatar_mainpage/theu.jpg" />
+                  </div>
+                  <h3 class="global-heading global-heading--normal mission-title">Bùi Thị Thêu</h3>
+                  <p class="global-text mission-text">19522254</p>
+                  <p class="global-text">o dau z</p>
+                  <a
+                    class="button button--secondary mission-button"
+                    href="https://www.facebook.com/MongNhaNe"
+                  >
+                    <img src="../assets/images/main-images/messenger.png" alt="" />
+                    Liên hệ</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </section>
+        <!-- review -->
         <section class="review">
           <div class="container">
             <div class="review-container">
@@ -213,13 +342,14 @@
                 <div>
                   <div class="review-card show-on-scroll">
                     <div class="review-avatar">
-                      <img srcset="https://source.unsplash.com/random 2x" />
+                      <img src="../assets/images/avatar_mainpage/avatar1.jpeg " />
                     </div>
-                    <h3 class="review-name">Mark Parker</h3>
-                    <span class="review-job">CEO of Fiverr</span>
+                    <h3 class="review-name">Nguyễn Minh Tuấn</h3>
+                    <span class="review-job">CEO of IE104</span>
                     <p class="review-desc">
-                      Cura bitur susci pit nequeut lacus interd sit amet dictum nunc eleifend.
-                      Mauris pulvinar odio at nunc labortis.
+                      Từ khi sử dụng các dịch vụ của FatMe tôi đã tiết kiệm được rất nhiều thời gian
+                      cho việc nghĩ hôm nay ăn gì, nấu gì, vừa hợp túi tiền lại còn đảm bảo về chất
+                      lượng. Quá tuyệt vời
                     </p>
                     <div class="review-rating">
                       <img srcset="../assets/images/main-images/icon-star.png 2x" /><span>4.5</span>
@@ -230,13 +360,14 @@
                   </div>
                   <div class="review-card show-on-scroll">
                     <div class="review-avatar">
-                      <img srcset="https://source.unsplash.com/random 2x" />
+                      <img src="../assets/images/avatar_mainpage/avatar2.jpeg" />
                     </div>
-                    <h3 class="review-name">Mark Parker</h3>
-                    <span class="review-job">CEO of Fiverr</span>
+                    <h3 class="review-name">Lã Mai Win</h3>
+                    <span class="review-job">CEO of IE104</span>
                     <p class="review-desc">
-                      Cura bitur susci pit nequeut lacus interd sit amet dictum nunc eleifend.
-                      Mauris pulvinar odio at nunc labortis.
+                      FatMe đã giúp tôi rất nhiều trong việc tổ chức các buổi party gia đình hay cho
+                      đồng nghiệp, chất lượng thì quá tuyệt vời, chăm sóc khách hàng cực kì chu đáo.
+                      Tôi sẽ tiếp tục ủng hộ và sử dụng FatMe
                     </p>
                     <div class="review-rating">
                       <img srcset="../assets/images/main-images/icon-star.png 2x" /><span>4.5</span>
@@ -249,13 +380,13 @@
                 <div>
                   <div class="review-card show-on-scroll">
                     <div class="review-avatar">
-                      <img srcset="https://source.unsplash.com/random 2x" />
+                      <img src="../assets/images/avatar_mainpage/avatar3.jpeg" />
                     </div>
-                    <h3 class="review-name">Mark Parker</h3>
-                    <span class="review-job">CEO of Fiverr</span>
+                    <h3 class="review-name">Nguyễn Tuấn Minh</h3>
+                    <span class="review-job">CEO of IE104</span>
                     <p class="review-desc">
-                      Cura bitur susci pit nequeut lacus interd sit amet dictum nunc eleifend.
-                      Mauris pulvinar odio at nunc labortis.
+                      Nếu bạn cảm thấy việc nấu ăn cho gia đình là 1 cực hình thì hay tìm đến FatMe,
+                      ở đây họ sẽ giải quyết tất cả những vấn đề về bếp núc của bạn trong vài phút.
                     </p>
                     <div class="review-rating">
                       <img srcset="../assets/images/main-images/icon-star.png 2x" /><span>4.5</span>
@@ -270,8 +401,7 @@
                 <span class="global-caption show-on-scroll">Đã làm những gì</span>
                 <h2 class="global-heading global-heading--big show-on-scroll">Phản hồi tích cực</h2>
                 <p class="global-text show-on-scroll">
-                  Ok oke okk Ok oke okk Ok oke okk Ok oke okk Ok oke okk Ok oke okkOk oke okk Ok oke
-                  okk Ok oke okk
+                  Bạn có thể xem thêm các phản hồi khác tại đây
                 </p>
                 <div class="review-number show-on-scroll">
                   <div class="review-check">
@@ -284,15 +414,14 @@
             </div>
           </div>
         </section>
+        <!-- blog -->
         <section class="blog">
           <div class="container">
             <div class="blog-header">
               <h2 class="global-heading global-heading--big show-on-scroll">
-                Our Regular Updated Blog Posts
+                Các Blog mới nhất đến từ FatMe
               </h2>
-              <p class="global-text show-on-scroll">
-                tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-              </p>
+              <p class="global-text show-on-scroll">Đừng bỏ lỡ blog mới nhất cùa FatMe nhé</p>
             </div>
             <!-- blog list -->
             <div class="blog-list slider-responsive">
@@ -427,15 +556,17 @@
             </div>
           </div>
         </section>
+        <!-- subscribe -->
         <section class="subscribe">
           <div class="container subscribe-container">
             <div class="subscribe-main">
               <div class="subscribe-content">
                 <h2 class="global-haeding subscribe-heading show-on-scroll">
-                  Sign up to Our Newsletter
+                  Nhận thông báo mới nhất
                 </h2>
                 <p class="global-text subscribe-desc show-on-scroll">
-                  You need to get positive results when you spend hard earned revenue and time.
+                  Nhập gmail để không bỏ lỡ những thông báo mới nhất và các ưu đãi hấp dẫn đến từ
+                  Fatme nhé !!!
                 </p>
               </div>
               <div class="subscribe-form">
@@ -457,9 +588,7 @@
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, qui error,
-              aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
-              repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
+              Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách
             </p>
             <div class="social">
               <a href="#" class="social-item">

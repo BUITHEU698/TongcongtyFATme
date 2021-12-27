@@ -100,3 +100,12 @@ $(document).ready(function () {
     $(this).addClass("link-active");
   });
 });
+
+$(".heart").click(function () {
+  if ($(this).attr("src") == "../assets/images/main-images/icon-heart.png") {
+    $(this).attr("src", "../assets/images/main-images/icon-heart-fill.png");
+  } else {
+    $(this).attr("src", "../assets/images/main-images/icon-heart.png");
+  }
+});
+

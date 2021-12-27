@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
   /* Set rates + misc */
-  var taxRate = 0.05;
+  
   var shippingRate = 15.0;
   var fadeTime = 300;
 
@@ -24,9 +24,9 @@ $(document).ready(function () {
     });
 
     /* Calculate totals */
-    var tax = subtotal * taxRate;
+    var tax = subtotal 
     var shipping = subtotal > 0 ? shippingRate : 0;
-    var total = subtotal + tax + shipping;
+    var total = subtotal + shipping;
 
     /* Update totals display */
     $(".totals-value").fadeOut(fadeTime, function () {

@@ -193,7 +193,7 @@ if(empty($_SESSION['email'])){
                       <span class="sum">
                         Tổng tiền: <span class="sum-price">35.000</span>đ
                       </span>
-                      <a href="#!">Thanh toán</a>
+                      <a href="./">Thanh toán</a>
                       </div>
                   </li>
                 </ul>

@@ -89,6 +89,8 @@ function submit(){
         x.desk.style = "border: 1px solid red;"
         alert("Bạn chưa nhập số bàn")
     }
-    else alert("Xác nhận thành công")
-    location.href="../main-page/index.html"
+    else{
+        alert("Xác nhận thành công")
+        location.href="../main-page/index.html";
+    }
 }

@@ -1,5 +1,16 @@
 <?php
 include'../../connect/connect.php';
+
+if(!empty($_SESSION['email'])){
+  $email = $_SESSION['email'];
+  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan as $key=>$value)  {
+    $ten=$value['HOTEN'];
+    $tach_ten = explode(" ", $ten);
+    $account=$tach_ten[1].' '.$tach_ten[2];
+  }
+}
+
 ?>
 <html>
   <head>
@@ -49,14 +60,9 @@ include'../../connect/connect.php';
                 ><img src="../../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
-            <?php if (!empty($_SESSION['email'])){ ?>
-                <li class="menu-item">
-                    <a class="menu-link" href="../../Home_main_page/index.php">Quản lí trang bán hàng</a>
-                </li>
-            <?php }?>
+            <li class="menu-item"><a class="menu-link" href="../../main-page/index.php">Trang chủ</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../../monan_main_page/">Món ăn</a>
+              <a class="menu-link" href="../../mon-an/index.php">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link link-active" href="../../blog/index.php">Blog</a></li>
             <li class="menu-item"><a class="menu-link" href="../../service/service.php">Dịch vụ</a></li>
@@ -67,10 +73,75 @@ include'../../connect/connect.php';
                     <a class="button button--primary auth-signup" href="../../register/index.php">Đăng ký</a>
                 </li>
             <?php } else {?>
-                <li class="auth">
-                    <button class="button button--primary auth-signup">Account</button>
-
-                </li>
+              <li class="auth">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="">Tài khoản</a>
+                  </li>
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../../assets/images/main-images/icon-user.png" alt="user" />
+                    <span class="auth-username"><?php echo $account?></span>
+                  <img
+                    class="arrow-down"
+                    src="../../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"

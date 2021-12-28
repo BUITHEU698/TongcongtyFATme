@@ -1,5 +1,15 @@
 <?php
 include'../connect/connect.php';
+if(!empty($_SESSION['email'])){
+  $email = $_SESSION['email'];
+  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan as $key=>$value)  {
+    $ten=$value['HOTEN'];
+    $tach_ten = explode(" ", $ten);
+    $account=$tach_ten[1].' '.$tach_ten[2];
+  }
+}
+  
 
 ?>
 
@@ -54,7 +64,7 @@ include'../connect/connect.php';
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
               <a class="menu-link" href="../service/service.html">Dịch vụ</a>
             </li>
@@ -82,10 +92,10 @@ include'../connect/connect.php';
                 </div>
                 <ul class="auth-like-dropdown">
                   <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="#!">Tài khoản</a>
+                    <a class="auth-like-dropdown-link" href="">Tài khoản</a>
                   </li>
                   <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="#!">Đăng xuất</a>
+                    <a class="auth-like-dropdown-link" href="">Đăng xuất</a>
                   </li>
                 </ul>
               </div>
@@ -118,7 +128,7 @@ include'../connect/connect.php';
               <div class="auth-user">
                 <div class="auth-user-top">
                   <img src="../assets/images/main-images/icon-user.png" alt="user" />
-                  <span class="auth-username">Win Lax</span>
+                    <span class="auth-username"><?php echo $account?></span>
                   <img
                     class="arrow-down"
                     src="../assets/images/main-images/icon-arrow-down.png"
@@ -130,7 +140,7 @@ include'../connect/connect.php';
                     <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
                   </li>
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="#!">Đăng xuất</a>
+                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
                   </li>
                 </ul>
               </div>

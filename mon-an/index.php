@@ -4,6 +4,13 @@ if(empty($_SESSION['email'])){
     header("location: ../login/index.php");
   }else {
     $email = $_SESSION['email'];
+    $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+    foreach($taikhoan as $key=>$value)  {
+      $ten=$value['HOTEN'];
+      $tach_ten = explode(" ", $ten);
+      $account=$tach_ten[1].' '.$tach_ten[2];
+    }
+    
     if (isset($_POST['mua1'])){
       $TENMONAN='Xôi Xá Xíu';
       $GIA='35000';
@@ -12,11 +19,234 @@ if(empty($_SESSION['email'])){
       $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
       $query=mysqli_query($conn,$sql);
     }
-
+    if (isset($_POST['tim1'])){
+      $TENMONAN='Xôi Xá Xíu';
+      $GIA='35000';
+      $THELOAI='Xôi';
+      $IMAGE='xoixaxiu.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua2'])){
+      $TENMONAN='Pizza Hải Sản Sốt Tiêu Đen';
+      $GIA='69000';
+      $THELOAI='Pizza';
+      $IMAGE='pizza.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim2'])){
+      $TENMONAN='Pizza Hải Sản Sốt Tiêu Đen';
+      $GIA='69000';
+      $THELOAI='Pizza';
+      $IMAGE='pizza.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua3'])){
+      $TENMONAN='Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi
+      blackpink';
+      $GIA='139000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='gavuive.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim3'])){
+      $TENMONAN='Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi
+      blackpink';
+      $GIA='139000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='gavuive.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua4'])){
+      $TENMONAN='Combo Lộc Phúc';
+      $GIA='86000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='phucloc.png';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim4'])){
+      $TENMONAN='Combo Lộc Phúc';
+      $GIA='86000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='phucloc.png';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua5'])){
+      $TENMONAN='1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi';
+      $GIA='79000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='burger.png';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim5'])){
+      $TENMONAN='1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi';
+      $GIA='79000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='burger.png';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua6'])){
+      $TENMONAN='1 Gà Sốt Trứng Muối + 1 Pepsi';
+      $GIA='36000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='gatrungmuoi.png';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim6'])){
+      $TENMONAN='1 Gà Sốt Trứng Muối + 1 Pepsi';
+      $GIA='36000';
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='gatrungmuoi.png';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua7'])){
+      $TENMONAN='Sữa chua Tocotoco';
+      $GIA='20000';
+      $THELOAI='Đồ uống';
+      $IMAGE='trasuatoco.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim7'])){
+      $TENMONAN='Sữa chua Tocotoco';
+      $GIA='20000';
+      $THELOAI='Đồ uống';
+      $IMAGE='trasuatoco.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua8'])){
+      $TENMONAN='Beefsteak Bò Sốt Tiêu';
+      $GIA='70000';
+      $THELOAI='Beefsteak';
+      $IMAGE='beefsteak.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim8'])){
+      $TENMONAN='Beefsteak Bò Sốt Tiêu';
+      $GIA='70000';
+      $THELOAI='Beefsteak';
+      $IMAGE='beefsteak.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua9'])){
+      $TENMONAN='Bánh Bạch Tuộc';
+      $GIA='99000';
+      $THELOAI='Ăn vặt';
+      $IMAGE='banhbachtuoc.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim9'])){
+      $TENMONAN='Bánh Bạch Tuộc';
+      $GIA='99000';
+      $THELOAI='Ăn vặt';
+      $IMAGE='banhbachtuoc.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
+    if (isset($_POST['mua10'])){
+      $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị';
+      $GIA='105000';
+      $THELOAI='Đồ ăn mặn';
+      $IMAGE='galachanh.jpeg';
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+    }
+    if (isset($_POST['tim10'])){
+      $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị';
+      $GIA='105000';
+      $THELOAI='Đồ ăn mặn';
+      $IMAGE='galachanh.jpeg';
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'";
+      $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query);
+      if ($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $query=mysqli_query($conn,$sql);
+      }else {
+        header("location:index.php");
+      }
+    }
     $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'");
-
-
+    $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
   }
+  
 ?>
 <html>
   <head>
@@ -58,7 +288,7 @@ if(empty($_SESSION['email'])){
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index-main.html"
+          <a href="../main-page/index.php"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -94,58 +324,37 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <li class="auth-like-dropdown-item">
-                    <a href="" class="dropdown-item">
-                      <img
-                        src="../assets/images/food/xoixaxiu.jpeg"
-                        alt="Hình thức ăn"
-                        class="dropdown-item-image"
-                      />
+
+                  <?php
+                    $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'";
+                    $query=mysqli_query($conn,$sql);
+                    $check=mysqli_num_rows($query);
+                    if ($check==0){?>
                       <div class="dropdown-item-text">
-                        <div class="dropdown-item-text-desc">Xôi</div>
-                        <div class="dropdown-item-text-title">Xôi Xá Xíu</div>
-                        <div class="dropdown-item-text-price">35.000đ</div>
+                        <p>Chưa có lượt thích nào !</p>
                       </div>
-                      <div class="dropdown-item-right">
+                    <?php} else foreach($dsyeuthich as $key=>$value) {?> 
+                    <li class="auth-like-dropdown-item">
+                      <a href="" class="dropdown-item">
                         <img
-                          class="trash"
-                          src="../assets/images/main-images/icon-trash.png"
-                          alt="trash"
+                          src="../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
                         />
-                        <img
-                          class="heart"
-                          src="../assets/images/main-images/icon-heart-fill.png"
-                          alt="heart"
-                        />
-                      </div>
-                    </a>
-                  </li>
-                  <li class="auth-like-dropdown-item">
-                    <a href="" class="dropdown-item">
-                      <img
-                        src="../assets/images/food/xoixaxiu.jpeg"
-                        alt="Hình thức ăn"
-                        class="dropdown-item-image"
-                      />
-                      <div class="dropdown-item-text">
-                        <div class="dropdown-item-text-desc">Xôi</div>
-                        <div class="dropdown-item-text-title">Xôi Xá Xíu</div>
-                        <div class="dropdown-item-text-price">35.000đ</div>
-                      </div>
-                      <div class="dropdown-item-right">
-                        <img
-                          class="trash"
-                          src="../assets/images/main-images/icon-trash.png"
-                          alt="trash"
-                        />
-                        <img
-                          class="heart"
-                          src="../assets/images/main-images/icon-heart-fill.png"
-                          alt="heart"
-                        />
-                      </div>
-                    </a>
-                  </li>
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                      </a>
+                    </li>
+                  <?php }?>
                 </ul>
               </div>
               <div class="auth-shoppingcart">
@@ -162,9 +371,10 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
-                  <li class="auth-shoppingcart-dropdown-item">
-                    <div href="" class="dropdown-item">
-                      <?php  foreach($dsgiohang as $key=>$value)  { ?>
+                <?php  foreach($dsgiohang as $key=>$value)  { ?>
+                  <li class="auth-shoppingcart-dropdown-item" >
+                    <div href="" class="dropdown-item" >
+                      
                       <img src="../assets/images/food/<?php echo $value['IMAGE']?>" alt="Hình thức ăn"
                         class="dropdown-item-image">
                         <div class="dropdown-item-text">
@@ -174,34 +384,38 @@ if(empty($_SESSION['email'])){
                           <div class="dropdown-item-text-price"><span class="price"><?php echo $value['GIA']?></span>đ</div>
                         </div>
                         <div class="dropdown-item-right">
-                        <img
-                          class="trash"
-                          src="../assets/images/main-images/icon-trash.png"
-                          alt="trash"
-                        />
+                        <a href="xoa.php?id=<?php echo $value['id_monan']; ?>">
+                          <img class="trash" src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                        </a> 
                         <img
                           class="heart"
                           src="../assets/images/main-images/icon-heart-fill.png"
                           alt="heart"
                         />
                       </div>
-                        <?php }?> 
                     </div>
                   </li>
-                  <li class="auth-shoppingcart-dropdown-item">
-                    <div class="auth-shoppingcart-dropdown-link" href="#!">
-                      <span class="sum">
-                        Tổng tiền: <span class="sum-price">35.000</span>đ
-                      </span>
-                      <a href="./">Thanh toán</a>
-                      </div>
-                  </li>
+                <?php }?> 
+                  <?php   
+                  $tongtien=0;
+                    foreach($dsgiohang as $key=>$value)  {  
+                    $tongtien=$tongtien+$value['GIA'];
+                  }
+                    ?>
+                    <li class="auth-shoppingcart-dropdown-item">
+                      <div class="auth-shoppingcart-dropdown-link" href="#!">
+                        <span class="sum">
+                          Tổng tiền: <span class="sum-price"><?php echo $tongtien ?></span>đ
+                        </span>
+                        <a href="./">Thanh toán</a>
+                        </div>
+                    </li>
                 </ul>
               </div>
               <div class="auth-user">
                 <div class="auth-user-top">
                   <img src="../assets/images/main-images/icon-user.png" alt="user" />
-                  <span class="auth-username">Win Lax</span>
+                  <span class="auth-username"><?php echo $account ?></span>
                   <img
                     class="arrow-down"
                     src="../assets/images/main-images/icon-arrow-down.png"
@@ -210,10 +424,10 @@ if(empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-user-dropdown">
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="../profile/index.html">Tài khoản</a>
+                    <a class="auth-user-dropdown-link" href="../profile/index.php">Tài khoản</a>
                   </li>
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                    <a class="auth-user-dropdown-link" href="dx.php">Đăng xuất</a>
                   </li>
                 </ul>
               </div>
@@ -558,7 +772,7 @@ if(empty($_SESSION['email'])){
                   <div class="category-item">
                     <div class="category-item-image">
                       <img
-                        src="../assets/images/food/cagetory4.png"
+                        src="../assets/images/food/cagetory2.png"
                         alt="Banner"
                         class="category-item-image-item"
                       />
@@ -624,7 +838,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/xoixaxiu.jpeg" alt="" name="IMAGE"/>
@@ -671,7 +885,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim2"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/pizza.jpeg" alt="" />
@@ -714,11 +928,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua2">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -726,7 +941,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim3"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img style="height: 200px" src="../assets/images/food/gavuive.jpeg" alt="" />
@@ -772,11 +987,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <img
+                      <button name="mua3"><img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
                         alt=""
-                      />
+                      /></button>
+                      
                     </div>
                   </div>
                 </div>
@@ -784,7 +1000,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim4"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img style="height: 200px" src="../assets/images/food/phucloc.png" alt="" />
@@ -829,11 +1045,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua4">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -841,7 +1058,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim5"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img style="height: 200px" src="../assets/images/food/burger.png" alt="" />
@@ -886,11 +1103,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua5">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -898,7 +1116,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim6"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img
@@ -918,7 +1136,7 @@ if(empty($_SESSION['email'])){
                           show-on-scroll
                         "
                       >
-                        1 Gà Số Trứng Muối + 1 Pepsi
+                        1 Gà Sốt Trứng Muối + 1 Pepsi
                       </div>
                     </div>
                     <div class="product-item-price global-heading--normal">
@@ -947,11 +1165,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua6">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -959,7 +1178,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá 50%</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim7"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img
@@ -1006,11 +1225,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua7">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -1029,7 +1249,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Đang hot</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim8"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/beefsteak.jpeg" alt="" />
@@ -1072,11 +1292,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua8">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -1084,7 +1305,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Đang hot</div>
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim9"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/banhbachtuoc.jpeg" alt="" />
@@ -1127,11 +1348,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua9">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -1139,7 +1361,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <!-- <div class="product-item-sale">Giảm giá <span class="percent">50</span>%</div> -->
-                      <img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" />
+                      <button name="tim10"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/galachanh.jpeg" alt="" />
@@ -1182,11 +1404,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
+                      <button name="mua10">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      />
+                        alt="" 
+                      /></button>
                     </div>
                   </div>
                 </div>
@@ -1221,7 +1444,7 @@ if(empty($_SESSION['email'])){
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.html" class="footer-logo">
+            <a href="index.php" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">

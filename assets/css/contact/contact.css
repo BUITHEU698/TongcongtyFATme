@@ -13,13 +13,19 @@
 }
 
 .contact {
-  padding-bottom: var(--section-spacing);
-  background-color: rgba(244, 161, 26, 0.1);
+  padding-bottom: 50px;
+  background: url(https://images.unsplash.com/photo-1508614999368-9260051292e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) no-repeat center center/cover;
   padding-top: 50px;
 }
 .contact-header {
   text-align: center;
   margin-bottom: 50px;
+}
+.contact-header-title {
+  color: #f4f6fd;
+}
+.contact-header-subtitle {
+  color: #e7e7e7;
 }
 .contact-list {
   display: flex;
@@ -42,13 +48,12 @@
   min-width: 230px;
   transition: all 0.3s ease-in-out;
 }
-.contact-list-item .active {
-  background-color: #fff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
 .contact-list-item:hover {
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.contact-list-item:hover .contact-list-item-content-subtitle {
+  color: #ff7d00;
 }
 .contact-list-item-icon {
   display: flex;
@@ -64,13 +69,9 @@
 }
 .contact-list-item-content-subtitle {
   font-size: 18px;
-  color: #ff7d00;
-}
-.contact-magic .active {
-  display: block;
+  color: #f4f6fd;
 }
 .contact-form {
-  display: none;
   padding: 30px 40px;
   border: 1px solid transparent;
   border-radius: 15px;
@@ -162,7 +163,7 @@
 }
 
 .google-map {
-  display: none;
+  display: block;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -175,6 +176,11 @@
 }
 .google-map iframe hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@media screen and (max-width: 767px) {
+  .google-map iframe {
+    height: 300px;
+  }
 }
 
 /*# sourceMappingURL=contact.css.map */

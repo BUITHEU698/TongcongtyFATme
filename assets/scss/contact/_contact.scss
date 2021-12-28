@@ -1,10 +1,16 @@
 .contact {
-  padding-bottom: var(--section-spacing);
-  background-color: rgba(244, 161, 26, 0.1);
+  padding-bottom: 50px;
+  background: url(https://images.unsplash.com/photo-1508614999368-9260051292e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) no-repeat center center / cover;
   padding-top: 50px;
   &-header {
     text-align: center;
     margin-bottom: 50px;
+    &-title {
+      color: $gray-lighter;
+    }
+    &-subtitle {
+      color: $gray-light;
+    }
   }
   &-list {
     display: flex;
@@ -25,13 +31,12 @@
       gap: 15px;
       min-width: 230px;
       transition: all 0.3s ease-in-out;
-      .active {
-        background-color: #fff;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      }
       &:hover {
         background-color: #fff;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        .contact-list-item-content-subtitle {
+          color: $primary-color;
+        }
       }
       &-icon {
         display: flex;
@@ -46,18 +51,12 @@
         height: 100%;
         &-subtitle {
           font-size: 18px;
-          color: $primary-color;
+          color: $gray-lighter;
         }
       }
     }
   }
-  &-magic {
-    .active {
-      display: block;
-    }
-  }
   &-form {
-    display: none;
     padding: 30px 40px;
     border: 1px solid transparent;
     border-radius: 15px;
@@ -68,6 +67,7 @@
     transition: all 0.3s ease-in-out;
     &:hover {
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
     }
     &-right {
       .contact-form-input {
@@ -157,7 +157,7 @@
   border-radius: 10px;
 }
 .google-map {
-  display: none;
+  display: block;
   margin: 0 auto;
   margin-top: 50px;
   iframe {
@@ -169,5 +169,9 @@
     hover {
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
+    @media screen and (max-width: 767px) {
+      height: 300px;
+    }
+
   }
 }

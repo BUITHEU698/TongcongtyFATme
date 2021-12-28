@@ -56,7 +56,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+.voucher{
+  
+}
 .img-voucher > span {
   color: red;
 }
@@ -81,6 +83,7 @@ body {
   padding: 15px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: all 0.3s ease-in-out;
   transform: translateY(-10px);
 }
 
@@ -91,7 +94,8 @@ body {
 
 .voucher-list:hover + .voucher-info {
   display: block;
-  margin-top: 15px;
+  margin-top: 0px;
+  transform: translateY(20px);
   opacity: 1;
   z-index: 50;
   margin-left: 10px;

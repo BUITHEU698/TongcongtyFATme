@@ -1,6 +1,19 @@
 <?php
 include'../connect/connect.php';
+if(!empty($_SESSION['email'])){
+  $email = $_SESSION['email'];
+  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan as $key=>$value)  {
+    $ten=$value['HOTEN'];
+    $tach_ten = explode(" ", $ten);
+    $account=$tach_ten[1].' '.$tach_ten[2];
+  }
+  $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+}
+  
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,53 +44,137 @@ include'../connect/connect.php';
 
   <body>
     <div class="totop">
-      <a href="#" class="goto-top"></a>
+      <a href="../main-page/index.php" class="goto-top"></a>
     </div>
     <header class="header">
       <div class="navigation">
-      <a href="../main-page/index.php"
-            ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
-          /></a>
+        <a href="../main-page/index.php"
+          ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
+        /></a>
         <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
         <ul class="menu">
-          <div class="menu-item toggle-close">
-            <label for="toggle-check"><img src="/monan_main_page/img/logo/menu-close.png" alt="Close" /></label>
-          </div>
-          <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
-          <?php if (!empty($_SESSION['email'])){ ?>
-                <li class="menu-item">
-                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
-                </li>
-            <?php }?>
-          <li class="menu-item"><a class="menu-link" href="../monan_main_page/index.php">Món ăn</a></li>
-          <li class="menu-item"><a class="menu-link" href="/blog/index.php">Blog</a></li>
-          <li class="menu-item"><a class="menu-link link-active" href="#">Dịch vụ</a></li>
-          <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
-          <?php if (empty($_SESSION['email'])){ ?>
-                <li class="auth">
-                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
-                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
-                </li>
-            <?php } else {?>
-                <li class="auth">
-                    <button class="button button--primary auth-signup">Account</button>
+            <div class="menu-item toggle-close">
+              <label for="toggle-check"
+                ><img src="../assets/images/main-images/menu-close.png" alt="Close"
+              /></label>
+            </div>
+            <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
+            </li>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
+            </li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
 
-                </li>
+            <?php if (empty($_SESSION['email'])){ ?>
+              <li class="auth">
+              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+              <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+            </li>
+            <?php } else {?>
+              <li class="auth">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                    <li class="auth-like-dropdown-item">
+                      <a href="" class="dropdown-item">
+                        <img
+                          src="../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
+                        />
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                      </a>
+                    </li>
+                  <?php }?>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
+                    <span class="auth-username"><?php echo $account?></span>
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <?php }?>
-        </ul>
+          </ul>
         <label for="toggle-check" class="toggle"
-          ><img src="../monan_main_page/img/logo/menu.png" alt="Menu"
+          ><img src="../assets/images/main-images/menu.png" alt="Menu"
         /></label>
-        <label for="toggle-check" class="menu-overlay"></label>
+        <label for="toggle-check" class="overlay"></label>
       </div>
+     
     </header>
 
     <div class="service_container">
         <div class="service_header">
             <div class="header_content">
                 <div class="right">
-                    <h1>TIỆC TRỌN GÓI LƯU ĐỘNG</h1>
-                    <h1>TẠI NHÀ – TIỆC OUTSIDE</h1>
+                    <h2>TIỆC TRỌN GÓI LƯU ĐỘNG</h2>
+                    <h2>TẠI NHÀ – TIỆC OUTSIDE</h2>
                     <hr>
                     <ul>
                       <li>Tiệc từ 1 bàn đến 300 bàn </li>
@@ -158,19 +255,23 @@ include'../connect/connect.php';
                 <ul>
                   <li>
                     <label for="">Ngày bắt đầu</label>
-                    <input type="datetime-local">
+                    <input type="datetime-local" id="time">
+                    <p id="showTime"></p>
                   </li>
                   <li>
                     <label for="">Địa chỉ</label>
-                   <input type="text" placeholder="Nhập địa chỉ">
+                   <input type="text" id="location" placeholder="Nhập địa chỉ">
+                   <p id="showLcation"></p>
                   </li>
                   <li>
                     <label for="">Số khách</label>
-                    <input type="number" placeholder="Nhập số khách tham dự">
+                    <input type="number" id="numCus" placeholder="Nhập số khách tham dự">
+                    <p id="showCus"></p>
                   </li>
                   <li>
                     <label for="">Số bàn</label>
-                    <input type="number" placeholder="Nhập số bàn">
+                    <input type="number" id="numDesk" placeholder="Nhập số bàn">
+                    <p id="showDesk"></p>
                   </li>
                 </ul>
             </div>
@@ -443,7 +544,7 @@ include'../connect/connect.php';
                 <option value="">Momo</option>
                 <option value="">Banking</option>
               </select>
-              <button>Xác nhận</button>
+              <button onclick="submit()">Xác nhận</button>
             </div>
         </div>
     </div>
@@ -452,7 +553,7 @@ include'../connect/connect.php';
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="/monan_main_page/index.php" class="footer-logo">
+            <a href="../mon-an/index.php" class="footer-logo">
               <img srcset="/monan_main_page/img/logo/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>

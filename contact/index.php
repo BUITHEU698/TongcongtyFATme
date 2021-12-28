@@ -1,10 +1,3 @@
-<?php
-include'../connect/connect.php';
-
-
-?>
-
-
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -39,6 +32,8 @@ include'../connect/connect.php';
     />
     <!-- my css -->
     <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="../assets/css/main-page/app.css" />
+    <link rel="stylesheet" href="../assets/css//contac/contact.css" />
     <title>FATMe - Blog</title>
   </head>
   <body>
@@ -56,58 +51,112 @@ include'../connect/connect.php';
       <header class="header">
         <div class="navigation">
           <a href="../main-page/index.php"
-            ><img class="header-logo" srcset="./images/images-main/logo.png 2x"
+            ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
           <ul class="menu">
             <div class="menu-item toggle-close">
               <label for="toggle-check"
-                ><img src="./images/images-main/menu-close.png" alt="Close"
+                ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
+            <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../main-page/index.php">Trang chủ</a>
+              <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
-            <?php if (!empty($_SESSION['email'])){ ?>
-                <li class="menu-item">
-                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
-                </li>
-            <?php }?>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../monan_main_page/index.php">Món ăn</a>
+              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link link-active" href="../blog/index.php">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="../service/service.php">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="./index.html">Liên hệ</a></li>
-            <?php if (empty($_SESSION['email'])){ ?>
-                <li class="auth">
-                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
-                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
-                </li>
-            <?php } else {?>
-                <li class="auth">
-                    <button class="button button--primary auth-signup">Account</button>
-
-                </li>
-            <?php }?>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
+            <li class="auth">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="../profile/index.php">Tài khoản</a>
+                  </li>
+                  <li class="auth-like-dropdown-item">
+                    <a class="auth-like-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
+                  <span class="auth-username">Win Lax</span>
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../profile/index.php">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
           </ul>
           <label for="toggle-check" class="toggle"
-            ><img src="./images/images-main/menu.png" alt="Menu"
+            ><img src="../assets/images/main-images/menu.png" alt="Menu"
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
+
       </header>
       <section class="ftco-section">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
+            <div class="col-md-6 text-center">
               <h2 class="heading-section">LIÊN HỆ</h2>
             </div>
           </div>
           <div class="row justify-content-center">
             <div class="col-md-12">
               <div class="wrapper">
-                <div class="row mb-5">
+                <div class="row ">
                   <div class="col-md-3">
                     <div class="dbox w-100 text-center">
                       <div class="icon d-flex align-items-center justify-content-center">
@@ -115,8 +164,9 @@ include'../connect/connect.php';
                       </div>
                       <div class="text">
                         <p>
-                          <span>Địa chỉ: </span> Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí
-                          Minh.
+                          <span>Địa chỉ: </span>
+                           <a href="#" >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí
+                          Minh.</a> 
                         </p>
                       </div>
                     </div>
@@ -160,7 +210,7 @@ include'../connect/connect.php';
                 </div>
                 <div class="row no-gutters">
                   <div class="col-md-7">
-                    <div class="contact-wrap w-100 p-md-5 p-4">
+                    <div class="contact-wrap w-100 p-4">
                       <h3 class="mb-4">Form liên hệ</h3>
                       <div id="form-message-warning" class="mb-4"></div>
 
@@ -270,6 +320,9 @@ include'../connect/connect.php';
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <br><br><br><br><br>
       </section>
     </div>
     <footer class="footer">

@@ -16,7 +16,8 @@ if(empty($_SESSION['email'])){
       $GIA='35000';
       $THELOAI='Xôi';
       $IMAGE='xoixaxiu.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL1'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim1'])){
@@ -39,7 +40,8 @@ if(empty($_SESSION['email'])){
       $GIA='69000';
       $THELOAI='Pizza';
       $IMAGE='pizza.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL2'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim2'])){
@@ -63,7 +65,8 @@ if(empty($_SESSION['email'])){
       $GIA='139000';
       $THELOAI='Thức ăn nhanh';
       $IMAGE='gavuive.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL3'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim3'])){
@@ -87,7 +90,8 @@ if(empty($_SESSION['email'])){
       $GIA='86000';
       $THELOAI='Thức ăn nhanh';
       $IMAGE='phucloc.png';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL4'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim4'])){
@@ -110,7 +114,8 @@ if(empty($_SESSION['email'])){
       $GIA='79000';
       $THELOAI='Thức ăn nhanh';
       $IMAGE='burger.png';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL4'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim5'])){
@@ -133,7 +138,8 @@ if(empty($_SESSION['email'])){
       $GIA='36000';
       $THELOAI='Thức ăn nhanh';
       $IMAGE='gatrungmuoi.png';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL6'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim6'])){
@@ -156,7 +162,8 @@ if(empty($_SESSION['email'])){
       $GIA='20000';
       $THELOAI='Đồ uống';
       $IMAGE='trasuatoco.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL7'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim7'])){
@@ -179,7 +186,8 @@ if(empty($_SESSION['email'])){
       $GIA='70000';
       $THELOAI='Beefsteak';
       $IMAGE='beefsteak.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL8'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim8'])){
@@ -202,7 +210,8 @@ if(empty($_SESSION['email'])){
       $GIA='99000';
       $THELOAI='Ăn vặt';
       $IMAGE='banhbachtuoc.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
+      $SOLUONG=$_POST['SL9'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim9'])){
@@ -225,8 +234,9 @@ if(empty($_SESSION['email'])){
       $GIA='105000';
       $THELOAI='Đồ ăn mặn';
       $IMAGE='galachanh.jpeg';
-      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');";
-      $query=mysqli_query($conn,$sql);
+      $SOLUONG=$_POST['SL10'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+       $query=mysqli_query($conn,$sql);
     }
     if (isset($_POST['tim10'])){
       $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị';
@@ -245,6 +255,7 @@ if(empty($_SESSION['email'])){
     }
     $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'");
     $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+
   }
   
 ?>
@@ -324,16 +335,7 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-
-                  <?php
-                    $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'";
-                    $query=mysqli_query($conn,$sql);
-                    $check=mysqli_num_rows($query);
-                    if ($check==0){?>
-                      <div class="dropdown-item-text">
-                        <p>Chưa có lượt thích nào !</p>
-                      </div>
-                    <?php} else foreach($dsyeuthich as $key=>$value) {?> 
+                  <?php foreach($dsyeuthich as $key=>$value) { ?> 
                     <li class="auth-like-dropdown-item">
                       <a href="" class="dropdown-item">
                         <img
@@ -371,7 +373,24 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
-                <?php  foreach($dsgiohang as $key=>$value)  { ?>
+                <?php 
+                
+                function formatMoney($number, $fractional=false){  
+                  if ($fractional) {  
+                      $number = sprintf('%.2f', $number);  
+                  }  
+                  while (true) {  
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
+                      if ($replaced != $number) {  
+                          $number = $replaced;  
+                      } else {  
+                          break;  
+                      }  
+                  }  
+                  return $number;  
+              }
+                
+                foreach($dsgiohang as $key=>$value)  { ?>
                   <li class="auth-shoppingcart-dropdown-item" >
                     <div href="" class="dropdown-item" >
                       
@@ -381,7 +400,7 @@ if(empty($_SESSION['email'])){
                           <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
                           <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
                           
-                          <div class="dropdown-item-text-price"><span class="price"><?php echo $value['GIA']?></span>đ</div>
+                          <div class="dropdown-item-text-price"><span class="price"><?php echo formatMoney($value['GIA'])?></span>đ</div>
                         </div>
                         <div class="dropdown-item-right">
                         <a href="xoa.php?id=<?php echo $value['id_monan']; ?>">
@@ -399,15 +418,14 @@ if(empty($_SESSION['email'])){
                   <?php   
                   $tongtien=0;
                     foreach($dsgiohang as $key=>$value)  {  
-                    $tongtien=$tongtien+$value['GIA'];
-                  }
-                    ?>
+                    $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
+                  }?>
                     <li class="auth-shoppingcart-dropdown-item">
                       <div class="auth-shoppingcart-dropdown-link" href="#!">
                         <span class="sum">
-                          Tổng tiền: <span class="sum-price"><?php echo $tongtien ?></span>đ
+                          Tổng tiền: <span class="sum-price"><?php echo formatMoney($tongtien) ?></span>đ
                         </span>
-                        <a href="./">Thanh toán</a>
+                        <a href="../shoppingcart/index.php">Thanh toán</a>
                         </div>
                     </li>
                 </ul>
@@ -868,7 +886,7 @@ if(empty($_SESSION['email'])){
                       <div class="product-item-number">
                         <div class="buttons_added">
                           <input class="minus is-form" type="button" value="-" />
-                          <input aria-label="quantity"class="input-qty"max="10"min="1"name=""type="number"value="1"/>
+                          <input aria-label="quantity"class="input-qty"max="10"min="1"name="SL1"type="number"value="1"/>
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
@@ -921,7 +939,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL2"
                             type="number"
                             value="1"
                           />
@@ -980,7 +998,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL3"
                             type="number"
                             value="1"
                           />
@@ -1038,7 +1056,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL4"
                             type="number"
                             value="1"
                           />
@@ -1096,7 +1114,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL5"
                             type="number"
                             value="1"
                           />
@@ -1158,7 +1176,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL6"
                             type="number"
                             value="1"
                           />
@@ -1218,7 +1236,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL7"
                             type="number"
                             value="1"
                           />
@@ -1285,7 +1303,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL8"
                             type="number"
                             value="1"
                           />
@@ -1341,7 +1359,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL9"
                             type="number"
                             value="1"
                           />
@@ -1397,7 +1415,7 @@ if(empty($_SESSION['email'])){
                             class="input-qty"
                             max="10"
                             min="1"
-                            name=""
+                            name="SL10"
                             type="number"
                             value="1"
                           />

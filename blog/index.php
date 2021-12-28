@@ -49,7 +49,7 @@ if(!empty($_SESSION['email'])){
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index.html"
+          <a href="../main-page/index.php"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -65,9 +65,9 @@ if(!empty($_SESSION['email'])){
             </li>
             <li class="menu-item"><a class="menu-link" href="#!">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../service/service.html">Dịch vụ</a>
+              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
 
             <?php if (empty($_SESSION['email'])){ ?>
               <li class="auth">

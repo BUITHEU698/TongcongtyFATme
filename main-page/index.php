@@ -1,5 +1,16 @@
 <?php
 include'../connect/connect.php';
+if(!empty($_SESSION['email'])){
+  $email = $_SESSION['email'];
+  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan as $key=>$value)  {
+    $ten=$value['HOTEN'];
+    $tach_ten = explode(" ", $ten);
+    $account=$tach_ten[1].' '.$tach_ten[2];
+  }
+  $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+}
+  
 
 ?>
 
@@ -54,11 +65,11 @@ include'../connect/connect.php';
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../service/service.html">Dịch vụ</a>
+              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
 
             <?php if (empty($_SESSION['email'])){ ?>
               <li class="auth">
@@ -81,12 +92,28 @@ include'../connect/connect.php';
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="#!">Tài khoản</a>
-                  </li>
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="#!">Đăng xuất</a>
-                  </li>
+                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                    <li class="auth-like-dropdown-item">
+                      <a href="" class="dropdown-item">
+                        <img
+                          src="../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
+                        />
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                      </a>
+                    </li>
+                  <?php }?>
                 </ul>
               </div>
               <div class="auth-shoppingcart">
@@ -104,7 +131,7 @@ include'../connect/connect.php';
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
                   <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
                       Giỏ hàng
                     </a>
                   </li>
@@ -118,7 +145,7 @@ include'../connect/connect.php';
               <div class="auth-user">
                 <div class="auth-user-top">
                   <img src="../assets/images/main-images/icon-user.png" alt="user" />
-                  <span class="auth-username">Win Lax</span>
+                    <span class="auth-username"><?php echo $account?></span>
                   <img
                     class="arrow-down"
                     src="../assets/images/main-images/icon-arrow-down.png"
@@ -130,7 +157,7 @@ include'../connect/connect.php';
                     <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
                   </li>
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="#!">Đăng xuất</a>
+                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
                   </li>
                 </ul>
               </div>
@@ -448,13 +475,13 @@ include'../connect/connect.php';
             <!-- blog list -->
             <div class="blog-list slider-responsive">
               <div class="post-item show-on-scroll">
-                <a href="../blog_1/index.html" class="post-media">
+                <a href="../blog_1/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog_1/index.html" class="post-title"
+                    <a href="../blog_1/index.php" class="post-title"
                       >Những món ăn nhất định phải thử một lần khi sống trong đời</a
                     >
                   </h3>
@@ -462,13 +489,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_2/index.html" class="post-media">
+                <a href="../blog/blog_2/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_2/index.html" class="post-title"
+                    <a href="../blog/blog_2/index.php" class="post-title"
                       >Người Nhật Bản ăn gì vào đêm trăng rằm?</a
                     >
                   </h3>
@@ -476,13 +503,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_3/index.html" class="post-media">
+                <a href="../blog/blog_3/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_3/index.html" class="post-title"
+                    <a href="../blog/blog_3/index.php" class="post-title"
                       >Khám phá khu phố Tàu giữa lòng Sài Gòn</a
                     >
                   </h3>
@@ -490,13 +517,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_4/index.html" class="post-media">
+                <a href="../blog/blog_4/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_4/index.html" class="post-title"
+                    <a href="../blog/blog_4/index.php" class="post-title"
                       >Chỉ Với 30k Thì Ăn Gì Ở Sài Gòn?
                     </a>
                   </h3>
@@ -504,13 +531,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_5/index.html" class="post-media">
+                <a href="../blog/blog_5/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_5/index.html" class="post-title"
+                    <a href="../blog/blog_5/index.php" class="post-title"
                       >[Bạn Có Biết] TOP 8 loại quả đắt đỏ nhất thế giới</a
                     >
                   </h3>
@@ -520,13 +547,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_6/index.html" class="post-media">
+                <a href="../blog/blog_6/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog6.png" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_6/index.html" class="post-title"
+                    <a href="../blog/blog_6/index.php" class="post-title"
                       >Food stylist – Những người nghệ sĩ biến hóa trên bàn ăn</a
                     >
                   </h3>
@@ -534,13 +561,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_7/index.html" class="post-media">
+                <a href="../blog/blog_7/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_7/index.html" class="post-title"
+                    <a href="../blog/blog_7/index.php" class="post-title"
                       >Cách làm “ROSÉ ROLL CAKE” – Bánh cuộn kem phômai bằng chảo
                     </a>
                   </h3>
@@ -548,13 +575,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_8/index.html" class="post-media">
+                <a href="../blog/blog_8/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_8/index.html" class="post-title"
+                    <a href="../blog/blog_8/index.php" class="post-title"
                       >6 lợi ích của việc nấu ăn tại nhà
                     </a>
                   </h3>
@@ -562,13 +589,13 @@ include'../connect/connect.php';
                 </div>
               </div>
               <div class="post-item show-on-scroll">
-                <a href="../blog/blog_9/index.html" class="post-media">
+                <a href="../blog/blog_9/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog/blog_9/index.html" class="post-title"
+                    <a href="../blog/blog_9/index.php" class="post-title"
                       >Chế Độ Ăn Keto Là Gì? Cơ Bản Dành Cho Người Mới Bắt Đầu
                     </a>
                   </h3>

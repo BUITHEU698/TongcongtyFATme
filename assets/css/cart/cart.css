@@ -8,12 +8,14 @@
     float: left;
     width: 35%;
   }
-   
+  .product .product-price{
+    color: #ff7d00;
+    font-weight: 600;
+    font-size: 20px;
+  }
   .product-price {
     float: left;
-    color: #ff7d00;
-    font-weight: 700;
-    font-size: 20px;
+  
     width: 15%;
   }
    
@@ -69,35 +71,36 @@
   }
    
   .shopping-cart {
-    margin-top: 20px;
+    margin-top: 50px;
+
   }
   .wrapper{
     max-width: 1140px;
   } 
-  /* Column headers */
-  .column-labels label {
-   
-    margin-bottom: 15px;
-    
-  }
 
-   
+  .column-labels .product-image, .column-labels .product-details, .column-labels .product-price, .column-labels .product-quantity, .column-labels .product-removal, .column-labels .product-line-price {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500px ;
+  }
   /* Product entries */
   .product {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding: 10px 20px;
+    height: 110px;
     border-bottom: 1px solid #eee;
   }
   .product .product-image {
     text-align: center;
   }
   .product .product-image img {
-    width: 100px;
+    width: 80px;
+    border-radius: 4px;
   }
   .product .product-details .product-title {
     margin-right: 20px;
-    color:  #051441;
-    fo
+    font-size: 18px;
     
   }
   .product .product-details .product-description {
@@ -105,13 +108,18 @@
     line-height: 1.4em;
   }
   .product .product-quantity input {
-    width: 50px;
+    width: 60px;
     height: 30px;
+    margin-left: 25px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    padding:0px 5px;
   }
   .product .remove-product {
     width: 50px;
-    height: 50px;
+   
     padding:none;
+    margin-left: 20px;
     border: none
     
   }
@@ -127,6 +135,7 @@
     float: right;
     clear: both;
     width: 100%;
+    padding: 5px 20px;
     margin-bottom: 10px;
   }
   .totals .totals-item label {
@@ -157,6 +166,8 @@
   }
   .column-labels{
     border-bottom: 1px solid #eee;
+    background-color: #eee;
+    padding: 10px 20px;
     margin-bottom: 15px;
   }
   /* Make adjustments for tablet */

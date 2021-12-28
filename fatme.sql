@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 21, 2021 lúc 11:58 PM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 8.0.13
+-- Host: 127.0.0.1
+-- Generation Time: Dec 28, 2021 at 03:22 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `fatme`
+-- Database: `fatme`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chuongtrinh_khuyenmai`
+-- Table structure for table `chuongtrinh_khuyenmai`
 --
 
 CREATE TABLE `chuongtrinh_khuyenmai` (
@@ -39,7 +39,7 @@ CREATE TABLE `chuongtrinh_khuyenmai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `chuongtrinh_khuyenmai`
+-- Dumping data for table `chuongtrinh_khuyenmai`
 --
 
 INSERT INTO `chuongtrinh_khuyenmai` (`email_khachhang`, `id_chuongtrinh`, `TENCHUONGTRINH`, `LOAIKHUYENMAI`, `THOIGIAN_BATDAU`, `TONGGIAY_BATDAU`, `THOIGIAN_KETTHUC`, `TONGGIAY_KETTHUC`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `chuongtrinh_khuyenmai` (`email_khachhang`, `id_chuongtrinh`, `TENCH
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `danhmuc`
+-- Table structure for table `danhmuc`
 --
 
 CREATE TABLE `danhmuc` (
@@ -64,7 +64,7 @@ CREATE TABLE `danhmuc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `danhmuc`
+-- Dumping data for table `danhmuc`
 --
 
 INSERT INTO `danhmuc` (`email_khachhang`, `id_danhmuc`, `TENDANHMUC`, `MOTA`, `TRANGTHAI`, `NGAYDANG`) VALUES
@@ -75,7 +75,22 @@ INSERT INTO `danhmuc` (`email_khachhang`, `id_danhmuc`, `TENDANHMUC`, `MOTA`, `T
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `giohang`
+--
+
+CREATE TABLE `giohang` (
+  `id_monan` int(11) NOT NULL,
+  `email_khachhang` text NOT NULL,
+  `IMAGE` varchar(255) NOT NULL,
+  `TENMONAN` varchar(255) NOT NULL,
+  `GIA` int(11) NOT NULL,
+  `THELOAI` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -92,7 +107,7 @@ CREATE TABLE `khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`id`, `HOTEN`, `CMND`, `NGAY`, `THANG`, `NAM`, `email`, `SODIENTHOAI`, `MOTA`, `password`) VALUES
@@ -101,7 +116,7 @@ INSERT INTO `khachhang` (`id`, `HOTEN`, `CMND`, `NGAY`, `THANG`, `NAM`, `email`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ma_khuyenmai`
+-- Table structure for table `ma_khuyenmai`
 --
 
 CREATE TABLE `ma_khuyenmai` (
@@ -123,7 +138,7 @@ CREATE TABLE `ma_khuyenmai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `ma_khuyenmai`
+-- Dumping data for table `ma_khuyenmai`
 --
 
 INSERT INTO `ma_khuyenmai` (`email_khachhang`, `id_makhuyenmai`, `TENMAKHUYENMAI`, `APDUNG`, `id_chuongtrinh`, `GIATRIKHUYENMAI`, `GIATRIGIAMTOIDA`, `DIEUKIEN`, `DK_SOLUONG`, `GIOIHAN`, `GH_SOLUONG`, `THOIGIAN_BATDAU`, `TONGGIAY_BATDAU`, `THOIGIAN_KETTHUC`, `TONGGIAY_KETTHUC`) VALUES
@@ -133,7 +148,7 @@ INSERT INTO `ma_khuyenmai` (`email_khachhang`, `id_makhuyenmai`, `TENMAKHUYENMAI
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `monan`
+-- Table structure for table `monan`
 --
 
 CREATE TABLE `monan` (
@@ -148,38 +163,66 @@ CREATE TABLE `monan` (
   `IMAGE` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Chỉ mục cho các bảng đã đổ
+-- Table structure for table `yeuthich`
+--
+
+CREATE TABLE `yeuthich` (
+  `id_monan` int(11) NOT NULL,
+  `email_khachhang` varchar(255) NOT NULL,
+  `TENMONAN` varchar(255) NOT NULL,
+  `IMAGE` varchar(255) NOT NULL,
+  `GIA` int(11) NOT NULL,
+  `THELOAI` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `yeuthich`
+--
+
+INSERT INTO `yeuthich` (`id_monan`, `email_khachhang`, `TENMONAN`, `IMAGE`, `GIA`, `THELOAI`) VALUES
+(20, '19522049@gm.uit.edu.vn', 'Xôi Xá Xíu', 'xoixaxiu.jpeg', 35000, 'Xôi');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `chuongtrinh_khuyenmai`
+-- Indexes for table `chuongtrinh_khuyenmai`
 --
 ALTER TABLE `chuongtrinh_khuyenmai`
   ADD PRIMARY KEY (`id_chuongtrinh`);
 
 --
--- Chỉ mục cho bảng `danhmuc`
+-- Indexes for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
   ADD PRIMARY KEY (`id_danhmuc`),
   ADD UNIQUE KEY `TENDANHMUC` (`TENDANHMUC`);
 
 --
--- Chỉ mục cho bảng `khachhang`
+-- Indexes for table `giohang`
+--
+ALTER TABLE `giohang`
+  ADD PRIMARY KEY (`id_monan`);
+
+--
+-- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user` (`email`);
 
 --
--- Chỉ mục cho bảng `ma_khuyenmai`
+-- Indexes for table `ma_khuyenmai`
 --
 ALTER TABLE `ma_khuyenmai`
   ADD PRIMARY KEY (`id_makhuyenmai`);
 
 --
--- Chỉ mục cho bảng `monan`
+-- Indexes for table `monan`
 --
 ALTER TABLE `monan`
   ADD PRIMARY KEY (`id_monan`),
@@ -187,45 +230,64 @@ ALTER TABLE `monan`
   ADD KEY `fk_danhmuc_monan` (`id_danhmuc`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- Indexes for table `yeuthich`
+--
+ALTER TABLE `yeuthich`
+  ADD PRIMARY KEY (`id_monan`),
+  ADD UNIQUE KEY `email_khachhang` (`email_khachhang`,`TENMONAN`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `chuongtrinh_khuyenmai`
+-- AUTO_INCREMENT for table `chuongtrinh_khuyenmai`
 --
 ALTER TABLE `chuongtrinh_khuyenmai`
   MODIFY `id_chuongtrinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT cho bảng `danhmuc`
+-- AUTO_INCREMENT for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
   MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
--- AUTO_INCREMENT cho bảng `khachhang`
+-- AUTO_INCREMENT for table `giohang`
+--
+ALTER TABLE `giohang`
+  MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
--- AUTO_INCREMENT cho bảng `ma_khuyenmai`
+-- AUTO_INCREMENT for table `ma_khuyenmai`
 --
 ALTER TABLE `ma_khuyenmai`
   MODIFY `id_makhuyenmai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT cho bảng `monan`
+-- AUTO_INCREMENT for table `monan`
 --
 ALTER TABLE `monan`
   MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- AUTO_INCREMENT for table `yeuthich`
+--
+ALTER TABLE `yeuthich`
+  MODIFY `id_monan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `monan`
+-- Constraints for table `monan`
 --
 ALTER TABLE `monan`
   ADD CONSTRAINT `fk_danhmuc_monan` FOREIGN KEY (`id_danhmuc`) REFERENCES `danhmuc` (`id_danhmuc`);

@@ -1,4 +1,22 @@
-<html>
+<?php
+include"../connect/connect.php";
+if(empty($_SESSION['email'])){
+    header("location: ../login/index.php");
+  }else {
+    $email = $_SESSION['email'];
+    $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+    foreach($taikhoan as $key=>$value)  {
+      $ten=$value['HOTEN'];
+      $tach_ten = explode(" ", $ten);
+      $account=$tach_ten[1].' '.$tach_ten[2];
+    }
+    $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'");
+
+  }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -16,6 +34,14 @@
     <!-- my css -->
     <link rel="stylesheet" href="../assets/css/main-page/app.css" />
     <link rel="stylesheet" href="../assets/css/cart/cart.css" />
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    crossorigin="anonymous"
+  />
+
+
+    
     <title>FATMe - Món ăn</title>
 </head>
 
@@ -26,7 +52,7 @@
     <div class="wrapper">
         <header class="header">
             <div class="navigation">
-                <a href="../main-page/index-main.html"><img class="header-logo"
+                <a href="../main-page/index.php"><img class="header-logo"
                         srcset="../assets/images/main-images/logo.png 2x" /></a>
                 <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
                 <ul class="menu">
@@ -34,15 +60,15 @@
                         <label for="toggle-check"><img src="../assets/images/main-images/menu-close.png"
                                 alt="Close" /></label>
                     </div>
-                    <li class="menu-item"><a class="menu-link" href="../main-page/index-main.html">Trang chủ</a></li>
+                    <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
                     <li class="menu-item">
-                        <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
+                        <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
                     </li>
-                    <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
+                    <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
                     <li class="menu-item">
-                        <a class="menu-link" href="../service/service.html">Dịch vụ</a>
+                        <a class="menu-link" href="../service/service.php">Dịch vụ</a>
                     </li>
-                    <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+                    <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
                     <li class="auth">
                         <div class="auth-like">
                             <div class="auth-like-top">
@@ -55,7 +81,7 @@
                                     <a class="auth-like-dropdown-link" href="../profile/index.php">Tài khoản</a>
                                 </li>
                                 <li class="auth-like-dropdown-item">
-                                    <a class="auth-like-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                                    <a class="auth-like-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
                                 </li>
                             </ul>
                         </div>
@@ -69,7 +95,7 @@
                             </div>
                             <ul class="auth-shoppingcart-dropdown">
                                 <li class="auth-shoppingcart-dropdown-item">
-                                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.html">
+                                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.index.php">
                                         Giỏ hàng
                                     </a>
                                 </li>
@@ -78,20 +104,21 @@
                                         Đặt hàng
                                     </a>
                                 </li>
+                            </ul>
                         </div>
                         <div class="auth-user">
                             <div class="auth-user-top">
                                 <img src="../assets/images/main-images/icon-user.png" alt="user" />
-                                <span class="auth-username">Win Lax</span>
+                                <span class="auth-username"><?php echo $account ?></span>
                                 <img class="arrow-down" src="../assets/images/main-images/icon-arrow-down.png"
                                     alt="arrow-down" />
                             </div>
                             <ul class="auth-user-dropdown">
                                 <li class="auth-user-dropdown-item">
-                                    <a class="auth-user-dropdown-link" href="../profile/index.html">Tài khoản</a>
+                                    <a class="auth-user-dropdown-link" href="../profile/index.php">Tài khoản</a>
                                 </li>
                                 <li class="auth-user-dropdown-item">
-                                    <a class="auth-user-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
                                 </li>
                             </ul>
                         </div>
@@ -105,60 +132,63 @@
         </header>
 
         <main >
-            <h1 style="color: #ff7d00;color: #051441" >Giỏ Hàng</h1>
+            <p style=" color:#635f85; font-size: 27px; font-weight: 500; margin: 0 auto; width: max-content;" >GIỎ HÀNG</p>
+            
             <div class="shopping-cart">
                 <div class="column-labels">
                     <label class="product-image">Ảnh</label>
                     <label class="product-details">Tên Món Ăn</label>
-                    <label class="product-price">Giá</label>
+                    <label class="product-price">Giá Tiền </label>
                     <label class="product-quantity">Số Lượng</label>
                     <label class="product-removal">Xóa</label>
                     <label class="product-line-price">Tổng Tiền</label>
                 </div>
+                <?php
 
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/tiem-banh-hp-aq-quan-3-ho-chi-minh-1618632105237285840-eatery-avatar-1640055668.jpg">
+                    function formatMoney($number, $fractional=false){  
+                        if ($fractional) {  
+                            $number = sprintf('%.2f', $number);  
+                        }  
+                        while (true) {  
+                            $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
+                            if ($replaced != $number) {  
+                                $number = $replaced;  
+                            } else {  
+                                break;  
+                            }  
+                        }  
+                        return $number;  
+                    }
+                  foreach($dsgiohang as $key=>$value)  { ?>
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="../assets/images/food/<?php echo $value['IMAGE']?>">
+                        </div>
+                        <div class="product-details">
+                            <p class="product-title"><?php echo $value['TENMONAN']?></p>
+                        </div>
+                        <div class="product-price"><?php echo formatMoney($value['GIA'])?></div>
+                        <div class="product-quantity">
+                            <input class="input-pro" type="number" value="<?php echo $value['SOLUONG']?>" min="1">
+                        </div>
+                        <div class="product-removal">
+                            <button style="background: none;" class="remove-product">
+                               <a href="xoa.php?id=<?php echo $value['id_monan'];?>"> <i class="far fa-trash-alt"></i></a>
+                            </button>
+                        </div>
+                        <div class="product-line-price"><?php echo formatMoney($value['GIA']*$value['SOLUONG'])?></div>
                     </div>
-                    <div class="product-details">
-                        <h2 class="product-title">Cơm Tấm Bin Bo</h2>
-                    </div>
-                    <div class="product-price">20.000</div>
-                    <div class="product-quantity">
-                        <input class="input-pro" type="number" value="2" min="1">
-                    </div>
-                    <div class="product-removal">
-                        <button class="remove-product">
-                            Xóa
-                        </button>
-                    </div>
-                    <div class="product-line-price">20.000</div>
-                </div>
-
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/tiem-banh-hp-aq-quan-3-ho-chi-minh-1618632105237285840-eatery-avatar-1640055668.jpg">
-                    </div>
-                    <div class="product-details">
-                        <h2 class="product-title">BÁNH mì Kebab-Hamburger - Bánh flan Nguyễn Thiện Thuật</h2>
-                       
-                    </div>
-                    <div class="product-price">15.000</div>
-                    <div class="product-quantity">
-                        <input class="input-pro" type="number" value="1" min="1">
-                    </div>
-                    <div class="product-removal">
-                        <button class="remove-product">
-                            Xóa
-                        </button>
-                    </div>
-                    <div class="product-line-price">15.000</div>
-                </div>
+                <?php }?> 
+                <?php   
+                  $tongtien=0;
+                    foreach($dsgiohang as $key=>$value)  {  
+                    $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
+                  }?>
 
                 <div class="totals">
                     <div class="totals-item">
                         <label>Tổng Tiền </label>
-                        <div class="totals-value" id="cart-subtotal">71.97</div>
+                        <div class="totals-value" id="cart-subtotal"><?php echo formatMoney($tongtien) ?></div>
                     </div>
                     <!-- <div class="totals-item">
                         <label>Phí Ship (5%)</label>
@@ -166,11 +196,11 @@
                     </div> -->
                     <div class="totals-item">
                         <label>Phí Ship (5%)</label>
-                        <div class="totals-value" id="cart-shipping">15.000</div>
+                        <div class="totals-value" id="cart-shipping">15,000</div>
                     </div>
                     <div class="totals-item totals-item-total">
                         <label>Thanh Toán</label>
-                        <div class="totals-value" id="cart-total">90.57</div>
+                        <div class="totals-value" id="cart-total"><?php echo formatMoney($tongtien+15000) ?></div>
                     </div>
                 </div>
 
@@ -179,15 +209,14 @@
             </div>
         </main>
         <br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div>
+        </div>
     
     <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <a href="index.html" class="footer-logo">
+                    <a href="index.php" class="footer-logo">
                         <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
                     </a>
                     <p class="footer-desc text">

@@ -176,4 +176,16 @@ body {
 
 .product-quantity {
     display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.ship-address-number>input {
+    padding: 2px 10px;
+    border: 1px solid rgba(0, 0, 0, .14);
+    width: 70px;
+}
+
+.voucher-info {
+    line-height: 1;
 }

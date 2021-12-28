@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2021 at 03:22 AM
+-- Generation Time: Dec 28, 2021 at 06:30 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -84,7 +84,8 @@ CREATE TABLE `giohang` (
   `IMAGE` varchar(255) NOT NULL,
   `TENMONAN` varchar(255) NOT NULL,
   `GIA` int(11) NOT NULL,
-  `THELOAI` varchar(255) NOT NULL
+  `THELOAI` varchar(255) NOT NULL,
+  `SOLUONG` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

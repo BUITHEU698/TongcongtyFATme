@@ -39,6 +39,7 @@ iframe{
 .food-container {
   display: flex;
   flex-wrap: nowrap;
+  font-family: "Source Sans Pro", sans-serif;
 }
 .img{
     width: 100%;

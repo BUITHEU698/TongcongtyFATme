@@ -79,7 +79,7 @@ iframe{
     width: 100%;
     height: 2.3rem;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 560px) {
     .type_food_container{
         height: 500px !important;
     }

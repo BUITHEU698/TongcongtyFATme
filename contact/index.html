@@ -3,7 +3,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/images-main/logo-main.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/main-images/logo-main.png"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -31,10 +35,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
     />
     <!-- my css -->
-    <link rel="stylesheet" href="./css/app.css" />
     <link rel="stylesheet" href="../assets/css/main-page/app.css" />
-    <link rel="stylesheet" href="../assets/css//contac/contact.css" />
-    <title>FATMe - Blog</title>
+    <link rel="stylesheet" href="../assets/css/contact/contact.css" />
+    <title>FATMe - Liên hệ</title>
   </head>
   <body>
     <div class="totop">
@@ -42,7 +45,7 @@
         href="#"
         class="goto-top"
         style="
-          background: url(./images/images-main/gototop.svg) no-repeat center,
+          background: url(../assets/images/main-images/gototop.svg) no-repeat center,
             linear-gradient(45deg, #f67102 5.1%, #f4a91e 86.29%);
         "
       ></a>
@@ -60,7 +63,9 @@
                 ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="../main-page/index-main.html">Trang chủ</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../main-page/index-main.html">Trang chủ</a>
+            </li>
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
             </li>
@@ -68,7 +73,9 @@
             <li class="menu-item">
               <a class="menu-link" href="../service/service.html">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
+            <li class="menu-item">
+              <a class="menu-link link-active" href="../contact/index.html">Liên hệ</a>
+            </li>
             <li class="auth">
               <div class="auth-like">
                 <div class="auth-like-top">
@@ -112,9 +119,7 @@
                     </a>
                   </li>
                   <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
-                      Đặt hàng
-                    </a>
+                    <a class="auth-shoppingcart-dropdown-link" href="#!"> Đặt hàng </a>
                   </li>
                 </ul>
               </div>
@@ -144,179 +149,98 @@
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
-
       </header>
-      <section class="ftco-section">
+      <section class="contact">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-              <h2 class="heading-section">LIÊN HỆ</h2>
-            </div>
+          <div class="contact-header">
+            <h1 class="contact-header-title global-heading global-heading--big">Liên hệ</h1>
+            <p class="contact-header-subtitle global-text">
+              Để được hỗ trợ nhanh nhất, vui lòng liên hệ với chúng tôi.
+            </p>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-12">
-              <div class="wrapper">
-                <div class="row ">
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span><i class="fas fa-map-marker-alt"></i></span>
-                      </div>
-                      <div class="text">
-                        <p>
-                          <span>Địa chỉ: </span> Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí
-                          Minh.
-                        </p>
-                      </div>
-                    </div>
+          <div class="contact-list">
+            <a href="#!" class="contact-list-item">
+              <div class="contact-list-item-icon">
+                <img src="../assets/images/main-images/icon-location.png" alt="địa chỉ" />
+              </div>
+              <div class="contact-list-item-content">
+                <p class="contact-list-item-content-subtitle">Tp.Hồ Chí Minh</p>
+              </div>
+            </a>
+            <a href="mailto:congtyfatme@gmail.com" class="contact-list-item contact-active"
+            >
+              <div class="contact-list-item-icon">
+                <img src="../assets/images/main-images/icon-email.png" alt="email" />
+              </div>
+              <div class="contact-list-item-content">
+                <p class="contact-list-item-content-subtitle">congtyfatme@gmail.com</p>
+              </div>
+            </a>
+            <a href="tel:0989898989" class="contact-list-item">
+              <div class="contact-list-item-icon">
+                <img src="../assets/images/main-images/icon-phone.png" alt="phone" />
+              </div>
+              <div class="contact-list-item-content">
+                <p class="contact-list-item-content-subtitle">0989898989</p>
+              </div>
+            </a>
+          </div>
+          <div class="contact-magic contact-form magic-active">
+            <h2 class="contact-form-title">Điền liên hệ</h2>
+            <form action="">
+              <div class="contact-form-content">
+                <div class="contact-form-left">
+                  <div class="contact-form-item">
+                    <label for="name">Họ và Tên</label>
+                    <input
+                      class="contact-form-input"
+                      type="text"
+                      placeholder="Nhập vào đây..."
+                      name="name"
+                      id="name"
+                    />
                   </div>
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span><i class="fas fa-phone"></i></span>
-                      </div>
-                      <div class="text">
-                        <p>
-                          <span>Số điện thoại:</span>
-                          <a href="tel://1234567920">(84+) 971 29 28 38</a>
-                        </p>
-                      </div>
-                    </div>
+                  <div class="contact-form-item">
+                    <label for="email">Email</label>
+                    <input
+                      class="contact-form-input"
+                      type="text"
+                      placeholder="Nhập vào đây..."
+                      \
+                      name="email"
+                      id="email"
+                    />
                   </div>
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="fa fa-paper-plane"></span>
-                      </div>
-                      <div class="text">
-                        <p>
-                          <span>Email:</span>
-                          <a href="mailto:info@yoursite.com">congtyfatme@gmail.com</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="fa fa-globe"></span>
-                      </div>
-                      <div class="text">
-                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
-                      </div>
-                    </div>
+                  <div class="contact-form-item">
+                    <label for="phone">Số điện thoại</label>
+                    <input
+                      class="contact-form-input"
+                      type="text"
+                      placeholder="Nhập vào đây..."
+                      name="phone"
+                      id="phone"
+                    />
                   </div>
                 </div>
-                <div class="row no-gutters">
-                  <div class="col-md-7">
-                    <div class="contact-wrap w-100 p-4">
-                      <h3 class="mb-4">Form liên hệ</h3>
-                      <div id="form-message-warning" class="mb-4"></div>
-
-                      <div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="label" for="name">Họ và Tên </label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                name="name"
-                                id="name"
-                                placeholder="Name"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="label" for="email">Số Điện Thoại</label>
-                              <input
-                                type="phone"
-                                class="form-control"
-                                name="phone"
-                                id="phone"
-                                placeholder="Số điện Thoại"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="label" for="email">Địa chỉ email</label>
-                              <input
-                                type="email"
-                                class="form-control"
-                                name="email"
-                                id="email"
-                                placeholder="Email"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="label" for="subject">Tiêu đề</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                name="subject"
-                                id="subject"
-                                placeholder="Tiêu Đề"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="label" for="#">Nội dung</label>
-                              <textarea
-                                name="message"
-                                class="form-control"
-                                id="message"
-                                cols="30"
-                                rows="4"
-                                placeholder="Điền nội dung ..."
-                              ></textarea>
-                            </div>
-                          </div>
-                          <div>
-                            <a href="../main-page/index.html"
-                              ><button
-                                style="
-                                  border: none;
-                                  color: white;
-                                  border-radius: 5px;
-                                  margin-left: 15px;
-                                  background: linear-gradient(
-                                    103.38deg,
-                                    #f67102 5.1%,
-                                    #f4a91e 86.29%
-                                  );
-                                  padding: 10px;
-                                "
-                              >
-                                Gửi thông tin
-                              </button></a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5 d-flex align-items-stretch">
-                    <div
-                      class="info-wrap w-100 p-5 img"
-                      style="background-image: url(images/img.gif)"
-                    >
-                      <img
-                        style="width: 200px; margin: 0 auto; margin-top: 150px"
-                        src="./images/z3036584193908_a4dfed154f1eeb70ec049adfbb08d1a7.jpg"
-                        alt=""
-                      />
-                      <h1></h1>
-                    </div>
+                <div class="contact-form-right">
+                  <div class="contact-form-item">
+                    <label for="message">Nội dung</label>
+                    <textarea
+                      class="contact-form-input"
+                      placeholder="Nhập vào đây..."
+                      name="message"
+                      id="message"
+                    ></textarea>
                   </div>
                 </div>
               </div>
-            </div>
+              <button class="contact-form-button button button--primary" type="submit">
+                Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+          <div class="contact-magic google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231171196223!2d106.80086541526072!3d10.870014160430552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiDEkEhRRyBUUC5IQ00!5e0!3m2!1svi!2s!4v1640646972276!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
       </section>
@@ -326,21 +250,23 @@
         <div class="footer-container">
           <div class="footer-column">
             <a href="index.html" class="footer-logo">
-              <img srcset="./images/images-main/logo.png 2x" alt="" />
+              <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
+            <p class="footer-desc text">
+              Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách
+            </p>
             <div class="social">
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/facebook.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/twitter.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/twitter.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/instagram.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/apple.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/apple.png 2x" alt="" />
               </a>
             </div>
           </div>
@@ -411,6 +337,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->
-    <script src="./app.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/contact.js"></script>
   </body>
 </html>

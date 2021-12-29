@@ -195,7 +195,7 @@ if(empty($_SESSION['email'])){
                         <div class="totals-value" id="cart-tax">3.60</div>
                     </div> -->
                     <div class="totals-item">
-                        <label>Phí Ship (5%)</label>
+                        <label>Phí Ship (15.000)</label>
                         <div class="totals-value" id="cart-shipping">15,000</div>
                     </div>
                     <div class="totals-item totals-item-total">

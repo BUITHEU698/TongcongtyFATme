@@ -185,7 +185,7 @@ $account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
             </div>
             <div class="blog_post-text">
               <div class="blog_post-social">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffatme.tk%2Fblog%2Fblog_5%2F" class="blog_post-social-item">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffatme.tk%2Fblog%2Fblog_5%2F" class="blog_post-social-item" target="_blank">
                   <img srcset="../../assets/images/main-images/facebook.png 2x" alt="" />
                 </a>
                 <a href="#" class="blog_post-social-item">
@@ -492,7 +492,7 @@ $account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
                 <p class="global-text">
                   Tác giả: Kiên Nguyễn Blog, Đinh Tùng – Blogchiasekienthuc.com <br />
                   Link dẫn đến bài viết gốc:
-                  <a
+                  <a target="_blank"
                     href="https://blogchiasekienthuc.com/kien-thuc/8-loai-qua-dat-do-nhat-the-gioi.html"
                     >https://blogchiasekienthuc.com/kien-thuc/8-loai-qua-dat-do-nhat-the-gioi.html
                   </a>

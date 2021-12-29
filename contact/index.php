@@ -192,7 +192,7 @@
                       <div class="text">
                         <p>
                           <span>Email:</span>
-                          <a href="mailto:info@yoursite.com">congtyfatme@gmail.com</a>
+                          <a href="mailto:TongCongTyFATme@yoursite.com">TongCongTyFATme@gmail.com</a>
                         </p>
                       </div>
                     </div>
@@ -203,7 +203,7 @@
                         <span class="fa fa-globe"></span>
                       </div>
                       <div class="text">
-                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                        <p><span>Website</span> <a href="www.FATMe.tk">FATMe.tk</a></p>
                       </div>
                     </div>
                   </div>

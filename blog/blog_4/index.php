@@ -185,7 +185,7 @@ $account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
             </div>
             <div class="blog_post-text">
               <div class="blog_post-social">
-                <a href="#" class="blog_post-social-item">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffatme.tk%2Fblog%2Fblog_4%2F" class="blog_post-social-item">
                   <img srcset="../../assets/images/main-images/facebook.png 2x" alt="" />
                 </a>
                 <a href="#" class="blog_post-social-item">

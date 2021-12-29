@@ -156,7 +156,7 @@ if(!empty($_SESSION['email'])){
         <div class="blog_post-container container">
           <div class="blog_post-header">
             <div class="blog_post-link">
-              <a href="../../blog/index.html" class="blog_post-link-item menu-link">Blog </a>
+              <a href="../../blog/index.php" class="blog_post-link-item menu-link">Blog </a>
               <img src="../../assets/images/main-images/icon-arrow-right.png" alt="" class="" />
               <a href="#!" class="blog_post-link-item">Blog_1 </a>
             </div>
@@ -193,9 +193,7 @@ if(!empty($_SESSION['email'])){
                 <a href="#" class="blog_post-social-item">
                   <img srcset="../../assets/images/main-images/instagram.png 2x" alt="" />
                 </a>
-                <a href="#" class="blog_post-social-item">
-                  <img srcset="../../assets/images/main-images/apple.png 2x" alt="" />
-                </a>
+
               </div>
               <div class="blog_post-text-content">
                 <p class="global-text">
@@ -362,13 +360,13 @@ if(!empty($_SESSION['email'])){
           <p class="post-title-heading">Có thể bạn thích</p>
           <div class="blog-list slider-responsive">
             <div class="post-item show-on-scroll">
-              <a href="../blog_2/index.html" class="post-media">
+              <a href="../blog_2/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_2/index.html" class="post-title"
+                  <a href="../blog_2/index.php" class="post-title"
                     >Người Nhật Bản ăn gì vào đêm trăng rằm?</a
                   >
                 </h3>
@@ -376,13 +374,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_3/index.html" class="post-media">
+              <a href="../blog_3/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_3/index.html" class="post-title"
+                  <a href="../blog_3/index.php" class="post-title"
                     >Khám phá khu phố Tàu giữa lòng Sài Gòn</a
                   >
                 </h3>
@@ -390,13 +388,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_4/index.html" class="post-media">
+              <a href="../blog_4/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_4/index.html" class="post-title"
+                  <a href="../blog_4/index.php" class="post-title"
                     >Chỉ Với 30k Thì Ăn Gì Ở Sài Gòn?
                   </a>
                 </h3>
@@ -404,13 +402,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_5/index.html" class="post-media">
+              <a href="../blog_5/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_5/index.html" class="post-title"
+                  <a href="../blog_5/index.php" class="post-title"
                     >[Bạn Có Biết] TOP 8 loại quả đắt đỏ nhất thế giới</a
                   >
                 </h3>
@@ -420,13 +418,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_6/index.html" class="post-media">
+              <a href="../blog_6/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog6.png" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_6/index.html" class="post-title"
+                  <a href="../blog_6/index.php" class="post-title"
                     >Food stylist – Những người nghệ sĩ biến hóa trên bàn ăn</a
                   >
                 </h3>
@@ -434,13 +432,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_7/index.html" class="post-media">
+              <a href="../blog_7/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_7/index.html" class="post-title"
+                  <a href="../blog_7/index.php" class="post-title"
                     >Cách làm “ROSÉ ROLL CAKE” – Bánh cuộn kem phômai bằng chảo
                   </a>
                 </h3>
@@ -448,13 +446,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_8/index.html" class="post-media">
+              <a href="../blog_8/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_8/index.html" class="post-title"
+                  <a href="../blog_8/index.php" class="post-title"
                     >6 lợi ích của việc nấu ăn tại nhà
                   </a>
                 </h3>
@@ -462,13 +460,13 @@ if(!empty($_SESSION['email'])){
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="../blog_9/index.html" class="post-media">
+              <a href="../blog_9/index.php" class="post-media">
                 <img src="../../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="../blog_9/index.html" class="post-title"
+                  <a href="../blog_9/index.php" class="post-title"
                     >Chế Độ Ăn Keto Là Gì? Cơ Bản Dành Cho Người Mới Bắt Đầu
                   </a>
                 </h3>

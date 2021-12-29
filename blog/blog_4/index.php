@@ -4,14 +4,8 @@ include'../../connect/connect.php';
 if(!empty($_SESSION['email'])){
   $email = $_SESSION['email'];
   $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
-  foreach($taikhoan as $key=>$value)  {
-    $ten=$value['HOTEN'];
-    $tach_ten = explode(" ", $ten);
-    $account=$tach_ten[1].' '.$tach_ten[2];
-  }
-}
-
-?>
+  foreach($taikhoan as $key=>$value) { $ten=$value['HOTEN']; $tach_ten = explode(" ", $ten);
+$account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -60,20 +54,32 @@ if(!empty($_SESSION['email'])){
                 ><img src="../../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="../../main-page/index.php">Trang chủ</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="../../main-page/index.php">Trang chủ</a>
+            </li>
             <li class="menu-item">
               <a class="menu-link" href="../../mon-an/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link link-active" href="../../blog/index.php">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="../../service/service.php">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="../../contact/index.php">Liên hệ</a></li>
+            <li class="menu-item">
+              <a class="menu-link link-active" href="../../blog/index.php">Blog</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="../../service/service.php">Dịch vụ</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="../../contact/index.php">Liên hệ</a>
+            </li>
             <?php if (empty($_SESSION['email'])){ ?>
-                <li class="auth">
-                    <a class="button button--secondary auth-login" href="../../login/index.php">Đăng nhập</a>
-                    <a class="button button--primary auth-signup" href="../../register/index.php">Đăng ký</a>
-                </li>
+            <li class="auth">
+              <a class="button button--secondary auth-login" href="../../login/index.php"
+                >Đăng nhập</a
+              >
+              <a class="button button--primary auth-signup" href="../../register/index.php"
+                >Đăng ký</a
+              >
+            </li>
             <?php } else {?>
-              <li class="auth">
+            <li class="auth">
               <div class="auth-like">
                 <div class="auth-like-top">
                   <img
@@ -116,16 +122,14 @@ if(!empty($_SESSION['email'])){
                     </a>
                   </li>
                   <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
-                      Đặt hàng
-                    </a>
+                    <a class="auth-shoppingcart-dropdown-link" href="#!"> Đặt hàng </a>
                   </li>
                 </ul>
               </div>
               <div class="auth-user">
                 <div class="auth-user-top">
                   <img src="../../assets/images/main-images/icon-user.png" alt="user" />
-                    <span class="auth-username"><?php echo $account?></span>
+                  <span class="auth-username"><?php echo $account?></span>
                   <img
                     class="arrow-down"
                     src="../../assets/images/main-images/icon-arrow-down.png"
@@ -157,29 +161,25 @@ if(!empty($_SESSION['email'])){
             <div class="blog_post-link">
               <a href="../../blog/index.php" class="blog_post-link-item menu-link">Blog </a>
               <img src="../../assets/images/main-images/icon-arrow-right.png" alt="" class="" />
-              <a href="../blog_1/index.php" class="blog_post-link-item">Blog_1 </a>
+              <a href="#!" class="blog_post-link-item">Blog_4 </a>
             </div>
             <div class="">
-              <p class="blog_post-time global-text show-on-scroll">22 tháng 12 năm 2021</p>
+              <p class="blog_post-time global-text show-on-scroll">24 tháng 12 năm 2021</p>
               <h2 class="blog_post-heading global-heading global-heading--big show-on-scroll">
-                Tiêu đề bài post nó sẽ ở đây
+                Khám phá khu phố Tàu giữa lòng Sài Gòn
               </h2>
-              <p class="blog_post-desc global-text show-on-scroll">
-                tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-              </p>
+              <p class="blog_post-desc global-text show-on-scroll"></p>
               <div class="blog_post-category">
                 <a href="#" class="post-category">The newest</a>
-                <a href="#" class="post-category">Shop</a>
                 <a href="#" class="post-category">Tin tức</a>
-                <a href="#" class="post-category">Công nghệ</a>
               </div>
             </div>
           </div>
           <div class="blog_post-content">
             <div class="blog_post-image">
               <img
-                src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
-                alt="blog-1"
+                src="../../assets/images/blog-images/blog4.jpg"
+                alt="blog-4"
                 class="blog_post-image-img"
               />
             </div>
@@ -194,218 +194,208 @@ if(!empty($_SESSION['email'])){
                 <a href="#" class="blog_post-social-item">
                   <img srcset="../../assets/images/main-images/instagram.png 2x" alt="" />
                 </a>
-                <a href="#" class="blog_post-social-item">
-                  <img srcset="../../assets/images/main-images/apple.png 2x" alt="" />
-                </a>
               </div>
               <div class="blog_post-text-content">
-                <p class="global-heading global-heading--normal">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Với 30k, bạn có thể ăn món gì ở Sài Gòn? Một câu hỏi tưởng chừng rất dễ trả lời
+                  nhưng lại khiến nhiều bạn lúng túng. Cùng lyhoangdong.weebly.com khám phá ngay và
+                  luôn những món ngon nức tiếng nhưng giá cực hạt dẻ để “phải đi và nếm thử” cho
+                  bằng hết nhé!
                 </p>
+                <p class="global-heading global-heading--normal">1. Vương quốc bánh mì</p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Đầu tiên và nhất định nên thử, đó chính là bánh mì. Dù đây là một món ăn quá quen thuộc và phổ biến ở nhiều vùng nhưng chỉ với 30k thì nó là lựa chọn đầu tiên. Nếu bạn đã quen thuộc với những nẻo đường nhộn nhịp thì bạn cũng sẽ dễ dàng nhận thấy nhiều lò bánh mì luôn tỏa ra hương thơm ngát, cái mùi của bột mì được nướng vừa tới, quyện đều trong không khí, làm cho ai đi qua cũng ngơ ngẩn, đặc biệt là “những chiếc bụng đói”.
                 </p>
                 <img
-                  src="https://cdn.dribbble.com/users/33073/screenshots/15238065/media/5df5a84f3ed908ad7bad36fa645e3d4a.png?compress=1&resize=1200x900"
+                  src="../../assets/images/blog-images/banh-mi.jpg"
                   alt=""
                   class="blog_post-text-img"
                 />
-                <p class="global-heading global-heading--normal">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                <p class="global-text">
+                  Tại mỗi lò bánh mì, người ta thường có thêm quầy bán tại chỗ với nhiều loại nhân khác nhau như thịt xông khói, trứng ốp la, chả lụa, chà bông, cá hộp,… đủ mọi hương vị để lựa chọn. Giá dao động từ 10 – 20k là bạn đã có một ổ bánh mì giòn tan, đầy ắp nhân để thưởng thức.
+                </p>
+
+                <p class="global-heading global-heading--normal">2. Bánh tráng trộn</p>
+                <p class="global-text">
+                  Nếu đã lỡ mê ẩm thực bình dân Sài Gòn thì chắc rằng không thể bỏ qua bánh tráng trộn, món ăn vặt dễ tìm và giá cả vô cùng ổn.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Bánh tráng trộn có rất nhiều hương vị khác nhau, có thập cẩm (xoài, khô bò, đậu phộng, rau răm, ...), bánh trạng mỡ hành (Chỉ có hành lá phí thơm với bơ), bánh tráng hành phi (Hành phi thơm lừng với muối, dầu điều), bánh tráng cuộn (trứng cút, xoài, tép, …), …
+                </p>
+                <img
+                  src="../../assets/images/blog-images/banh-trang-tron.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Chi phí mà bạn bỏ ra không quá cao, chỉ từ 10k – 20k là có một bịch bánh tráng đầy ú nụ để nhâm nhi, tám chuyện cùng bạn bè và cũng no cái bụng.
+                </p>
+                <p class="global-heading global-heading--normal">3. Trà sữa béo thơm</p><p class="global-text">
+                  Đã liệt kê bánh tráng trộn thì không thể bỏ qua trà sữa – thức uống làm mưa làm gió trong giới ẩm thực lâu nay. Sài Gòn là nơi hội tụ hàng trăm các tiệm trà sữa lớn nhỏ, từ các thương hiệu bình dân đến các thương hiệu cao cấp từ nhiều nước trên thế giới.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/tra-sua-beo.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Nếu với 30k, có thể bạn sẽ không thưởng thức được một ly trà sữa của các thương hiệu danh giá nhưng để có ngay một ly trà sữa bự cùng lớp topping ú nụ thì trà sữa nhà làm là một gợi ý. Do không bị đánh nặng về thương hiệu và mặt bằng nên trà sữa nhà làm có giá rẻ hơn mà vẫn đảm bảo đủ hương vị để bạn chọn lựa.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Giá cả cho một ly trà sữa nhà làm có thể dao động từ 15 – 25k đã bao gồm các loại topping như thạch củ năng, bánh flan, trân châu, thạch dừa, …
+                </p>
+                <p class="global-heading global-heading--normal">4. Các loại đồ chiên đa dạng</p><p class="global-text"></p>
+                <p class="global-text">
+                  Cá viên chiên, bò viên chiên, hoành thánh chiên có phải rất quen thuộc? Đây là một trong những gợi ý gửi đến bạn. Với 30k bạn có thể gọi cho mình một phần chiên thập cẩm đủ cho một người ăn.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/do-chien.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Các món chiên ở trên rất phù hợp để cả nhóm bạn cùng nhau ăn và tám chuyện. Thêm vào đó, nó còn thường được ăn kèm với rau củ như dưa leo, đồ chua, … nên bạn không hề lo bị nóng trong người.
+                </p>
+                <p class="global-heading global-heading--normal">5. Phá lấu bò
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Một món ăn bình dân nhưng không hề thiếu sức hút với thực khách tại Sài Gòn, đó chính là phá lấu bò.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/pha-lau.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Phá lấu bò được chế biến khá công phu, khi ăn có vị béo và thơm của nước cốt dừa, quyện với các gia vị nêm nếm độc đáo, thường được ăn kèm với bánh mì hoặc mì tôm. Giá một chén phá lấu cộng thêm một ổ bánh mì giòn rụm ăn kèm thường từ 20 – 25k, tuy nhiên, cũng có một vài chỗ mức giá cao hơn, thường là khi bạn ăn ở những quận trung tâm hoặc quán nổi tiếng. Bạn nên cân nhắc hoặc hỏi giá trước khi quyết định ghé ăn nhé!
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Với 5 món ăn, thức uống độc đáo trên, bạn có thể no bụng chỉ với 30k đấy! Hy vọng những gợi ý trên đã giúp bạn có thêm lựa chọn ẩm thực ngon miệng dù có ít chi phí.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                </p>
-                <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun
+                  Tác giả: lyhoangdong.weebly.com <br />
+                  Link dẫn đến bài viết gốc:
+                  <a href="https://lyhoangdong.weebly.com/am-thuc-duong-pho/an-gi-o-sai-gon-voi-30k"
+                    >https://lyhoangdong.weebly.com/am-thuc-duong-pho/an-gi-o-sai-gon-voi-30k
+                  </a>
                 </p>
               </div>
             </div>
           </div>
-
+          <p class="post-title-heading">Có thể bạn thích</p>
           <div class="blog-list slider-responsive">
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_2/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_2/index.php" class="post-title"
+                    >Người Nhật Bản ăn gì vào đêm trăng rằm?</a
+                  >
+                </h3>
+                <p class="post-desc">Tác giả: Blog Ẩm Thực</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_1/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_1/index.php" class="post-title"
+                    >Những món ăn nhất định phải thử một lần khi sống trong đời</a
+                  >
+                </h3>
+                <p class="post-desc">Tác giả: Blog Ẩm thực</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_3/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_3/index.php" class="post-title"
+                    >Khám phá khu phố Tàu giữa lòng Sài Gòn
+                  </a>
+                </h3>
+                <p class="post-desc">Tác giả: LyHoangDong Blog</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_5/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_5/index.php" class="post-title"
+                    >[Bạn Có Biết] TOP 8 loại quả đắt đỏ nhất thế giới</a
+                  >
                 </h3>
                 <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
+                  Tác giả: Kiên Nguyễn Blog, Đinh Tùng – Blogchiasekienthuc.com
                 </p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_6/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog6.png" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_6/index.php" class="post-title"
+                    >Food stylist – Những người nghệ sĩ biến hóa trên bàn ăn</a
+                  >
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: Liam Production</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_7/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_7/index.php" class="post-title"
+                    >Cách làm “ROSÉ ROLL CAKE” – Bánh cuộn kem phômai bằng chảo
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: Esheep Kitchen</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_8/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_8/index.php" class="post-title"
+                    >6 lợi ích của việc nấu ăn tại nhà
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: bepxua</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_9/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_9/index.php" class="post-title"
+                    >Chế Độ Ăn Keto Là Gì? Cơ Bản Dành Cho Người Mới Bắt Đầu
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
-              </div>
-            </div>
-            <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
-              </a>
-              <div class="post-content">
-                <a href="#" class="post-category">Shop</a>
-                <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
-                </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
-              </div>
-            </div>
-            <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
-              </a>
-              <div class="post-content">
-                <a href="#" class="post-category">Shop</a>
-                <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
-                </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: benben123</p>
               </div>
             </div>
           </div>
@@ -420,7 +410,8 @@ if(!empty($_SESSION['email'])){
                 Nhận thông báo mới nhất
               </h2>
               <p class="global-text subscribe-desc show-on-scroll">
-                Nhập gmail để không bỏ lỡ những thông báo mới nhất và các ưu đãi hấp dẫn đến từ Fatme nhé !!!
+                Nhập gmail để không bỏ lỡ những thông báo mới nhất và các ưu đãi hấp dẫn đến từ
+                Fatme nhé !!!
               </p>
             </div>
             <div class="subscribe-form">
@@ -441,7 +432,9 @@ if(!empty($_SESSION['email'])){
             <a href="index.php" class="footer-logo">
               <img srcset="../../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
+            <p class="footer-desc text">
+              Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách
+            </p>
             <div class="social">
               <a href="#" class="social-item">
                 <img srcset="../../assets/images/main-images/facebook.png 2x" alt="" />

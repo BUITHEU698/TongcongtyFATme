@@ -12,6 +12,7 @@ if(!empty($_SESSION['email'])){
 }
 
 ?>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -157,16 +158,14 @@ if(!empty($_SESSION['email'])){
             <div class="blog_post-link">
               <a href="../../blog/index.php" class="blog_post-link-item menu-link">Blog </a>
               <img src="../../assets/images/main-images/icon-arrow-right.png" alt="" class="" />
-              <a href="../blog_1/index.php" class="blog_post-link-item">Blog_1 </a>
+              <a href="#!" class="blog_post-link-item">Blog_2 </a>
             </div>
             <div class="">
               <p class="blog_post-time global-text show-on-scroll">22 tháng 12 năm 2021</p>
               <h2 class="blog_post-heading global-heading global-heading--big show-on-scroll">
-                Tiêu đề bài post nó sẽ ở đây
+                Người Nhật Bản ăn gì vào đêm trăng rằm?
               </h2>
-              <p class="blog_post-desc global-text show-on-scroll">
-                tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-              </p>
+              <p class="blog_post-desc global-text show-on-scroll"></p>
               <div class="blog_post-category">
                 <a href="#" class="post-category">The newest</a>
                 <a href="#" class="post-category">Shop</a>
@@ -178,8 +177,8 @@ if(!empty($_SESSION['email'])){
           <div class="blog_post-content">
             <div class="blog_post-image">
               <img
-                src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
-                alt="blog-1"
+                src="../../assets/images/blog-images/blog2.jpg"
+                alt="blog-2"
                 class="blog_post-image-img"
               />
             </div>
@@ -194,218 +193,284 @@ if(!empty($_SESSION['email'])){
                 <a href="#" class="blog_post-social-item">
                   <img srcset="../../assets/images/main-images/instagram.png 2x" alt="" />
                 </a>
-                <a href="#" class="blog_post-social-item">
-                  <img srcset="../../assets/images/main-images/apple.png 2x" alt="" />
-                </a>
+
               </div>
               <div class="blog_post-text-content">
-                <p class="global-heading global-heading--normal">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <p class="global-text">
+                  Món bánh dango được người Nhật ăn quanh năm, thường dùng cùng nước trà. Nhưng
+                  riêng vào ngày Trung thu, Tsukimi-dango được người Nhật lựa chọn để cúng trăng và
+                  thể hiện sự biết ơn với tổ tiên.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Trung thu Nhật Bản – hay còn được gọi là ngày lễ cúng trăng Ostukimi (月見) – là
+                  dịp lễ vào rằm Tháng Tám hàng năm của xứ sở hoa anh đào. Mỗi mùa trăng về, người
+                  Nhật lại ăn một món bánh truyền thống rất hấp dẫn, đó là món bánh Tsukimi-dango –
+                  một loại bánh gạo dẻo thơm ngọt, dễ thương rất đậm chất Nhật Bản.
                 </p>
+                <p class="global-heading global-heading--normal">Bánh Tsukimi-dango</p>
+
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Dango là tên gọi chung của các loại bánh được làm từ bột gạo (mochiko), có khá
+                  nhiều đặc điểm chung với món bánh mochi Nhật Bản khá phổ biến ở Việt Nam.
                 </p>
                 <img
-                  src="https://cdn.dribbble.com/users/33073/screenshots/15238065/media/5df5a84f3ed908ad7bad36fa645e3d4a.png?compress=1&resize=1200x900"
+                  src="../../assets/images/blog-images/dango-trang.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Món bánh dango được người Nhật ăn quanh năm, thường dùng cùng nước trà. Nhưng
+                  riêng vào ngày Trung thu, Tsukimi-dango được người Nhật lựa chọn để cúng trăng và
+                  thể hiện sự biết ơn với tổ tiên.
+                </p>
+                <p class="global-text">
+                  Bánh Tsukimi-dango rất dễ làm, gần giống như món bánh trôi nước của Việt Nam vậy.
+                  Với hình dáng nhỏ, vừa miệng ăn, vị ngọt lịm, dẻo và dai, Tsukimi-dango là món ăn
+                  vặt yêu thích của đông đảo trẻ em lẫn người lớn Nhật Bản.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-vang.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Một cách ăn Tsukimi-dango phổ biến là nướng sơ rồi phết nước đường và bột đậu nành
+                  kinako
+                </p>
+                <p class="global-text">
+                  Không chỉ có vị bột ngọt ngậy hấp dẫn, ngày nay, người Nhật còn chế biến món bánh
+                  này với rất nhiều hương vị hấp dẫn như trà xanh, đậu đỏ, dừa, socola, …
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-mau.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Bánh Tsukimi-dango được tạo màu từ các nguyên liệu tự nhiên như đậu đỏ, trà xanh,
+                  xoài, trứng, …
+                </p>
+                <p class="global-text">
+                  Tsukimi-dango còn được kết hợp với nhiều món ăn khác như kem, hoa quả, … tạo thành
+                  các món ăn vặt đặc sắc, góp phần làm phong phú nền ẩm thực Nhật Bản. Đến với nước
+                  Nhật, bạn có thể dễ dàng bắt gặp các quán ăn vặt với vô vàn những món
+                  Tsukimi-dango sáng tạo, hấp dẫn.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-ly.jpg"
                   alt=""
                   class="blog_post-text-img"
                 />
                 <p class="global-heading global-heading--normal">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Truyền thuyết về bánh Tsukimi-dango
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Nếu như Trung thu Việt Nam có câu chuyện chị Hằng, câu chuyện chú Cuội phổ biến
+                  trong dân gian thì cung trăng Nhật Bản cũng có một nhân vật đại diện thú vị không
+                  kém. Đó chính là loài thỏ ngọc – những chú thỏ màu trắng, dễ thương rất được trẻ
+                  em xứ sở hoa anh đào yêu thích.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-tho.png"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Theo truyền thuyết Nhật Bản, bánh Tsukimi-dango được làm bởi các chú thỏ trên cung
+                  trăng. Hàng năm cứ đến ngày trăng rằm, các chú thỏ đó lại cùng nhau giã bột làm
+                  bánh để ăn mừng.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-tra.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Chính vì vậy, hình ảnh các chú thỏ giã bột, ăn bánh trên mặt trăng đã trở thành
+                  một hình ảnh ngộ nghĩnh mà quen thuộc trong tâm trí người Nhật.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-tho-trang.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Thỏ ngọc và bánh Tsukimi-dango đã trở thành hình tượng quen thuộc trong văn hóa
+                  Trung thu của người Nhật
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Có rất nhiều truyền thuyết được truyền tai nhau rằng vì sao thỏ lại là loài vật
+                  được sinh sống bất tử trên mặt trăng. Thế nhưng, điểm chung của tất cả các truyền
+                  thuyết ấy đều là ngợi ca sự hi sinh, tình nghĩa và dũng khí của loài thỏ. Thật
+                  không khó để nhận thấy thỏ là một loài vật rất được yêu mến và gần gũi với người
+                  dân Nhật Bản.
+                </p>
+                <p class="global-heading global-heading--normal">
+                  Cúng bánh Tsukimi-dango trong đêm rằm Trung thu
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Vào đêm rằm Trung thu, người Nhật thường xếp những viên bánh tsukimi-dango tròn
+                  nhỏ thành hình tháp, đặt trên kệ gỗ. Bên cạnh trang trí bình cỏ susuki, đôi khi họ
+                  còn bày thêm một số loại hoa quả.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-2-ruou.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Sau khi hoàn thành mâm cúng, họ bày bánh trái ra vị trí có thể ngắm trăng rõ nhất
+                  trong nhà, thường là hiên nhà hoặc bên bậu cửa sổ. Đặt như vậy là bởi người Nhật
+                  muốn có thể vừa ăn bánh, vừa thưởng trăng một cách trọn vẹn nhất. Đối với người
+                  Nhật, lễ hội Ostukimi mà không có bánh Tsukimi-dango và ngắm trăng thì sẽ không
+                  trọn vẹn, hạnh phúc.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-1-ruou.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Theo quan niệm Nhật Bản, bánh Tsukimi-dango được làm ra để dâng lên thần linh,
+                  cúng bái tổ tiên, cha mẹ đã mất và cầu mong cho mùa mang bội thu, cuộc sống an
+                  bình. Ở một số nơi còn cho rằng, nếu có trẻ em đi qua tự ý lấy bánh tsukimi-dango
+                  đã cúng xong là điều may mắn, gia đình sẽ gặp nhiều điềm lành.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/dango-2-tho.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Bánh Tsukimi-dango có mùi vị dẻo, dai, thơm thơm ngọt ngọt, mang đậm bản sắc ẩm
+                  thực và văn hóa của xứ sở hoa anh đào xinh đẹp. Trung thu sắp đến gần, hãy thử vào
+                  bếp làm một đĩa bánh Tsukimi-dango cho mùa trăng rằm thêm phần khác lạ, thú vị và
+                  độc đáo nhé.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                </p>
-                <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                </p>
-                <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun
+                  Tác giả: Blog Ẩm thực <br />
+                  Link dẫn đến bài viết gốc:
+                  <a href="https://www.blogamthuc.com/nguoi-nhat-ban-an-gi-vao-dem-trang-ram.html"
+                    >https://www.blogamthuc.com/nguoi-nhat-ban-an-gi-vao-dem-trang-ram.html
+                  </a>
                 </p>
               </div>
             </div>
           </div>
-
+          <p class="post-title-heading">Có thể bạn thích</p>
           <div class="blog-list slider-responsive">
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_1/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_1/index.php" class="post-title"
+                    >Những món ăn nhất định phải thử một lần khi sống trong đời</a
+                  >
+                </h3>
+                <p class="post-desc">Tác giả: Blog Ẩm Thực</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_3/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog3.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_3/index.php" class="post-title"
+                    >Khám phá khu phố Tàu giữa lòng Sài Gòn</a
+                  >
+                </h3>
+                <p class="post-desc">Tác giả: LyHoangDong Blog</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_4/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_4/index.php" class="post-title"
+                    >Chỉ Với 30k Thì Ăn Gì Ở Sài Gòn?
+                  </a>
+                </h3>
+                <p class="post-desc">Tác giả: lyhoangdong.weebly.com</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_5/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_5/index.php" class="post-title"
+                    >[Bạn Có Biết] TOP 8 loại quả đắt đỏ nhất thế giới</a
+                  >
                 </h3>
                 <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
+                  Tác giả: Kiên Nguyễn Blog, Đinh Tùng – Blogchiasekienthuc.com
                 </p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_6/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog6.png" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_6/index.php" class="post-title"
+                    >Food stylist – Những người nghệ sĩ biến hóa trên bàn ăn</a
+                  >
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: Liam Production</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_7/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_7/index.php" class="post-title"
+                    >Cách làm “ROSÉ ROLL CAKE” – Bánh cuộn kem phômai bằng chảo
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: Esheep Kitchen</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_8/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_8/index.php" class="post-title"
+                    >6 lợi ích của việc nấu ăn tại nhà
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: bepxua</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_9/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_9/index.php" class="post-title"
+                    >Chế Độ Ăn Keto Là Gì? Cơ Bản Dành Cho Người Mới Bắt Đầu
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
-              </div>
-            </div>
-            <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
-              </a>
-              <div class="post-content">
-                <a href="#" class="post-category">Shop</a>
-                <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
-                </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
-              </div>
-            </div>
-            <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
-              </a>
-              <div class="post-content">
-                <a href="#" class="post-category">Shop</a>
-                <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
-                </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: benben123</p>
               </div>
             </div>
           </div>

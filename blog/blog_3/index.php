@@ -157,16 +157,14 @@ if(!empty($_SESSION['email'])){
             <div class="blog_post-link">
               <a href="../../blog/index.php" class="blog_post-link-item menu-link">Blog </a>
               <img src="../../assets/images/main-images/icon-arrow-right.png" alt="" class="" />
-              <a href="../blog_1/index.php" class="blog_post-link-item">Blog_1 </a>
+              <a href="#!" class="blog_post-link-item">Blog_3 </a>
             </div>
             <div class="">
               <p class="blog_post-time global-text show-on-scroll">22 tháng 12 năm 2021</p>
               <h2 class="blog_post-heading global-heading global-heading--big show-on-scroll">
-                Tiêu đề bài post nó sẽ ở đây
+                Khám phá khu phố Tàu giữa lòng Sài Gòn
               </h2>
-              <p class="blog_post-desc global-text show-on-scroll">
-                tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-              </p>
+              <p class="blog_post-desc global-text show-on-scroll"></p>
               <div class="blog_post-category">
                 <a href="#" class="post-category">The newest</a>
                 <a href="#" class="post-category">Shop</a>
@@ -178,8 +176,8 @@ if(!empty($_SESSION['email'])){
           <div class="blog_post-content">
             <div class="blog_post-image">
               <img
-                src="https://cdn.dribbble.com/users/2539288/screenshots/15326794/media/4c3268cdbc069e4ff03979d9b9a16e11.jpg?compress=1&resize=1600x1200"
-                alt="blog-1"
+                src="../../assets/images/blog-images/blog3.jpg"
+                alt="blog-3"
                 class="blog_post-image-img"
               />
             </div>
@@ -194,218 +192,287 @@ if(!empty($_SESSION['email'])){
                 <a href="#" class="blog_post-social-item">
                   <img srcset="../../assets/images/main-images/instagram.png 2x" alt="" />
                 </a>
-                <a href="#" class="blog_post-social-item">
-                  <img srcset="../../assets/images/main-images/apple.png 2x" alt="" />
-                </a>
+
               </div>
               <div class="blog_post-text-content">
-                <p class="global-heading global-heading--normal">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Khu phố Tàu Thành phố Hồ Chí Minh, nằm ở trung tâm quận 5, có vẻ yên tĩnh vào buổi
+                  sáng nhưng nhộn nhịp vào ban đêm. Người Việt Nam có một trích dẫn vui nhộn "Thức
+                  ăn tốt nhất là Thực phẩm Trung Quốc, vợ tốt nhất là Vợ Nhật Bản, và ngôi nhà tốt
+                  nhất là Nhà Tây.". Vì vậy, những gì thú vị về thực phẩm Trung Quốc? Điều gì khiến
+                  nó trở nên hấp dẫn? Ngày nay, LyHoangDong Blog sẽ khám phá ra câu trả lời cho bạn
+                  theo cách rất riêng: một tour thực phẩm Trung Quốc tại các nhà hàng Trung Quốc
+                  ngay tại trung tâm của Sài Gòn năng động này.
                 </p>
+                <p class="global-heading global-heading--normal">Vịt quay Bắc Kinh</p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Chúng tôi bắt đầu chuyến lưu diễn với một món ăn nổi tiếng từ Trung Quốc: Vịt quay
+                  Bắc Kinh. Chúng tôi thực sự không có ý tưởng vịt nướng rang như thế nào ở Bắc
+                  Kinh, nhưng nếu họ hiển thị thức ăn của họ như hình dưới đây, bạn sẽ không vội
+                  vàng bên trong và đặt hàng ngay lập tức? Onetrip chắc chắn sẽ. Yum!
                 </p>
                 <img
-                  src="https://cdn.dribbble.com/users/33073/screenshots/15238065/media/5df5a84f3ed908ad7bad36fa645e3d4a.png?compress=1&resize=1200x900"
+                  src="../../assets/images/blog-images/vit-quay.jpg"
                   alt=""
                   class="blog_post-text-img"
                 />
-                <p class="global-heading global-heading--normal">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                <p class="global-text">
+                  Tại Việt Nam, người ta thường đến các cửa hàng này để lấy vịt rang, vì vậy hầu hết
+                  trong số họ không có bàn ghế để khách hàng ngồi xuống. Họ chỉ có một cái giá lớn
+                  phủ kiếng, nơi họ có thể treo lên những con vịt nướng ngon miệng bên trong.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Cách họ nấu vịt rất thú vị để xem. Năm vịt hấp được treo trên một cái nồi đất sét
+                  khổng lồ đã được thắp sáng bên trong. Sau đó, sau khoảng 30 đến 45 phút, chúng tôi
+                  có vịt tốt nhất trong thị trấn. Bạn có tự hỏi tại sao những con vịt đó có cái nhìn
+                  màu cam ngon, crunchy? Đó là bởi vì họ đang nướng với mật ong. m thanh hấp dẫn
+                  phải không?
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Nhà hàng Onetrip đã cho bạn thấy trong video rất cũ và đã có mặt trong hơn 60 năm.
+                  Vịt của chúng mềm, ngon ngọt và ngon miệng cùng với một loại sốt đặc. Đó là lý do
+                  tại sao ngay cả khi họ không thực hiện tiếp thị, họ vẫn luôn có đám đông từ sáng
+                  sớm cho đến đêm. Người chủ cũ đã được sinh ra tại Quảng Châu, Trung Quốc đã đến
+                  Việt Nam, cưới một phụ nữ Việt Nam và mở cửa hàng này. Con gái của anh bây giờ
+                  điều hành công việc gia đình cho anh ta.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, error
-                  soluta officiis sunt sed velit atque nostrum illum tenetur, animi nam eaque
-                  accusantium dolores autem, mollitia dolor exercitationem earum. Vero? Similique
-                  ipsa commodi voluptas obcaecati eligendi. Illo voluptate eius dolorem consequatur,
-                  deleniti dignissimos sed, ab ipsum aspernatur magni fugiat fugit autem
-                  voluptatibus assumenda eum debitis quae doloremque optio nobis animi.
+                  Chúng tôi thường ăn vịt nướng với bánh bao hoặc cơm nếp. Nhưng chúng tôi nghĩ rằng
+                  bạn chỉ có thể muốn thưởng thức vịt của chính nó gây ra hương vị của nó là tuyệt
+                  vời như vậy mà bạn sẽ không bao giờ muốn ngừng ăn! Một điểm tích cực cho resto này
+                  là nhà bếp vô cùng của họ. Nó sạch sẽ và hoàn toàn mở để mọi người có thể nhìn
+                  thấy mọi thứ đang diễn ra bên trong. Bạn không phải lo lắng về chất lượng thực
+                  phẩm, Onetrip luôn cho bạn thấy tốt nhất.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Thông tin chung: <br />
+                  Tên nhà hàng : Vịt quay Quốc Kỳ <br />
+                  Địa chỉ: 471 Trần Phú, Phường 7, Quận 5, TP.HCM <br />
+                  Giờ mở cửa: 7 giờ sáng - 10 giờ tối <br />
+                </p>
+                <p class="global-heading global-heading--normal">Mì tươi làm bằng tay</p>
+                <p class="global-text">
+                  Cách xử lý tiếp theo cũng không kém đặc biệt: mì khô khô. Onetrip sẽ đưa bạn đến
+                  một cửa hàng phở gia đình, trong một con hẻm nhỏ, nơi họ có một siêu đặc biệt để
+                  làm khô mì của họ. Hãy cùng kiểm tra nào.
+                </p>
+                <img
+                  src="../../assets/images/blog-images/mi-tuoi.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Hình ảnh ấn tượng đầu tiên bạn sẽ nhìn thấy ngay khi bạn vào cửa hàng này là một
+                  giỏ hàng bằng gỗ cũ được làm bởi chủ sở hữu đầu tiên. Trong 70 năm, con gái ông đã
+                  không bao giờ muốn thay thế nó bằng một chiếc xe đẩy hiện đại, vì vậy bà chỉ cố
+                  gắng khắc phục nó nếu có bất cứ điều gì phá vỡ.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                  Bạn có thể tìm thấy tất cả các loại mì ở đây nấu trong những cách khác nhau. Tất
+                  cả mọi thứ từ char siu đến mì wonton phục vụ khô hoặc trong một món súp ăn liền.
+                  Và mỗi người trong số họ là siêu ngon theo cách Trung Quốc. Bạn biết mì là đặc
+                  biệt soooo khi họ vẫn nhai. Ngay cả khi chúng ta ăn chúng chậm, chúng sẽ không bao
+                  giờ trở thành bong bóng.
                 </p>
                 <p class="global-text">
-                  tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun
+                  Trong khi chúng tôi ở đây, chúng tôi đã ra lệnh cho hai bát mì khô khô, và chúng
+                  tôi lại một lần nữa họ lại cảm thấy xấu hổ. Người nấu nướng chuẩn bị cho món
+                  noodle thật dễ dàng, nhưng trên thực tế, nó cần rất nhiều sự khéo léo. Họ chỉ cần
+                  ném mì vào nước đun sôi trong một thời gian ngắn, sau đó kéo chúng ra với một
+                  chiếc cào lớn. Sau đó, họ sử dụng một đôi đũa lớn để chạm vào cào, vì vậy mì ăn
+                  liền và nhảy lên cho đến khi khô. Thật là một kỹ thuật khéo léo. Kiểm tra nó trong
+                  video. Hương vị mặn của thịt heo xông khói pha trộn với tôm giòn và nước sốt hàu
+                  tạo nên sự kết hợp hoàn hảo trong miệng của bạn. Súp ăn liền cũng rất ngon, vì vậy
+                  ngay cả khi khách hàng đặt hàng mì khô, họ thường muốn có một bát súp bên cạnh.
+                  Súp có mặn và ngọt cùng một lúc. Bạn có thể ngửi thấy mùi thịt heo ngon và hương
+                  vị hành xanh đang trôi nổi từ bát.
+                </p>
+                <p class="global-text">
+                  Hương vị mặn của thịt heo xông khói pha trộn với tôm giòn và nước sốt hàu tạo nên
+                  sự kết hợp hoàn hảo trong miệng của bạn.
+                </p>
+                <p class="global-text">
+                  Resto này mở cửa rất sớm vào buổi sáng và không đóng cửa cho đến 1 giờ sáng. Nơi
+                  luôn đầy người, những người đi với nụ cười lớn và túi mì ngon. Onetrip không thể
+                  chỉ thưởng thức món ăn ngon miệng này, vì vậy chúng tôi quyết định chia sẻ địa
+                  điểm tuyệt vời với khách hàng tương lai của chúng tôi.
+                </p>
+                <p class="global-text">
+                  Thông tin chung: <br />
+                  Tên nhà hàng: Thiệu Kỳ <br />
+                  Địa chỉ: 66/5 Lê Đại Hành, Phường 7, Quận 11, TP.HCM <br />
+                  Giờ hoạt động: 7:00 AM - 1:00 AM <br />
+                </p>
+                <p class="global-heading global-heading--normal">Há cảo</p>
+                <img
+                  src="../../assets/images/blog-images/ha-cao.jpg"
+                  alt=""
+                  class="blog_post-text-img"
+                />
+                <p class="global-text">
+                  Và cuối cùng nhưng không kém phần quan trọng, hãy có một số bánh bao tại một trong
+                  những nhà hàng kiểu Trung Quốc nhất. Nếu bạn là người yêu đồ ăn Trung Quốc, chắc
+                  chắn bạn không thể bỏ qua nơi này. Tại sao chúng ta lại nghĩ đến nơi này có phong
+                  cách? Đó là bởi vì tất cả nhân viên đều có đồng phục Trung Quốc rất đặc biệt. Họ
+                  cũng rất chu đáo và thân thiện với khách hàng. Vì vậy, mặc dù giá cả khá cao so
+                  với các quán ăn trên đường phố, nhưng nó vẫn là lựa chọn đầu tiên cho những ai
+                  muốn thưởng thức thức ăn ngon trong khung cảnh sang trọng hơn.
+                </p>
+                <p class="global-text">
+                  Nhà hàng này có hơn 20 loại bánh bao để bạn lựa chọn. Mỗi loại khác nhau được đặt
+                  trong một giỏ nhỏ hấp mà làm cho một bảng đầy bánh bao một cảnh tuyệt đẹp. Nhưng
+                  chúng không chỉ đẹp Mỗi một trong số họ có một hương vị độc đáo.
+                </p>
+                <p class="global-text">
+                  Bánh bao Char Siu được đánh giá cao vì thịt lợn của họ ngon miệng bên trong. Tôm
+                  tôm hấp sẽ không chỉ gây ấn tượng với sự xuất hiện của họ mà còn bởi vì thịt tôm
+                  mềm, mềm. Có nhiều món ăn khác như cua shumai, thịt heo chiên với bánh puffley,
+                  bánh bao với thịt lợn và rau mùi tây Trung Quốc, và bánh cuốn với sốt hàu ...
+                </p>
+                <p class="global-text">
+                  Đến nước Mỹ mà bỏ qua món kem thì thật đáng tiếc. Mỗi địa phương đều có một loại
+                  kem riêng của mình nhưng nhìn chung chúng đều đặc biệt ngon. Kem Mỹ được coi là
+                  một trong những món tráng miệng ngon nhất trên toàn thế giới.
+                </p>
+                <p class="global-text">
+                  Thông tin chung: <br />
+                  Tên nhà hàng: Dimsum Mỹ Thức - Tiến Phát <br />
+                  Địa chỉ: 18 Kỳ Hòa, Phường 11, Quận 5, TP.HCM <br />
+                  Giờ hoạt động: 6:00 AM - 12:30 CH <br />
+                </p>
+                <p class="global-text">
+                  Sau khi xem video và đọc bài báo, bạn có nhận được lý do tại sao tất cả mọi người
+                  yêu thực phẩm Trung Quốc? Nếu bạn đang đi du lịch hoặc sinh sống ở Việt Nam, bạn
+                  sẽ may mắn vì không phải đi xa hơn để thưởng thức một số món đặc sản Trung Quốc
+                  tuyệt vời. Bạn có thể lấy chúng ngay tại những con phố ẩm thực Sài Gòn. Đừng ngần
+                  ngại liên hệ Onetrip nếu bạn muốn biết những địa điểm tốt nhất trong thị trấn.
+                  Chúng tôi đã sẵn sàng và chờ đợi để đưa bạn lên một chuyến tham quan Trung Quốc về
+                  Thực phẩm sẽ làm nổ tung tâm trí của bạn.
+                </p>
+                <p class="global-text">
+                  Tác giả: LyHoangDong Blog <br />
+                  Link dẫn đến bài viết gốc:
+                  <a href="https://lyhoangdong.weebly.com/am-thuc-duong-pho/pho-tau"
+                    >https://lyhoangdong.weebly.com/am-thuc-duong-pho/pho-tau
+                  </a>
                 </p>
               </div>
             </div>
           </div>
-
+          <p class="post-title-heading">Có thể bạn thích</p>
           <div class="blog-list slider-responsive">
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_2/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog2.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_2/index.php" class="post-title"
+                    >Người Nhật Bản ăn gì vào đêm trăng rằm?</a
+                  >
+                </h3>
+                <p class="post-desc">Tác giả: Blog Ẩm Thực</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_1/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_1/index.php" class="post-title"
+                    >Những món ăn nhất định phải thử một lần khi sống trong đời</a
+                  >
+                </h3>
+                <p class="post-desc">Tác giả: Blog Ẩm thực</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_4/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog4.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_4/index.php" class="post-title"
+                    >Chỉ Với 30k Thì Ăn Gì Ở Sài Gòn?
+                  </a>
+                </h3>
+                <p class="post-desc">Tác giả: lyhoangdong.weebly.com</p>
+              </div>
+            </div>
+            <div class="post-item show-on-scroll">
+              <a href="../blog_5/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog5.jpg" alt="" class="post-image" />
+              </a>
+              <div class="post-content">
+                <a href="#" class="post-category">Shop</a>
+                <h3>
+                  <a href="../blog_5/index.php" class="post-title"
+                    >[Bạn Có Biết] TOP 8 loại quả đắt đỏ nhất thế giới</a
+                  >
                 </h3>
                 <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
+                  Tác giả: Kiên Nguyễn Blog, Đinh Tùng – Blogchiasekienthuc.com
                 </p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_6/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog6.png" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_6/index.php" class="post-title"
+                    >Food stylist – Những người nghệ sĩ biến hóa trên bàn ăn</a
+                  >
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: Liam Production</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_7/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog7.jpeg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_7/index.php" class="post-title"
+                    >Cách làm “ROSÉ ROLL CAKE” – Bánh cuộn kem phômai bằng chảo
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: Esheep Kitchen</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_8/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog8.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_8/index.php" class="post-title"
+                    >6 lợi ích của việc nấu ăn tại nhà
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: bepxua</p>
               </div>
             </div>
             <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
+              <a href="../blog_9/index.php" class="post-media">
+                <img src="../../assets/images/blog-images/blog9.jpg" alt="" class="post-image" />
               </a>
               <div class="post-content">
                 <a href="#" class="post-category">Shop</a>
                 <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
+                  <a href="../blog_9/index.php" class="post-title"
+                    >Chế Độ Ăn Keto Là Gì? Cơ Bản Dành Cho Người Mới Bắt Đầu
+                  </a>
                 </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
-              </div>
-            </div>
-            <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
-              </a>
-              <div class="post-content">
-                <a href="#" class="post-category">Shop</a>
-                <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
-                </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
-              </div>
-            </div>
-            <div class="post-item show-on-scroll">
-              <a href="#" class="post-media">
-                <img
-                  src="https://cdn.dribbble.com/users/5209175/screenshots/15329869/media/46b95b0ec58274621935463cd534f793.jpg?compress=1&resize=1600x1200"
-                  alt=""
-                  class="post-image"
-                />
-              </a>
-              <div class="post-content">
-                <a href="#" class="post-category">Shop</a>
-                <h3>
-                  <a href="#" class="post-title">How to choose best bike for spring in Australia</a>
-                </h3>
-                <p class="post-desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at quae
-                  architecto perspiciatis dolore deleniti, voluptas aperiam dolorem sit. Est in
-                  asperiores ipsa repellat sit odit eos quia nostrum quae.
-                </p>
+                <p class="post-desc">Tác giả: benben123</p>
               </div>
             </div>
           </div>

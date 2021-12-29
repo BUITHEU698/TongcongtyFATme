@@ -1,16 +1,14 @@
 <?php
 include'../connect/connect.php';
-if(empty($_SESSION['email'])){
-  header("location: ../login/index.php");
-}else {
-  $email=$_SESSION['email'];
-  $sql="SELECT * FROM khachhang WHERE email='$email'";
-  $query=mysqli_query($conn,$sql);
-  $taikhoan= mysqli_fetch_assoc($query);
-
-  if (isset($_POST['account'])){
-    require_once("index.php");
+if(!empty($_SESSION['email'])){
+  $email = $_SESSION['email'];
+  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan as $key=>$value)  {
+    $ten=$value['HOTEN'];
+    $tach_ten = explode(" ", $ten);
+    $account=$tach_ten[1].' '.$tach_ten[2];
   }
+  $query=mysqli_fetch_assoc($taikhoan);
   if (isset($_POST['luu'])){
     $HOTEN=$_POST['HOTEN'];
     $CMND=$_POST['CMND'];
@@ -56,6 +54,23 @@ if(empty($_SESSION['email'])){
   }
 }
 
+
+
+
+
+
+
+  $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+
+
+
+
+
+}else {
+    header("location: ../login/index.php");
+}
+  
+
 ?>
 
 
@@ -79,10 +94,22 @@ if(empty($_SESSION['email'])){
       rel="stylesheet"
     />
     <!-- css link -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
     />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
@@ -93,10 +120,11 @@ if(empty($_SESSION['email'])){
     />
     <!-- my css -->
     <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="../assets/css/main-page/app.css" />
+    <link rel="stylesheet" href="../assets/css/profile/profile.css">
     <title>FATMe - Blog</title>
   </head>
-  <body >
-    <form action=""method="post">
+  <body>
     <div class="totop">
       <a
         href="#"
@@ -110,69 +138,136 @@ if(empty($_SESSION['email'])){
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index.html"
-            ><img class="header-logo" srcset="./images/images-main/logo.png 2x"
+          <a href="../main-page/index-main.html"
+            ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
           <ul class="menu">
             <div class="menu-item toggle-close">
               <label for="toggle-check"
-                ><img src="./images/images-main/menu-close.png" alt="Close"
+                ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
+            <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../main-page/index.php">Trang chủ</a>
+              <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
-            <?php if (!empty($_SESSION['email'])){ ?>
-                <li class="menu-item">
-                    <a class="menu-link" href="../Home_main_page/index.php">Quản lí trang bán hàng</a>
-                </li>
-            <?php }?>
+            <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../monan_main_page/index.html">Món ăn</a>
+              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="#!">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="./index.html">Liên hệ</a></li>
-            <li class="auth">
-              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a
-              ><a class="button button--primary auth-signup" href="../register/index.php"
-                >Đăng ký</a
-              >
-            </li>
-            <li class="menu-item"><a class="menu-link link-active" href="../blog/blog.php">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="../service/service.php">Dịch vụ</a></li>
-            <li class="menu-item"><a class="menu-link" href="./index.php">Liên hệ</a></li>
-            <?php if (empty($_SESSION['email'])){ ?>
-                <li class="auth">
-                    <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
-                    <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
-                </li>
-            <?php } else {?>
-                <li class="auth">
-                    <button class="button button--primary auth-signup"name="account">Account</button>
+            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
 
-                </li>
+            <?php if (empty($_SESSION['email'])){ ?>
+              <li class="auth">
+              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+              <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+            </li>
+            <?php } else {?>
+              <li class="auth">
+              <div class="auth-like">
+                <div class="auth-like-top">
+                  <img
+                    class="heart"
+                    src="../assets/images/main-images/icon-heart.png"
+                    alt="heart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-like-dropdown">
+                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                    <li class="auth-like-dropdown-item">
+                      <a href="" class="dropdown-item">
+                        <img
+                          src="../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
+                        />
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                      </a>
+                    </li>
+                  <?php }?>
+                </ul>
+              </div>
+              <div class="auth-shoppingcart">
+                <div class="auth-shoppingcart-top">
+                  <img
+                    class="shoppingcart"
+                    src="../assets/images/main-images/icon-shoppingcart-header.png"
+                    alt="shopping cart"
+                  />
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-shoppingcart-dropdown">
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
+                      Giỏ hàng
+                    </a>
+                  </li>
+                  <li class="auth-shoppingcart-dropdown-item">
+                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                      Đặt hàng
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="auth-user">
+                <div class="auth-user-top">
+                  <img src="../assets/images/main-images/icon-user.png" alt="user" />
+                    <span class="auth-username"><?php echo $account?></span>
+                  <img
+                    class="arrow-down"
+                    src="../assets/images/main-images/icon-arrow-down.png"
+                    alt="arrow-down"
+                  />
+                </div>
+                <ul class="auth-user-dropdown">
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                  </li>
+                  <li class="auth-user-dropdown-item">
+                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
             <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
-            ><img src="./images/images-main/menu.png" alt="Menu"
+            ><img src="../assets/images/main-images/menu.png" alt="Menu"
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
+
       </header>
+
       <section class="">
         <div class="container">
+          <h1 class="mb-5">Account Settings</h1>
           <div class="bg-white shadow rounded-lg d-block d-sm-flex">
             <div class="profile-tab-nav border-right">
               <div class="p-4">
                 <div class="img-circle text-center mb-3">
-                  <img
-                    style="max-width: max-content; margin: 0 auto"
-                    src="./images/anh-tho-cute-dang-yeu.jpg"
-                    alt="Image"
-                    class="shadow"
-                  />
+                  <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" />
+                  <input type="file" />
                 </div>
                 <h4 class="text-center"><?php if (empty($taikhoan['HOTEN'])) { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
               </div>
@@ -192,19 +287,7 @@ if(empty($_SESSION['email'])){
                   aria-selected="true"
                 >
                   <i class="fa fa-home text-center mr-1"></i>
-                  Hồ sơ
-                </a>
-                <a
-                  class="nav-link"
-                  id="notification-tab"
-                  data-toggle="pill"
-                  href="#notification"
-                  role="tab"
-                  aria-controls="notification"
-                  aria-selected="false"
-                >
-                  <i class="fas fa-map-marker-alt"></i>
-                  Địa chỉ
+                  Account
                 </a>
                 <a
                   class="nav-link"
@@ -216,7 +299,31 @@ if(empty($_SESSION['email'])){
                   aria-selected="false"
                 >
                   <i class="fa fa-key text-center mr-1"></i>
-                  Mật khẩu
+                  Password
+                </a>
+                <a
+                  class="nav-link"
+                  id="security-tab"
+                  data-toggle="pill"
+                  href="#security"
+                  role="tab"
+                  aria-controls="security"
+                  aria-selected="false"
+                >
+                  <i class="fa fa-user text-center mr-1"></i>
+                  Security
+                </a>
+                <a
+                  class="nav-link"
+                  id="application-tab"
+                  data-toggle="pill"
+                  href="#application"
+                  role="tab"
+                  aria-controls="application"
+                  aria-selected="false"
+                >
+                  <i class="fa fa-tv text-center mr-1"></i>
+                  Application
                 </a>
                 <a
                   class="nav-link"
@@ -228,7 +335,7 @@ if(empty($_SESSION['email'])){
                   aria-selected="false"
                 >
                   <i class="fa fa-bell text-center mr-1"></i>
-                  Thông Báo
+                  Notification
                 </a>
               </div>
             </div>
@@ -244,19 +351,19 @@ if(empty($_SESSION['email'])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Họ & Tên </label>
-                      <input type="text" class="form-control"name="HOTEN" value="<?php echo$taikhoan['HOTEN']?>"/>
+                      <input type="text" class="form-control" value="FATMe " />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>CMND/CCCD</label>
-                      <input type="text" name="CMND"class="form-control" value="<?php echo$taikhoan['CMND']?>" />
+                      <label>Tên Tài Khoản</label>
+                      <input type="text" class="form-control" value="FATMe" />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-
-                      <select name="day" id="" class="form-control"  >
+                      <select name="day" id="" class="form-control">
+                        <option value="0">Ngày</option>
                         <option value="1">Ngày 1</option>
                         <option value="2">Ngày 2</option>
                         <option value="3">Ngày 3</option>
@@ -292,14 +399,14 @@ if(empty($_SESSION['email'])){
                         <option value="27">Ngày 27</option>
                         <option value="28">Ngày 28</option>
                         <option value="29">Ngày 29</option>
-                        <option value="30">Ngày 30</option>
-                        <option value="31">Ngày 31</option>
-                    </select>
+                        <option value="3-">Ngày 30</option>
+                      </select>
                     </div>
-                </div>
-                <div class="col-md-4">
+                  </div>
+                  <div class="col-md-4">
                     <div class="form-group">
-                    <select name="month" id=""class="form-control" >
+                      <select name="day" id="" class="form-control">
+                        <option value="0">Tháng</option>
                         <option value="1">Tháng 1</option>
                         <option value="2">Tháng 2</option>
                         <option value="3">Tháng 3</option>
@@ -312,66 +419,52 @@ if(empty($_SESSION['email'])){
                         <option value="10">Tháng 10</option>
                         <option value="11">Tháng 11</option>
                         <option value="12">Tháng 12</option>
-                    </select>
-
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                      <select name="nam" id=""class="form-control" >
-                        <option value="">Năm</option>
-                      <select name="year" id=""class="form-control" >
-                        <option value="1989">Năm 1989</option>
-                        <option value="1990">Năm 1990</option>
-                        <option value="1991">Năm 1991</option>
-                        <option value="1992">Năm 1992</option>
-                        <option value="1993">Năm 1993</option>
-                        <option value="1994">Năm 1994</option>
-                        <option value="1995">Năm 1995</option>
-                        <option value="1996">Năm 1996</option>
-                        <option value="1997">Năm 1997</option>
-                        <option value="1998">Năm 1998</option>
-                        <option value="1999">Năm 1999</option>
-                        <option value="2000">Năm 2000</option>
-                        <option value="2001">Năm 2001</option>
-                        <option value="2002">Năm 2002</option>
-                        <option value="2003">Năm 2003</option>
-                        <option value="2004">Năm 2004</option>
-                        <option value="2005">Năm 2005</option>
-                        <option value="2006">Năm 2006</option>
-                        <option value="2007">Năm 2007</option>
-                        <option value="2008">Năm 2008</option>
-                        <option value="2009">Năm 2009</option>
-                        <option value="2010">Năm 2010</option>
-
                       </select>
-
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select name="nam" id="" class="form-control">
+                        <option value="0">Năm</option>
+                        <option value="1">Năm 1999</option>
+                        <option value="2">Năm 2000</option>
+                        <option value="3">Năm 2001</option>
+                        <option value="4">Năm 2002</option>
+                        <option value="5">Năm 2003</option>
+                        <option value="6">Năm 2004</option>
+                        <option value="7">Năm 2005</option>
+                        <option value="8">Năm 2006</option>
+                        <option value="9">Năm 2007</option>
+                        <option value="10">Năm 2008</option>
+                        <option value="11">Năm 2009</option>
+                        <option value="12">Năm 2010</option>
+                      </select>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Email</label>
-                      <input type="mail"name="email" disabled class="form-control" value="<?php echo$taikhoan['email'] ?>" />
+                      <input type="text" class="form-control" value="congtyfatme@gmail.com" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Số Điện Thoại</label>
-                      <input type="tel" class="form-control"name="SODIENTHOAI" value="<?php echo $taikhoan['SODIENTHOAI']?>" />
+                      <input type="text" class="form-control" value="(84+) 971 29 28 38" />
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Giói Thiệu Bản Thân </label>
-                      <textarea class="form-control"name="MOTA" rows="4"><?php echo $taikhoan['MOTA']?></textarea
-                      >
+                      <textarea class="form-control" rows="4"> I love you</textarea>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <button class="btn btn-primary"name="luu">Lưu</button>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
                 </div>
               </div>
               <div
@@ -380,44 +473,33 @@ if(empty($_SESSION['email'])){
                 role="tabpanel"
                 aria-labelledby="password-tab"
               >
-                <h3 class="mb-4">Thay đổi mật khẩu</h3>
+                <h3 class="mb-4">Password Settings</h3>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Mật khẩu cũ</label>
-                      <input type="password" name="old"class="form-control" />
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion" id="accordionExample">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Mật khẩu mới</label>
-                      <input type="password" name="new"class="form-control" />
+                      <label>Old password</label>
+                      <input type="password" class="form-control" />
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Nhập lại mật khẩu mới</label>
-                      <input type="password" name="renew"class="form-control" />
+                      <label>New password</label>
+                      <input type="password" class="form-control" />
                     </div>
                   </div>
-                </div>
-
-
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Confirm new password</label>
+                      <input type="password" class="form-control" />
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <button class="btn btn-primary"name="thaydoi">Thay đổi</button>
-                  <button class="btn btn-light"name="huy">Hủy</button>
+                  <button class="btn btn-primary">Update</button>
+                  <button class="btn btn-light">Cancel</button>
                 </div>
-                <div>
-                  <br>
-                <span><?php echo(isset($error)?$error:'')?></span>
-                </div>
-
               </div>
               <div
                 class="tab-pane fade"
@@ -425,25 +507,96 @@ if(empty($_SESSION['email'])){
                 role="tabpanel"
                 aria-labelledby="security-tab"
               >
-                <h3 class="mb-4">Security Settings</h3>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Login</label>
-                      <input type="text" class="form-control" />
+                <h3 class="mb-4">Password Settings</h3>
+
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by
+                        default, until the collapse plugin adds the appropriate classes that we use
+                        to style each element. These classes control the overall appearance, as well
+                        as the showing and hiding via CSS transitions. You can modify any of this
+                        with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>,
+                        though the transition does limit overflow.
+                      </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Two-factor auth</label>
-                      <input type="text" class="form-control" />
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by
+                        default, until the collapse plugin adds the appropriate classes that we use
+                        to style each element. These classes control the overall appearance, as well
+                        as the showing and hiding via CSS transitions. You can modify any of this
+                        with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>,
+                        though the transition does limit overflow.
+                      </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="recovery" />
-                        <label class="form-check-label" for="recovery"> Recovery </label>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by
+                        default, until the collapse plugin adds the appropriate classes that we use
+                        to style each element. These classes control the overall appearance, as well
+                        as the showing and hiding via CSS transitions. You can modify any of this
+                        with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>,
+                        though the transition does limit overflow.
                       </div>
                     </div>
                   </div>
@@ -614,11 +767,10 @@ if(empty($_SESSION['email'])){
       </div>
     </footer>
     <!-- script link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->
     <script src="./app.js"></script>
-    </form>
   </body>
 </html>

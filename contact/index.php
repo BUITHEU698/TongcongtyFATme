@@ -1,9 +1,28 @@
+<?php
+include'../connect/connect.php';
+if(!empty($_SESSION['email'])){
+  $email = $_SESSION['email'];
+  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan as $key=>$value)  {
+    $ten=$value['HOTEN'];
+    $tach_ten = explode(" ", $ten);
+    $account=$tach_ten[1].' '.$tach_ten[2];
+  }
+}
+
+?>
+
+
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/images-main/logo-main.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/main-images/logo-main.png"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -31,10 +50,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
     />
     <!-- my css -->
-    <link rel="stylesheet" href="./css/app.css" />
     <link rel="stylesheet" href="../assets/css/main-page/app.css" />
-    <link rel="stylesheet" href="../assets/css//contac/contact.css" />
-    <title>FATMe - Blog</title>
+    <link rel="stylesheet" href="../assets/css/contact/contact.css" />
+    <title>FATMe - Liên hệ</title>
   </head>
   <body>
     <div class="totop">
@@ -42,7 +60,7 @@
         href="#"
         class="goto-top"
         style="
-          background: url(./images/images-main/gototop.svg) no-repeat center,
+          background: url(../assets/images/main-images/gototop.svg) no-repeat center,
             linear-gradient(45deg, #f67102 5.1%, #f4a91e 86.29%);
         "
       ></a>
@@ -50,7 +68,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index.php"
+          <a href="../main-page/index-main.html"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -60,7 +78,7 @@
                 ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+            <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
@@ -69,7 +87,14 @@
               <a class="menu-link" href="../service/service.php">Dịch vụ</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
-            <li class="auth">
+
+            <?php if (empty($_SESSION['email'])){ ?>
+              <li class="auth">
+              <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
+              <a class="button button--primary auth-signup" href="../register/index.php">Đăng ký</a>
+            </li>
+            <?php } else {?>
+              <li class="auth">
               <div class="auth-like">
                 <div class="auth-like-top">
                   <img
@@ -84,12 +109,28 @@
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="../profile/index.php">Tài khoản</a>
-                  </li>
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="../login/index.php">Đăng xuất</a>
-                  </li>
+                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                    <li class="auth-like-dropdown-item">
+                      <a href="" class="dropdown-item">
+                        <img
+                          src="../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
+                        />
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                      </a>
+                    </li>
+                  <?php }?>
                 </ul>
               </div>
               <div class="auth-shoppingcart">
@@ -121,7 +162,7 @@
               <div class="auth-user">
                 <div class="auth-user-top">
                   <img src="../assets/images/main-images/icon-user.png" alt="user" />
-                  <span class="auth-username">Win Lax</span>
+                    <span class="auth-username"><?php echo $account?></span>
                   <img
                     class="arrow-down"
                     src="../assets/images/main-images/icon-arrow-down.png"
@@ -130,221 +171,139 @@
                 </div>
                 <ul class="auth-user-dropdown">
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="../profile/index.php">Tài khoản</a>
+                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
                   </li>
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="../login/index.php">Đăng xuất</a>
+                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
                   </li>
                 </ul>
               </div>
             </li>
+            <?php }?>
           </ul>
           <label for="toggle-check" class="toggle"
             ><img src="../assets/images/main-images/menu.png" alt="Menu"
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
-
       </header>
-      <section class="ftco-section">
+      <section class="contact">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-              <h2 class="heading-section">LIÊN HỆ</h2>
-            </div>
+          <div class="contact-header">
+            <h1 class="contact-header-title global-heading global-heading--big">Liên hệ</h1>
+            <p class="contact-header-subtitle global-text">
+              Để được hỗ trợ nhanh nhất, vui lòng liên hệ với chúng tôi.
+            </p>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-12">
-              <div class="wrapper">
-                <div class="row ">
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span><i class="fas fa-map-marker-alt"></i></span>
-                      </div>
-                      <div class="text">
-                        <p>
-                          <span>Địa chỉ: </span>
-                           <a href="#" >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí
-                          Minh.</a> 
-                        </p>
-                      </div>
-                    </div>
+          <div class="contact-list">
+            <a href="#map" class="contact-list-item">
+              <div class="contact-list-item-icon">
+                <img src="../assets/images/main-images/icon-location.png" alt="địa chỉ" />
+              </div>
+              <div class="contact-list-item-content">
+                <p class="contact-list-item-content-subtitle">Tp.Hồ Chí Minh</p>
+              </div>
+            </a>
+            <a href="mailto:congtyfatme@gmail.com" class="contact-list-item contact-active"
+            >
+              <div class="contact-list-item-icon">
+                <img src="../assets/images/main-images/icon-email.png" alt="email" />
+              </div>
+              <div class="contact-list-item-content">
+                <p class="contact-list-item-content-subtitle">congtyfatme@gmail.com</p>
+              </div>
+            </a>
+            <a href="tel:0989898989" class="contact-list-item">
+              <div class="contact-list-item-icon">
+                <img src="../assets/images/main-images/icon-phone.png" alt="phone" />
+              </div>
+              <div class="contact-list-item-content">
+                <p class="contact-list-item-content-subtitle">0989898989</p>
+              </div>
+            </a>
+          </div>
+          <div class="contact-form">
+            <h2 class="contact-form-title">Điền liên hệ</h2>
+            <form action="">
+              <div class="contact-form-content">
+                <div class="contact-form-left">
+                  <div class="contact-form-item">
+                    <label for="name">Họ và Tên</label>
+                    <input
+                      class="contact-form-input"
+                      type="text"
+                      placeholder="Nhập vào đây..."
+                      name="name"
+                      id="name"
+                    />
                   </div>
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span><i class="fas fa-phone"></i></span>
-                      </div>
-                      <div class="text">
-                        <p>
-                          <span>Số điện thoại:</span>
-                          <a href="tel://1234567920">(84+) 971 29 28 38</a>
-                        </p>
-                      </div>
-                    </div>
+                  <div class="contact-form-item">
+                    <label for="email">Email</label>
+                    <input
+                      class="contact-form-input"
+                      type="text"
+                      placeholder="Nhập vào đây..."
+                      \
+                      name="email"
+                      id="email"
+                    />
                   </div>
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="fa fa-paper-plane"></span>
-                      </div>
-                      <div class="text">
-                        <p>
-                          <span>Email:</span>
-                          <a href="mailto:TongCongTyFATme@yoursite.com">TongCongTyFATme@gmail.com</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="dbox w-100 text-center">
-                      <div class="icon d-flex align-items-center justify-content-center">
-                        <span class="fa fa-globe"></span>
-                      </div>
-                      <div class="text">
-                        <p><span>Website</span> <a href="www.FATMe.tk">FATMe.tk</a></p>
-                      </div>
-                    </div>
+                  <div id="map" class="contact-form-item">
+                    <label for="phone">Số điện thoại</label>
+                    <input
+                      class="contact-form-input"
+                      type="text"
+                      placeholder="Nhập vào đây..."
+                      name="phone"
+                      id="phone"
+                    />
                   </div>
                 </div>
-                <div class="row no-gutters">
-                  <div class="col-md-7">
-                    <div class="contact-wrap w-100 p-4">
-                      <h3 class="mb-4">Form liên hệ</h3>
-                      <div id="form-message-warning" class="mb-4"></div>
-
-                      <div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="label" for="name">Họ và Tên </label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                name="name"
-                                id="name"
-                                placeholder="Name"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="label" for="email">Số Điện Thoại</label>
-                              <input
-                                type="phone"
-                                class="form-control"
-                                name="phone"
-                                id="phone"
-                                placeholder="Số điện Thoại"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="label" for="email">Địa chỉ email</label>
-                              <input
-                                type="email"
-                                class="form-control"
-                                name="email"
-                                id="email"
-                                placeholder="Email"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="label" for="subject">Tiêu đề</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                name="subject"
-                                id="subject"
-                                placeholder="Tiêu Đề"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <label class="label" for="#">Nội dung</label>
-                              <textarea
-                                name="message"
-                                class="form-control"
-                                id="message"
-                                cols="30"
-                                rows="4"
-                                placeholder="Điền nội dung ..."
-                              ></textarea>
-                            </div>
-                          </div>
-                          <div>
-                            <a href="../main-page/index.php"
-                              ><button
-                                style="
-                                  border: none;
-                                  color: white;
-                                  border-radius: 5px;
-                                  margin-left: 15px;
-                                  background: linear-gradient(
-                                    103.38deg,
-                                    #f67102 5.1%,
-                                    #f4a91e 86.29%
-                                  );
-                                  padding: 10px;
-                                "
-                              >
-                                Gửi thông tin
-                              </button></a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5 d-flex align-items-stretch">
-                    <div
-                      class="info-wrap w-100 p-5 img"
-                      style="background-image: url(images/img.gif)"
-                    >
-                      <img
-                        style="width: 200px; margin: 0 auto; margin-top: 150px"
-                        src="./images/z3036584193908_a4dfed154f1eeb70ec049adfbb08d1a7.jpg"
-                        alt=""
-                      />
-                      <h1></h1>
-                    </div>
+                <div class="contact-form-right">
+                  <div class="contact-form-item">
+                    <label for="message">Nội dung</label>
+                    <textarea
+                      class="contact-form-input"
+                      placeholder="Nhập vào đây..."
+                      name="message"
+                      id="message"
+                    ></textarea>
                   </div>
                 </div>
               </div>
-            </div>
+              <button class="contact-form-button button button--primary" type="submit">
+                Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+          <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231171196223!2d106.80086541526072!3d10.870014160430552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiDEkEhRRyBUUC5IQ00!5e0!3m2!1svi!2s!4v1640646972276!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
-      </section>
-      <section>
-        <br><br><br><br><br>
       </section>
     </div>
     <footer class="footer">
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.php" class="footer-logo">
-              <img srcset="./images/images-main/logo.png 2x" alt="" />
+            <a href="index.html" class="footer-logo">
+              <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
+            <p class="footer-desc text">
+              Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách
+            </p>
             <div class="social">
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/facebook.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/twitter.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/twitter.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/instagram.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="./images/images-main/apple.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/apple.png 2x" alt="" />
               </a>
             </div>
           </div>
@@ -415,6 +374,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->
-    <script src="./app.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/contact.js"></script>
   </body>
 </html>

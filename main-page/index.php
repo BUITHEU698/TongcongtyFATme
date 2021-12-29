@@ -10,7 +10,7 @@ if(!empty($_SESSION['email'])){
   }
   $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
 }
-  
+
 
 ?>
 
@@ -92,7 +92,7 @@ if(!empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                <?php foreach($dsyeuthich as $key=>$value) { ?>
                     <li class="auth-like-dropdown-item">
                       <a href="" class="dropdown-item">
                         <img
@@ -189,19 +189,19 @@ if(!empty($_SESSION['email'])){
             <?php }?>
               <a class="watch-video button button--secondary btn-watch" href="#!">
                 <div class="watch-icon">
-                  <img srcset="../assets/images/main-images/icon-play.png 2x" />
+                  <img class="watchimg" srcset="../assets/images/main-images/icon-play.png 2x" />
                 </div>
                 <span>Xem Video</span></a
               >
             </div>
           </div>
           <div class="header-image show-on-scroll">
-            <video class="video" loop controls poster="../assets/images/main-images/img-header.png">
+            <video id="introVideo" class="video" loop controls poster="../assets/images/main-images/img-header.png">
               <source src="./video/videofatme.mp4" type="video/mp4" />
             </video>
             <button id="play-pause" class="btn-watch btn-watch1">
               <div class="watch-icon watch-icon1">
-                <img srcset="../assets/images/main-images/icon-play.png 2x" />
+                <img class="watchimg" srcset="../assets/images/main-images/icon-play.png 2x" />
               </div>
             </button>
           </div>

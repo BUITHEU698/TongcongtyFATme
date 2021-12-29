@@ -9,8 +9,7 @@ function loop() {
   elementsToShow.forEach(function (element) {
     if (isElementInViewport(element)) {
       element.classList.add("is-visible");
-    }
-    else {
+    } else {
       element.classList.remove("is-visible");
     }
   });
@@ -78,7 +77,6 @@ $(".slider-responsive-2").slick({
   adaptiveHeight: true,
 });
 
-
 var filtered = false;
 
 $(".js-filter").on("click", function () {
@@ -108,4 +106,12 @@ $(".heart").click(function () {
     $(this).attr("src", "../assets/images/main-images/icon-heart.png");
   }
 });
-
+$(".watch-icon").click(function () {
+  if ($(".watchimg").attr("srcset") == "../assets/images/main-images/icon-play.png 2x") {
+    $("#introVideo").get(0).play();
+    $(".watchimg").attr("srcset", "../assets/images/main-images/icon-pause.png 2x");
+  } else {
+    $("#introVideo").get(0).pause();
+    $(".watchimg").attr("srcset", "../assets/images/main-images/icon-play.png 2x");
+  }
+});

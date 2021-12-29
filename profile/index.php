@@ -289,7 +289,7 @@ if(empty($_SESSION['email'])){
                   aria-selected="true"
                 >
                   <i class="fa fa-home text-center mr-1"></i>
-                  Account
+                  Thông tin của bạn
                 </a>
                 <a
                   class="nav-link"
@@ -301,7 +301,7 @@ if(empty($_SESSION['email'])){
                   aria-selected="false"
                 >
                   <i class="fa fa-key text-center mr-1"></i>
-                  Password
+                  Quản lý mật khẩu
                 </a>
                 <a
                   class="nav-link"
@@ -312,21 +312,10 @@ if(empty($_SESSION['email'])){
                   aria-controls="security"
                   aria-selected="false"
                 >
-                  <i class="fa fa-user text-center mr-1"></i>
-                  Security
+                <i class="fas fa-map-marker-alt"></i>
+                  Quản lý địa chỉ
                 </a>
-                <a
-                  class="nav-link"
-                  id="application-tab"
-                  data-toggle="pill"
-                  href="#application"
-                  role="tab"
-                  aria-controls="application"
-                  aria-selected="false"
-                >
-                  <i class="fa fa-tv text-center mr-1"></i>
-                  Application
-                </a>
+               
                 <a
                   class="nav-link"
                   id="notification-tab"
@@ -544,7 +533,7 @@ if(empty($_SESSION['email'])){
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Accordion Item #1
+                        Nhà riêng 
                       </button>
                     </h2>
                     <div
@@ -554,13 +543,9 @@ if(empty($_SESSION['email'])){
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by
-                        default, until the collapse plugin adds the appropriate classes that we use
-                        to style each element. These classes control the overall appearance, as well
-                        as the showing and hiding via CSS transitions. You can modify any of this
-                        with custom CSS or overriding our default variables. It's also worth noting
-                        that just about any HTML can go within the <code>.accordion-body</code>,
-                        though the transition does limit overflow.
+                      BUI THI THEU <span style="collor = ><i class="far fa-check-circle"></i> Địa chỉ mặc định <br></span> 
+        Địa chỉ: ký túc xá khu a khu phố 6, Phường Linh Trung, Quận Thủ Đức, Hồ Chí Minh
+        Điện thoại: 0368311698
                       </div>
                     </div>
                   </div>
@@ -574,7 +559,7 @@ if(empty($_SESSION['email'])){
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Accordion Item #2
+                        trường Học
                       </button>
                     </h2>
                     <div
@@ -604,7 +589,7 @@ if(empty($_SESSION['email'])){
                         aria-expanded="false"
                         aria-controls="collapseThree"
                       >
-                        Accordion Item #3
+                        Ký túc xá
                       </button>
                     </h2>
                     <div
@@ -630,46 +615,14 @@ if(empty($_SESSION['email'])){
                   <button class="btn btn-light">Cancel</button>
                 </div>
               </div>
-              <div
-                class="tab-pane fade"
-                id="application"
-                role="tabpanel"
-                aria-labelledby="application-tab"
-              >
-                <h3 class="mb-4">Application Settings</h3>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="app-check" />
-                        <label class="form-check-label" for="app-check"> App check </label>
-                      </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck2"
-                        />
-                        <label class="form-check-label" for="defaultCheck2">
-                          Lorem ipsum dolor sit.
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <button class="btn btn-primary">Update</button>
-                  <button class="btn btn-light">Cancel</button>
-                </div>
-              </div>
+              
               <div
                 class="tab-pane fade"
                 id="notification"
                 role="tabpanel"
                 aria-labelledby="notification-tab"
               >
-                <h3 class="mb-4">Notification Settings</h3>
+                <h3 class="mb-4">Thông báo </h3>
                 <div class="form-group">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="notification1" />

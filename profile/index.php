@@ -8,7 +8,14 @@ if(empty($_SESSION['email'])){
   foreach($taikhoan1 as $key=>$value)  {
     $ten=$value['HOTEN'];
     $tach_ten = explode(" ", $ten);
-    $account=$tach_ten[1].' '.$tach_ten[2];
+
+    if ($tach_ten[1]==""){
+      $account=$tach_ten[0];
+    } else if ($tach_ten[2]==""){
+      $account=$tach_ten[0].' '.$tach_ten[1];
+    } else {
+      $account=$tach_ten[1].' '.$tach_ten[2];
+    }
   }
   $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
 
@@ -262,10 +269,10 @@ if(empty($_SESSION['email'])){
             <div class="profile-tab-nav border-right">
               <div class="p-4">
                 <div class="img-circle text-center mb-3">
-                  <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" />
-                  <input type="file" />
+                  <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" style="margin-left:28%" />
+                  
                 </div>
-                <h4 class="text-center"><?php if ($taikhoan['HOTEN']=="USER OF FATMe") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
+                <h4 class="text-center"><?php if ($taikhoan['HOTEN']=="USER OF FATME") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
               </div>
               <div
                 class="nav flex-column nav-pills"

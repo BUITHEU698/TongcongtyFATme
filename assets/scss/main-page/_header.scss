@@ -1,3 +1,6 @@
+.shoppingcart-alert {
+  color: $primary-color;
+}
 .toggle {
   margin-left: auto;
   display: none;
@@ -93,9 +96,6 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       transition: all 0.3s ease-in-out;
       transform: translateY(-10px);
-      &-item {
-        margin-bottom: 10px;
-      }
       &-link {
         padding: 15px;
         color: inherit;
@@ -146,9 +146,6 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       transition: all 0.3s ease-in-out;
       transform: translateY(-10px);
-      &-item {
-        margin-bottom: 10px;
-      }
       &-link {
         padding: 15px 10px 15px 10px;
         color: inherit;

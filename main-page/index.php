@@ -93,8 +93,7 @@ if(!empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-like-dropdown">
                 <?php foreach($dsyeuthich as $key=>$value) { ?>
-                    <li class="auth-like-dropdown-item">
-                      <a href="" class="dropdown-item">
+                  <li class="dropdown-item auth-like-dropdown-item">
                         <img
                           src="../assets/images/food/<?php echo $value['IMAGE']?>"
                           alt="Hình thức ăn"
@@ -111,7 +110,6 @@ if(!empty($_SESSION['email'])){
                           </a>
                             <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
                         </div>
-                      </a>
                     </li>
                   <?php }?>
                 </ul>
@@ -632,12 +630,12 @@ if(!empty($_SESSION['email'])){
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.html" class="footer-logo">
+            <a href="../main-page/index.php#" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
             <div class="social">
-              <a href="#" class="social-item">
+              <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
                 <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
@@ -646,48 +644,39 @@ if(!empty($_SESSION['email'])){
               <a href="#" class="social-item">
                 <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
-              <a href="#" class="social-item">
-                <img srcset="../assets/images/main-images/apple.png 2x" alt="" />
-              </a>
             </div>
-          </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Dịch vụ</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-            </ul>
           </div>
           <div class="footer-column">
             <h3 class="footer-heading heading-small">Món ăn</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Thể loại</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Có thể bạn thích</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Mọi người ăn gì</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Blog</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="../blog/index.php" class="footer-link">Tin hot</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog mới gần đây</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog có thể bạn thích</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_1/index.php" class="footer-link">Blog 1</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_2/index.php" class="footer-link">Blog 2</a>
               </li>
             </ul>
           </div>

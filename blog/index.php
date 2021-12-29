@@ -153,7 +153,7 @@ if(!empty($_SESSION['email'])){
         </div>
       </header>
       <main>
-        <section class="blog">
+        <section class="blog" id="blog">
           <div class="container">
             <div class="blog-header">
               <h2 class="global-heading global-heading--big show-on-scroll">

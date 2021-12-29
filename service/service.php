@@ -10,7 +10,7 @@ if(!empty($_SESSION['email'])){
   }
   $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
 }
-  
+
 
 ?>
 
@@ -89,7 +89,7 @@ if(!empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                <?php foreach($dsyeuthich as $key=>$value) { ?>
                     <li class="auth-like-dropdown-item">
                       <a href="" class="dropdown-item">
                         <img
@@ -166,7 +166,7 @@ if(!empty($_SESSION['email'])){
         /></label>
         <label for="toggle-check" class="overlay"></label>
       </div>
-     
+
     </header>
 
     <div class="service_container">

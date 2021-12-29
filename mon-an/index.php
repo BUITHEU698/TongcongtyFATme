@@ -421,18 +421,19 @@ if(empty($_SESSION['email'])){
                     $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
                   }?>
                     <li class="auth-shoppingcart-dropdown-item">
-                      <div class="auth-shoppingcart-dropdown-link" href="#!">
                       <?php if ($tongtien==0){ ?>
                         <span>
                           Giỏ hàng của bạn đang trống !
                         </span>
                             <?php } else {?>
+                              <div class="auth-shoppingcart-dropdown-link" href="#!">
                               <span class="sum">
                           Tổng tiền: <span class="sum-price"><?php echo formatMoney($tongtien) ?></span>đ
                         </span>
                         <a href="../shoppingcart/index.php">Thanh toán</a>
-                            <?php }?>
                         </div>
+                            <?php }?>
+                        
                     </li>
                 </ul>
               </div>

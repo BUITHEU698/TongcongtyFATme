@@ -185,7 +185,7 @@ $account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
             </div>
             <div class="blog_post-text">
               <div class="blog_post-social">
-                <a href="#" class="blog_post-social-item">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffatme.tk%2Fblog%2Fblog_4%2F" class="blog_post-social-item" target="_blank">
                   <img srcset="../../assets/images/main-images/facebook.png 2x" alt="" />
                 </a>
                 <a href="#" class="blog_post-social-item">
@@ -275,7 +275,7 @@ $account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
                 <p class="global-text">
                   Tác giả: lyhoangdong.weebly.com <br />
                   Link dẫn đến bài viết gốc:
-                  <a href="https://lyhoangdong.weebly.com/am-thuc-duong-pho/an-gi-o-sai-gon-voi-30k"
+                  <a target="_blank" href="https://lyhoangdong.weebly.com/am-thuc-duong-pho/an-gi-o-sai-gon-voi-30k"
                     >https://lyhoangdong.weebly.com/am-thuc-duong-pho/an-gi-o-sai-gon-voi-30k
                   </a>
                 </p>

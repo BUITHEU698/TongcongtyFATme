@@ -184,7 +184,7 @@ if(!empty($_SESSION['email'])){
             </div>
             <div class="blog_post-text">
               <div class="blog_post-social">
-                <a href="#" class="blog_post-social-item">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffatme.tk%2Fblog%2Fblog_1%2F" class="blog_post-social-item" target="_blank">
                   <img srcset="../../assets/images/main-images/facebook.png 2x" alt="" />
                 </a>
                 <a href="#" class="blog_post-social-item">
@@ -349,7 +349,7 @@ if(!empty($_SESSION['email'])){
                 <p class="global-text">
                   Tác giả: Blog Ẩm thực <br />
                   Link dẫn đến bài viết gốc:
-                  <a
+                  <a target="_blank"
                     href="https://www.blogamthuc.com/nhung-mon-an-nhat-dinh-phai-thu-mot-lan-khi-song-trong-doi.html"
                     >https://www.blogamthuc.com/nhung-mon-an-nhat-dinh-phai-thu-mot-lan-khi-song-trong-doi.html</a
                   >

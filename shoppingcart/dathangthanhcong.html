@@ -1,20 +1,3 @@
-<?php
-include"../connect/connect.php";
-if(empty($_SESSION['email'])){
-    header("location: ../login/index.php");
-  }else {
-    $email = $_SESSION['email'];
-    $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
-    foreach($taikhoan as $key=>$value)  {
-      $ten=$value['HOTEN'];
-      $tach_ten = explode(" ", $ten);
-      $account=$tach_ten[1].' '.$tach_ten[2];
-    }
-    $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'");
-
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +35,7 @@ if(empty($_SESSION['email'])){
     <div class="wrapper">
         <header class="header">
             <div class="navigation">
-                <a href="../main-page/index.php"><img class="header-logo"
+                <a href="../main-page/index-main.html"><img class="header-logo"
                         srcset="../assets/images/main-images/logo.png 2x" /></a>
                 <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
                 <ul class="menu">
@@ -60,15 +43,15 @@ if(empty($_SESSION['email'])){
                         <label for="toggle-check"><img src="../assets/images/main-images/menu-close.png"
                                 alt="Close" /></label>
                     </div>
-                    <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
+                    <li class="menu-item"><a class="menu-link" href="../main-page/index-main.html">Trang chủ</a></li>
                     <li class="menu-item">
-                        <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
+                        <a class="menu-link" href="../mon-an/index.html">Món ăn</a>
                     </li>
-                    <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
+                    <li class="menu-item"><a class="menu-link" href="../blog/index.html">Blog</a></li>
                     <li class="menu-item">
-                        <a class="menu-link" href="../service/service.php">Dịch vụ</a>
+                        <a class="menu-link" href="../service/service.html">Dịch vụ</a>
                     </li>
-                    <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
+                    <li class="menu-item"><a class="menu-link" href="../contact/index.html">Liên hệ</a></li>
                     <li class="auth">
                         <div class="auth-like">
                             <div class="auth-like-top">
@@ -81,7 +64,7 @@ if(empty($_SESSION['email'])){
                                     <a class="auth-like-dropdown-link" href="../profile/index.php">Tài khoản</a>
                                 </li>
                                 <li class="auth-like-dropdown-item">
-                                    <a class="auth-like-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
+                                    <a class="auth-like-dropdown-link" href="../login/index.php">Đăng xuất</a>
                                 </li>
                             </ul>
                         </div>
@@ -95,7 +78,7 @@ if(empty($_SESSION['email'])){
                             </div>
                             <ul class="auth-shoppingcart-dropdown">
                                 <li class="auth-shoppingcart-dropdown-item">
-                                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.index.php">
+                                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.html">
                                         Giỏ hàng
                                     </a>
                                 </li>
@@ -109,16 +92,16 @@ if(empty($_SESSION['email'])){
                         <div class="auth-user">
                             <div class="auth-user-top">
                                 <img src="../assets/images/main-images/icon-user.png" alt="user" />
-                                <span class="auth-username"><?php echo $account ?></span>
+                                <span class="auth-username">Win Lax</span>
                                 <img class="arrow-down" src="../assets/images/main-images/icon-arrow-down.png"
                                     alt="arrow-down" />
                             </div>
                             <ul class="auth-user-dropdown">
                                 <li class="auth-user-dropdown-item">
-                                    <a class="auth-user-dropdown-link" href="../profile/index.php">Tài khoản</a>
+                                    <a class="auth-user-dropdown-link" href="../profile/index.html">Tài khoản</a>
                                 </li>
                                 <li class="auth-user-dropdown-item">
-                                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
+                                    <a class="auth-user-dropdown-link" href="../login/index.php">Đăng xuất</a>
                                 </li>
                             </ul>
                         </div>
@@ -131,92 +114,36 @@ if(empty($_SESSION['email'])){
 
         </header>
 
-        <main >
-            <p style=" color:#635f85; font-size: 27px; font-weight: 500; margin: 0 auto; width: max-content;" >GIỎ HÀNG</p>
+      <section>
+          <div>
+              <ul>
+                  <li>1</li>
+                  <li>Chọn Mặt Hàng</li>
+              </ul>
+              <ul>
+                  <li>2</li>
+                  <li>Thêm vào giỏ hàng</li>
+              </ul>
+              <ul>
+                <li>3</li>
+                <li>Thanh Toán </li>
             
-            <div class="shopping-cart">
-                <div class="column-labels">
-                    <label class="product-image">Ảnh</label>
-                    <label class="product-details">Tên Món Ăn</label>
-                    <label class="product-price">Giá Tiền </label>
-                    <label class="product-quantity">Số Lượng</label>
-                    <label class="product-removal">Xóa</label>
-                    <label class="product-line-price">Tổng Tiền</label>
-                </div>
-                <?php
+            </ul>
+          </div>
+          <h2>Bạn đã đặt hàng thành công</h2>
+          <p>cảm ơn bạn đã đặt hàng> mã đơn hàng của bạn là: </p>
+          <h1>0056-1127-3648</h1>
+      </section>
 
-                    function formatMoney($number, $fractional=false){  
-                        if ($fractional) {  
-                            $number = sprintf('%.2f', $number);  
-                        }  
-                        while (true) {  
-                            $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
-                            if ($replaced != $number) {  
-                                $number = $replaced;  
-                            } else {  
-                                break;  
-                            }  
-                        }  
-                        return $number;  
-                    }
-                  foreach($dsgiohang as $key=>$value)  { ?>
-                    <div class="product">
-                        <div class="product-image">
-                            <img src="../assets/images/food/<?php echo $value['IMAGE']?>">
-                        </div>
-                        <div class="product-details">
-                            <p class="product-title"><?php echo $value['TENMONAN']?></p>
-                        </div>
-                        <div class="product-price"><?php echo formatMoney($value['GIA'])?></div>
-                        <div class="product-quantity">
-                            <input class="input-pro" type="number" value="<?php echo $value['SOLUONG']?>" min="1">
-                        </div>
-                        <div class="product-removal">
-                            <button style="background: none;" class="remove-product">
-                               <a href="xoa.php?id=<?php echo $value['id_monan'];?>"> <i class="far fa-trash-alt"></i></a>
-                            </button>
-                        </div>
-                        <div class="product-line-price"><?php echo formatMoney($value['GIA']*$value['SOLUONG'])?></div>
-                    </div>
-                <?php }?> 
-                <?php   
-                  $tongtien=0;
-                    foreach($dsgiohang as $key=>$value)  {  
-                    $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
-                  }?>
 
-                <div class="totals">
-                    <div class="totals-item">
-                        <label>Tổng Tiền </label>
-                        <div class="totals-value" id="cart-subtotal"><?php echo formatMoney($tongtien) ?></div>
-                    </div>
-                    <!-- <div class="totals-item">
-                        <label>Phí Ship (5%)</label>
-                        <div class="totals-value" id="cart-tax">3.60</div>
-                    </div> -->
-                    <div class="totals-item">
-                        <label>Phí Ship (15.000)</label>
-                        <div class="totals-value" id="cart-shipping">15,000</div>
-                    </div>
-                    <div class="totals-item totals-item-total">
-                        <label>Thanh Toán</label>
-                        <div class="totals-value" id="cart-total"><?php echo formatMoney($tongtien+15000) ?></div>
-                    </div>
-                </div>
-
-                <button class="checkout">Đặt Hàng</button>
-
-            </div>
-        </main>
-        <br><br><br>
-        </div>
+    </div>
     
     <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <a href="index.php" class="footer-logo">
+                    <a href="index.html" class="footer-logo">
                         <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
                     </a>
                     <p class="footer-desc text">

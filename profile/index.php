@@ -6,17 +6,16 @@ if(empty($_SESSION['email'])){
   $email=$_SESSION['email'];
   $taikhoan1=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
   foreach($taikhoan1 as $key=>$value)  {
-    $ten=$value['HOTEN'];
+    $ten=$value['HOTEN'].' '.'★';
     $tach_ten = explode(" ", $ten);
-
-    if ($tach_ten[1]==""){
+    if ($tach_ten[1]=='★'){
       $account=$tach_ten[0];
-    } else if ($tach_ten[2]==""){
+    } else if ($tach_ten[2]=='★'){
       $account=$tach_ten[0].' '.$tach_ten[1];
-    } else {
+    } else  {
       $account=$tach_ten[1].' '.$tach_ten[2];
     }
-  }
+  } 
   $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
 
   $sql="SELECT * FROM khachhang WHERE email='$email'";

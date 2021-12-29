@@ -856,7 +856,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
-                      <button name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button> 
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/xoixaxiu.jpeg" alt="" name="IMAGE"/>

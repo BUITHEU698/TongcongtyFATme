@@ -265,7 +265,7 @@ if(empty($_SESSION['email'])){
                   <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" style="margin-left:28%" />
                   
                 </div>
-                <h4 class="text-center"><?php if ($taikhoan['HOTEN']=="USER OF FATMe") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
+                <h4 class="text-center"><?php if ($taikhoan['HOTEN']=="USER OF FATME") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
               </div>
               <div
                 class="nav flex-column nav-pills"

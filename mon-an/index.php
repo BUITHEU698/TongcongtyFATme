@@ -866,22 +866,22 @@ if(empty($_SESSION['email'])){
                       <button name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button> 
                     </div>
                     <div class="product-item-image">
-                      <img src="../assets/images/food/xoixaxiu.jpeg" alt="" name="IMAGE"/>
+                      <img src="../assets/images/food/khaivitamhop.jpg" alt="" name="IMAGE"/>
                     </div>
                     <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">Xôi</div>
+                      <div class="product-item-special global-text show-on-scroll">Khai Vị</div>
                       <div
                         class="
                           product-item-title
                           global-heading global-heading--normal
                           show-on-scroll"
                       >
-                        Xôi Xá Xíu
+                      Khai Vị Tam Hợp
                       </div>
                     </div>
                     <div class="product-item-price global-heading--normal">
                       <div class="product-item-price-new">
-                        <span class="price-new">35 000</span>
+                        <span class="price-new">235.000 - 265.000</span>
                         <span class="price-new-unit">đ</span>
                       </div>
                       <div class="product-item-price-old">

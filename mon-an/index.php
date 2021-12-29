@@ -422,10 +422,16 @@ if(empty($_SESSION['email'])){
                   }?>
                     <li class="auth-shoppingcart-dropdown-item">
                       <div class="auth-shoppingcart-dropdown-link" href="#!">
-                        <span class="sum">
+                      <?php if ($tongtien==0){ ?>
+                        <span>
+                          Giỏ hàng của bạn đang trống !
+                        </span>
+                            <?php } else {?>
+                              <span class="sum">
                           Tổng tiền: <span class="sum-price"><?php echo formatMoney($tongtien) ?></span>đ
                         </span>
                         <a href="../shoppingcart/index.php">Thanh toán</a>
+                            <?php }?>
                         </div>
                     </li>
                 </ul>

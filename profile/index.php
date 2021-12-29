@@ -120,6 +120,7 @@ if(empty($_SESSION['email'])){
     <title>FATMe - Blog</title>
   </head>
   <body>
+    <form action=""method="post">
     <div class="totop">
       <a
         href="#"
@@ -789,5 +790,6 @@ if(empty($_SESSION['email'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- script -->
     <script src="./app.js"></script>
+    </form>
   </body>
 </html>

@@ -111,7 +111,7 @@ if(!empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
                   <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                    <a class="auth-shoppingcart-dropdown-link" href="../../shoppingcart/index.php">
                       Giỏ hàng
                     </a>
                   </li>

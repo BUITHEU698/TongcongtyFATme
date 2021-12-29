@@ -53,8 +53,7 @@ iframe{
     width: 20%;
     height: 20rem;
     text-align: center;
-    font-size: 1.1rem;
-    /* border: 1px solid #F67D03; */
+    font-size: 1.1rem;    
     background-color: #f5efe9;
     margin: -8px 0px 1rem 5px;
 }
@@ -80,3 +79,22 @@ iframe{
     width: 100%;
     height: 2.3rem;
 }
+@media screen and (max-width: 560px) {
+    .type_food_container{
+        height: 500px !important;
+    }
+    iframe{
+        width: 400px;
+        height: 100% !important;
+    }
+    .food-container div{
+
+        width: 10rem;
+        float:left;
+        clear:both;
+    }
+    .price{
+        visibility: hidden
+    }
+   
+  }

@@ -262,8 +262,8 @@ if(empty($_SESSION['email'])){
             <div class="profile-tab-nav border-right">
               <div class="p-4">
                 <div class="img-circle text-center mb-3">
-                  <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" />
-                  <input type="file" />
+                  <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" style="margin-left:28%" />
+                  
                 </div>
                 <h4 class="text-center"><?php if ($taikhoan['HOTEN']=="USER OF FATMe") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
               </div>

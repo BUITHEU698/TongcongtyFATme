@@ -91,6 +91,6 @@ function submit(){
     }
     else{
         alert("Xác nhận thành công")
-        location.href="../main-page/index.html";
+        location.href="../../../TongcongtyFATme/main-page/index.php";
     }
 }

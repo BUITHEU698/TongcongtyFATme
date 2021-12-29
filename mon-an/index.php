@@ -703,7 +703,7 @@ if(empty($_SESSION['email'])){
                 Thể loại
               </h2>
               <div class="food-more">
-                <a href="#!" class="food-link">Xem thêm</a>
+                <a href="type_food/type_food.php" class="food-link">Xem thêm</a>
                 <img src="../assets/images/main-images/icon-arrow-right.png" alt="" />
               </div>
             </div>

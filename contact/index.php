@@ -108,7 +108,7 @@ if(!empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                <?php foreach($dsyeuthich as $key=>$value) { ?>
                     <li class="auth-like-dropdown-item">
                       <a href="" class="dropdown-item">
                         <img
@@ -170,10 +170,10 @@ if(!empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-user-dropdown">
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                    <a class="auth-user-dropdown-link" href="../profile/index.php">Tài khoản</a>
                   </li>
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
+                    <a class="auth-user-dropdown-link" href="dx.php">Đăng xuất</a>
                   </li>
                 </ul>
               </div>
@@ -213,12 +213,12 @@ if(!empty($_SESSION['email'])){
               <p class="contact-list-item-content-subtitle">congtyfatme@gmail.com</p>
             </div>
           </a>
-          <a href="tel:0989898989" class="contact-list-item">
+          <a href="tel:0971292838" class="contact-list-item">
             <div class="contact-list-item-icon">
               <img src="../assets/images/main-images/icon-phone.png" alt="phone" />
             </div>
             <div class="contact-list-item-content">
-              <p class="contact-list-item-content-subtitle">0989898989</p>
+              <p class="contact-list-item-content-subtitle">(84+) 971 29 28 38</p>
             </div>
           </a>
         </div>

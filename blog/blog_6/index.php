@@ -111,7 +111,7 @@ if(!empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
                   <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
+                    <a class="auth-shoppingcart-dropdown-link" href="../../shoppingcart/index.php">
                       Giỏ hàng
                     </a>
                   </li>
@@ -134,7 +134,7 @@ if(!empty($_SESSION['email'])){
                 </div>
                 <ul class="auth-user-dropdown">
                   <li class="auth-user-dropdown-item">
-                    <a class="auth-user-dropdown-link" href="#!">Tài khoản</a>
+                    <a class="auth-user-dropdown-link" href="../../profile/index.php">Tài khoản</a>
                   </li>
                   <li class="auth-user-dropdown-item">
                     <a class="auth-user-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>

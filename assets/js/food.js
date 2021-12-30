@@ -97,3 +97,7 @@ $("input.input-qty").each(function () {
     $this.attr("value", d).val(d);
   });
 });
+function adu(){
+  location.href = "../../TongcongtyFATme/mon-an/monan1/index.php";
+}
+document.getElementById("gaga").onclick=function(){adu();};

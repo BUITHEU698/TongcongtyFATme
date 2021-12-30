@@ -934,9 +934,9 @@ html {
     border-radius: 100%;
     border: 5px solid #fff;
   }
-  .address{
-    border-radius: 2px;
-    border: 1px dashed rgb(216, 216, 216);
-    padding: 10px;
-    margin-top: 10px;
+  .address-default{
+    color: #ff0000;
+  }
+  .address-lable{
+    color: #000000;
   }

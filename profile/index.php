@@ -543,9 +543,9 @@ if(empty($_SESSION['email'])){
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                      BUI THI THEU <span style="collor = ><i class="far fa-check-circle"></i> Địa chỉ mặc định <br></span> 
-        Địa chỉ: ký túc xá khu a khu phố 6, Phường Linh Trung, Quận Thủ Đức, Hồ Chí Minh
-        Điện thoại: 0368311698
+                     <span class="address-lable">BUI THI THEU </span> <span class="address-default" ><i class="far fa-check-circle"></i> Địa chỉ mặc định <br></span> <br>
+       <span class="address-lable"> Địa chỉ:</span> ký túc xá khu a khu phố 6, Phường Linh Trung, Quận Thủ Đức, Hồ Chí Minh
+       <br> <br> <span  class="address-lable">Điện thoại:</span>  0368311698
                       </div>
                     </div>
                   </div>
@@ -559,25 +559,20 @@ if(empty($_SESSION['email'])){
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        trường Học
+                        Trường Học
                       </button>
                     </h2>
                     <div
-                      id="collapseTwo"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="headingTwo"
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                        default, until the collapse plugin adds the appropriate classes that we use
-                        to style each element. These classes control the overall appearance, as well
-                        as the showing and hiding via CSS transitions. You can modify any of this
-                        with custom CSS or overriding our default variables. It's also worth noting
-                        that just about any HTML can go within the <code>.accordion-body</code>,
-                        though the transition does limit overflow.
+                     <span class="address-lable">BUI THI THEU </span> <span class="address-default" ><i class="far fa-check-circle"> </i> <br></span> <br>
+       <span class="address-lable"> Địa chỉ:</span> ký túc xá khu a khu phố 6, Phường Linh Trung, Quận Thủ Đức, Hồ Chí Minh
+       <br> <br> <span  class="address-lable">Điện thoại:</span>  0368363854
                       </div>
-                    </div>
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">

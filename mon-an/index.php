@@ -872,16 +872,12 @@ if(empty($_SESSION['email'])){
                           show-on-scroll"
                       >
                       Khai Vị Tam Hợp
-=======
                   <a href="./monan1/index.html">
-=======
                   <a href="./monan1/index.php">
->>>>>>> 14f7d48a6175b8941e604de45a8e99248d3d90e4
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale green-bgfull">Mới có</div>
                         <button class="button-heart" name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button>
->>>>>>> 5c5410d83115903fc5dfb82e8c9e925500f8d937
                       </div>
                       <div class="product-item-image">
                         <img src="../assets/images/food/khaivitamhop.jpg" alt="" name="IMAGE"/>

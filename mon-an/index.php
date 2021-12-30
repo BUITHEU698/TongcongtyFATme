@@ -855,404 +855,417 @@ if(empty($_SESSION['email'])){
             </div>
             <div class="product-list slider-responsive-product-list">
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale green-bgfull">Mới có</div>
-                      <button class="button-heart" name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img src="../assets/images/food/khaivitamhop.jpg" alt="" name="IMAGE"/>
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">Khai Vị</div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll"
-                      >
-                      Khai Vị Tam Hợp
+                  <a href="./monan1/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale green-bgfull">Mới có</div>
+                        <button class="button-heart" name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button>
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">235.000 - 265.000</span>
-                        <span class="price-new-unit">đ</span>
+                      <div class="product-item-image">
+                        <img src="../assets/images/food/khaivitamhop.jpg" alt="" name="IMAGE"/>
                       </div>
-                      <div class="product-item-price-old">
-                        <span class="price-old"></span>
-                        <span class="price-old-unit"></span>
-                      </div>
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input aria-label="quantity"class="input-qty"max="10"min="1"name="SL1"type="number"value="1"/>
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">Khai Vị</div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll"
+                        >
+                        Khai Vị Tam Hợp
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua1">
-                      <img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">235.000 - 265.000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <div class="product-item-price-old">
+                          <span class="price-old"></span>
+                          <span class="price-old-unit"></span>
+                        </div>
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input aria-label="quantity"class="input-qty"max="10"min="1"name="SL1"type="number"value="1"/>
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua1">
+                        <img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale green-bgfull">Mới có</div>
-                      <button class="button-heart" name="tim2"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img src="../assets/images/food/pizza.jpeg" alt="" />
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">Pizza</div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll
-                        "
-                      >
-                        Pizza Hải Sản Sốt Tiêu Đen
+                  <a href="./monan2/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale green-bgfull">Mới có</div>
+                        <button class="button-heart" name="tim2"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">69.000</span>
-                        <span class="price-new-unit">đ</span>
+                      <div class="product-item-image">
+                        <img src="../assets/images/food/pizza.jpeg" alt="" />
                       </div>
-                      <!-- <div class="product-item-price-old">
-                        <span class="price-old">1.000.000</span>
-                        <span class="price-old-unit">đ</span>
-                      </div> -->
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name="SL2"
-                            type="number"
-                            value="1"
-                          />
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">Pizza</div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll
+                          "
+                        >
+                          Pizza Hải Sản Sốt Tiêu Đen
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua2">
-                      <img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">69.000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <!-- <div class="product-item-price-old">
+                          <span class="price-old">1.000.000</span>
+                          <span class="price-old-unit">đ</span>
+                        </div> -->
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="10"
+                              min="1"
+                              name="SL2"
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua2">
+                        <img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button class="button-heart" name="tim3"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img style="height: 200px" src="../assets/images/food/gavuive.jpeg" alt="" />
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">
-                        Thức ăn nhanh
+                  <a href="./monan1/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale">Giảm giá khi mua combo</div>
+                        <button class="button-heart" name="tim3"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                       </div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll
-                        "
-                      >
-                        Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi
-                        blackpink
+                      <div class="product-item-image">
+                        <img style="height: 200px" src="../assets/images/food/gavuive.jpeg" alt="" />
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">139 000</span>
-                        <span class="price-new-unit">đ</span>
-                      </div>
-                      <div class="product-item-price-old">
-                        <span class="price-old">160 000</span>
-                        <span class="price-old-unit">đ</span>
-                      </div>
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name="SL3"
-                            type="number"
-                            value="1"
-                          />
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">
+                          Thức ăn nhanh
+                        </div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll
+                          "
+                        >
+                          Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi
+                          blackpink
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua3"><img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
-
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">139 000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <div class="product-item-price-old">
+                          <span class="price-old">160 000</span>
+                          <span class="price-old-unit">đ</span>
+                        </div>
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="10"
+                              min="1"
+                              name="SL3"
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua3"><img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button class="button-heart" name="tim4"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img style="height: 200px" src="../assets/images/food/phucloc.png" alt="" />
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">
-                        Thức ăn nhanh
+                  <a href="./monan1/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale">Giảm giá khi mua combo</div>
+                        <button class="button-heart" name="tim4"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                       </div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll
-                        "
-                      >
-                        Combo Lộc Phúc
+                      <div class="product-item-image">
+                        <img style="height: 200px" src="../assets/images/food/phucloc.png" alt="" />
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">86 000</span>
-                        <span class="price-new-unit">đ</span>
-                      </div>
-                      <div class="product-item-price-old">
-                        <span class="price-old">125 000</span>
-                        <span class="price-old-unit">đ</span>
-                      </div>
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name="SL4"
-                            type="number"
-                            value="1"
-                          />
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">
+                          Thức ăn nhanh
+                        </div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll
+                          "
+                        >
+                          Combo Lộc Phúc
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua4">
-                      <img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">86 000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <div class="product-item-price-old">
+                          <span class="price-old">125 000</span>
+                          <span class="price-old-unit">đ</span>
+                        </div>
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="10"
+                              min="1"
+                              name="SL4"
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua4">
+                        <img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button class="button-heart" name="tim5"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img style="height: 200px" src="../assets/images/food/burger.png" alt="" />
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">
-                        Thức ăn nhanh
+                  <a href="./monan1/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale">Giảm giá khi mua combo</div>
+                        <button class="button-heart" name="tim5"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                       </div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll
-                        "
-                      >
-                        1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi
+                      <div class="product-item-image">
+                        <img style="height: 200px" src="../assets/images/food/burger.png" alt="" />
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">79 000</span>
-                        <span class="price-new-unit">đ</span>
-                      </div>
-                      <div class="product-item-price-old">
-                        <span class="price-old">120 000</span>
-                        <span class="price-old-unit">đ</span>
-                      </div>
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name="SL5"
-                            type="number"
-                            value="1"
-                          />
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">
+                          Thức ăn nhanh
+                        </div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll
+                          "
+                        >
+                          1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua5">
-                      <img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">79 000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <div class="product-item-price-old">
+                          <span class="price-old">120 000</span>
+                          <span class="price-old-unit">đ</span>
+                        </div>
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="10"
+                              min="1"
+                              name="SL5"
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua5">
+                        <img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button class="button-heart" name="tim6"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img
-                        style="height: 200px"
-                        src="../assets/images/food/gatrungmuoi.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">
-                        Thức ăn nhanh
+                  <a href="./monan1/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale">Giảm giá khi mua combo</div>
+                        <button class="button-heart" name="tim6"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                       </div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll
-                        "
-                      >
-                        1 Gà Sốt Trứng Muối + 1 Pepsi
+                      <div class="product-item-image">
+                        <img
+                          style="height: 200px"
+                          src="../assets/images/food/gatrungmuoi.png"
+                          alt=""
+                        />
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">36 000</span>
-                        <span class="price-new-unit">đ</span>
-                      </div>
-                      <div class="product-item-price-old">
-                        <span class="price-old">39 000</span>
-                        <span class="price-old-unit">đ</span>
-                      </div>
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name="SL6"
-                            type="number"
-                            value="1"
-                          />
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">
+                          Thức ăn nhanh
+                        </div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll
+                          "
+                        >
+                          1 Gà Sốt Trứng Muối + 1 Pepsi
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua6">
-                      <img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">36 000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <div class="product-item-price-old">
+                          <span class="price-old">39 000</span>
+                          <span class="price-old-unit">đ</span>
+                        </div>
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="10"
+                              min="1"
+                              name="SL6"
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua6">
+                        <img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div class="product-list-item">
-                  <div class="product-item">
-                    <div class="product-item-top">
-                      <div class="product-item-sale">Giảm giá 50%</div>
-                      <button class="button-heart" name="tim7"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
-                    </div>
-                    <div class="product-item-image">
-                      <img
-                        style="height: 200px"
-                        src="../assets/images/food/trasuatoco.jpeg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="product-item-name">
-                      <div class="product-item-special global-text show-on-scroll">Đồ uống</div>
-                      <div
-                        class="
-                          product-item-title
-                          global-heading global-heading--normal
-                          show-on-scroll
-                        "
-                      >
-                        Sữa chua Tocotoco
+                  <a href="./monan1/index.html">
+                    <div class="product-item">
+                      <div class="product-item-top">
+                        <div class="product-item-sale">Giảm giá 50%</div>
+                        <button class="button-heart" name="tim7"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                       </div>
-                    </div>
-                    <div class="product-item-price global-heading--normal">
-                      <div class="product-item-price-new">
-                        <span class="price-new">20 000</span>
-                        <span class="price-new-unit">đ</span>
+                      <div class="product-item-image">
+                        <img
+                          style="height: 200px"
+                          src="../assets/images/food/trasuatoco.jpeg"
+                          alt=""
+                        />
                       </div>
-                      <div class="product-item-price-old">
-                        <span class="price-old">40 000</span>
-                        <span class="price-old-unit">đ</span>
-                      </div>
-                    </div>
-                    <div class="product-item-bottom">
-                      <div class="product-item-number">
-                        <div class="buttons_added">
-                          <input class="minus is-form" type="button" value="-" />
-                          <input
-                            aria-label="quantity"
-                            class="input-qty"
-                            max="10"
-                            min="1"
-                            name="SL7"
-                            type="number"
-                            value="1"
-                          />
-                          <input class="plus is-form" type="button" value="+" />
+                      <div class="product-item-name">
+                        <div class="product-item-special global-text show-on-scroll">Đồ uống</div>
+                        <div
+                          class="
+                            product-item-title
+                            global-heading global-heading--normal
+                            show-on-scroll
+                          "
+                        >
+                          Sữa chua Tocotoco
                         </div>
                       </div>
-                      <button class="button-shoppingcart" name="mua7">
-                      <img
-                        class="product-item-shoppingcart"
-                        src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt=""
-                      /></button>
+                      <div class="product-item-price global-heading--normal">
+                        <div class="product-item-price-new">
+                          <span class="price-new">20 000</span>
+                          <span class="price-new-unit">đ</span>
+                        </div>
+                        <div class="product-item-price-old">
+                          <span class="price-old">40 000</span>
+                          <span class="price-old-unit">đ</span>
+                        </div>
+                      </div>
+                      <div class="product-item-bottom">
+                        <div class="product-item-number">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="10"
+                              min="1"
+                              name="SL7"
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                        </div>
+                        <button class="button-shoppingcart" name="mua7">
+                        <img
+                          class="product-item-shoppingcart"
+                          src="../assets/images/main-images/icon-shoppingcart.png"
+                          alt=""
+                        /></button>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
             </div>
           </div>

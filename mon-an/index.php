@@ -855,7 +855,6 @@ if(empty($_SESSION['email'])){
             </div>
             <div class="product-list slider-responsive-product-list">
                 <div class="product-list-item">
-<<<<<<< HEAD
                   <div class="product-item"id="gaga">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
@@ -875,6 +874,9 @@ if(empty($_SESSION['email'])){
                       Khai Vị Tam Hợp
 =======
                   <a href="./monan1/index.html">
+=======
+                  <a href="./monan1/index.php">
+>>>>>>> 14f7d48a6175b8941e604de45a8e99248d3d90e4
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale green-bgfull">Mới có</div>
@@ -924,7 +926,7 @@ if(empty($_SESSION['email'])){
                   </a>
                 </div>
                 <div class="product-list-item">
-                  <a href="./monan2/index.html">
+                  <a href="./monan2/index.php">
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale green-bgfull">Mới có</div>
@@ -982,7 +984,7 @@ if(empty($_SESSION['email'])){
                   </a>
                 </div>
                 <div class="product-list-item">
-                  <a href="./monan1/index.html">
+                  <a href="./monan1/index.php">
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -1042,7 +1044,7 @@ if(empty($_SESSION['email'])){
                   </a>
                 </div>
                 <div class="product-list-item">
-                  <a href="./monan1/index.html">
+                  <a href="./monan1/index.php">
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -1102,7 +1104,7 @@ if(empty($_SESSION['email'])){
                   </a>
                 </div>
                 <div class="product-list-item">
-                  <a href="./monan1/index.html">
+                  <a href="./monan1/index.php">
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -1162,7 +1164,7 @@ if(empty($_SESSION['email'])){
                   </a>
                 </div>
                 <div class="product-list-item">
-                  <a href="./monan1/index.html">
+                  <a href="./monan1/index.php">
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale">Giảm giá khi mua combo</div>
@@ -1226,7 +1228,7 @@ if(empty($_SESSION['email'])){
                   </a>
                 </div>
                 <div class="product-list-item">
-                  <a href="./monan1/index.html">
+                  <a href="./monan1/index.php">
                     <div class="product-item">
                       <div class="product-item-top">
                         <div class="product-item-sale">Giảm giá 50%</div>

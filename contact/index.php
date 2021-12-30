@@ -285,7 +285,7 @@ if(!empty($_SESSION['email'])){
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.html" class="footer-logo">
+            <a href="#" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">

@@ -13,11 +13,11 @@ if(empty($_SESSION['email'])){
     }
     $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'");
     $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
-    
+
 
 
   }
-  
+
 
 ?>
 
@@ -95,7 +95,7 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                  <?php foreach($dsyeuthich as $key=>$value) { ?>
                     <li class="auth-like-dropdown-item">
                       <a href="" class="dropdown-item">
                         <img
@@ -133,39 +133,39 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
-                <?php 
-                
-                function formatMoney($number, $fractional=false){  
-                  if ($fractional) {  
-                      $number = sprintf('%.2f', $number);  
-                  }  
-                  while (true) {  
-                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
-                      if ($replaced != $number) {  
-                          $number = $replaced;  
-                      } else {  
-                          break;  
-                      }  
-                  }  
-                  return $number;  
+                <?php
+
+                function formatMoney($number, $fractional=false){
+                  if ($fractional) {
+                      $number = sprintf('%.2f', $number);
+                  }
+                  while (true) {
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                      if ($replaced != $number) {
+                          $number = $replaced;
+                      } else {
+                          break;
+                      }
+                  }
+                  return $number;
               }
-                
+
                 foreach($dsgiohang as $key=>$value)  { ?>
                   <li class="auth-shoppingcart-dropdown-item" >
                     <div href="" class="dropdown-item" >
-                      
+
                       <img src="../../assets/images/food/<?php echo $value['IMAGE']?>" alt="Hình thức ăn"
                         class="dropdown-item-image">
                         <div class="dropdown-item-text">
                           <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
                           <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
-                          
+
                           <div class="dropdown-item-text-price"><span class="price"><?php echo formatMoney($value['GIA'])?></span>đ</div>
                         </div>
                         <div class="dropdown-item-right">
                         <a href="xoa.php?id=<?php echo $value['id_monan']; ?>">
                           <img class="trash" src="../../assets/images/main-images/icon-trash.png" alt="trash"/>
-                        </a> 
+                        </a>
                         <img
                           class="heart"
                           src="../../assets/images/main-images/icon-heart-fill.png"
@@ -174,10 +174,10 @@ if(empty($_SESSION['email'])){
                       </div>
                     </div>
                   </li>
-                <?php }?> 
-                  <?php   
+                <?php }?>
+                  <?php
                   $tongtien=0;
-                    foreach($dsgiohang as $key=>$value)  {  
+                    foreach($dsgiohang as $key=>$value)  {
                     $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
                   }?>
                     <li class="auth-shoppingcart-dropdown-item">
@@ -254,71 +254,62 @@ if(empty($_SESSION['email'])){
                     </li>
                 </ul>
             </div>
-          
+
                <iframe src="./an_vat/an_vat.html" frameborder="0" name="food-content-list"></iframe>
-            
+
         </div>
     </div>
     <footer class="footer">
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="../../main-page/index.php" class="footer-logo">
-              <img srcset="../../assets/images/main-images/logo.png 2x" alt="" />
+            <a href="#" class="footer-logo">
+              <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
             <div class="social">
-              <a href="#" class="social-item">
-                <img srcset="../../assets/images/main-images/facebook.png 2x" alt="" />
+              <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
+                <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="../../assets/images/main-images/twitter.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/twitter.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
-                <img srcset="../../assets/images/main-images/instagram.png 2x" alt="" />
-              </a>
-              <a href="#" class="social-item">
-                <img srcset="../../assets/images/main-images/apple.png 2x" alt="" />
+                <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
             </div>
-          </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Dịch vụ</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-            </ul>
           </div>
           <div class="footer-column">
             <h3 class="footer-heading heading-small">Món ăn</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Thể loại</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Có thể bạn thích</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Mọi người ăn gì</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Blog</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="../blog/index.php" class="footer-link">Tin hot</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog mới gần đây</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog có thể bạn thích</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_1/index.php" class="footer-link">Blog 1</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_2/index.php" class="footer-link">Blog 2</a>
               </li>
             </ul>
           </div>
@@ -326,8 +317,8 @@ if(empty($_SESSION['email'])){
             <h3 class="footer-heading heading-small">Liên hệ</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="mailto:congtyfatme@gmail.com" class="footer-link-none"
-                  >congtyfatme@gmail.com</a
+                <a href="mailto:TongCongTyFATMe@gmail.com" class="footer-link-none"
+                  >TongCongTyFATMe@gmail.com</a
                 >
               </li>
               <li class="footer-item">

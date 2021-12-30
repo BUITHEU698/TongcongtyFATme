@@ -360,6 +360,7 @@ body {
   width: 100%;
   z-index: -10;
   padding: 15px;
+  padding-bottom: 25px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: all 0.3s ease-in-out;
@@ -1458,8 +1459,8 @@ body {
 }
 .footer-container {
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-gap: 0 126px;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  grid-gap: 0 70px;
 }
 .footer-logo {
   display: inline-block;

@@ -1,13 +1,39 @@
-html {
-    box-sizing: border-box;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+/* remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
   *,
+<<<<<<< HEAD
   *:before,
   *:after {
     box-sizing: border-box;
@@ -934,4 +960,62 @@ html {
     border-radius: 100%;
     border: 5px solid #fff;
   }
-  
+  .address-default{
+    color: #ff0000;
+  }
+  .address-lable{
+    color: #000000;
+  }
+=======
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* reset list styles for ul, ol, dl, and address elements */
+ul,
+ol,
+dl,
+address {
+  margin: 0;
+  padding: 0;
+}
+.user {
+  margin-bottom: 30px;
+}
+.shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.profile-tab-nav {
+  min-width: 250px;
+}
+
+.tab-content {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.nav-pills a.nav-link {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  color: #333;
+}
+.nav-pills a.nav-link i {
+  width: 20px;
+}
+
+.img-circle img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+}
+>>>>>>> 4a7c6aae1e1259e5231e11cf5a75c6ac74e4ab66

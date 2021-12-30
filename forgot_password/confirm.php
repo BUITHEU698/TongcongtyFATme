@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
       <form action="" class="form-forgot" method="post" >
         <!-- icon back -->
         <div class="form-forgot-icon">
-          <a href="../forgot_password/index.html"><i class="fas fa-arrow-left sub-link"></i></a>
+          <a href="../forgot_password/index.php"><i class="fas fa-arrow-left sub-link"></i></a>
         </div>
         <h1 class="header-text bold">Xác nhận mã</h1>
         <p class="sub-text">

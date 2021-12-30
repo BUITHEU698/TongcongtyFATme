@@ -317,8 +317,8 @@ $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$e
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
     />
     <!-- my css -->
-    <link rel="stylesheet" href="../assets/css/main-page/app.css" />
     <link rel="stylesheet" href="../assets/css/profile/profile.css" />
+    <link rel="stylesheet" href="../assets/css/main-page/app.css" />
     <title>FATMe - Tài khoản</title>
   </head>
   <body>
@@ -525,7 +525,7 @@ $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$e
                       style="margin-left: 28%"
                     />
                   </div>
-                  <h4 class="text-center">
+                  <h4 class="text-center global-heading global-heading--normal">
                     <?php if ($taikhoan['HOTEN']=="USER OF FATME") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?>
                   </h4>
                 </div>
@@ -604,7 +604,7 @@ $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$e
                   role="tabpanel"
                   aria-labelledby="account-tab"
                 >
-                  <h3 class="mb-4">Thông tin tài khoản</h3>
+                  <h3 class="mb-4 global-heading global-heading--normal">Thông tin tài khoản</h3>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -985,81 +985,81 @@ $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$e
         </section>
       </div>
       <footer class="footer">
-      <div class="container">
-        <div class="footer-container">
-          <div class="footer-column">
-            <a href="../main-page/index.php#" class="footer-logo">
-              <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
-            </a>
-            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
-            <div class="social">
-              <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
-                <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
+        <div class="container">
+          <div class="footer-container">
+            <div class="footer-column">
+              <a href="#" class="footer-logo">
+                <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
               </a>
-              <a href="#" class="social-item">
-                <img srcset="../assets/images/main-images/twitter.png 2x" alt="" />
-              </a>
-              <a href="#" class="social-item">
-                <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
-              </a>
+              <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
+              <div class="social">
+                <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
+                  <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
+                </a>
+                <a href="#" class="social-item">
+                  <img srcset="../assets/images/main-images/twitter.png 2x" alt="" />
+                </a>
+                <a href="#" class="social-item">
+                  <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading heading-small">Món ăn</h3>
+              <ul class="footer-links">
+                <li class="footer-item">
+                  <a href="../mon-an/index.php#category" class="footer-link">Thể loại</a>
+                </li>
+                <li class="footer-item">
+                  <a href="../mon-an/index.php#category" class="footer-link">Có thể bạn thích</a>
+                </li>
+                <li class="footer-item">
+                  <a href="../mon-an/index.php#category" class="footer-link">Mọi người ăn gì</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading heading-small">Blog</h3>
+              <ul class="footer-links">
+                <li class="footer-item">
+                  <a href="../blog/index.php" class="footer-link">Tin hot</a>
+                </li>
+                <li class="footer-item">
+                  <a href="../blog/index.php#blog" class="footer-link">Blog mới gần đây</a>
+                </li>
+                <li class="footer-item">
+                  <a href="../blog/index.php#blog" class="footer-link">Blog có thể bạn thích</a>
+                </li>
+                <li class="footer-item">
+                  <a href="../blog/blog_1/index.php" class="footer-link">Blog 1</a>
+                </li>
+                <li class="footer-item">
+                  <a href="../blog/blog_2/index.php" class="footer-link">Blog 2</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-heading heading-small">Liên hệ</h3>
+              <ul class="footer-links">
+                <li class="footer-item">
+                  <a href="mailto:TongCongTyFATMe@gmail.com" class="footer-link-none"
+                    >TongCongTyFATMe@gmail.com</a
+                  >
+                </li>
+                <li class="footer-item">
+                  <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
+                </li>
+                <li class="footer-item">
+                  <span href="#" class="footer-link-none"
+                    >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
+                  >
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Món ăn</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="../mon-an/index.php#category" class="footer-link">Thể loại</a>
-              </li>
-              <li class="footer-item">
-                <a href="../mon-an/index.php#category" class="footer-link">Có thể bạn thích</a>
-              </li>
-              <li class="footer-item">
-                <a href="../mon-an/index.php#category" class="footer-link">Mọi người ăn gì</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Blog</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="../blog/index.php" class="footer-link">Tin hot</a>
-              </li>
-              <li class="footer-item">
-                <a href="../blog/index.php#blog" class="footer-link">Blog mới gần đây</a>
-              </li>
-              <li class="footer-item">
-                <a href="../blog/index.php#blog" class="footer-link">Blog có thể bạn thích</a>
-              </li>
-              <li class="footer-item">
-                <a href="../blog/blog_1/index.php" class="footer-link">Blog 1</a>
-              </li>
-              <li class="footer-item">
-                <a href="../blog/blog_2/index.php" class="footer-link">Blog 2</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Liên hệ</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="mailto:TongCongTyFATMe@gmail.com" class="footer-link-none"
-                  >TongCongTyFATMe@gmail.com</a
-                >
-              </li>
-              <li class="footer-item">
-                <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
-              </li>
-              <li class="footer-item">
-                <span href="#" class="footer-link-none"
-                  >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
-                >
-              </li>
-            </ul>
-          </div>
+          <div class="copyright">All Right Reserved by Us! Copyright FATMe 2021</div>
         </div>
-        <div class="copyright">All Right Reserved by Us! Copyright FATMe 2021</div>
-      </div>
-    </footer>
+      </footer>
       <!-- script link -->
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>

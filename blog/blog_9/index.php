@@ -429,7 +429,7 @@ $account=$tach_ten[1].' '.$tach_ten[2]; } } ?>
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.php" class="footer-logo">
+            <a href="#" class="footer-logo">
               <img srcset="../../assets/images/main-images/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">

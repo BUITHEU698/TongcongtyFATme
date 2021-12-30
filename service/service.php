@@ -553,7 +553,7 @@ if(!empty($_SESSION['email'])){
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="../mon-an/index.php" class="footer-logo">
+            <a href="#" class="footer-logo">
               <img srcset="/monan_main_page/img/logo/logo.png 2x" alt="" />
             </a>
             <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>

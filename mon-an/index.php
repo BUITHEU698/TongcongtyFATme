@@ -10,7 +10,7 @@ if(empty($_SESSION['email'])){
       $tach_ten = explode(" ", $ten);
       $account=$tach_ten[1].' '.$tach_ten[2];
     }
-    
+
     if (isset($_POST['mua1'])){
       $TENMONAN='Xôi Xá Xíu';
       $GIA='35000';
@@ -257,7 +257,7 @@ if(empty($_SESSION['email'])){
     $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
 
   }
-  
+
 ?>
 <html>
   <head>
@@ -335,9 +335,8 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <?php foreach($dsyeuthich as $key=>$value) { ?> 
-                    <li class="auth-like-dropdown-item">
-                      <a href="" class="dropdown-item">
+                  <?php foreach($dsyeuthich as $key=>$value) { ?>
+                    <li class="dropdown-item auth-like-dropdown-item">
                         <img
                           src="../assets/images/food/<?php echo $value['IMAGE']?>"
                           alt="Hình thức ăn"
@@ -354,7 +353,6 @@ if(empty($_SESSION['email'])){
                           </a>
                             <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
                         </div>
-                      </a>
                     </li>
                   <?php }?>
                 </ul>
@@ -373,66 +371,64 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
-                <?php 
-                
-                function formatMoney($number, $fractional=false){  
-                  if ($fractional) {  
-                      $number = sprintf('%.2f', $number);  
-                  }  
-                  while (true) {  
-                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);  
-                      if ($replaced != $number) {  
-                          $number = $replaced;  
-                      } else {  
-                          break;  
-                      }  
-                  }  
-                  return $number;  
+                <?php
+
+                function formatMoney($number, $fractional=false){
+                  if ($fractional) {
+                      $number = sprintf('%.2f', $number);
+                  }
+                  while (true) {
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                      if ($replaced != $number) {
+                          $number = $replaced;
+                      } else {
+                          break;
+                      }
+                  }
+                  return $number;
               }
-                
+
                 foreach($dsgiohang as $key=>$value)  { ?>
-                  <li class="auth-shoppingcart-dropdown-item" >
-                    <div href="" class="dropdown-item" >
-                      
+                  <li class="dropdown-item auth-shoppingcart-dropdown-item" >
                       <img src="../assets/images/food/<?php echo $value['IMAGE']?>" alt="Hình thức ăn"
                         class="dropdown-item-image">
                         <div class="dropdown-item-text">
                           <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
                           <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
-                          
+
                           <div class="dropdown-item-text-price"><span class="price"><?php echo formatMoney($value['GIA'])?></span>đ</div>
                         </div>
                         <div class="dropdown-item-right">
                         <a href="xoa.php?id=<?php echo $value['id_monan']; ?>">
                           <img class="trash" src="../assets/images/main-images/icon-trash.png" alt="trash"/>
-                        </a> 
+                        </a>
                         <img
                           class="heart"
                           src="../assets/images/main-images/icon-heart-fill.png"
                           alt="heart"
                         />
                       </div>
-                    </div>
                   </li>
-                <?php }?> 
-                  <?php   
+                <?php }?>
+                  <?php
                   $tongtien=0;
-                    foreach($dsgiohang as $key=>$value)  {  
+                    foreach($dsgiohang as $key=>$value)  {
                     $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
                   }?>
                     <li class="auth-shoppingcart-dropdown-item">
-                      <div class="auth-shoppingcart-dropdown-link" href="#!">
                       <?php if ($tongtien==0){ ?>
-                        <span>
+                        <span class="shoppingcart-alert">
                           Giỏ hàng của bạn đang trống !
                         </span>
                             <?php } else {?>
+                              <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
                               <span class="sum">
                           Tổng tiền: <span class="sum-price"><?php echo formatMoney($tongtien) ?></span>đ
                         </span>
-                        <a href="../shoppingcart/index.php">Thanh toán</a>
+                        <span>Thanh toán</span>
+                        </a>
                             <?php }?>
-                        </div>
+
                     </li>
                 </ul>
               </div>
@@ -586,7 +582,7 @@ if(empty($_SESSION['email'])){
                       >
                         Grab food
                       </div>
-                      <a class="button button--green" href="#!">Xem ngay</a>
+                      <a class="button button--green" href="https://food.grab.com/vn/vi/" target="_blank">Xem ngay</a>
                     </div>
                     <div class="banner-product-image">
                       <img
@@ -619,7 +615,7 @@ if(empty($_SESSION['email'])){
                       >
                         Loship
                       </div>
-                      <a class="button button--red" href="#!">Xem ngay</a>
+                      <a class="button button--red" href="https://loship.vn/" target="_blank">Xem ngay</a>
                     </div>
                     <div class="banner-product-image">
                       <img
@@ -652,7 +648,7 @@ if(empty($_SESSION['email'])){
                       >
                         Gojek
                       </div>
-                      <a class="button button--dark" href="#!">Xem ngay</a>
+                      <a class="button button--dark" href="https://www.gojek.com/vn/" target="_blank">Xem ngay</a>
                     </div>
                     <div class="banner-product-image">
                       <img
@@ -685,7 +681,7 @@ if(empty($_SESSION['email'])){
                       >
                         Shopee Food
                       </div>
-                      <a class="button button--orange" href="#!">Xem ngay</a>
+                      <a class="button button--orange" href="https://shopeefood.vn/" target="_blank">Xem ngay</a>
                     </div>
                     <div class="banner-product-image">
                       <img
@@ -702,7 +698,7 @@ if(empty($_SESSION['email'])){
         </section>
         <!-- end banner -->
         <!-- category -->
-        <section class="category">
+        <section class="category" id="category">
           <div class="food-container">
             <div class="food-header">
               <h2 class="food-heading global-heading global-food-heading show-on-scroll is-visible">
@@ -862,7 +858,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
-                      <button name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button> 
+                      <button class="button-heart" name="tim1"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart"/></button>
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/khaivitamhop.jpg" alt="" name="IMAGE"/>
@@ -896,11 +892,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua1">
+                      <button class="button-shoppingcart" name="mua1">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -909,7 +905,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Mới có</div>
-                      <button name="tim2"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim2"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/pizza.jpeg" alt="" />
@@ -952,11 +948,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua2">
+                      <button class="button-shoppingcart" name="mua2">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -965,7 +961,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button name="tim3"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim3"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img style="height: 200px" src="../assets/images/food/gavuive.jpeg" alt="" />
@@ -1011,12 +1007,12 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua3"><img
+                      <button class="button-shoppingcart" name="mua3"><img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
                         alt=""
                       /></button>
-                      
+
                     </div>
                   </div>
                 </div>
@@ -1024,7 +1020,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button name="tim4"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim4"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img style="height: 200px" src="../assets/images/food/phucloc.png" alt="" />
@@ -1069,11 +1065,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua4">
+                      <button class="button-shoppingcart" name="mua4">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1082,7 +1078,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button name="tim5"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim5"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img style="height: 200px" src="../assets/images/food/burger.png" alt="" />
@@ -1127,11 +1123,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua5">
+                      <button class="button-shoppingcart" name="mua5">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1140,7 +1136,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá khi mua combo</div>
-                      <button name="tim6"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim6"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img
@@ -1189,11 +1185,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua6">
+                      <button class="button-shoppingcart" name="mua6">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1202,7 +1198,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale">Giảm giá 50%</div>
-                      <button name="tim7"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim7"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img
@@ -1249,11 +1245,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua7">
+                      <button class="button-shoppingcart" name="mua7">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1273,7 +1269,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Đang hot</div>
-                      <button name="tim8"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim8"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/beefsteak.jpeg" alt="" />
@@ -1316,11 +1312,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua8">
+                      <button class="button-shoppingcart" name="mua8">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1329,7 +1325,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <div class="product-item-sale green-bgfull">Đang hot</div>
-                      <button name="tim9"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim9"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/banhbachtuoc.jpeg" alt="" />
@@ -1372,11 +1368,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua9">
+                      <button class="button-shoppingcart" name="mua9">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1385,7 +1381,7 @@ if(empty($_SESSION['email'])){
                   <div class="product-item">
                     <div class="product-item-top">
                       <!-- <div class="product-item-sale">Giảm giá <span class="percent">50</span>%</div> -->
-                      <button name="tim10"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button> 
+                      <button class="button-heart" name="tim10"><img src="../assets/images/main-images/icon-heart.png" alt="" class="heart" /></button>
                     </div>
                     <div class="product-item-image">
                       <img src="../assets/images/food/galachanh.jpeg" alt="" />
@@ -1428,11 +1424,11 @@ if(empty($_SESSION['email'])){
                           <input class="plus is-form" type="button" value="+" />
                         </div>
                       </div>
-                      <button name="mua10">
+                      <button class="button-shoppingcart" name="mua10">
                       <img
                         class="product-item-shoppingcart"
                         src="../assets/images/main-images/icon-shoppingcart.png"
-                        alt="" 
+                        alt=""
                       /></button>
                     </div>
                   </div>
@@ -1468,16 +1464,12 @@ if(empty($_SESSION['email'])){
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
-            <a href="index.php" class="footer-logo">
+            <a href="#" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, qui error,
-              aspernatur ut velit saepe adipisci reprehenderit maxime suscipit ea non earum
-              repudiandae aliquid doloremque nihil pariatur, culpa iste officiis?
-            </p>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
             <div class="social">
-              <a href="#" class="social-item">
+              <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
                 <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
@@ -1486,48 +1478,39 @@ if(empty($_SESSION['email'])){
               <a href="#" class="social-item">
                 <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
-              <a href="#" class="social-item">
-                <img srcset="../assets/images/main-images/apple.png 2x" alt="" />
-              </a>
             </div>
-          </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Dịch vụ</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-            </ul>
           </div>
           <div class="footer-column">
             <h3 class="footer-heading heading-small">Món ăn</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Thể loại</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Có thể bạn thích</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Mọi người ăn gì</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Blog</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="../blog/index.php" class="footer-link">Tin hot</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog mới gần đây</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog có thể bạn thích</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_1/index.php" class="footer-link">Blog 1</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_2/index.php" class="footer-link">Blog 2</a>
               </li>
             </ul>
           </div>
@@ -1535,8 +1518,8 @@ if(empty($_SESSION['email'])){
             <h3 class="footer-heading heading-small">Liên hệ</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="mailto:congtyfatme@gmail.com" class="footer-link-none"
-                  >congtyfatme@gmail.com</a
+                <a href="mailto:TongCongTyFATMe@gmail.com" class="footer-link-none"
+                  >TongCongTyFATMe@gmail.com</a
                 >
               </li>
               <li class="footer-item">

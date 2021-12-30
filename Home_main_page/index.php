@@ -33,7 +33,7 @@ if(empty($_SESSION['email'])){
                     <ul class="list_menu">
                         <li class="img_li">
                             <a href=""><img class="img_icon" src="./images/Logo .png" /></a>
-                            
+
                         </li>
                         <li class="search">
                             <div>
@@ -79,7 +79,7 @@ if(empty($_SESSION['email'])){
                                         <button onclick="avatar()" class="dropbtn">Nhóm 11</button>
                                         <div id="myDropdown" class="dropdown-content">
                                             <!-- href="/Main_page/home/ho_so_ca_nhan/ho_so.html -->
-                                            <a target="content" href="../main-page/index.html"><i class="fas fa-user"></i>Hồ sơ cá nhân</a
+                                            <a target="content" href="../main-page/index.php"><i class="fas fa-user"></i>Hồ sơ cá nhân</a
                         >
                         <a href=""><i class="fas fa-store-alt"></i>Thông tin shop</a>
                                             <a href=""><i class="fas fa-key"></i>Mật khẩu</a>

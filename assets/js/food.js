@@ -101,3 +101,17 @@ function adu(){
   location.href = "../../TongcongtyFATme/mon-an/monan1/index.php";
 }
 document.getElementById("gaga").onclick=function(){adu();};
+
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" focus", ""); 
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " focus";
+}

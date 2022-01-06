@@ -320,12 +320,13 @@
 .blog_post-image {
   margin-bottom: 30px;
 }
-.blog_post-image img {
+.blog_post-image-img {
   border-radius: 15px;
   max-height: 450px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px, rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .blog_post-text {
   padding: 0 10% 0 12%;
@@ -335,12 +336,14 @@
   text-align: justify;
   margin-bottom: 10px;
 }
-.blog_post-text img {
+.blog_post-text-img {
   margin: 0 auto;
   border-radius: 15px;
   max-height: 500px;
   object-fit: contain;
   margin-bottom: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 4px solid white;
 }
 .blog_post-text-content .global-text:last-child {
   font-size: 18px;

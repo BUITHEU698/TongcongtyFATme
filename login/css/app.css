@@ -2,7 +2,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source San Pro', sans-serif;
   font-size: 1.6rem;
   line-height: 1.4;
 }
@@ -44,6 +44,14 @@ body {
   margin: 4rem 0;
 }
 /* CSS main */
+.image-main-auth {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.image-main-auth img {
+  max-height: 50px;
+}
 .container {
   width: 100%;
   height: 100%;

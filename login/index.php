@@ -60,6 +60,9 @@ if(isset($_POST['email'])){
   </head>
 
   <body>
+    <a href="../main-page/index.php" class="image-main-auth">
+      <img src="../assets/images/main-images/logo.png" alt="Logo" class="">
+    </a>
     <div class="container">
       <form action="" method="post" class="form-login">
         <h1 class="header-text bold">Đăng nhập</h1>

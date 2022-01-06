@@ -67,7 +67,7 @@ if(!empty($_SESSION['email'])){
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index-main.html"
+          <a href="../main-page/index.php"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />

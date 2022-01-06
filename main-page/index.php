@@ -473,13 +473,13 @@ if(!empty($_SESSION['email'])){
             <!-- blog list -->
             <div class="blog-list slider-responsive">
               <div class="post-item show-on-scroll">
-                <a href="../blog_1/index.php" class="post-media">
+                <a href="../blog/blog_1/index.php" class="post-media">
                   <img src="../assets/images/blog-images/blog1.jpg" alt="" class="post-image" />
                 </a>
                 <div class="post-content">
                   <a href="#" class="post-category">Shop</a>
                   <h3>
-                    <a href="../blog_1/index.php" class="post-title"
+                    <a href="../blog/blog_1/index.php" class="post-title"
                       >Những món ăn nhất định phải thử một lần khi sống trong đời</a
                     >
                   </h3>
@@ -612,7 +612,7 @@ if(!empty($_SESSION['email'])){
                   Nhận thông báo mới nhất
                 </h2>
                 <p class="global-text subscribe-desc show-on-scroll">
-                  Nhập gmail để không bỏ lỡ những thông báo mới nhất và các ưu đãi hấp dẫn đến từ Fatme nhé !!!
+                  Nhập gmail để không bỏ lỡ những thông báo mới nhất và các ưu đãi hấp dẫn đến từ FATMe nhé !!!
                 </p>
               </div>
               <div class="subscribe-form">
@@ -633,7 +633,7 @@ if(!empty($_SESSION['email'])){
             <a href="#" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách</p>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FATMe thật nhanh, giao tận tay khách</p>
             <div class="social">
               <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
                 <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
@@ -684,8 +684,8 @@ if(!empty($_SESSION['email'])){
             <h3 class="footer-heading heading-small">Liên hệ</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="mailto:TongCongTyFATMe@gmail.com" class="footer-link-none"
-                  >TongCongTyFATMe@gmail.com</a
+                <a href="mailto:congtyfatme@gmail.com" class="footer-link-none"
+                  >congtyfatme@gmail.com</a
                 >
               </li>
               <li class="footer-item">

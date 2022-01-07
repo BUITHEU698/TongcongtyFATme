@@ -451,6 +451,9 @@
   border-radius: 10px;
   font-size: 14px;
 }
+.product-item-image {
+  height: 200px;
+}
 .product-item-image img {
   border-radius: 10px 10px 0 0;
   max-height: 200px;

@@ -19,7 +19,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      display:flex;
+      display: flex;
       justify-content: space-between;
       align-items: center;
       width: 240px;
@@ -31,12 +31,15 @@
       border-radius: 10px;
       font-size: 14px;
     }
-    &-image img {
-      border-radius: 10px 10px 0 0;
-      max-height: 200px;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    &-image {
+      height: 200px;
+      img {
+        border-radius: 10px 10px 0 0;
+        max-height: 200px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
     &-special {
       height: 30px;
@@ -49,8 +52,8 @@
     }
     &-title {
       line-height: 32px;
-      display:-webkit-box;
-      -webkit-line-clamp:2;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;

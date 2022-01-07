@@ -130,9 +130,8 @@
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
-       
       </header>
-  
+
       <section class="section1">
         <div id="demo" class="carousel slide col-md-5" data-bs-ride="carousel">
 

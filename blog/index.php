@@ -63,9 +63,9 @@ if(!empty($_SESSION['email'])){
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="#!">Blog</a></li>
+            <li class="menu-item"><a class="menu-link link-active" href="#!">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
+              <a class="menu-link" href="../service/index.php">Dịch vụ</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
 
@@ -160,7 +160,7 @@ if(!empty($_SESSION['email'])){
                 Các bài blog được cập nhật thường xuyên của chúng tôi
               </h2>
               <p class="global-text show-on-scroll">
-                tempus, lectus risus In' perdiel tellus, sed faucibus ipsum ipsurn nun neque.
+                Cập nhật mới nhất: 24 tháng 12 năm 2021
               </p>
             </div>
             <!-- posts -->
@@ -586,7 +586,7 @@ if(!empty($_SESSION['email'])){
                 <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
               </li>
               <li class="footer-item">
-                <span href="#" class="footer-link-none"
+                <span class="footer-link-none"
                   >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
                 >
               </li>

@@ -66,7 +66,7 @@ if(!empty($_SESSION['email'])){
               <a class="menu-link" href="../../mon-an/index.php">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link link-active" href="../../blog/index.php">Blog</a></li>
-            <li class="menu-item"><a class="menu-link" href="../../service/service.php">Dịch vụ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../../service/index.php">Dịch vụ</a></li>
             <li class="menu-item"><a class="menu-link" href="../../contact/index.php">Liên hệ</a></li>
             <?php if (empty($_SESSION['email'])){ ?>
                 <li class="auth">
@@ -150,9 +150,9 @@ if(!empty($_SESSION['email'])){
           /></label>
           <label for="toggle-check" class="overlay"></label>
         </div>
-       
+
       </header>
-  
+
       <section class="section1">
         <div id="demo" class="carousel slide col-md-5" data-bs-ride="carousel">
 
@@ -511,7 +511,7 @@ if(!empty($_SESSION['email'])){
                 <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
               </li>
               <li class="footer-item">
-                <span href="#" class="footer-link-none"
+                <span class="footer-link-none"
                   >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
                 >
               </li>

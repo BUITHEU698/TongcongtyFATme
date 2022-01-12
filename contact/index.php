@@ -77,16 +77,17 @@ if(!empty($_SESSION['email'])){
                 ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
+              <a class="menu-link" href="../service/index.php">Dịch vụ</a>
             </li>
-            <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
-
+            <li class="menu-item">
+              <a class="menu-link link-active" href="../contact/index.php">Liên hệ</a>
+            </li>
             <?php if (empty($_SESSION['email'])){ ?>
               <li class="auth">
               <a class="button button--secondary auth-login" href="../login/index.php">Đăng nhập</a>
@@ -288,11 +289,9 @@ if(!empty($_SESSION['email'])){
             <a href="#" class="footer-logo">
               <img srcset="../assets/images/main-images/logo.png 2x" alt="" />
             </a>
-            <p class="footer-desc text">
-              Yêu là phải nói, đói là phải ăn, gọi FatMe thật nhanh, giao tận tay khách
-            </p>
+            <p class="footer-desc text">Yêu là phải nói, đói là phải ăn, gọi FATMe thật nhanh, giao tận tay khách</p>
             <div class="social">
-              <a href="#" class="social-item">
+              <a href="https://www.facebook.com/FootAtTheMoment/" target="_blank" class="social-item">
                 <img srcset="../assets/images/main-images/facebook.png 2x" alt="" />
               </a>
               <a href="#" class="social-item">
@@ -301,48 +300,39 @@ if(!empty($_SESSION['email'])){
               <a href="#" class="social-item">
                 <img srcset="../assets/images/main-images/instagram.png 2x" alt="" />
               </a>
-              <a href="#" class="social-item">
-                <img srcset="../assets/images/main-images/apple.png 2x" alt="" />
-              </a>
             </div>
-          </div>
-          <div class="footer-column">
-            <h3 class="footer-heading heading-small">Dịch vụ</h3>
-            <ul class="footer-links">
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-              <li class="footer-item">
-                <a href="#" class="footer-link">Tên dịch vụ</a>
-              </li>
-            </ul>
           </div>
           <div class="footer-column">
             <h3 class="footer-heading heading-small">Món ăn</h3>
             <ul class="footer-links">
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Thể loại</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Có thể bạn thích</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../mon-an/index.php#category" class="footer-link">Mọi người ăn gì</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading heading-small">Blog</h3>
+            <ul class="footer-links">
+              <li class="footer-item">
+                <a href="../blog/index.php" class="footer-link">Tin hot</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog mới gần đây</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-link">Làm gì đó</a>
+                <a href="../blog/index.php#blog" class="footer-link">Blog có thể bạn thích</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_1/index.php" class="footer-link">Blog 1</a>
+              </li>
+              <li class="footer-item">
+                <a href="../blog/blog_2/index.php" class="footer-link">Blog 2</a>
               </li>
             </ul>
           </div>
@@ -358,7 +348,7 @@ if(!empty($_SESSION['email'])){
                 <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
               </li>
               <li class="footer-item">
-                <span href="#" class="footer-link-none"
+                <span class="footer-link-none"
                   >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
                 >
               </li>

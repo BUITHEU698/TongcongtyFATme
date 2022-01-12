@@ -490,7 +490,7 @@
                 <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
               </li>
               <li class="footer-item">
-                <span href="#" class="footer-link-none"
+                <span class="footer-link-none"
                   >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
                 >
               </li>

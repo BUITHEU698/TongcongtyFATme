@@ -15,7 +15,7 @@ if(empty($_SESSION['email'])){
     } else  {
       $account=$tach_ten[1].' '.$tach_ten[2];
     }
-  } 
+  }
   $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
 
   $sql="SELECT * FROM khachhang WHERE email='$email'";
@@ -140,7 +140,7 @@ if(empty($_SESSION['email'])){
     <div class="wrapper">
       <header class="header">
         <div class="navigation">
-          <a href="../main-page/index-main.html"
+          <a href="../main-page/index.php"
             ><img class="header-logo" srcset="../assets/images/main-images/logo.png 2x"
           /></a>
           <input type="checkbox" name="" id="toggle-check" class="toggle-check" />
@@ -150,13 +150,13 @@ if(empty($_SESSION['email'])){
                 ><img src="../assets/images/main-images/menu-close.png" alt="Close"
               /></label>
             </div>
-            <li class="menu-item"><a class="menu-link" href="#">Trang chủ</a></li>
+            <li class="menu-item"><a class="menu-link" href="../main-page/index.php">Trang chủ</a></li>
             <li class="menu-item">
               <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
             <li class="menu-item">
-              <a class="menu-link" href="../service/service.php">Dịch vụ</a>
+              <a class="menu-link" href="../service/index.php">Dịch vụ</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="../contact/index.php">Liên hệ</a></li>
 
@@ -181,7 +181,7 @@ if(empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                <?php foreach($dsyeuthich as $key=>$value) { ?> 
+                <?php foreach($dsyeuthich as $key=>$value) { ?>
                     <li class="auth-like-dropdown-item">
                       <a href="" class="dropdown-item">
                         <img
@@ -269,7 +269,7 @@ if(empty($_SESSION['email'])){
               <div class="p-4">
                 <div class="img-circle text-center mb-3">
                   <img src="./images/anh-tho-cute-dang-yeu.jpg" alt="Image" class="shadow" style="margin-left:28%" />
-                  
+
                 </div>
                 <h4 class="text-center"><?php if ($taikhoan['HOTEN']=="USER OF FATME") { echo "Chưa có tên gì hết nè !";}else {echo $taikhoan['HOTEN']; }?></h4>
               </div>
@@ -315,8 +315,8 @@ if(empty($_SESSION['email'])){
                 <i class="fas fa-map-marker-alt"></i>
                   Quản lý địa chỉ
                 </a>
-               
-              
+
+
               </div>
             </div>
             <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
@@ -522,7 +522,7 @@ if(empty($_SESSION['email'])){
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Nhà riêng 
+                        Nhà riêng
                       </button>
                     </h2>
                     <div
@@ -540,7 +540,7 @@ if(empty($_SESSION['email'])){
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
-                     
+
                     </h2>
                     <div
                       id="collapseOne"
@@ -549,7 +549,7 @@ if(empty($_SESSION['email'])){
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                    
+
                       </div>
                   </div>
                   <div class="accordion-item">
@@ -584,8 +584,8 @@ if(empty($_SESSION['email'])){
                   <button class="btn btn-light">Cancel</button>
                 </div>
               </div>
-              
-            
+
+
             </div>
           </div>
         </div>
@@ -666,7 +666,7 @@ if(empty($_SESSION['email'])){
                 <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
               </li>
               <li class="footer-item">
-                <span href="#" class="footer-link-none"
+                <span class="footer-link-none"
                   >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
                 >
               </li>

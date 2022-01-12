@@ -163,11 +163,11 @@ email_khachhang='$email'"); } ?>
                 <a class="menu-link" href="../main-page/index.php">Trang chủ</a>
               </li>
               <li class="menu-item">
-                <a class="menu-link" href="../mon-an/index.php">Món ăn</a>
+                <a class="menu-link link-active" href="../mon-an/index.php">Món ăn</a>
               </li>
               <li class="menu-item"><a class="menu-link" href="../blog/index.php">Blog</a></li>
               <li class="menu-item">
-                <a class="menu-link" href="../service/service.php">Dịch vụ</a>
+                <a class="menu-link" href="../service/index.php">Dịch vụ</a>
               </li>
               <li class="menu-item">
                 <a class="menu-link" href="../contact/index.php">Liên hệ</a>
@@ -1409,7 +1409,7 @@ email_khachhang='$email'"); } ?>
                   <a href="tel:+84971292838" class="footer-link-none">(84+) 971 29 28 38</a>
                 </li>
                 <li class="footer-item">
-                  <span href="#" class="footer-link-none"
+                  <span class="footer-link-none"
                     >Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh.</span
                   >
                 </li>

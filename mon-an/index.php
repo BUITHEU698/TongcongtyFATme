@@ -12,16 +12,19 @@ if (!empty($_SESSION['email'])){
       $account=$tach_ten[0].' '.$tach_ten[1];
     } else  {
       $account=$tach_ten[1].' '.$tach_ten[2];
-    }
+    } 
   }
     if (isset($_POST['mua1'])){ 
-      $TENMONAN='Xôi Xá Xíu';
-      $GIA='35000'; $THELOAI='Xôi'; 
-      $IMAGE='xoixaxiu.jpeg'; 
+      $TENMONAN='Khai Vị Tam Hợp';
+      $GIA='235000'; $THELOAI='Khai Vị'; 
+      $IMAGE='khaivitamhop.jpg'; 
       $SOLUONG=$_POST['SL1']; 
       $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
-      $query=mysqli_query($conn,$sql); } if (isset($_POST['tim1'])){ $TENMONAN='Xôi Xá Xíu'; $GIA='35000';
-      $THELOAI='Xôi'; $IMAGE='xoixaxiu.jpeg'; 
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim1'])){ 
+      $TENMONAN='Khai Vị Tam Hợp'; $GIA='235000';
+      $THELOAI='Khai Vị'; $IMAGE='khaivitamhop.jpg'; 
       $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; 
       $query=mysqli_query($conn,$sql);
       $check=mysqli_num_rows($query); 
@@ -29,202 +32,208 @@ if (!empty($_SESSION['email'])){
         $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
         $query=mysqli_query($conn,$sql); 
       }else {
-        header("location:index.php"); } } if (isset($_POST['mua2'])){ $TENMONAN='Pizza Hải Sản Sốt Tiêu Đen'; 
-        $GIA='69000'; 
-        $THELOAI='Pizza'; 
-        $IMAGE='pizza.jpeg'; 
-        $SOLUONG=$_POST['SL2']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
-        $query=mysqli_query($conn,$sql); 
+        header("location:index.php"); 
       } 
-      if (isset($_POST['tim2'])){ 
-        $TENMONAN='Pizza Hải Sản Sốt Tiêu Đen'; 
-        $GIA='69000'; 
-        $THELOAI='Pizza'; 
-        $IMAGE='pizza.jpeg'; 
+    } 
+    if (isset($_POST['mua2'])){ 
+      $TENMONAN='Pizza Hải Sản Sốt Tiêu Đen'; 
+      $GIA='69000'; 
+      $THELOAI='Pizza'; 
+      $IMAGE='pizza.jpeg'; 
+      $SOLUONG=$_POST['SL2']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim2'])){ 
+      $TENMONAN='Pizza Hải Sản Sốt Tiêu Đen'; 
+      $GIA='69000'; 
+      $THELOAI='Pizza'; 
+      $IMAGE='pizza.jpeg'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
+        $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
+      } 
+    } if (isset($_POST['mua3'])){ 
+      $TENMONAN='Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi blackpink'; 
+      $GIA='139000'; 
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='gavuive.jpeg'; 
+      $SOLUONG=$_POST['SL3']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim3'])){ 
+      $TENMONAN='Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi blackpink'; 
+      $GIA='139000'; 
+      $THELOAI='Thức ăn nhanh'; 
+      $IMAGE='gavuive.jpeg'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql); 
+      $check=mysqli_num_rows($query);
+      if($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
+        $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
+      } 
+    } if (isset($_POST['mua4'])){ 
+      $TENMONAN='Combo Lộc Phúc';
+      $GIA='86000'; 
+      $THELOAI='Thức ăn nhanh'; 
+      $IMAGE='phucloc.png'; 
+      $SOLUONG=$_POST['SL4']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim4'])){
+      $TENMONAN='Combo Lộc Phúc';
+      $GIA='86000'; 
+      $THELOAI='Thức ăn nhanh'; 
+      $IMAGE='phucloc.png'; 
         $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } if (isset($_POST['mua3'])){ 
-        $TENMONAN='Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi blackpink'; 
-        $GIA='139000'; 
-        $THELOAI='Thức ăn nhanh';
-        $IMAGE='gavuive.jpeg'; 
-        $SOLUONG=$_POST['SL3']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
-        $query=mysqli_query($conn,$sql); 
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI)VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
       } 
-      if (isset($_POST['tim3'])){ 
-        $TENMONAN='Jollibee - 02 miếng gà giòn vui vẻ + 01 ly pepsi thường + tặng 1 lon pepsi blackpink'; 
-        $GIA='139000'; 
-        $THELOAI='Thức ăn nhanh'; 
-        $IMAGE='gavuive.jpeg'; 
-        $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql); 
-        $check=mysqli_num_rows($query);
-        if($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } if (isset($_POST['mua4'])){ 
-        $TENMONAN='Combo Lộc Phúc';
-        $GIA='86000'; 
-        $THELOAI='Thức ăn nhanh'; 
-        $IMAGE='phucloc.png'; 
-        $SOLUONG=$_POST['SL4']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
-        $query=mysqli_query($conn,$sql); 
-      } 
-      if (isset($_POST['tim4'])){
-        $TENMONAN='Combo Lộc Phúc';
-        $GIA='86000'; 
-        $THELOAI='Thức ăn nhanh'; 
-        $IMAGE='phucloc.png'; 
-         $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI)VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } 
-      if (isset($_POST['mua5'])){
-        $TENMONAN='1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi'; $GIA='79000'; 
-        $THELOAI='Thức ăn nhanh';
-        $IMAGE='burger.png'; 
-        $SOLUONG=$_POST['SL4']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
-        $query=mysqli_query($conn,$sql); 
-      } 
-      if (isset($_POST['tim5'])){
-        $TENMONAN='1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi'; $GIA='79000'; 
-        $THELOAI='Thức ăn nhanh';
-        $IMAGE='burger.png'; 
-         $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if($check==0){
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } 
-      if (isset($_POST['mua6'])){
-        $TENMONAN='1 Gà Sốt Trứng Muối + 1 Pepsi'; $GIA='36000'; $THELOAI='Thức ăn nhanh'; $IMAGE='gatrungmuoi.png'; 
-        $SOLUONG=$_POST['SL6'];
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
-        $query=mysqli_query($conn,$sql); 
-      } if (isset($_POST['tim6'])){
-        $TENMONAN='1 Gà Sốt Trứng Muối + 1 Pepsi'; $GIA='36000'; 
-        $THELOAI='Thức ăn nhanh'; 
-        $IMAGE='gatrungmuoi.png'; 
+    } 
+    if (isset($_POST['mua5'])){
+      $TENMONAN='1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi'; $GIA='79000'; 
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='burger.png'; 
+      $SOLUONG=$_POST['SL4']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim5'])){
+      $TENMONAN='1 Burger bò Teriyaki trứng + 1 Mì Ý + 1 Khoai Tây Chiên + 1 Pepsi'; $GIA='79000'; 
+      $THELOAI='Thức ăn nhanh';
+      $IMAGE='burger.png'; 
         $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } 
-      if (isset($_POST['mua7'])){
-        $TENMONAN='Sữa chua Tocotoco';
-        $GIA='20000'; 
-        $THELOAI='Đồ uống'; 
-        $IMAGE='trasuatoco.jpeg'; 
-        $SOLUONG=$_POST['SL7']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $check=mysqli_num_rows($query); 
+      if($check==0){
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
         $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
       } 
-      if (isset($_POST['tim7'])){
-        $TENMONAN='Sữa chua Tocotoco';
-        $GIA='20000'; $THELOAI='Đồ uống'; 
-        $IMAGE='trasuatoco.jpeg'; 
-        $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } 
-      if (isset($_POST['mua8'])){
-        $TENMONAN='Beefsteak Bò Sốt Tiêu';
-        $GIA='70000'; 
-        $THELOAI='Beefsteak'; 
-        $IMAGE='beefsteak.jpeg'; 
-        $SOLUONG=$_POST['SL8']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+    } 
+    if (isset($_POST['mua6'])){
+      $TENMONAN='1 Gà Sốt Trứng Muối + 1 Pepsi'; $GIA='36000'; $THELOAI='Thức ăn nhanh'; $IMAGE='gatrungmuoi.png'; 
+      $SOLUONG=$_POST['SL6'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim6'])){
+      $TENMONAN='1 Gà Sốt Trứng Muối + 1 Pepsi'; $GIA='36000'; 
+      $THELOAI='Thức ăn nhanh'; 
+      $IMAGE='gatrungmuoi.png'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
         $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
       } 
-      if (isset($_POST['tim8'])){ 
-        $TENMONAN='Beefsteak Bò Sốt Tiêu';
-        $GIA='70000'; 
-        $THELOAI='Beefsteak'; 
-        $IMAGE='beefsteak.jpeg'; 
-        $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } 
-      if (isset($_POST['mua9'])){ 
-        $TENMONAN='Bánh Bạch Tuộc';
-        $GIA='99000'; 
-        $THELOAI='Ăn vặt'; 
-        $IMAGE='banhbachtuoc.jpeg'; 
-        $SOLUONG=$_POST['SL9']; 
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+    } 
+    if (isset($_POST['mua7'])){
+      $TENMONAN='Sữa chua Tocotoco';
+      $GIA='20000'; 
+      $THELOAI='Đồ uống'; 
+      $IMAGE='trasuatoco.jpeg'; 
+      $SOLUONG=$_POST['SL7']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim7'])){
+      $TENMONAN='Sữa chua Tocotoco';
+      $GIA='20000'; $THELOAI='Đồ uống'; 
+      $IMAGE='trasuatoco.jpeg'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
         $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
       } 
-      if (isset($_POST['tim9'])){
-        $TENMONAN='Bánh Bạch Tuộc';
-        $GIA='99000'; 
-        $THELOAI='Ăn vặt'; 
-        $IMAGE='banhbachtuoc.jpeg'; 
-        $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
-      } 
-      if (isset($_POST['mua10'])){
-        $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị'; 
-        $GIA='105000'; 
-        $THELOAI='Đồ ăn mặn'; 
-        $IMAGE='galachanh.jpeg'; 
-        $SOLUONG=$_POST['SL10'];
-        $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+    } 
+    if (isset($_POST['mua8'])){
+      $TENMONAN='Beefsteak Bò Sốt Tiêu';
+      $GIA='70000'; 
+      $THELOAI='Beefsteak'; 
+      $IMAGE='beefsteak.jpeg'; 
+      $SOLUONG=$_POST['SL8']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim8'])){ 
+      $TENMONAN='Beefsteak Bò Sốt Tiêu';
+      $GIA='70000'; 
+      $THELOAI='Beefsteak'; 
+      $IMAGE='beefsteak.jpeg'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
         $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
       } 
-      if (isset($_POST['tim10'])){ 
-        $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị'; 
-        $GIA='105000'; 
-        $THELOAI='Đồ ăn mặn'; 
-        $IMAGE='galachanh.jpeg'; 
-        $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
-        $check=mysqli_num_rows($query); 
-        if ($check==0){ 
-          $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
-          $query=mysqli_query($conn,$sql); 
-        }else {
-          header("location:index.php"); 
-        } 
+    } 
+    if (isset($_POST['mua9'])){ 
+      $TENMONAN='Bánh Bạch Tuộc';
+      $GIA='99000'; 
+      $THELOAI='Ăn vặt'; 
+      $IMAGE='banhbachtuoc.jpeg'; 
+      $SOLUONG=$_POST['SL9']; 
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim9'])){
+      $TENMONAN='Bánh Bạch Tuộc';
+      $GIA='99000'; 
+      $THELOAI='Ăn vặt'; 
+      $IMAGE='banhbachtuoc.jpeg'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
+        $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
       } 
-      $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'"); $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
-    }
+    } 
+    if (isset($_POST['mua10'])){
+      $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị'; 
+      $GIA='105000'; 
+      $THELOAI='Đồ ăn mặn'; 
+      $IMAGE='galachanh.jpeg'; 
+      $SOLUONG=$_POST['SL10'];
+      $sql="INSERT INTO giohang(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI,SOLUONG) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI','$SOLUONG');";
+      $query=mysqli_query($conn,$sql); 
+    } 
+    if (isset($_POST['tim10'])){ 
+      $TENMONAN='Gà Lá Chanh Tóp Mỡ Ngũ Vị'; 
+      $GIA='105000'; 
+      $THELOAI='Đồ ăn mặn'; 
+      $IMAGE='galachanh.jpeg'; 
+      $sql="SELECT *FROM yeuthich WHERE email_khachhang='$email'AND TENMONAN='$TENMONAN'"; $query=mysqli_query($conn,$sql);
+      $check=mysqli_num_rows($query); 
+      if ($check==0){ 
+        $sql="INSERT INTO yeuthich(email_khachhang,IMAGE,TENMONAN,GIA,THELOAI) VALUES('$email','$IMAGE','$TENMONAN','$GIA','$THELOAI');"; 
+        $query=mysqli_query($conn,$sql); 
+      }else {
+        header("location:index.php"); 
+      } 
+    } 
+    $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'"); 
+    $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+  }
   ?>
 <html>
   <head>
@@ -305,7 +314,24 @@ if (!empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                <?php foreach($dsyeuthich as $key=>$value) { ?>
+                <?php 
+                
+                function formatMoney1($number, $fractional=false){
+                  if ($fractional) {
+                      $number = sprintf('%.2f', $number);
+                  }
+                  while (true) {
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                      if ($replaced != $number) {
+                          $number = $replaced;
+                      } else {
+                          break;
+                      }
+                  }
+                  return $number;
+              }
+                
+                foreach($dsyeuthich as $key=>$value) { ?>
                   <li class="dropdown-item auth-like-dropdown-item">
                         <img
                           src="../assets/images/food/<?php echo $value['IMAGE']?>"
@@ -315,7 +341,7 @@ if (!empty($_SESSION['email'])){
                         <div class="dropdown-item-text">
                           <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
                           <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
-                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                          <div class="dropdown-item-text-price"><?php echo formatMoney1($value['GIA'])?>đ</div>
                         </div>
                         <div class="dropdown-item-right">
                           <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
@@ -325,6 +351,21 @@ if (!empty($_SESSION['email'])){
                         </div>
                     </li>
                   <?php }?>
+                  <?php
+                  $tongtien1=0;
+                    foreach($dsyeuthich as $key=>$value)  {
+                    $tongtien1=$tongtien1+$value['GIA'];
+                  }?>
+                    <li class="auth-shoppingcart-dropdown-item">
+                      <?php if ($tongtien1==0){ ?>
+                        <span class="shoppingcart-alert">
+                          Danh sách yêu thích của bạn đang trống !
+                        </span>
+                            <?php }else {?>
+                            <?php }?>
+
+
+
                 </ul>
               </div>
               <div class="auth-shoppingcart">
@@ -340,18 +381,72 @@ if (!empty($_SESSION['email'])){
                     alt="arrow-down"
                   />
                 </div>
+                
+
+
                 <ul class="auth-shoppingcart-dropdown">
-                  <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
-                      Giỏ hàng
-                    </a>
+                <?php
+
+                function formatMoney($number, $fractional=false){
+                  if ($fractional) {
+                      $number = sprintf('%.2f', $number);
+                  }
+                  while (true) {
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                      if ($replaced != $number) {
+                          $number = $replaced;
+                      } else {
+                          break;
+                      }
+                  }
+                  return $number;
+              }
+
+                foreach($dsgiohang as $key=>$value)  { ?>
+                  <li class="dropdown-item auth-shoppingcart-dropdown-item" >
+                      <img src="../assets/images/food/<?php echo $value['IMAGE']?>" alt="Hình thức ăn"
+                        class="dropdown-item-image">
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+
+                          <div class="dropdown-item-text-price"><span class="price"><?php echo formatMoney($value['GIA'])?></span>đ</div>
+                        </div>
+                        <div class="dropdown-item-right">
+                        <a href="xoa.php?id=<?php echo $value['id_monan']; ?>">
+                          <img class="trash" src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                        </a>
+                        <img
+                          class="heart"
+                          src="../assets/images/main-images/icon-heart-fill.png"
+                          alt="heart"
+                        />
+                      </div>
                   </li>
-                  <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
-                      Đặt hàng
-                    </a>
-                  </li>
+                <?php }?>
+                  <?php
+                  $tongtien=0;
+                    foreach($dsgiohang as $key=>$value)  {
+                    $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
+                  }?>
+                    <li class="auth-shoppingcart-dropdown-item">
+                      <?php if ($tongtien==0){ ?>
+                        <span class="shoppingcart-alert">
+                          Giỏ hàng của bạn đang trống !
+                        </span>
+                            <?php } else {?>
+                              <a class="auth-shoppingcart-dropdown-link" href="../shoppingcart/index.php">
+                              <span class="sum">
+                          Tổng tiền: <span class="sum-price"><?php echo formatMoney($tongtien) ?></span>đ
+                        </span>
+                        <span>Thanh toán</span>
+                        </a>
+                            <?php }?>
+
+                    </li>
                 </ul>
+
+
               </div>
               <div class="auth-user">
                 <div class="auth-user-top">
@@ -754,7 +849,7 @@ if (!empty($_SESSION['email'])){
                       </div>
                       <div class="product-item-price global-heading--normal">
                         <div class="product-item-price-new">
-                          <span class="price-new">235.000 - 265.000</span>
+                          <span class="price-new">235.000</span>
                           <span class="price-new-unit">đ</span>
                         </div>
                         <div class="product-item-price-old">

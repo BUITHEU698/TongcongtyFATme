@@ -15,8 +15,10 @@ if(empty($_SESSION['email'])){
     } else  {
       $account=$tach_ten[1].' '.$tach_ten[2];
     }
-  }  $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE
-email_khachhang='$email'"); } ?>
+  }  
+  $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'"); 
+  $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,12 +101,26 @@ email_khachhang='$email'"); } ?>
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="../profile/index.php">Tài khoản</a>
-                  </li>
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="../mon-an/dx.php">Đăng xuất</a>
-                  </li>
+                <?php foreach($dsyeuthich as $key=>$value) { ?>
+                  <li class="dropdown-item auth-like-dropdown-item">
+                        <img
+                          src="../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
+                        />
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo $value['GIA']?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                    </li>
+                  <?php }?>
                 </ul>
               </div>
               <div class="auth-shoppingcart">

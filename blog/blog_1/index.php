@@ -15,6 +15,8 @@ if(!empty($_SESSION['email'])){
       $account=$tach_ten[1].' '.$tach_ten[2];
     }
   }
+  $dsyeuthich=mysqli_query($conn,"SELECT * FROM yeuthich WHERE email_khachhang='$email'");
+  $dsgiohang=mysqli_query($conn,"SELECT * FROM giohang WHERE email_khachhang='$email'"); 
 }
 
 ?>
@@ -95,12 +97,55 @@ if(!empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-like-dropdown">
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="">Tài khoản</a>
-                  </li>
-                  <li class="auth-like-dropdown-item">
-                    <a class="auth-like-dropdown-link" href="">Đăng xuất</a>
-                  </li>
+                <?php 
+                
+                function formatMoney1($number, $fractional=false){
+                  if ($fractional) {
+                      $number = sprintf('%.2f', $number);
+                  }
+                  while (true) {
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                      if ($replaced != $number) {
+                          $number = $replaced;
+                      } else {
+                          break;
+                      }
+                  }
+                  return $number;
+              }
+                
+                foreach($dsyeuthich as $key=>$value) { ?>
+                  <li class="dropdown-item auth-like-dropdown-item">
+                        <img
+                          src="../../assets/images/food/<?php echo $value['IMAGE']?>"
+                          alt="Hình thức ăn"
+                          class="dropdown-item-image"
+                        />
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+                          <div class="dropdown-item-text-price"><?php echo formatMoney1($value['GIA'])?></div>
+                        </div>
+                        <div class="dropdown-item-right">
+                          <a href="../../mon-an/xoa_thich.php?id=<?php echo $value['id_monan']?>">
+                            <img class="trash"src="../../assets/images/main-images/icon-trash.png" alt="trash"/>
+                          </a>
+                            <img class="heart"src="../../assets/images/main-images/icon-heart-fill.png"alt="heart"/>
+                        </div>
+                    </li>
+                  <?php }?>
+                  <?php
+                  $tongtien1=0;
+                    foreach($dsyeuthich as $key=>$value)  {
+                    $tongtien1=$tongtien1+$value['GIA'];
+                  }?>
+                    <li class="auth-shoppingcart-dropdown-item">
+                      <?php if ($tongtien1==0){ ?>
+                        <span class="shoppingcart-alert">
+                          Danh sách yêu thích của bạn đang trống !
+                        </span>
+                            <?php }else {?>
+                            <?php }?>
                 </ul>
               </div>
               <div class="auth-shoppingcart">
@@ -117,16 +162,65 @@ if(!empty($_SESSION['email'])){
                   />
                 </div>
                 <ul class="auth-shoppingcart-dropdown">
-                  <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="../../shoppingcart/index.php">
-                      Giỏ hàng
-                    </a>
+                <?php
+
+                function formatMoney($number, $fractional=false){
+                  if ($fractional) {
+                      $number = sprintf('%.2f', $number);
+                  }
+                  while (true) {
+                      $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number);
+                      if ($replaced != $number) {
+                          $number = $replaced;
+                      } else {
+                          break;
+                      }
+                  }
+                  return $number;
+              }
+
+                foreach($dsgiohang as $key=>$value)  { ?>
+                  <li class="dropdown-item auth-shoppingcart-dropdown-item" >
+                      <img src="../../assets/images/food/<?php echo $value['IMAGE']?>" alt="Hình thức ăn"
+                        class="dropdown-item-image">
+                        <div class="dropdown-item-text">
+                          <div class="dropdown-item-text-desc"><?php echo $value['THELOAI']?></div>
+                          <div class="dropdown-item-text-title"><?php echo $value['TENMONAN']?></div>
+
+                          <div class="dropdown-item-text-price"><span class="price"><?php echo formatMoney($value['GIA'])?></span>đ</div>
+                        </div>
+                        <div class="dropdown-item-right">
+                        <a href="xoa.php?id=<?php echo $value['id_monan']; ?>">
+                          <img class="trash" src="../../assets/images/main-images/icon-trash.png" alt="trash"/>
+                        </a>
+                        <img
+                          class="heart"
+                          src="../../assets/images/main-images/icon-heart-fill.png"
+                          alt="heart"
+                        />
+                      </div>
                   </li>
-                  <li class="auth-shoppingcart-dropdown-item">
-                    <a class="auth-shoppingcart-dropdown-link" href="#!">
-                      Đặt hàng
-                    </a>
-                  </li>
+                <?php }?>
+                  <?php
+                  $tongtien=0;
+                    foreach($dsgiohang as $key=>$value)  {
+                    $tongtien=$tongtien+$value['GIA']*$value['SOLUONG'];
+                  }?>
+                    <li class="auth-shoppingcart-dropdown-item">
+                      <?php if ($tongtien==0){ ?>
+                        <span class="shoppingcart-alert">
+                          Giỏ hàng của bạn đang trống !
+                        </span>
+                            <?php } else {?>
+                              <a class="auth-shoppingcart-dropdown-link" href="../../shoppingcart/index.php">
+                              <span class="sum">
+                          Tổng tiền: <span class="sum-price"><?php echo formatMoney($tongtien) ?></span>đ
+                        </span>
+                        <span>Thanh toán</span>
+                        </a>
+                            <?php }?>
+
+                    </li>
                 </ul>
               </div>
               <div class="auth-user">

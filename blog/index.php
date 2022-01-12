@@ -2,11 +2,17 @@
 include'../connect/connect.php';
 if(!empty($_SESSION['email'])){
   $email = $_SESSION['email'];
-  $taikhoan=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
-  foreach($taikhoan as $key=>$value)  {
-    $ten=$value['HOTEN'];
+  $taikhoan1=mysqli_query($conn,"SELECT * FROM khachhang WHERE email='$email'");
+  foreach($taikhoan1 as $key=>$value)  {
+    $ten=$value['HOTEN'].' '.'★';
     $tach_ten = explode(" ", $ten);
-    $account=$tach_ten[1].' '.$tach_ten[2];
+    if ($tach_ten[1]=='★'){
+      $account=$tach_ten[0];
+    } else if ($tach_ten[2]=='★'){
+      $account=$tach_ten[0].' '.$tach_ten[1];
+    } else  {
+      $account=$tach_ten[1].' '.$tach_ten[2];
+    }
   }
 }
 

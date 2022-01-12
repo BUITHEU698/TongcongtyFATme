@@ -224,6 +224,8 @@ body {
 .toggle {
   margin-left: auto;
   display: none;
+  align-items: center;
+  height: 86px;
 }
 .toggle-close {
   display: none;
@@ -688,7 +690,7 @@ body {
   }
 
   .toggle {
-    display: block;
+    display: flex;
   }
   .toggle-close {
     display: inline-block;
